@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15668A2051CE0E00B4067C /* Checkbox.swift */; };
 		2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
 		2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B3204E5A440093B3BF /* Main.storyboard */; };
 		2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B6204E5A440093B3BF /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C15668A2051CE0E00B4067C /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -46,9 +48,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C1566892051CDE000B4067C /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				2C15668A2051CE0E00B4067C /* Checkbox.swift */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
 		2C1EE2A3204E5A440093B3BF = {
 			isa = PBXGroup;
 			children = (
+				2C1566892051CDE000B4067C /* Custom UI */,
 				2C1EE2AE204E5A440093B3BF /* RideSafe */,
 				2C1EE2AD204E5A440093B3BF /* Products */,
 				4B157561EAB4B787B2AA1CDF /* Pods */,
@@ -256,6 +267,7 @@
 			files = (
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				2C1EE2D1204E6F340093B3BF /* Register.swift in Sources */,
+				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,

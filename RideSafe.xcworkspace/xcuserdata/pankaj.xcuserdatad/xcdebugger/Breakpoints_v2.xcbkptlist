@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RideSafe/Controller/LoginController.swift"
-            timestampString = "542143679.494717"
+            timestampString = "542235650.929225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "btnClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
