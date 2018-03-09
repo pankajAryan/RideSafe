@@ -10,6 +10,9 @@ import Foundation
 
 enum ServiceType: String {
     case registerCitizen = "registerCitizen"
+    case generateOtp =  "generateOtp"
+    case verifyOtp =  "verifyOtp"
+    case resendOtp = "resendOtp"
 }
 
 

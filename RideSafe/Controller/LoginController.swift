@@ -15,10 +15,16 @@ class LoginController: UIViewController {
     var model:Register?
     @IBOutlet weak var officialCheckBox: Checkbox!
     @IBOutlet weak var citizenCheckBox: Checkbox!
+    @IBOutlet weak var otpView: UIStackView!
+    @IBOutlet weak var mobileNumber: UITextField!
+    @IBOutlet weak var otpText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
+    }
+    
+    fileprivate func setupUI() {
         citizenCheckBox.uncheckedBorderColor = .black
         citizenCheckBox.borderStyle = .circle
         citizenCheckBox.checkedBorderColor = .blue
@@ -26,7 +32,6 @@ class LoginController: UIViewController {
         citizenCheckBox.checkmarkStyle = .circle
         
         citizenCheckBox.valueChanged = { (value) in
-            print("checkbox value change: \(value)")
             if value == true {
                 self.officialCheckBox.isChecked = false
             }
@@ -37,29 +42,62 @@ class LoginController: UIViewController {
         officialCheckBox.checkedBorderColor = .blue
         officialCheckBox.checkmarkColor = .blue
         officialCheckBox.checkmarkStyle = .circle
-
+        
         officialCheckBox.valueChanged = { (value) in
-            print("checkbox value change: \(value)")
             if value == true {
                 self.citizenCheckBox.isChecked = false
             }
         }
-    
     }
 
     
     @IBAction func btnClicked(_ sender: Any) {
-        
-        let indicator = MaterialActivityIndicatorView()
-        indicator.startAnimating()
-        
-        NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": "Test","mobile": "9999999999","districtId": "2"]).then { response -> () in
-            print(response)
-            self.model =   Register(dictionary: (response as NSDictionary))
-            }.catch { (error) in
-                print(error.localizedDescription)
-            }.always {
-                indicator.stopAnimating()
+        if self.otpView.isHidden {
+            doRegistration()
+        } else {
+            verifyOtp(mobileNo: mobileNumber.text!, otp: otpText.text!)
         }
     }
+    
+    private func doRegistration() {
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": "Test","mobile": "9999999999","districtId": "2"])
+        }.then { response -> () in
+            self.model =   Register(dictionary: (response as NSDictionary))
+        }.then { () -> () in
+                self.generateOtp(phonNo: self.mobileNumber.text!)
+        }.then { () -> () in
+            UIView.animate(withDuration: 0.3, animations: {
+                self.otpView.isHidden = false
+            })
+        } .catch { error in
+        }
+    }
+    
+    private func generateOtp(phonNo:String) {
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .generateOtp, params: ["phoneNo" : phonNo])
+        }.then { response -> () in
+            }.catch { error in
+        }
+    }
+    
+
+    private func verifyOtp(mobileNo:String,otp:String) {
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
+        }.then { response -> () in
+        }.catch { error in
+        }
+    }
+    
+    @IBAction func resendOTP(_ sender: UIButton) {
+        
+        firstly{
+            NetworkManager().doServiceCall(serviceType: .resendOtp, params: ["phoneNo" : mobileNumber.text!])
+            }.then { (response) -> () in
+            }.catch { (error) in
+        }
+    }
+    
 }

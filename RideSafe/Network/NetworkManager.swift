@@ -21,11 +21,13 @@ class NetworkManager {
                 switch response.result {
                 case .success:
                     if let response = response.value as? [String : Any]  {
+                        #if DEBUG
+                            print("service: \(serviceType.rawValue) \n  response: \(response) ")
+                        #endif
                         fullFilled(response)
                     }
                     break
                 case .failure(let error):
-                    print(error)
                     reject(error)
                 }
             }
