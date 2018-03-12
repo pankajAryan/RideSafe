@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15668A2051CE0E00B4067C /* Checkbox.swift */; };
+		2C1566972056A6F900B4067C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566942056A6F900B4067C /* SideMenu.swift */; };
+		2C1566982056A6F900B4067C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566952056A6F900B4067C /* MenuCell.swift */; };
+		2C1566992056A6F900B4067C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1566962056A6F900B4067C /* MenuCell.xib */; };
+		2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15669F2056A76D00B4067C /* DashboardController.swift */; };
 		2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
 		2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B3204E5A440093B3BF /* Main.storyboard */; };
 		2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B6204E5A440093B3BF /* Assets.xcassets */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		2C15668A2051CE0E00B4067C /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		2C1566942056A6F900B4067C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		2C1566952056A6F900B4067C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		2C1566962056A6F900B4067C /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		2C15669F2056A76D00B4067C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +64,16 @@
 			path = "Custom UI";
 			sourceTree = "<group>";
 		};
+		2C1566932056A6F900B4067C /* SideSlider */ = {
+			isa = PBXGroup;
+			children = (
+				2C1566942056A6F900B4067C /* SideMenu.swift */,
+				2C1566952056A6F900B4067C /* MenuCell.swift */,
+				2C1566962056A6F900B4067C /* MenuCell.xib */,
+			);
+			path = SideSlider;
+			sourceTree = "<group>";
+		};
 		2C1EE2A3204E5A440093B3BF = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +96,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				2C1566932056A6F900B4067C /* SideSlider */,
 				2C1EE2D7204E6F460093B3BF /* Controller */,
 				2C1EE2D2204E6F3E0093B3BF /* Network */,
 				2C1EE2CF204E6F040093B3BF /* Model */,
@@ -111,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1EE2D8204E6F460093B3BF /* LoginController.swift */,
+				2C15669F2056A76D00B4067C /* DashboardController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +216,7 @@
 			files = (
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
+				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,8 +289,11 @@
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				2C1EE2D1204E6F340093B3BF /* Register.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
+				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
+				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
+				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

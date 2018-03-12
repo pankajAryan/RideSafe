@@ -61,7 +61,7 @@ class LoginController: UIViewController {
     
     private func doRegistration() {
         firstly {
-            NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": "Test","mobile": "9999999999","districtId": "2"])
+            NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": "Test","mobile": self.mobileNumber.text!,"districtId": "2"])
         }.then { response -> () in
             self.model =   Register(dictionary: (response as NSDictionary))
         }.then { () -> () in
@@ -87,6 +87,7 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
         }.then { response -> () in
+            
         }.catch { error in
         }
     }

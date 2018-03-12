@@ -28,6 +28,7 @@ class NetworkManager {
                     }
                     break
                 case .failure(let error):
+                    print("response code", response.response?.statusCode)
                     reject(error)
                 }
             }
