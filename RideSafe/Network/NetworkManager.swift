@@ -28,7 +28,9 @@ class NetworkManager {
                     }
                     break
                 case .failure(let error):
+                     #if DEBUG
                     print("response code", response.response?.statusCode)
+                        #endif
                     reject(error)
                 }
             }

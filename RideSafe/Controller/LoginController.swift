@@ -22,6 +22,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     fileprivate func setupUI() {
@@ -52,6 +53,7 @@ class LoginController: UIViewController {
 
     
     @IBAction func btnClicked(_ sender: Any) {
+         
         if self.otpView.isHidden {
             doRegistration()
         } else {
@@ -87,9 +89,16 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
         }.then { response -> () in
-            
+            self.gotodashBoard()
         }.catch { error in
         }
+    }
+    
+   
+    private func gotodashBoard() {
+      let str =  UIStoryboard(name: "Main", bundle: nil)
+        let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func resendOTP(_ sender: UIButton) {
@@ -102,3 +111,4 @@ class LoginController: UIViewController {
     }
     
 }
+
