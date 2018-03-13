@@ -44,8 +44,6 @@ class RegistrationController: UIViewController {
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
         drop.tableHeight = 300
-        
-       // drop.center = CGPoint(x: self.district.frame.midX, y: self.district.frame.midY)
         drop.placeholder = "Select your district..."
         var districtNames = [String]()
         for i in dictList! {
@@ -53,9 +51,7 @@ class RegistrationController: UIViewController {
         }
         drop.options = districtNames
         
-        drop.didSelect { (option, index) in
-          
-            print("You just select: \(option) at index: \(index)")
+        drop.didSelect { (option, index) in          
             self.selectedDistrictID = (dictList?[index].districtId)!
         }
         self.view.addSubview(drop)

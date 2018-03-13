@@ -14,6 +14,7 @@ import PromiseKit
 class NetworkManager {
     
     func doServiceCall(serviceType:ServiceType, params:[String:String]) -> Promise<[String:Any]> {
+        SwiftLoader.show(animated: true)
         let urlString = makeUrl(restUrl: serviceType.rawValue)
         return Promise { fullFilled , reject in
             Alamofire.request(urlString, method: .post, parameters: params).responseJSON {
@@ -26,6 +27,7 @@ class NetworkManager {
                             print("✅ service: \(serviceType.rawValue) \n ✅ response: \(response) ")
                         #endif
                         fullFilled(response)
+                        SwiftLoader.hide()
                     }
                     break
                 case .failure(let error):
@@ -33,6 +35,7 @@ class NetworkManager {
                         print("❌ response code", response.response?.statusCode)
                     #endif
                     reject(error)
+                    SwiftLoader.hide()
                 }
             }
         }

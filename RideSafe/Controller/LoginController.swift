@@ -11,7 +11,7 @@ import PromiseKit
 
 class LoginController: UIViewController {
     
-  
+    
     @IBOutlet weak var officialCheckBox: Checkbox!
     @IBOutlet weak var citizenCheckBox: Checkbox!
     @IBOutlet weak var otpView: UIStackView!

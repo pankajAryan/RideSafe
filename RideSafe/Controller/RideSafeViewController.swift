@@ -24,6 +24,13 @@ extension UIViewController {
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "emergency")
     }
     
+    func showActivityIndicator() {
+        SwiftLoader.show(animated: true)
+    }
+    
+    func hideActivityIndicator() {
+        SwiftLoader.hide()
+    }
 }
 
 
