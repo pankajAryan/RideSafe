@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double MaterialActivityIndicatorVersionNumber;
-FOUNDATION_EXPORT const unsigned char MaterialActivityIndicatorVersionString[];
+FOUNDATION_EXPORT double UIDropDownVersionNumber;
+FOUNDATION_EXPORT const unsigned char UIDropDownVersionString[];
 

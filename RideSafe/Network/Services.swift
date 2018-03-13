@@ -13,6 +13,7 @@ enum ServiceType: String {
     case generateOtp =  "generateOtp"
     case verifyOtp =  "verifyOtp"
     case resendOtp = "resendOtp"
+    case getDistrictList = "getDistrictList"
 }
 
 

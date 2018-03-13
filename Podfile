@@ -8,5 +8,5 @@ target 'RideSafe' do
   # Pods for RideSafe
 pod 'PromiseKit', '~> 4.0'
 pod 'Alamofire', '~> 4.4'
-pod 'MaterialActivityIndicator'
+pod 'UIDropDown'
 end

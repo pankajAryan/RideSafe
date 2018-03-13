@@ -8,11 +8,10 @@
 
 import UIKit
 import PromiseKit
-import MaterialActivityIndicator
 
 class LoginController: UIViewController {
     
-    var model:Register?
+  
     @IBOutlet weak var officialCheckBox: Checkbox!
     @IBOutlet weak var citizenCheckBox: Checkbox!
     @IBOutlet weak var otpView: UIStackView!
@@ -25,7 +24,7 @@ class LoginController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    fileprivate func setupUI() {
+    private func setupUI() {
         citizenCheckBox.uncheckedBorderColor = .black
         citizenCheckBox.borderStyle = .circle
         citizenCheckBox.checkedBorderColor = .blue
@@ -50,59 +49,49 @@ class LoginController: UIViewController {
             }
         }
     }
-
+    
     
     @IBAction func btnClicked(_ sender: Any) {
-         
+        
         if self.otpView.isHidden {
-            doRegistration()
+            generateOtp(phonNo:mobileNumber.text!)
         } else {
             verifyOtp(mobileNo: mobileNumber.text!, otp: otpText.text!)
         }
     }
     
-    private func doRegistration() {
-        firstly {
-            NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": "Test","mobile": self.mobileNumber.text!,"districtId": "2"])
-        }.then { response -> () in
-            self.model =   Register(dictionary: (response as NSDictionary))
-        }.then { () -> () in
-                self.generateOtp(phonNo: self.mobileNumber.text!)
-        }.then { () -> () in
-            UIView.animate(withDuration: 0.3, animations: {
-                self.otpView.isHidden = false
-            })
-        } .catch { error in
-        }
-    }
+    
     
     private func generateOtp(phonNo:String) {
         firstly {
             NetworkManager().doServiceCall(serviceType: .generateOtp, params: ["phoneNo" : phonNo])
-        }.then { response -> () in
+            }.then { response -> () in
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.otpView.isHidden = false
+                })
             }.catch { error in
         }
     }
     
-
+    
     private func verifyOtp(mobileNo:String,otp:String) {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
-        }.then { response -> () in
-            self.gotodashBoard()
-        }.catch { error in
+            }.then { response -> () in
+                self.gotoRegistrationPage()
+            }.catch { error in
         }
     }
     
-   
-    private func gotodashBoard() {
-      let str =  UIStoryboard(name: "Main", bundle: nil)
-        let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
+    
+    private func gotoRegistrationPage() {
+        let str =  UIStoryboard(name: "Main", bundle: nil)
+        let vc = str.instantiateViewController(withIdentifier: "RegistrationController") as! RegistrationController
+        vc.phoneNumber = mobileNumber.text!
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func resendOTP(_ sender: UIButton) {
-        
         firstly{
             NetworkManager().doServiceCall(serviceType: .resendOtp, params: ["phoneNo" : mobileNumber.text!])
             }.then { (response) -> () in

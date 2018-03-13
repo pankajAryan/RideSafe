@@ -12,11 +12,19 @@
 		2C1566982056A6F900B4067C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566952056A6F900B4067C /* MenuCell.swift */; };
 		2C1566992056A6F900B4067C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1566962056A6F900B4067C /* MenuCell.xib */; };
 		2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15669F2056A76D00B4067C /* DashboardController.swift */; };
+		2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A12057DCA000B4067C /* MyProfile.swift */; };
+		2C1566A42057DCC300B4067C /* MyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A32057DCC300B4067C /* MyReport.swift */; };
+		2C1566A62057DCD800B4067C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A52057DCD800B4067C /* SettingController.swift */; };
+		2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A72057DCF800B4067C /* AboutRideSafe.swift */; };
+		2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A92058013A00B4067C /* RideSafeViewController.swift */; };
+		2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AB2058238800B4067C /* RegistrationController.swift */; };
+		2C1566B120582F8D00B4067C /* DistrictList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AE20582F8D00B4067C /* DistrictList.swift */; };
+		2C1566B220582F8D00B4067C /* Json4Swift_Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AF20582F8D00B4067C /* Json4Swift_Base.swift */; };
+		2C1566B320582F8D00B4067C /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B020582F8D00B4067C /* ResponseObject.swift */; };
 		2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
 		2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B3204E5A440093B3BF /* Main.storyboard */; };
 		2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B6204E5A440093B3BF /* Assets.xcassets */; };
 		2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */; };
-		2C1EE2D1204E6F340093B3BF /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D0204E6F340093B3BF /* Register.swift */; };
 		2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D3204E6F3E0093B3BF /* Services.swift */; };
 		2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */; };
 		2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D8204E6F460093B3BF /* LoginController.swift */; };
@@ -29,13 +37,21 @@
 		2C1566952056A6F900B4067C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		2C1566962056A6F900B4067C /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
 		2C15669F2056A76D00B4067C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+		2C1566A12057DCA000B4067C /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+		2C1566A32057DCC300B4067C /* MyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReport.swift; sourceTree = "<group>"; };
+		2C1566A52057DCD800B4067C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		2C1566A72057DCF800B4067C /* AboutRideSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRideSafe.swift; sourceTree = "<group>"; };
+		2C1566A92058013A00B4067C /* RideSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeViewController.swift; sourceTree = "<group>"; };
+		2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		2C1566AE20582F8D00B4067C /* DistrictList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictList.swift; sourceTree = "<group>"; };
+		2C1566AF20582F8D00B4067C /* Json4Swift_Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Json4Swift_Base.swift; sourceTree = "<group>"; };
+		2C1566B020582F8D00B4067C /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C1EE2B6204E5A440093B3BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1EE2B9204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1EE2BB204E5A440093B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C1EE2D0204E6F340093B3BF /* Register.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
 		2C1EE2D3204E6F3E0093B3BF /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2C1EE2D8204E6F460093B3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -72,6 +88,16 @@
 				2C1566962056A6F900B4067C /* MenuCell.xib */,
 			);
 			path = SideSlider;
+			sourceTree = "<group>";
+		};
+		2C1566AD20582F8D00B4067C /* DistrictList */ = {
+			isa = PBXGroup;
+			children = (
+				2C1566AE20582F8D00B4067C /* DistrictList.swift */,
+				2C1566AF20582F8D00B4067C /* Json4Swift_Base.swift */,
+				2C1566B020582F8D00B4067C /* ResponseObject.swift */,
+			);
+			path = DistrictList;
 			sourceTree = "<group>";
 		};
 		2C1EE2A3204E5A440093B3BF = {
@@ -112,7 +138,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2C1EE2D0204E6F340093B3BF /* Register.swift */,
+				2C1566AD20582F8D00B4067C /* DistrictList */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -131,6 +157,12 @@
 			children = (
 				2C1EE2D8204E6F460093B3BF /* LoginController.swift */,
 				2C15669F2056A76D00B4067C /* DashboardController.swift */,
+				2C1566A12057DCA000B4067C /* MyProfile.swift */,
+				2C1566A32057DCC300B4067C /* MyReport.swift */,
+				2C1566A52057DCD800B4067C /* SettingController.swift */,
+				2C1566A72057DCF800B4067C /* AboutRideSafe.swift */,
+				2C1566A92058013A00B4067C /* RideSafeViewController.swift */,
+				2C1566AB2058238800B4067C /* RegistrationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -265,14 +297,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialActivityIndicator/MaterialActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -286,15 +318,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
-				2C1EE2D1204E6F340093B3BF /* Register.swift in Sources */,
+				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
+				2C1566B320582F8D00B4067C /* ResponseObject.swift in Sources */,
+				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
+				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
 				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
+				2C1566B220582F8D00B4067C /* Json4Swift_Base.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
+				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
+				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
+				2C1566B120582F8D00B4067C /* DistrictList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

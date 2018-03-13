@@ -22,15 +22,16 @@ class NetworkManager {
                 case .success:
                     if let response = response.value as? [String : Any]  {
                         #if DEBUG
-                            print("service: \(serviceType.rawValue) \n  response: \(response) ")
+                            print("✅ paramas:",params)
+                            print("✅ service: \(serviceType.rawValue) \n ✅ response: \(response) ")
                         #endif
                         fullFilled(response)
                     }
                     break
                 case .failure(let error):
-                     #if DEBUG
-                    print("response code", response.response?.statusCode)
-                        #endif
+                    #if DEBUG
+                        print("❌ response code", response.response?.statusCode)
+                    #endif
                     reject(error)
                 }
             }
