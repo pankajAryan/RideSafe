@@ -109,7 +109,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
-                                        <rect key="frame" x="0.0" y="-378" width="343" height="52"/>
+                                        <rect key="frame" x="0.0" y="-326" width="343" height="52"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-yc-deP">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
@@ -309,15 +309,24 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUx-M0-zfB">
                                         <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
                                         <state key="normal" image="road_infra"/>
+                                        <connections>
+                                            <action selector="roadInfraClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="3oY-pn-OXK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAG-wN-c75">
                                         <rect key="frame" x="77" y="0.0" width="67" height="60"/>
                                         <state key="normal" image="live_share"/>
+                                        <connections>
+                                            <action selector="shareLiveLocationClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="P7O-Qo-JD3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-38-AC4">
                                         <rect key="frame" x="154" y="0.0" width="67" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" image="emergency"/>
+                                        <connections>
+                                            <action selector="emergencyClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="oBm-CE-pAT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBf-Oi-t1y">
                                         <rect key="frame" x="231" y="0.0" width="67" height="60"/>
@@ -325,10 +334,16 @@
                                         <state key="normal" image="contact">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="helpLineClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="Fad-N8-NRi"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgH-Qj-C2g">
                                         <rect key="frame" x="308" y="0.0" width="67" height="60"/>
                                         <state key="normal" image="education"/>
+                                        <connections>
+                                            <action selector="educationClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="41t-Es-Wap"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

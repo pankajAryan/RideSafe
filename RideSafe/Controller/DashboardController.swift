@@ -29,6 +29,16 @@ class DashboardController: UIViewController, MenuCellDelegte {
         }
     }
     
+    @IBAction func roadInfraClicked(_ sender: UIButton) {
+    }
+    @IBAction func shareLiveLocationClicked(_ sender: UIButton) {
+    }
+    @IBAction func emergencyClicked(_ sender: UIButton) {
+    }
+    @IBAction func helpLineClicked(_ sender: UIButton) {
+    }
+    @IBAction func educationClicked(_ sender: UIButton) {
+    }
     func cellCllicked(action: SliderActions?) {
         
         guard let action = action else { return  }
