@@ -18,18 +18,19 @@ class RideSafeViewController: UIViewController {
 
 extension UIViewController {
     
-    func setBackButton(){
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.backIndicatorImage = #imageLiteral(resourceName: "emergency")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = #imageLiteral(resourceName: "emergency")
+    func setBackButton() {
+        let leftButton = UIButton(type: .custom)
+        leftButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
+        leftButton.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
+       leftButton.setImage(#imageLiteral(resourceName: "emergency"), for: .normal)
+        leftButton.contentHorizontalAlignment = .left
+        leftButton.contentVerticalAlignment = .center
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
+
     }
     
-    func showActivityIndicator() {
-        SwiftLoader.show(animated: true)
-    }
-    
-    func hideActivityIndicator() {
-        SwiftLoader.hide()
+   @objc func leftButtonClicked() {
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

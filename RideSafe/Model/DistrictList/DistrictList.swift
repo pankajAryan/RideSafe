@@ -13,22 +13,9 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class DistrictList {
-	public var districtId : String?
-	public var name : String?
-	public var isActive : String?
-	public var createdOn : String?
-	public var updatedOn : String?
+	public var districtList : Array<District>?
 
-/**
-    Returns an array of models based on given dictionary.
-    
-    Sample usage:
-    let districtList_list = DistrictList.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
-    - parameter array:  NSArray from JSON dictionary.
-
-    - returns: Array of DistrictList Instances.
-*/
     public class func modelsFromDictionaryArray(array:NSArray) -> [DistrictList]
     {
         var models:[DistrictList] = []
@@ -39,41 +26,15 @@ public class DistrictList {
         return models
     }
 
-/**
-    Constructs the object based on the given dictionary.
-    
-    Sample usage:
-    let districtList = DistrictList(someDictionaryFromJSON)
 
-    - parameter dictionary:  NSDictionary from JSON.
-
-    - returns: DistrictList Instance.
-*/
 	required public init?(dictionary: NSDictionary) {
 
-		districtId = dictionary["districtId"] as? String
-		name = dictionary["name"] as? String
-		isActive = dictionary["isActive"] as? String
-		createdOn = dictionary["createdOn"] as? String
-		updatedOn = dictionary["updatedOn"] as? String
+        if (dictionary["districtList"] != nil) { districtList = District.modelsFromDictionaryArray(array: dictionary["districtList"] as! NSArray) }
 	}
 
-		
-/**
-    Returns the dictionary representation for the current instance.
-    
-    - returns: NSDictionary.
-*/
 	public func dictionaryRepresentation() -> NSDictionary {
 
 		let dictionary = NSMutableDictionary()
-
-		dictionary.setValue(self.districtId, forKey: "districtId")
-		dictionary.setValue(self.name, forKey: "name")
-		dictionary.setValue(self.isActive, forKey: "isActive")
-		dictionary.setValue(self.createdOn, forKey: "createdOn")
-		dictionary.setValue(self.updatedOn, forKey: "updatedOn")
-
 		return dictionary
 	}
 

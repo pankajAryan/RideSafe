@@ -17,7 +17,9 @@ class DashboardController: UIViewController, MenuCellDelegte {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu.menuCellDelegte = self
-        self.navigationController?.navigationBar.isHidden = false 
+        self.navigationController?.navigationBar.isHidden = false
+        self.view.bringSubview(toFront: self.sideMenu)
+
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
@@ -27,6 +29,16 @@ class DashboardController: UIViewController, MenuCellDelegte {
         }
     }
     
+    @IBAction func roadInfraClicked(_ sender: UIButton) {
+    }
+    @IBAction func shareLiveLocationClicked(_ sender: UIButton) {
+    }
+    @IBAction func emergencyClicked(_ sender: UIButton) {
+    }
+    @IBAction func helpLineClicked(_ sender: UIButton) {
+    }
+    @IBAction func educationClicked(_ sender: UIButton) {
+    }
     func cellCllicked(action: SliderActions?) {
         
         guard let action = action else { return  }
