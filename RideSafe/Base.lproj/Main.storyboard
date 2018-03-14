@@ -292,17 +292,52 @@
                                 <rect key="frame" x="-240" y="64" width="240" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="zJU-BQ-8TD"/>
+                                    <constraint firstAttribute="width" constant="240" id="KCl-mo-xmy"/>
                                 </constraints>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXy-fg-MNp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eVa-r7-TdK">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUx-M0-zfB">
+                                        <rect key="frame" x="0.0" y="0.0" width="67" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAG-wN-c75">
+                                        <rect key="frame" x="77" y="0.0" width="67" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIk-38-AC4">
+                                        <rect key="frame" x="154" y="0.0" width="67" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBf-Oi-t1y">
+                                        <rect key="frame" x="231" y="0.0" width="67" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cgH-Qj-C2g">
+                                        <rect key="frame" x="308" y="0.0" width="67" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="fvE-dF-8Rc"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="top" secondItem="bF9-vI-Pjc" secondAttribute="top" id="GIJ-HG-kjc"/>
-                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" constant="-240" id="eFr-Xa-Xdc"/>
-                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="bottom" secondItem="bF9-vI-Pjc" secondAttribute="bottom" id="t9R-vb-Db5"/>
+                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="bottom" secondItem="bF9-vI-Pjc" secondAttribute="bottom" id="23e-zc-oka"/>
+                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" constant="-240" id="BLy-Ev-1ds"/>
+                            <constraint firstItem="bF9-vI-Pjc" firstAttribute="bottom" secondItem="eVa-r7-TdK" secondAttribute="bottom" id="SZF-Ta-2Fu"/>
+                            <constraint firstItem="bF9-vI-Pjc" firstAttribute="trailing" secondItem="eVa-r7-TdK" secondAttribute="trailing" id="Ur1-PN-l5c"/>
+                            <constraint firstItem="BUX-Hk-BfR" firstAttribute="top" secondItem="bF9-vI-Pjc" secondAttribute="top" id="Xre-P0-ywn"/>
+                            <constraint firstItem="eVa-r7-TdK" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" id="jco-aI-2sO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bF9-vI-Pjc"/>
                     </view>
@@ -316,12 +351,12 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
-                        <outlet property="tableViewleadingConstraint" destination="eFr-Xa-Xdc" id="Mfy-nG-0dv"/>
+                        <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VV3-JF-4ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="121"/>
+            <point key="canvasLocation" x="1988" y="120.98950524737631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GTS-W3-ILm">

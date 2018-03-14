@@ -12,28 +12,29 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class ResponseObject {
-	public var totalCount : Int?
-	public var pageCount : Int?
-	public var pageSize : Int?
-	public var districtList : Array<DistrictList>?
+public class District {
+	public var districtId : String?
+	public var name : String?
+	public var isActive : String?
+	public var createdOn : String?
+	public var updatedOn : String?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let responseObject_list = ResponseObject.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let districtList_list = DistrictList.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of ResponseObject Instances.
+    - returns: Array of DistrictList Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [ResponseObject]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [District]
     {
-        var models:[ResponseObject] = []
+        var models:[District] = []
         for item in array
         {
-            models.append(ResponseObject(dictionary: item as! NSDictionary)!)
+            models.append(District(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -42,18 +43,19 @@ public class ResponseObject {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let responseObject = ResponseObject(someDictionaryFromJSON)
+    let districtList = DistrictList(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: ResponseObject Instance.
+    - returns: DistrictList Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		totalCount = dictionary["totalCount"] as? Int
-		pageCount = dictionary["pageCount"] as? Int
-		pageSize = dictionary["pageSize"] as? Int
-        if (dictionary["districtList"] != nil) { districtList = DistrictList.modelsFromDictionaryArray(array: dictionary["districtList"] as! NSArray) }
+		districtId = dictionary["districtId"] as? String
+		name = dictionary["name"] as? String
+		isActive = dictionary["isActive"] as? String
+		createdOn = dictionary["createdOn"] as? String
+		updatedOn = dictionary["updatedOn"] as? String
 	}
 
 		
@@ -66,9 +68,11 @@ public class ResponseObject {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.totalCount, forKey: "totalCount")
-		dictionary.setValue(self.pageCount, forKey: "pageCount")
-		dictionary.setValue(self.pageSize, forKey: "pageSize")
+		dictionary.setValue(self.districtId, forKey: "districtId")
+		dictionary.setValue(self.name, forKey: "name")
+		dictionary.setValue(self.isActive, forKey: "isActive")
+		dictionary.setValue(self.createdOn, forKey: "createdOn")
+		dictionary.setValue(self.updatedOn, forKey: "updatedOn")
 
 		return dictionary
 	}

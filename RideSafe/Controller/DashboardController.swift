@@ -17,7 +17,9 @@ class DashboardController: UIViewController, MenuCellDelegte {
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu.menuCellDelegte = self
-        self.navigationController?.navigationBar.isHidden = false 
+        self.navigationController?.navigationBar.isHidden = false
+        self.view.bringSubview(toFront: self.sideMenu)
+
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {

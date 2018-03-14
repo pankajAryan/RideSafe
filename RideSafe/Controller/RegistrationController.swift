@@ -30,7 +30,7 @@ class RegistrationController: UIViewController {
                                                                                    "length": "10","sortBy": "NAME",
                                                                                    "order": "A","status": "T"])
             }.then { response -> () in
-                let json4Swift_Base = Json4Swift_Base(dictionary: response as NSDictionary)
+                let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 let dictList =        json4Swift_Base?.responseObject?.districtList
                 
                     self.makeDropDow(dictList)
@@ -39,7 +39,7 @@ class RegistrationController: UIViewController {
         }
     }
     
-    private func makeDropDow(_ dictList: [DistrictList]?) {
+    private func makeDropDow(_ dictList: [District]?) {
         let drop = UIDropDown(frame: self.district.frame)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true

@@ -13,6 +13,7 @@ class MyProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
+        self.title = "My profile"
     }
 
 }
