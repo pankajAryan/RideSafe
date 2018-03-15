@@ -9,4 +9,6 @@ target 'RideSafe' do
 pod 'PromiseKit', '~> 4.0'
 pod 'Alamofire', '~> 4.4'
 pod 'UIDropDown'
+pod 'YouTubePlayer-Swift', '~> 1.0'
+pod 'SWSegmentedControl'
 end
