@@ -415,12 +415,20 @@
                                     <constraint firstAttribute="height" constant="30" id="W9s-lB-U0q"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nir-Mn-CLa">
+                                <rect key="frame" x="20" y="139" width="335" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="v2E-KY-ust"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="e0y-rX-9St" firstAttribute="width" secondItem="kAG-wN-c75" secondAttribute="width" id="0LN-wH-CTg"/>
                             <constraint firstItem="BUX-Hk-BfR" firstAttribute="bottom" secondItem="bF9-vI-Pjc" secondAttribute="bottom" id="23e-zc-oka"/>
                             <constraint firstItem="e0y-rX-9St" firstAttribute="top" secondItem="kAG-wN-c75" secondAttribute="bottom" constant="-8" id="2b8-e5-FcQ"/>
+                            <constraint firstItem="Nir-Mn-CLa" firstAttribute="leading" secondItem="lRG-c1-AZt" secondAttribute="leading" id="3zB-Lg-DrE"/>
                             <constraint firstItem="bF9-vI-Pjc" firstAttribute="bottom" secondItem="hXy-fg-MNp" secondAttribute="bottom" id="664-Fh-71K"/>
                             <constraint firstItem="Tso-Xr-L73" firstAttribute="top" secondItem="rUx-M0-zfB" secondAttribute="bottom" constant="-8" id="6FO-OR-8Zw"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="top" secondItem="MBf-Oi-t1y" secondAttribute="bottom" constant="-8" id="6Fb-Ce-hXS"/>
@@ -432,6 +440,7 @@
                             <constraint firstItem="N2s-ya-AII" firstAttribute="top" secondItem="WIk-38-AC4" secondAttribute="bottom" constant="-8" id="KQg-fP-9CN"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="centerX" secondItem="MBf-Oi-t1y" secondAttribute="centerX" id="Mxr-6A-feX"/>
                             <constraint firstItem="N2s-ya-AII" firstAttribute="width" secondItem="WIk-38-AC4" secondAttribute="width" id="Pnp-Mr-FAM"/>
+                            <constraint firstItem="Nir-Mn-CLa" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="bottom" constant="12" id="W8q-72-ZCZ"/>
                             <constraint firstItem="Tso-Xr-L73" firstAttribute="width" secondItem="rUx-M0-zfB" secondAttribute="width" id="Wfp-j0-ptS"/>
                             <constraint firstItem="eVa-r7-TdK" firstAttribute="top" secondItem="hXy-fg-MNp" secondAttribute="top" id="XTW-Ci-BcI"/>
                             <constraint firstItem="BUX-Hk-BfR" firstAttribute="top" secondItem="bF9-vI-Pjc" secondAttribute="top" id="Xre-P0-ywn"/>
@@ -439,6 +448,7 @@
                             <constraint firstItem="CCS-Kv-Loe" firstAttribute="leading" secondItem="ZNB-Yb-Uhu" secondAttribute="leading" id="ZU8-oc-Hnl"/>
                             <constraint firstItem="e0y-rX-9St" firstAttribute="centerX" secondItem="kAG-wN-c75" secondAttribute="centerX" id="ZaY-fM-Luf"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="width" secondItem="MBf-Oi-t1y" secondAttribute="width" id="aRJ-eW-YC4"/>
+                            <constraint firstItem="Nir-Mn-CLa" firstAttribute="trailing" secondItem="PEJ-LD-6az" secondAttribute="trailing" id="anr-C5-ZAH"/>
                             <constraint firstItem="ZNB-Yb-Uhu" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" constant="20" id="cN7-op-JEg"/>
                             <constraint firstItem="Tso-Xr-L73" firstAttribute="centerX" secondItem="rUx-M0-zfB" secondAttribute="centerX" id="dss-LH-LRG"/>
                             <constraint firstItem="xXL-7K-QOh" firstAttribute="centerX" secondItem="cgH-Qj-C2g" secondAttribute="centerX" id="f0n-be-Maz"/>
@@ -461,6 +471,7 @@
                     <connections>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
+                        <outlet property="vehicleTypeView" destination="Nir-Mn-CLa" id="xxQ-Bo-KBl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VV3-JF-4ej" userLabel="First Responder" sceneMemberID="firstResponder"/>

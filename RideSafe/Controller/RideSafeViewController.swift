@@ -13,6 +13,23 @@ class RideSafeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    func readFileFromBundle() {
+        func loadJson(filename fileName: String) -> [String: Any]? {
+            if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
+                do {
+                    let data = try Data(contentsOf: url)
+                    let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    if let dictionary = object as? [String: Any] {
+                        return dictionary
+                    }
+                } catch {
+                    print("Error!! Unable to parse  \(fileName).json")
+                }
+            }
+            return nil
+        }
+    }
 }
 
 

@@ -24,6 +24,7 @@ class LoginController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    
     private func setupUI() {
         citizenCheckBox.uncheckedBorderColor = .black
         citizenCheckBox.borderStyle = .circle
@@ -78,11 +79,31 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
+                let data  = VerifyOTPResponse(dictionary: response as NSDictionary)
+                
+                
+                if let theJSONData = try? JSONSerialization.data(withJSONObject: response,options: []) {
+                        let theJSONText = String(data: theJSONData,encoding: .ascii)
+                        print("JSON string = \(theJSONText!)")
+                    if let json = theJSONText {
+                         self.write(text: json, to: "VerifyOTPJSON")
+                    }
+                  
+                }
+               
+                
                 self.gotoRegistrationPage()
             }.catch { error in
         }
     }
     
+    func write(text: String, to fileNamed: String, folder: String = "verifyotpresponse") {
+        guard let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first else { return }
+        guard let writePath = NSURL(fileURLWithPath: path).appendingPathComponent(folder) else { return }
+        try? FileManager.default.createDirectory(atPath: writePath.path, withIntermediateDirectories: true)
+        let file = writePath.appendingPathComponent(fileNamed + ".json")
+        try? text.write(to: file, atomically: false, encoding: String.Encoding.utf8)
+    }
     
     private func gotoRegistrationPage() {
         let str =  UIStoryboard(name: "Main", bundle: nil)

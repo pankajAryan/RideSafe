@@ -7,19 +7,52 @@
 //
 
 import UIKit
+import UIDropDown
 
 class DashboardController: UIViewController, MenuCellDelegte {
     
+    @IBOutlet weak var vehicleTypeView: UIView!
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var sideMenu: SideMenu!
+    var vehicleType = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
+        makeVehicleDropDown()
 
+    }
+    
+    private func makeVehicleDropDown() {
+       let dropDown = UIDropDown(frame: vehicleTypeView.frame)
+        dropDown.hideOptionsWhenSelect = true
+        dropDown.animationType = .Classic
+        dropDown.tableHeight = 180
+        dropDown.placeholder = "Select Vehicle Type"
+        dropDown.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
+        dropDown.didSelect { [unowned self] (option, index) in
+            self.vehicleType = option
+           self.makeDrivingIssuesCatagory()
+
+        }
+        self.view.addSubview(dropDown)
+    }
+    
+    func makeDrivingIssuesCatagory() {
+        let vc = UIStoryboard(name: "DropDown", bundle: nil).instantiateViewController(withIdentifier: "DropDownController") as! DropDownController
+        vc.dropDownDelgate = self
+        vc.dropDownDataSource = [DropDownDataSource(name: "a", id: "1", checkMark: false),
+                                 DropDownDataSource(name: "b", id: "2", checkMark: false),
+                                 DropDownDataSource(name: "c", id: "3", checkMark: false),
+                                 DropDownDataSource(name: "d", id: "4", checkMark: false),
+                                 DropDownDataSource(name: "e", id: "5", checkMark: false),
+                                 DropDownDataSource(name: "f", id: "6", checkMark: false),
+                                 DropDownDataSource(name: "g", id: "7", checkMark: false),
+                                 DropDownDataSource(name: "h", id: "8", checkMark: false)]
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
@@ -68,4 +101,11 @@ class DashboardController: UIViewController, MenuCellDelegte {
 
     }
     
+}
+
+
+extension DashboardController: DropDownDelgate{
+    func selectedItems(_ items: [DropDownDataSource]) {
+        print(items)
+    }
 }
