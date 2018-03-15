@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Education Container View Controller-->
+        <scene sceneID="o9E-zP-7Jv">
+            <objects>
+                <viewController id="oTI-JK-u1A" customClass="EducationContainerViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y1g-eL-N3I">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="P0u-Y3-DRl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXZ-0h-4y1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="81"/>
+        </scene>
+        <!--Education Video View Controller-->
+        <scene sceneID="3Se-KN-4Qf">
+            <objects>
+                <viewController id="dEt-vq-f15" customClass="EducationVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J9F-fa-bKo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hhJ-m0-SgW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hhJ-m0-SgW" firstAttribute="leading" secondItem="Q0Z-Bh-WEG" secondAttribute="leading" id="Xdb-XW-0uo"/>
+                            <constraint firstItem="hhJ-m0-SgW" firstAttribute="bottom" secondItem="Q0Z-Bh-WEG" secondAttribute="bottom" id="b0I-52-TXb"/>
+                            <constraint firstItem="hhJ-m0-SgW" firstAttribute="trailing" secondItem="Q0Z-Bh-WEG" secondAttribute="trailing" id="sOH-1c-r4W"/>
+                            <constraint firstItem="hhJ-m0-SgW" firstAttribute="top" secondItem="J9F-fa-bKo" secondAttribute="top" id="yvZ-Je-nVb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Q0Z-Bh-WEG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vmS-f6-Fge" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="360.80000000000001" y="80.50974512743629"/>
+        </scene>
+        <!--EducationPDF View Controller-->
+        <scene sceneID="i89-0H-UIa">
+            <objects>
+                <viewController id="RAt-6q-gL1" customClass="EducationPDFViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bHn-0W-Vtc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JsL-tk-OHe">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JsL-tk-OHe" firstAttribute="top" secondItem="Cr6-OH-UHu" secondAttribute="top" id="60o-u1-P1N"/>
+                            <constraint firstItem="Cr6-OH-UHu" firstAttribute="bottom" secondItem="JsL-tk-OHe" secondAttribute="bottom" id="Ll4-vK-DST"/>
+                            <constraint firstItem="Cr6-OH-UHu" firstAttribute="trailing" secondItem="JsL-tk-OHe" secondAttribute="trailing" id="prA-zD-1gA"/>
+                            <constraint firstItem="JsL-tk-OHe" firstAttribute="leading" secondItem="bHn-0W-Vtc" secondAttribute="leading" id="s5p-Id-yHa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cr6-OH-UHu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0l-4y-kIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1041" y="81"/>
+        </scene>
+    </scenes>
+</document>

@@ -30,6 +30,10 @@
 		2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */; };
 		2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D8204E6F460093B3BF /* LoginController.swift */; };
 		B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */; };
+		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
+		B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */; };
+		B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */; };
+		B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		2C1EE2D8204E6F460093B3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
+		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
+		B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationContainerViewController.swift; sourceTree = "<group>"; };
+		B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationPDFViewController.swift; sourceTree = "<group>"; };
+		B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationVideoViewController.swift; sourceTree = "<group>"; };
 		EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -125,6 +133,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				B8AFD871205AD1F20044A608 /* Education */,
 				2C1566932056A6F900B4067C /* SideSlider */,
 				2C1EE2D7204E6F460093B3BF /* Controller */,
 				2C1EE2D2204E6F3E0093B3BF /* Network */,
@@ -177,6 +186,17 @@
 				3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B8AFD871205AD1F20044A608 /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				B8AFD872205AD1F20044A608 /* Education.storyboard */,
+				B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */,
+				B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */,
+				B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */,
+			);
+			path = Education;
 			sourceTree = "<group>";
 		};
 		E28FEEC0C9735859C1319CF5 /* Frameworks */ = {
@@ -253,6 +273,7 @@
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
+				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +345,7 @@
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
+				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
@@ -332,10 +354,12 @@
 				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
+				B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */,
 				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
 				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
 				2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
+				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
