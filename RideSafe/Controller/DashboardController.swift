@@ -22,11 +22,11 @@ class DashboardController: UIViewController, MenuCellDelegte {
         super.viewDidLoad()
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
-        self.view.bringSubview(toFront: self.sideMenu)
         makeVehicleDropDown()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         drivingIssuesLabel.addGestureRecognizer(tapGesture)
+        self.view.bringSubview(toFront: self.sideMenu)
     }
     
     @objc func tapFunction() {
