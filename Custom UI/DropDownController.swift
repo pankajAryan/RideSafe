@@ -15,7 +15,6 @@ protocol DropDownDelgate:class {
 class DropDownController: UITableViewController {
 
     var dropDownDataSource:[DropDownDataSource]?
-   private var selectedValues = [DropDownDataSource]()
     weak var dropDownDelgate:DropDownDelgate?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +30,7 @@ class DropDownController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath)
         let model = dropDownDataSource?[indexPath.row]
-        cell.textLabel?.text = model?.id ?? "id is nil"
+        cell.textLabel?.text = model?.name ?? "no name"
         cell.accessoryType = model?.checkMark == true ? .checkmark : .none
         return cell
     }
@@ -40,8 +39,8 @@ class DropDownController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType =  cell?.accessoryType == .checkmark ? .none :.checkmark
         
-        let selectedModel = dropDownDataSource![indexPath.row]
-         selectedValues.append(selectedModel)
+        dropDownDataSource![indexPath.row].checkMark = !dropDownDataSource![indexPath.row].checkMark
+
     }
     
 //    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -52,18 +51,18 @@ class DropDownController: UITableViewController {
 //
 //    }
     @IBAction func DoneButtonClicked(_ sender: UIBarButtonItem) {
-        self.dropDownDelgate?.selectedItems(selectedValues)
+        let selectedValues = dropDownDataSource?.filter{ $0.checkMark == true }
+        self.dropDownDelgate?.selectedItems(selectedValues!)
+        self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func backButtonClicked(_ sender: UIBarButtonItem) {
         self.navigationController?.popViewController(animated: true)
     }
     
 }
 
-struct DropDownDataSource: Equatable   {
+struct DropDownDataSource   {
     var name:String?
     var id:String?
     var checkMark = false
-    
-    static func == (lhs: DropDownDataSource ,rhs:DropDownDataSource) -> Bool {
-            return lhs == rhs
-        }
 }

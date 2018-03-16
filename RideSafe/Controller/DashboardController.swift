@@ -11,10 +11,12 @@ import UIDropDown
 
 class DashboardController: UIViewController, MenuCellDelegte {
     
+    @IBOutlet weak var drivingIssuesLabel: UILabel!
     @IBOutlet weak var vehicleTypeView: UIView!
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenu: SideMenu!
     var vehicleType = ""
+    var drivingIssues:[DropDownDataSource] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,13 @@ class DashboardController: UIViewController, MenuCellDelegte {
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
         makeVehicleDropDown()
-
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
+        drivingIssuesLabel.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func tapFunction() {
+        makeDrivingIssuesCatagory()
     }
     
     private func makeVehicleDropDown() {
@@ -34,25 +42,27 @@ class DashboardController: UIViewController, MenuCellDelegte {
         dropDown.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
         dropDown.didSelect { [unowned self] (option, index) in
             self.vehicleType = option
-           self.makeDrivingIssuesCatagory()
-
         }
         self.view.addSubview(dropDown)
     }
     
-    func makeDrivingIssuesCatagory() {
+    private func makeDrivingIssuesCatagory() {
         let vc = UIStoryboard(name: "DropDown", bundle: nil).instantiateViewController(withIdentifier: "DropDownController") as! DropDownController
         vc.dropDownDelgate = self
-        vc.dropDownDataSource = [DropDownDataSource(name: "a", id: "1", checkMark: false),
-                                 DropDownDataSource(name: "b", id: "2", checkMark: false),
-                                 DropDownDataSource(name: "c", id: "3", checkMark: false),
-                                 DropDownDataSource(name: "d", id: "4", checkMark: false),
-                                 DropDownDataSource(name: "e", id: "5", checkMark: false),
-                                 DropDownDataSource(name: "f", id: "6", checkMark: false),
-                                 DropDownDataSource(name: "g", id: "7", checkMark: false),
-                                 DropDownDataSource(name: "h", id: "8", checkMark: false)]
-        self.navigationController?.pushViewController(vc, animated: true)
+        var drivingissues = [DropDownDataSource]()
         
+        retriveJSONFrom(fileName: "VerifyOTPResponse").then { response -> () in
+            let sresponse =  VerifyOTPResponse.init(dictionary: response as NSDictionary)
+            let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
+            if let drivingIssues = drivingIssuesCatList {
+                for drivingIssu in drivingIssues {
+                    drivingissues.append(DropDownDataSource(name: drivingIssu.enName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+                }
+            }
+            vc.dropDownDataSource = drivingissues
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }.catch { error in }
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
@@ -106,6 +116,11 @@ class DashboardController: UIViewController, MenuCellDelegte {
 
 extension DashboardController: DropDownDelgate{
     func selectedItems(_ items: [DropDownDataSource]) {
-        print(items)
+        drivingIssues = items
+        var allIssues = ""
+        for issue in drivingIssues {
+            allIssues =  allIssues + issue.name! + ","
+        }
+        drivingIssuesLabel.text = String(describing: allIssues.dropLast())
     }
 }

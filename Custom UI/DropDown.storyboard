@@ -32,8 +32,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Select item" id="Ddz-Uq-dmb">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="oIO-P3-AsI">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="oIO-P3-AsI">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backButtonClicked:" destination="yQc-24-RRY" id="xIA-u9-y8u"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="aRK-nL-7T5">
                             <connections>

@@ -13,7 +13,7 @@ import Foundation
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class DrivingIssueCategory {
-	public var drivingIssueCategoryId : Int?
+	public var drivingIssueCategoryId : String?
 	public var enName : String?
 	public var hiName : String?
 	public var urName : String?
@@ -51,7 +51,7 @@ public class DrivingIssueCategory {
 */
 	required public init?(dictionary: NSDictionary) {
 
-		drivingIssueCategoryId = dictionary["drivingIssueCategoryId"] as? Int
+		drivingIssueCategoryId = dictionary["drivingIssueCategoryId"] as? String
 		enName = dictionary["enName"] as? String
 		hiName = dictionary["hiName"] as? String
 		urName = dictionary["urName"] as? String

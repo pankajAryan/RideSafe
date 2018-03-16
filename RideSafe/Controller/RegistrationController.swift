@@ -32,8 +32,7 @@ class RegistrationController: UIViewController {
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 let dictList =        json4Swift_Base?.responseObject?.districtList
-                
-                    self.makeDropDow(dictList)
+                self.makeDropDow(dictList)
                 
             }.catch { (error) in
         }
