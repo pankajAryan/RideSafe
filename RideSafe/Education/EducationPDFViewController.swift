@@ -9,7 +9,8 @@
 import UIKit
 
 class EducationPDFViewController: UIViewController {
-
+    @IBOutlet weak var educationPdfTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

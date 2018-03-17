@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import YouTubePlayer_Swift
 
 class YoutubeVideoViewController: UIViewController {
 
+    @IBOutlet weak var youtubePlayerView: YouTubePlayerView!
+    @IBOutlet weak var videoTitleLabel: UILabel!
+    @IBOutlet weak var videoDateTimeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -1,16 +1,15 @@
 //
-//  EducationVideoViewController.swift
+//  OpenPdfViewController.swift
 //  RideSafe
 //
-//  Created by Anand Mishra on 14/03/18.
+//  Created by Anand Mishra on 17/03/18.
 //  Copyright © 2018 Mobiquel. All rights reserved.
 //
 
 import UIKit
 
-class EducationVideoViewController: UIViewController {
-    @IBOutlet weak var educationVideoTableView: UITableView!
-    
+class OpenPdfViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SWSegmentedControl
 
 class EducationContainerViewController: UIViewController {
 
+    @IBOutlet weak var educationSegmentedControl: SWSegmentedControl!
+    @IBOutlet weak var containerView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
