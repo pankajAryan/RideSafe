@@ -41,6 +41,8 @@
 		B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */; };
 		B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */; };
 		B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2AD205CD8F7007D1F32 /* OpenPdfViewController.swift */; };
+		B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32EC205D108B00A6A975 /* MediaResponse.swift */; };
+		B86F32EF205D108C00A6A975 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32ED205D108C00A6A975 /* Media.swift */; };
 		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
 		B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */; };
 		B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */; };
@@ -88,6 +90,8 @@
 		B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFTableViewCell.xib; sourceTree = "<group>"; };
 		B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoViewController.swift; sourceTree = "<group>"; };
 		B821B2AD205CD8F7007D1F32 /* OpenPdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPdfViewController.swift; sourceTree = "<group>"; };
+		B86F32EC205D108B00A6A975 /* MediaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
+		B86F32ED205D108C00A6A975 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
 		B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationContainerViewController.swift; sourceTree = "<group>"; };
 		B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationPDFViewController.swift; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B821B2AF205D0C9B007D1F32 /* Education */,
 				2C3D5654205AD37B008F9104 /* VerifyOTP */,
 				2C1566AD20582F8D00B4067C /* DistrictList */,
 			);
@@ -228,6 +233,15 @@
 				3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		B821B2AF205D0C9B007D1F32 /* Education */ = {
+			isa = PBXGroup;
+			children = (
+				B86F32EC205D108B00A6A975 /* MediaResponse.swift */,
+				B86F32ED205D108C00A6A975 /* Media.swift */,
+			);
+			path = Education;
 			sourceTree = "<group>";
 		};
 		B8AFD871205AD1F20044A608 /* Education */ = {
@@ -409,10 +423,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
+				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
 				2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
+				B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */,
 				B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
