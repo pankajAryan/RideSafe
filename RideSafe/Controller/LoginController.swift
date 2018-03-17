@@ -46,21 +46,19 @@ class LoginController: UIViewController {
         officialCheckBox.valueChanged = { (value) in
             if value == true {
                 self.citizenCheckBox.isChecked = false
+                
             }
         }
     }
     
     
     @IBAction func btnClicked(_ sender: Any) {
-        
         if self.otpView.isHidden {
             generateOtp(phonNo:mobileNumber.text!)
         } else {
             verifyOtp(mobileNo: mobileNumber.text!, otp: otpText.text!)
         }
     }
-    
-    
     
     private func generateOtp(phonNo:String) {
         firstly {
@@ -78,11 +76,11 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
+               self.writeJSONTo(fileName: "VerifyOTPResponse", data: response)
                 self.gotoRegistrationPage()
             }.catch { error in
         }
     }
-    
     
     private func gotoRegistrationPage() {
         let str =  UIStoryboard(name: "Main", bundle: nil)

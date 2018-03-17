@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class RideSafeViewController: UIViewController {
 
@@ -14,7 +15,6 @@ class RideSafeViewController: UIViewController {
         super.viewDidLoad()
     }
 }
-
 
 extension UIViewController {
     
@@ -32,6 +32,33 @@ extension UIViewController {
    @objc func leftButtonClicked() {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func writeJSONTo(fileName:String,data:Any) {
+        guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+        let fileUrl = documentDirectoryUrl.appendingPathComponent(fileName + ".json")
+        do {
+            print("file url is:",fileUrl)
+            let data = try JSONSerialization.data(withJSONObject: data, options: [])
+            try  data.write(to: fileUrl, options: [])
+        } catch{
+            print(error)
+        }
+    }
+    
+    func retriveJSONFrom(fileName:String) -> Promise<[String:Any]> {
+        return  Promise { fulfill, reject in
+            guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+            let fileUrl = documentDirectoryUrl.appendingPathComponent(fileName + ".json")
+            do {
+                let data = try Data(contentsOf: fileUrl, options: [])
+                guard let content =  try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else { return }
+                fulfill(content)
+            } catch{
+                reject(error)
+            }
+        }
+    }
+    
 }
 
 
