@@ -24,7 +24,7 @@ class NetworkManager {
                     if let response = response.value as? [String : Any]  {
                         #if DEBUG
                             print("✅ paramas:",params)
-                            print("✅ service: \(serviceType.rawValue) \n ✅ response: \(response) ")
+                            print("✅ service: \(serviceType.rawValue)\n✅ response: \(response) ")
                         #endif
                         fullFilled(response)
                         SwiftLoader.hide()
