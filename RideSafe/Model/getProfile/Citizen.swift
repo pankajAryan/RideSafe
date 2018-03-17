@@ -12,27 +12,33 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class MediaResponse {
-	public var responseObject : Array<Media>?
-	public var errorCode : Int?
-	public var errorMessage : String?
+public class Citizen {
+	public var citizenId : String?
+	public var name : String?
+	public var mobile : String?
+	public var districtId : String?
+	public var deviceOS : String?
+	public var isActive : String?
+	public var createdOn : String?
+	public var updatedOn : String?
+	public var pushNotificationId : String?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let json4Swift_Base_list = MediaResponse.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let responseObject_list = ResponseObject.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of MediaResponse Instances.
+    - returns: Array of ResponseObject Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [MediaResponse]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [Citizen]
     {
-        var models:[MediaResponse] = []
+        var models:[Citizen] = []
         for item in array
         {
-            models.append(MediaResponse(dictionary: item as! NSDictionary)!)
+            models.append(Citizen(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -41,17 +47,23 @@ public class MediaResponse {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let json4Swift_Base = MediaResponse(someDictionaryFromJSON)
+    let responseObject = ResponseObject(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: MediaResponse Instance.
+    - returns: ResponseObject Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-        if (dictionary["responseObject"] != nil) { responseObject = Media.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
-		errorCode = dictionary["errorCode"] as? Int
-		errorMessage = dictionary["errorMessage"] as? String
+		citizenId = dictionary["citizenId"] as? String
+		name = dictionary["name"] as? String
+		mobile = dictionary["mobile"] as? String
+		districtId = dictionary["districtId"] as? String
+		deviceOS = dictionary["deviceOS"] as? String
+		isActive = dictionary["isActive"] as? String
+		createdOn = dictionary["createdOn"] as? String
+		updatedOn = dictionary["updatedOn"] as? String
+		pushNotificationId = dictionary["pushNotificationId"] as? String
 	}
 
 		
@@ -64,8 +76,15 @@ public class MediaResponse {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.errorCode, forKey: "errorCode")
-		dictionary.setValue(self.errorMessage, forKey: "errorMessage")
+		dictionary.setValue(self.citizenId, forKey: "citizenId")
+		dictionary.setValue(self.name, forKey: "name")
+		dictionary.setValue(self.mobile, forKey: "mobile")
+		dictionary.setValue(self.districtId, forKey: "districtId")
+		dictionary.setValue(self.deviceOS, forKey: "deviceOS")
+		dictionary.setValue(self.isActive, forKey: "isActive")
+		dictionary.setValue(self.createdOn, forKey: "createdOn")
+		dictionary.setValue(self.updatedOn, forKey: "updatedOn")
+		dictionary.setValue(self.pushNotificationId, forKey: "pushNotificationId")
 
 		return dictionary
 	}

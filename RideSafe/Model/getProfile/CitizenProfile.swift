@@ -12,8 +12,8 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class MediaResponse {
-	public var responseObject : Array<Media>?
+public class CitizenProfile {
+	public var responseObject : Citizen?
 	public var errorCode : Int?
 	public var errorMessage : String?
 
@@ -21,18 +21,18 @@ public class MediaResponse {
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let json4Swift_Base_list = MediaResponse.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let json4Swift_Base_list = CitizenProfile.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of MediaResponse Instances.
+    - returns: Array of CitizenProfile Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [MediaResponse]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [CitizenProfile]
     {
-        var models:[MediaResponse] = []
+        var models:[CitizenProfile] = []
         for item in array
         {
-            models.append(MediaResponse(dictionary: item as! NSDictionary)!)
+            models.append(CitizenProfile(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -41,15 +41,15 @@ public class MediaResponse {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let json4Swift_Base = MediaResponse(someDictionaryFromJSON)
+    let json4Swift_Base = CitizenProfile(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: MediaResponse Instance.
+    - returns: CitizenProfile Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-        if (dictionary["responseObject"] != nil) { responseObject = Media.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
+		if (dictionary["responseObject"] != nil) { responseObject = Citizen(dictionary: dictionary["responseObject"] as! NSDictionary) }
 		errorCode = dictionary["errorCode"] as? Int
 		errorMessage = dictionary["errorMessage"] as? String
 	}
@@ -64,6 +64,7 @@ public class MediaResponse {
 
 		let dictionary = NSMutableDictionary()
 
+		dictionary.setValue(self.responseObject?.dictionaryRepresentation(), forKey: "responseObject")
 		dictionary.setValue(self.errorCode, forKey: "errorCode")
 		dictionary.setValue(self.errorMessage, forKey: "errorMessage")
 
