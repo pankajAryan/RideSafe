@@ -12,6 +12,7 @@ class AboutRideSafe: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "About RideSafe"
+        setBackButton()
     }
 }

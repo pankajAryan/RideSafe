@@ -10,10 +10,25 @@ import UIKit
 
 class MyProfile: UIViewController {
 
+    @IBOutlet weak var districtField: UITextField!
+    @IBOutlet weak var mobileNumberField: UITextField!
+    @IBOutlet weak var nameFiled: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
         self.title = "My profile"
     }
+    
+    @IBAction func updateProfile(_ sender: UIButton) {
+    }
+    
+}
 
+extension MyProfile: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         textField.resignFirstResponder()
+            return true
+    }
+    
+    
 }
