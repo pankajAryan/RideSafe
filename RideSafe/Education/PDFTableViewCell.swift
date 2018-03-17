@@ -10,6 +10,10 @@ import UIKit
 
 class PDFTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var pdfIconImageView: UIImageView!
+    @IBOutlet weak var pdfTitleLabel: UILabel!
+    @IBOutlet weak var pdfDateLabel: UILabel!
+    @IBOutlet weak var pdfDiscription: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
