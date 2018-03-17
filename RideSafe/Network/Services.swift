@@ -15,6 +15,7 @@ enum ServiceType: String {
     case resendOtp = "resendOtp"
     case getDistrictList = "getDistrictList"
     case getCitizenProfile = "getCitizenProfile"
+    case updateCitizenProfile = "updateCitizenProfile"
 
 }
 

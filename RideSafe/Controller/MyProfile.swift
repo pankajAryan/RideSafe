@@ -15,6 +15,7 @@ class MyProfile: UIViewController {
     @IBOutlet weak var mobileNumberField: UITextField!
     @IBOutlet weak var nameFiled: UITextField!
     private var selectedDistrictID:String = ""
+    private var citizenid = ""
 
     fileprivate func getMyProfileData(citizenId:String) {
          NetworkManager().doServiceCall(serviceType: .getCitizenProfile, params: ["citizenId" : citizenId]).then { (response) -> () in
@@ -22,7 +23,7 @@ class MyProfile: UIViewController {
             let citizen = citizenProfile?.responseObject
             self.mobileNumberField.text = citizen?.mobile
             self.nameFiled.text = citizen?.name
-            self.selectedDistrictID = citizen?.districtId ?? "no citizen id"
+            self.selectedDistrictID = citizen?.districtId ?? "no district"
             // self.districtField.text
             let dictList =  SharedSettings.shared.districtResponse?.responseObject?.districtList
             self.makeDropDow(dictList)
@@ -37,6 +38,7 @@ class MyProfile: UIViewController {
         retriveJSONFrom(fileName: "VerifyOTPResponse").then { response -> () in
          let citizenid =  VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.citizenId
             if let id = citizenid {
+                self.citizenid = id
                 self.getMyProfileData(citizenId: id)
             }
         }
@@ -61,6 +63,9 @@ class MyProfile: UIViewController {
     }
     
     @IBAction func updateProfile(_ sender: UIButton) {
+        NetworkManager().doServiceCall(serviceType: .updateCitizenProfile, params: ["citizenId": citizenid, "name": nameFiled.text!,"districtId": selectedDistrictID]).then { response -> () in
+            self.navigationController?.popViewController(animated: true)
+            }.catch { (error) in }
     }
     
     
