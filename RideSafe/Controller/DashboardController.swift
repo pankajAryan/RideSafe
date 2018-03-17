@@ -81,6 +81,8 @@ class DashboardController: UIViewController, MenuCellDelegte {
     @IBAction func helpLineClicked(_ sender: UIButton) {
     }
     @IBAction func educationClicked(_ sender: UIButton) {
+        let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
+        self.navigationController?.pushViewController(educationContainerController, animated: true)
     }
     func cellCllicked(action: SliderActions?) {
         

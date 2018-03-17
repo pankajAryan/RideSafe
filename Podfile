@@ -11,4 +11,5 @@ pod 'Alamofire', '~> 4.4'
 pod 'UIDropDown'
 pod 'YouTubePlayer-Swift', '~> 1.0'
 pod 'SWSegmentedControl'
+pod 'SDWebImage', '~> 4.3'
 end

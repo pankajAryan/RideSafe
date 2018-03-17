@@ -21,13 +21,13 @@
         <!--Education Container View Controller-->
         <scene sceneID="o9E-zP-7Jv">
             <objects>
-                <viewController id="oTI-JK-u1A" customClass="EducationContainerViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationContainerViewController" id="oTI-JK-u1A" customClass="EducationContainerViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y1g-eL-N3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7L-36-hGn" customClass="SWSegmentedControl" customModule="SWSegmentedControl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Y3s-zP-C47"/>
@@ -46,15 +46,18 @@
                                         <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="indicatorThickness">
-                                        <real key="value" value="1"/>
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="indicatorPadding">
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="segmentedChanged:" destination="oTI-JK-u1A" eventType="valueChanged" id="tfe-eT-sDn"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="piv-Z9-Nvn">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -66,7 +69,7 @@
                             <constraint firstItem="piv-Z9-Nvn" firstAttribute="top" secondItem="T7L-36-hGn" secondAttribute="bottom" id="kUP-kd-1PW"/>
                             <constraint firstItem="T7L-36-hGn" firstAttribute="trailing" secondItem="P0u-Y3-DRl" secondAttribute="trailing" id="mYL-Jt-pn8"/>
                             <constraint firstItem="P0u-Y3-DRl" firstAttribute="trailing" secondItem="piv-Z9-Nvn" secondAttribute="trailing" id="ohE-iI-AYS"/>
-                            <constraint firstItem="T7L-36-hGn" firstAttribute="top" secondItem="y1g-eL-N3I" secondAttribute="top" id="tv5-TB-Mui"/>
+                            <constraint firstItem="T7L-36-hGn" firstAttribute="top" secondItem="P0u-Y3-DRl" secondAttribute="top" id="tv5-TB-Mui"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="P0u-Y3-DRl"/>
                     </view>
@@ -82,7 +85,7 @@
         <!--Education Video View Controller-->
         <scene sceneID="3Se-KN-4Qf">
             <objects>
-                <viewController id="dEt-vq-f15" customClass="EducationVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationVideoViewController" id="dEt-vq-f15" customClass="EducationVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J9F-fa-bKo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,32 +119,32 @@
         <!--Youtube Video View Controller-->
         <scene sceneID="zgO-pg-dWJ">
             <objects>
-                <viewController id="tVL-oe-BNb" customClass="YoutubeVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YoutubeVideoViewController" id="tVL-oe-BNb" customClass="YoutubeVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vy-6m-WA3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wmK-DP-p0Z" customClass="YouTubePlayerView" customModule="YouTubePlayer_Swift">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="290"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="dEL-EP-jJd"/>
+                                    <constraint firstAttribute="height" constant="290" id="dEL-EP-jJd"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-T1-TlB">
-                                <rect key="frame" x="16" y="266" width="343" height="19.5"/>
+                                <rect key="frame" x="16" y="306" width="343" height="19.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-YU-6yV">
-                                <rect key="frame" x="16" y="293.5" width="343" height="14.5"/>
+                                <rect key="frame" x="16" y="333.5" width="343" height="14.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruc-he-AO6">
-                                <rect key="frame" x="16" y="316" width="343" height="14"/>
+                                <rect key="frame" x="16" y="356" width="343" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -175,10 +178,10 @@
             </objects>
             <point key="canvasLocation" x="360.80000000000001" y="760.56971514242889"/>
         </scene>
-        <!--View Controller-->
+        <!--Open Pdf View Controller-->
         <scene sceneID="iXZ-ke-C1N">
             <objects>
-                <viewController id="sUQ-JV-iUO" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpenPdfViewController" id="sUQ-JV-iUO" customClass="OpenPdfViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Yi-uL-xLS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,6 +204,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gwG-f1-UZn"/>
                     </view>
+                    <connections>
+                        <outlet property="pdfWebView" destination="CAz-kZ-7Vm" id="YkW-B3-bLB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dqf-OU-3qL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -209,7 +215,7 @@
         <!--EducationPDF View Controller-->
         <scene sceneID="i89-0H-UIa">
             <objects>
-                <viewController id="RAt-6q-gL1" customClass="EducationPDFViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationPDFViewController" id="RAt-6q-gL1" customClass="EducationPDFViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHn-0W-Vtc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

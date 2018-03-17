@@ -7,30 +7,66 @@
 //
 
 import UIKit
+import PromiseKit
+import SDWebImage
 
 class EducationVideoViewController: UIViewController {
     @IBOutlet weak var educationVideoTableView: UITableView!
+    var mediaList: [Media] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.educationVideoTableView.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "VideoTableViewCellIdentifier")
+        educationVideoTableView.tableFooterView = UIView()
+        loadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadData() {
+        firstly{
+            NetworkManager().doServiceCall(serviceType: .getEducationalMediaListByType, params: ["type": "VIDEO"])
+            }.then { response -> () in
+                let mediaResponse = MediaResponse(dictionary: response as NSDictionary)
+                let mediaList = mediaResponse?.responseObject
+                self.reloadData(medialist: mediaList!)
+            }.catch { (error) in
+        }
     }
-    */
+    
+    func reloadData(medialist: [Media]) {
+        self.mediaList = medialist
+        educationVideoTableView.reloadData()
+    }
+}
 
+extension EducationVideoViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.mediaList.count
+    }
+    
+    // create a cell for each table view row
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:VideoTableViewCell = tableView.dequeueReusableCell(withIdentifier: "VideoTableViewCellIdentifier") as! VideoTableViewCell!
+        let media: Media = self.mediaList[indexPath.row]
+        
+        cell.videoTitleLabel.text = media.title
+        cell.dateTitleLabel.text = media.postedOn
+        cell.videoIconImageView.sd_setImage(with: URL(string: media.thumbnailURL!), placeholderImage: UIImage(named: "placeholder.png"))
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90.0
+    }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let youtubeViewController: YoutubeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "YoutubeVideoViewController") as! YoutubeVideoViewController
+        youtubeViewController.media = self.mediaList[indexPath.row]
+        
+        self.navigationController?.pushViewController(youtubeViewController, animated: true)
+    }
 }

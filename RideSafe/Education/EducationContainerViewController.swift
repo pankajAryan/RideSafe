@@ -13,10 +13,36 @@ class EducationContainerViewController: UIViewController {
 
     @IBOutlet weak var educationSegmentedControl: SWSegmentedControl!
     @IBOutlet weak var containerView: UIView!
+    var educationVideoViewController: EducationVideoViewController?
+    var educationPDFVideoController: EducationPDFViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Road Safety Education"
+        educationSegmentedControl.setTitle("VIDEOS", forSegmentAt: 0)
+        educationSegmentedControl.setTitle("PDF", forSegmentAt: 1)
+        educationVideoViewController = storyboard?.instantiateViewController(withIdentifier: "EducationVideoViewController") as? EducationVideoViewController
+        educationPDFVideoController = storyboard?.instantiateViewController(withIdentifier: "EducationPDFViewController") as? EducationPDFViewController
         // Do any additional setup after loading the view.
+        switchtoVideoTab()
+    }
+    
+    func switchtoVideoTab() {
+        
+        educationPDFVideoController?.removeFromParentViewController()
+        educationPDFVideoController?.view.removeFromSuperview()
+        
+        self.containerView.addSubview((educationVideoViewController?.view)!)
+        self.addChildViewController(educationVideoViewController!)
+        
+    }
+    
+    func switchToPDFTab() {
+        educationVideoViewController?.removeFromParentViewController()
+        educationVideoViewController?.view.removeFromSuperview()
+        self.containerView.addSubview((educationPDFVideoController?.view)!)
+        self.addChildViewController(educationPDFVideoController!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,15 +50,13 @@ class EducationContainerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func segmentedChanged(_ sender: SWSegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            switchtoVideoTab()
+        } else {
+            switchToPDFTab()
+        }
     }
-    */
-
+    
+    
 }
