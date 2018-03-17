@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import SWSegmentedControl
 
 class HelpLineContainerViewController: UIViewController {
 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var segmentedController: SWSegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +22,8 @@ class HelpLineContainerViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func selectedSegmentedController(_ sender: Any) {
     }
     
 

@@ -10,6 +10,7 @@ import UIKit
 
 class HelplineAdministrationViewController: UIViewController {
 
+    @IBOutlet weak var helpLineTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

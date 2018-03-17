@@ -44,6 +44,7 @@
 		B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */; };
 		B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */; };
 		B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2AD205CD8F7007D1F32 /* OpenPdfViewController.swift */; };
+		B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0B205D920B00ACFF0E /* HelpLineTableViewCell.swift */; };
 		B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32EC205D108B00A6A975 /* MediaResponse.swift */; };
 		B86F32EF205D108C00A6A975 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32ED205D108C00A6A975 /* Media.swift */; };
 		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
@@ -96,6 +97,7 @@
 		B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFTableViewCell.xib; sourceTree = "<group>"; };
 		B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoViewController.swift; sourceTree = "<group>"; };
 		B821B2AD205CD8F7007D1F32 /* OpenPdfViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPdfViewController.swift; sourceTree = "<group>"; };
+		B841ED0B205D920B00ACFF0E /* HelpLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineTableViewCell.swift; sourceTree = "<group>"; };
 		B86F32EC205D108B00A6A975 /* MediaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
 		B86F32ED205D108C00A6A975 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 				B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */,
 				B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */,
 				B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */,
+				B841ED0B205D920B00ACFF0E /* HelpLineTableViewCell.swift */,
 			);
 			path = HelpLine;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,
+				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
