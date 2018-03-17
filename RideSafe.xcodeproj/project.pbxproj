@@ -1,590 +1,630 @@
 // !$*UTF8*$!
 {
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 48;
-	objects = {
+    archiveVersion = 1;
+    classes = {
+    };
+    objectVersion = 48;
+    objects = {
 
 /* Begin PBXBuildFile section */
-		2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15668A2051CE0E00B4067C /* Checkbox.swift */; };
-		2C1566972056A6F900B4067C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566942056A6F900B4067C /* SideMenu.swift */; };
-		2C1566982056A6F900B4067C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566952056A6F900B4067C /* MenuCell.swift */; };
-		2C1566992056A6F900B4067C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1566962056A6F900B4067C /* MenuCell.xib */; };
-		2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15669F2056A76D00B4067C /* DashboardController.swift */; };
-		2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A12057DCA000B4067C /* MyProfile.swift */; };
-		2C1566A42057DCC300B4067C /* MyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A32057DCC300B4067C /* MyReport.swift */; };
-		2C1566A62057DCD800B4067C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A52057DCD800B4067C /* SettingController.swift */; };
-		2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A72057DCF800B4067C /* AboutRideSafe.swift */; };
-		2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A92058013A00B4067C /* RideSafeViewController.swift */; };
-		2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AB2058238800B4067C /* RegistrationController.swift */; };
-		2C1566B120582F8D00B4067C /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AE20582F8D00B4067C /* District.swift */; };
-		2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AF20582F8D00B4067C /* DistrictResponse.swift */; };
-		2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B020582F8D00B4067C /* DistrictList.swift */; };
-		2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B620584B7400B4067C /* SwiftLoader.swift */; };
-		2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
-		2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B3204E5A440093B3BF /* Main.storyboard */; };
-		2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B6204E5A440093B3BF /* Assets.xcassets */; };
-		2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */; };
-		2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D3204E6F3E0093B3BF /* Services.swift */; };
-		2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */; };
-		2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D8204E6F460093B3BF /* LoginController.swift */; };
-		2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D5650205AD1CE008F9104 /* DropDown.storyboard */; };
-		2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5652205AD1E8008F9104 /* DropDownController.swift */; };
-		2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */; };
-		2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */; };
-		2C3D565A205AD37B008F9104 /* DrivingIssueCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */; };
-		B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */; };
-		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
-		B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */; };
-		B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */; };
-		B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */; };
+        2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15668A2051CE0E00B4067C /* Checkbox.swift */; };
+        2C1566972056A6F900B4067C /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566942056A6F900B4067C /* SideMenu.swift */; };
+        2C1566982056A6F900B4067C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566952056A6F900B4067C /* MenuCell.swift */; };
+        2C1566992056A6F900B4067C /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C1566962056A6F900B4067C /* MenuCell.xib */; };
+        2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15669F2056A76D00B4067C /* DashboardController.swift */; };
+        2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A12057DCA000B4067C /* MyProfile.swift */; };
+        2C1566A42057DCC300B4067C /* MyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A32057DCC300B4067C /* MyReport.swift */; };
+        2C1566A62057DCD800B4067C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A52057DCD800B4067C /* SettingController.swift */; };
+        2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A72057DCF800B4067C /* AboutRideSafe.swift */; };
+        2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A92058013A00B4067C /* RideSafeViewController.swift */; };
+        2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AB2058238800B4067C /* RegistrationController.swift */; };
+        2C1566B120582F8D00B4067C /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AE20582F8D00B4067C /* District.swift */; };
+        2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AF20582F8D00B4067C /* DistrictResponse.swift */; };
+        2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B020582F8D00B4067C /* DistrictList.swift */; };
+        2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B620584B7400B4067C /* SwiftLoader.swift */; };
+        2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
+        2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B3204E5A440093B3BF /* Main.storyboard */; };
+        2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B6204E5A440093B3BF /* Assets.xcassets */; };
+        2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */; };
+        2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D3204E6F3E0093B3BF /* Services.swift */; };
+        2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */; };
+        2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D8204E6F460093B3BF /* LoginController.swift */; };
+        2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D5650205AD1CE008F9104 /* DropDown.storyboard */; };
+        2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5652205AD1E8008F9104 /* DropDownController.swift */; };
+        2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */; };
+        2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */; };
+        2C3D565A205AD37B008F9104 /* DrivingIssueCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */; };
+        B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */; };
+        B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
+        B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
+        B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
+        B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */; };
+        B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */; };
+        B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
+        B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */; };
+        B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */; };
+        B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */; };
+        B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */; };
+        B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */; };
+        B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C15668A2051CE0E00B4067C /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
-		2C1566942056A6F900B4067C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
-		2C1566952056A6F900B4067C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
-		2C1566962056A6F900B4067C /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
-		2C15669F2056A76D00B4067C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
-		2C1566A12057DCA000B4067C /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
-		2C1566A32057DCC300B4067C /* MyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReport.swift; sourceTree = "<group>"; };
-		2C1566A52057DCD800B4067C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
-		2C1566A72057DCF800B4067C /* AboutRideSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRideSafe.swift; sourceTree = "<group>"; };
-		2C1566A92058013A00B4067C /* RideSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeViewController.swift; sourceTree = "<group>"; };
-		2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
-		2C1566AE20582F8D00B4067C /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
-		2C1566AF20582F8D00B4067C /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
-		2C1566B020582F8D00B4067C /* DistrictList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictList.swift; sourceTree = "<group>"; };
-		2C1566B620584B7400B4067C /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
-		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2C1EE2B6204E5A440093B3BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		2C1EE2B9204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2C1EE2BB204E5A440093B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2C1EE2D3204E6F3E0093B3BF /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
-		2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		2C1EE2D8204E6F460093B3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		2C3D5650205AD1CE008F9104 /* DropDown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDown.storyboard; sourceTree = "<group>"; };
-		2C3D5652205AD1E8008F9104 /* DropDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownController.swift; sourceTree = "<group>"; };
-		2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
-		2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssuesCategoryList.swift; sourceTree = "<group>"; };
-		2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssueCategory.swift; sourceTree = "<group>"; };
-		3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
-		9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
-		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
-		B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationContainerViewController.swift; sourceTree = "<group>"; };
-		B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationPDFViewController.swift; sourceTree = "<group>"; };
-		B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationVideoViewController.swift; sourceTree = "<group>"; };
-		EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+        2C15668A2051CE0E00B4067C /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+        2C1566942056A6F900B4067C /* SideMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+        2C1566952056A6F900B4067C /* MenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+        2C1566962056A6F900B4067C /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+        2C15669F2056A76D00B4067C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
+        2C1566A12057DCA000B4067C /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
+        2C1566A32057DCC300B4067C /* MyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReport.swift; sourceTree = "<group>"; };
+        2C1566A52057DCD800B4067C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+        2C1566A72057DCF800B4067C /* AboutRideSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRideSafe.swift; sourceTree = "<group>"; };
+        2C1566A92058013A00B4067C /* RideSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeViewController.swift; sourceTree = "<group>"; };
+        2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+        2C1566AE20582F8D00B4067C /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
+        2C1566AF20582F8D00B4067C /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
+        2C1566B020582F8D00B4067C /* DistrictList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictList.swift; sourceTree = "<group>"; };
+        2C1566B620584B7400B4067C /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
+        2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+        2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+        2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+        2C1EE2B6204E5A440093B3BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+        2C1EE2B9204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+        2C1EE2BB204E5A440093B3BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+        2C1EE2D3204E6F3E0093B3BF /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+        2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+        2C1EE2D8204E6F460093B3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+        2C3D5650205AD1CE008F9104 /* DropDown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDown.storyboard; sourceTree = "<group>"; };
+        2C3D5652205AD1E8008F9104 /* DropDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownController.swift; sourceTree = "<group>"; };
+        2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
+        2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssuesCategoryList.swift; sourceTree = "<group>"; };
+        2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssueCategory.swift; sourceTree = "<group>"; };
+        3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
+        9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
+        B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
+        B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
+        B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
+        B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PDFTableViewCell.xib; sourceTree = "<group>"; };
+        B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoViewController.swift; sourceTree = "<group>"; };
+        B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
+        B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationContainerViewController.swift; sourceTree = "<group>"; };
+        B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationPDFViewController.swift; sourceTree = "<group>"; };
+        B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationVideoViewController.swift; sourceTree = "<group>"; };
+        B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpLine.storyboard; sourceTree = "<group>"; };
+        B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineContainerViewController.swift; sourceTree = "<group>"; };
+        B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelplineAdministrationViewController.swift; sourceTree = "<group>"; };
+        EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		2C1EE2A9204E5A440093B3BF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2C1EE2A9204E5A440093B3BF /* Frameworks */ = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2C1566892051CDE000B4067C /* Custom UI */ = {
-			isa = PBXGroup;
-			children = (
-				2C1566B620584B7400B4067C /* SwiftLoader.swift */,
-				2C15668A2051CE0E00B4067C /* Checkbox.swift */,
-				2C3D5650205AD1CE008F9104 /* DropDown.storyboard */,
-				2C3D5652205AD1E8008F9104 /* DropDownController.swift */,
-			);
-			path = "Custom UI";
-			sourceTree = "<group>";
-		};
-		2C1566932056A6F900B4067C /* SideSlider */ = {
-			isa = PBXGroup;
-			children = (
-				2C1566942056A6F900B4067C /* SideMenu.swift */,
-				2C1566952056A6F900B4067C /* MenuCell.swift */,
-				2C1566962056A6F900B4067C /* MenuCell.xib */,
-			);
-			path = SideSlider;
-			sourceTree = "<group>";
-		};
-		2C1566AD20582F8D00B4067C /* DistrictList */ = {
-			isa = PBXGroup;
-			children = (
-				2C1566AE20582F8D00B4067C /* District.swift */,
-				2C1566AF20582F8D00B4067C /* DistrictResponse.swift */,
-				2C1566B020582F8D00B4067C /* DistrictList.swift */,
-			);
-			path = DistrictList;
-			sourceTree = "<group>";
-		};
-		2C1EE2A3204E5A440093B3BF = {
-			isa = PBXGroup;
-			children = (
-				2C1566892051CDE000B4067C /* Custom UI */,
-				2C1EE2AE204E5A440093B3BF /* RideSafe */,
-				2C1EE2AD204E5A440093B3BF /* Products */,
-				4B157561EAB4B787B2AA1CDF /* Pods */,
-				E28FEEC0C9735859C1319CF5 /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		2C1EE2AD204E5A440093B3BF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2C1EE2AC204E5A440093B3BF /* RideSafe.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
-			isa = PBXGroup;
-			children = (
-				B8AFD871205AD1F20044A608 /* Education */,
-				2C1566932056A6F900B4067C /* SideSlider */,
-				2C1EE2D7204E6F460093B3BF /* Controller */,
-				2C1EE2D2204E6F3E0093B3BF /* Network */,
-				2C1EE2CF204E6F040093B3BF /* Model */,
-				2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */,
-				2C1EE2B3204E5A440093B3BF /* Main.storyboard */,
-				2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
-				2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
-				2C1EE2BB204E5A440093B3BF /* Info.plist */,
-			);
-			path = RideSafe;
-			sourceTree = "<group>";
-		};
-		2C1EE2CF204E6F040093B3BF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				2C3D5654205AD37B008F9104 /* VerifyOTP */,
-				2C1566AD20582F8D00B4067C /* DistrictList */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2C1EE2D2204E6F3E0093B3BF /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2C1EE2D3204E6F3E0093B3BF /* Services.swift */,
-				2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		2C1EE2D7204E6F460093B3BF /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				2C1EE2D8204E6F460093B3BF /* LoginController.swift */,
-				2C15669F2056A76D00B4067C /* DashboardController.swift */,
-				2C1566A12057DCA000B4067C /* MyProfile.swift */,
-				2C1566A32057DCC300B4067C /* MyReport.swift */,
-				2C1566A52057DCD800B4067C /* SettingController.swift */,
-				2C1566A72057DCF800B4067C /* AboutRideSafe.swift */,
-				2C1566A92058013A00B4067C /* RideSafeViewController.swift */,
-				2C1566AB2058238800B4067C /* RegistrationController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		2C3D5654205AD37B008F9104 /* VerifyOTP */ = {
-			isa = PBXGroup;
-			children = (
-				2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */,
-				2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */,
-				2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */,
-			);
-			path = VerifyOTP;
-			sourceTree = "<group>";
-		};
-		4B157561EAB4B787B2AA1CDF /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */,
-				3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		B8AFD871205AD1F20044A608 /* Education */ = {
-			isa = PBXGroup;
-			children = (
-				B8AFD872205AD1F20044A608 /* Education.storyboard */,
-				B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */,
-				B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */,
-				B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */,
-			);
-			path = Education;
-			sourceTree = "<group>";
-		};
-		E28FEEC0C9735859C1319CF5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
+        2C1566892051CDE000B4067C /* Custom UI */ = {
+            isa = PBXGroup;
+            children = (
+                2C1566B620584B7400B4067C /* SwiftLoader.swift */,
+                2C15668A2051CE0E00B4067C /* Checkbox.swift */,
+                2C3D5650205AD1CE008F9104 /* DropDown.storyboard */,
+                2C3D5652205AD1E8008F9104 /* DropDownController.swift */,
+            );
+            path = "Custom UI";
+            sourceTree = "<group>";
+        };
+        2C1566932056A6F900B4067C /* SideSlider */ = {
+            isa = PBXGroup;
+            children = (
+                2C1566942056A6F900B4067C /* SideMenu.swift */,
+                2C1566952056A6F900B4067C /* MenuCell.swift */,
+                2C1566962056A6F900B4067C /* MenuCell.xib */,
+            );
+            path = SideSlider;
+            sourceTree = "<group>";
+        };
+        2C1566AD20582F8D00B4067C /* DistrictList */ = {
+            isa = PBXGroup;
+            children = (
+                2C1566AE20582F8D00B4067C /* District.swift */,
+                2C1566AF20582F8D00B4067C /* DistrictResponse.swift */,
+                2C1566B020582F8D00B4067C /* DistrictList.swift */,
+            );
+            path = DistrictList;
+            sourceTree = "<group>";
+        };
+        2C1EE2A3204E5A440093B3BF = {
+            isa = PBXGroup;
+            children = (
+                2C1566892051CDE000B4067C /* Custom UI */,
+                2C1EE2AE204E5A440093B3BF /* RideSafe */,
+                2C1EE2AD204E5A440093B3BF /* Products */,
+                4B157561EAB4B787B2AA1CDF /* Pods */,
+                E28FEEC0C9735859C1319CF5 /* Frameworks */,
+            );
+            sourceTree = "<group>";
+        };
+        2C1EE2AD204E5A440093B3BF /* Products */ = {
+            isa = PBXGroup;
+            children = (
+                2C1EE2AC204E5A440093B3BF /* RideSafe.app */,
+            );
+            name = Products;
+            sourceTree = "<group>";
+        };
+        2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
+            isa = PBXGroup;
+            children = (
+                B8AFD87A205AD2270044A608 /* HelpLine */,
+                B8AFD871205AD1F20044A608 /* Education */,
+                2C1566932056A6F900B4067C /* SideSlider */,
+                2C1EE2D7204E6F460093B3BF /* Controller */,
+                2C1EE2D2204E6F3E0093B3BF /* Network */,
+                2C1EE2CF204E6F040093B3BF /* Model */,
+                2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */,
+                2C1EE2B3204E5A440093B3BF /* Main.storyboard */,
+                2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
+                2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
+                2C1EE2BB204E5A440093B3BF /* Info.plist */,
+            );
+            path = RideSafe;
+            sourceTree = "<group>";
+        };
+        2C1EE2CF204E6F040093B3BF /* Model */ = {
+            isa = PBXGroup;
+            children = (
+                2C3D5654205AD37B008F9104 /* VerifyOTP */,
+                2C1566AD20582F8D00B4067C /* DistrictList */,
+            );
+            path = Model;
+            sourceTree = "<group>";
+        };
+        2C1EE2D2204E6F3E0093B3BF /* Network */ = {
+            isa = PBXGroup;
+            children = (
+                2C1EE2D3204E6F3E0093B3BF /* Services.swift */,
+                2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */,
+            );
+            path = Network;
+            sourceTree = "<group>";
+        };
+        2C1EE2D7204E6F460093B3BF /* Controller */ = {
+            isa = PBXGroup;
+            children = (
+                2C1EE2D8204E6F460093B3BF /* LoginController.swift */,
+                2C15669F2056A76D00B4067C /* DashboardController.swift */,
+                2C1566A12057DCA000B4067C /* MyProfile.swift */,
+                2C1566A32057DCC300B4067C /* MyReport.swift */,
+                2C1566A52057DCD800B4067C /* SettingController.swift */,
+                2C1566A72057DCF800B4067C /* AboutRideSafe.swift */,
+                2C1566A92058013A00B4067C /* RideSafeViewController.swift */,
+                2C1566AB2058238800B4067C /* RegistrationController.swift */,
+            );
+            path = Controller;
+            sourceTree = "<group>";
+        };
+        2C3D5654205AD37B008F9104 /* VerifyOTP */ = {
+            isa = PBXGroup;
+            children = (
+                2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */,
+                2C3D5656205AD37B008F9104 /* DrivingIssuesCategoryList.swift */,
+                2C3D5657205AD37B008F9104 /* DrivingIssueCategory.swift */,
+            );
+            path = VerifyOTP;
+            sourceTree = "<group>";
+        };
+        4B157561EAB4B787B2AA1CDF /* Pods */ = {
+            isa = PBXGroup;
+            children = (
+                9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */,
+                3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */,
+            );
+            name = Pods;
+            sourceTree = "<group>";
+        };
+        B8AFD871205AD1F20044A608 /* Education */ = {
+            isa = PBXGroup;
+            children = (
+                B8AFD872205AD1F20044A608 /* Education.storyboard */,
+                B8AFD873205AD1F20044A608 /* EducationContainerViewController.swift */,
+                B8AFD874205AD1F20044A608 /* EducationPDFViewController.swift */,
+                B8AFD875205AD1F20044A608 /* EducationVideoViewController.swift */,
+                B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */,
+                B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */,
+                B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */,
+                B821B2A8205CC23E007D1F32 /* PDFTableViewCell.xib */,
+                B821B2AB205CC260007D1F32 /* YoutubeVideoViewController.swift */,
+            );
+            path = Education;
+            sourceTree = "<group>";
+        };
+        B8AFD87A205AD2270044A608 /* HelpLine */ = {
+            isa = PBXGroup;
+            children = (
+                B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */,
+                B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */,
+                B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */,
+            );
+            path = HelpLine;
+            sourceTree = "<group>";
+        };
+        E28FEEC0C9735859C1319CF5 /* Frameworks */ = {
+            isa = PBXGroup;
+            children = (
+                EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */,
+            );
+            name = Frameworks;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C1EE2AB204E5A440093B3BF /* RideSafe */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */;
-			buildPhases = (
-				BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */,
-				2C1EE2A8204E5A440093B3BF /* Sources */,
-				2C1EE2A9204E5A440093B3BF /* Frameworks */,
-				2C1EE2AA204E5A440093B3BF /* Resources */,
-				D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */,
-				7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RideSafe;
-			productName = RideSafe;
-			productReference = 2C1EE2AC204E5A440093B3BF /* RideSafe.app */;
-			productType = "com.apple.product-type.application";
-		};
+        2C1EE2AB204E5A440093B3BF /* RideSafe */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = 2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */;
+            buildPhases = (
+                BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */,
+                2C1EE2A8204E5A440093B3BF /* Sources */,
+                2C1EE2A9204E5A440093B3BF /* Frameworks */,
+                2C1EE2AA204E5A440093B3BF /* Resources */,
+                D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */,
+                7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */,
+            );
+            buildRules = (
+            );
+            dependencies = (
+            );
+            name = RideSafe;
+            productName = RideSafe;
+            productReference = 2C1EE2AC204E5A440093B3BF /* RideSafe.app */;
+            productType = "com.apple.product-type.application";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		2C1EE2A4204E5A440093B3BF /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = Mobiquel;
-				TargetAttributes = {
-					2C1EE2AB204E5A440093B3BF = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
-					};
-				};
-			};
-			buildConfigurationList = 2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */;
-			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = en;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = 2C1EE2A3204E5A440093B3BF;
-			productRefGroup = 2C1EE2AD204E5A440093B3BF /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				2C1EE2AB204E5A440093B3BF /* RideSafe */,
-			);
-		};
+        2C1EE2A4204E5A440093B3BF /* Project object */ = {
+            isa = PBXProject;
+            attributes = {
+                LastSwiftUpdateCheck = 0920;
+                LastUpgradeCheck = 0920;
+                ORGANIZATIONNAME = Mobiquel;
+                TargetAttributes = {
+                    2C1EE2AB204E5A440093B3BF = {
+                        CreatedOnToolsVersion = 9.2;
+                        ProvisioningStyle = Manual;
+                    };
+                };
+            };
+            buildConfigurationList = 2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */;
+            compatibilityVersion = "Xcode 8.0";
+            developmentRegion = en;
+            hasScannedForEncodings = 0;
+            knownRegions = (
+                en,
+                Base,
+            );
+            mainGroup = 2C1EE2A3204E5A440093B3BF;
+            productRefGroup = 2C1EE2AD204E5A440093B3BF /* Products */;
+            projectDirPath = "";
+            projectRoot = "";
+            targets = (
+                2C1EE2AB204E5A440093B3BF /* RideSafe */,
+            );
+        };
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2C1EE2AA204E5A440093B3BF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
-				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
-				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
-				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
-				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
-				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2C1EE2AA204E5A440093B3BF /* Resources */ = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
+                2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
+                B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
+                2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
+                2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
+                2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
+                B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
+                2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
+                B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RideSafe-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SWSegmentedControl/SWSegmentedControl.framework",
-				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWSegmentedControl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
+        7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputPaths = (
+            );
+            name = "[CP] Copy Pods Resources";
+            outputPaths = (
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-resources.sh\"\n";
+            showEnvVarsInLog = 0;
+        };
+        BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputPaths = (
+                "${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+                "${PODS_ROOT}/Manifest.lock",
+            );
+            name = "[CP] Check Pods Manifest.lock";
+            outputPaths = (
+                "$(DERIVED_FILE_DIR)/Pods-RideSafe-checkManifestLockResult.txt",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+            showEnvVarsInLog = 0;
+        };
+        D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */ = {
+            isa = PBXShellScriptBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+            );
+            inputPaths = (
+                "${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh",
+                "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+                "${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+                "${BUILT_PRODUCTS_DIR}/SWSegmentedControl/SWSegmentedControl.framework",
+                "${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
+                "${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
+            );
+            name = "[CP] Embed Pods Frameworks";
+            outputPaths = (
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWSegmentedControl.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
+                "${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+            shellPath = /bin/sh;
+            shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh\"\n";
+            showEnvVarsInLog = 0;
+        };
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2C1EE2A8204E5A440093B3BF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
-				2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
-				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
-				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
-				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
-				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
-				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
-				2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
-				2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
-				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
-				2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
-				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
-				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
-				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
-				B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */,
-				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
-				2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */,
-				2C3D565A205AD37B008F9104 /* DrivingIssueCategory.swift in Sources */,
-				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
-				2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */,
-				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
-				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
-				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
-				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
-				2C1566B120582F8D00B4067C /* District.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
+        2C1EE2A8204E5A440093B3BF /* Sources */ = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (
+                2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
+                2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
+                2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
+                B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
+                B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
+                2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
+                B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
+                2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
+                2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
+                2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
+                2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
+                2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
+                2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
+                2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
+                2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
+                2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
+                B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */,
+                2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
+                B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */,
+                2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */,
+                2C3D565A205AD37B008F9104 /* DrivingIssueCategory.swift in Sources */,
+                2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
+                2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */,
+                2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
+                B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
+                2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
+                2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
+                2C1566B120582F8D00B4067C /* District.swift in Sources */,
+                B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
+                B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
+            );
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2C1EE2B3204E5A440093B3BF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C1EE2B4204E5A440093B3BF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C1EE2B9204E5A440093B3BF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
+        2C1EE2B3204E5A440093B3BF /* Main.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                2C1EE2B4204E5A440093B3BF /* Base */,
+            );
+            name = Main.storyboard;
+            sourceTree = "<group>";
+        };
+        2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */ = {
+            isa = PBXVariantGroup;
+            children = (
+                2C1EE2B9204E5A440093B3BF /* Base */,
+            );
+            name = LaunchScreen.storyboard;
+            sourceTree = "<group>";
+        };
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		2C1EE2BC204E5A440093B3BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-			};
-			name = Debug;
-		};
-		2C1EE2BD204E5A440093B3BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		2C1EE2BF204E5A440093B3BF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RideSafe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		2C1EE2C0204E5A440093B3BF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = RideSafe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
+        2C1EE2BC204E5A440093B3BF /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = dwarf;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                ENABLE_TESTABILITY = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_DYNAMIC_NO_PIC = NO;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_OPTIMIZATION_LEVEL = 0;
+                GCC_PREPROCESSOR_DEFINITIONS = (
+                    "DEBUG=1",
+                    "$(inherited)",
+                );
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+                MTL_ENABLE_DEBUG_INFO = YES;
+                ONLY_ACTIVE_ARCH = YES;
+                SDKROOT = iphoneos;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+                SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+            };
+            name = Debug;
+        };
+        2C1EE2BD204E5A440093B3BF /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                ALWAYS_SEARCH_USER_PATHS = NO;
+                CLANG_ANALYZER_NONNULL = YES;
+                CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+                CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+                CLANG_CXX_LIBRARY = "libc++";
+                CLANG_ENABLE_MODULES = YES;
+                CLANG_ENABLE_OBJC_ARC = YES;
+                CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+                CLANG_WARN_BOOL_CONVERSION = YES;
+                CLANG_WARN_COMMA = YES;
+                CLANG_WARN_CONSTANT_CONVERSION = YES;
+                CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+                CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+                CLANG_WARN_EMPTY_BODY = YES;
+                CLANG_WARN_ENUM_CONVERSION = YES;
+                CLANG_WARN_INFINITE_RECURSION = YES;
+                CLANG_WARN_INT_CONVERSION = YES;
+                CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+                CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+                CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+                CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+                CLANG_WARN_STRICT_PROTOTYPES = YES;
+                CLANG_WARN_SUSPICIOUS_MOVE = YES;
+                CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+                CLANG_WARN_UNREACHABLE_CODE = YES;
+                CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+                CODE_SIGN_IDENTITY = "iPhone Developer";
+                COPY_PHASE_STRIP = NO;
+                DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+                ENABLE_NS_ASSERTIONS = NO;
+                ENABLE_STRICT_OBJC_MSGSEND = YES;
+                GCC_C_LANGUAGE_STANDARD = gnu11;
+                GCC_NO_COMMON_BLOCKS = YES;
+                GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+                GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+                GCC_WARN_UNDECLARED_SELECTOR = YES;
+                GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+                GCC_WARN_UNUSED_FUNCTION = YES;
+                GCC_WARN_UNUSED_VARIABLE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+                MTL_ENABLE_DEBUG_INFO = NO;
+                SDKROOT = iphoneos;
+                SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+                VALIDATE_PRODUCT = YES;
+            };
+            name = Release;
+        };
+        2C1EE2BF204E5A440093B3BF /* Debug */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = 9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_STYLE = Manual;
+                DEVELOPMENT_TEAM = "";
+                INFOPLIST_FILE = RideSafe/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+                PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                PROVISIONING_PROFILE_SPECIFIER = "";
+                SWIFT_VERSION = 4.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Debug;
+        };
+        2C1EE2C0204E5A440093B3BF /* Release */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = 3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */;
+            buildSettings = {
+                ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+                CODE_SIGN_STYLE = Manual;
+                DEVELOPMENT_TEAM = "";
+                INFOPLIST_FILE = RideSafe/Info.plist;
+                IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+                LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+                PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                PROVISIONING_PROFILE_SPECIFIER = "";
+                SWIFT_VERSION = 4.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C1EE2BC204E5A440093B3BF /* Debug */,
-				2C1EE2BD204E5A440093B3BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2C1EE2BF204E5A440093B3BF /* Debug */,
-				2C1EE2C0204E5A440093B3BF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
+        2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2C1EE2BC204E5A440093B3BF /* Debug */,
+                2C1EE2BD204E5A440093B3BF /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
+        2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */ = {
+            isa = XCConfigurationList;
+            buildConfigurations = (
+                2C1EE2BF204E5A440093B3BF /* Debug */,
+                2C1EE2C0204E5A440093B3BF /* Release */,
+            );
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 /* End XCConfigurationList section */
-	};
-	rootObject = 2C1EE2A4204E5A440093B3BF /* Project object */;
+    };
+    rootObject = 2C1EE2A4204E5A440093B3BF /* Project object */;
 }
