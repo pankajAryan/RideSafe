@@ -8,6 +8,7 @@
 
 import UIKit
 import PromiseKit
+import Toast_Swift
 
 class RideSafeViewController: UIViewController {
 
@@ -59,6 +60,12 @@ extension UIViewController {
         }
     }
     
+}
+
+extension UIViewController {
+    func showToast(response:[String:Any]) {
+        self.view.makeToast(response["errorMessage"] as? String, duration: 3.0, position: .bottom)
+    }
 }
 
 

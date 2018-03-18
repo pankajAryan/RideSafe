@@ -64,6 +64,7 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .generateOtp, params: ["phoneNo" : phonNo])
             }.then { response -> () in
+                self.showToast(response: response)
                 UIView.animate(withDuration: 0.3, animations: {
                     self.otpView.isHidden = false
                 })
@@ -76,6 +77,7 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
+                self.showToast(response: response)
                self.writeJSONTo(fileName: "VerifyOTPResponse", data: response)
                 VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
             }.catch { error in
@@ -99,6 +101,7 @@ class LoginController: UIViewController {
         firstly{
             NetworkManager().doServiceCall(serviceType: .resendOtp, params: ["phoneNo" : mobileNumber.text!])
             }.then { (response) -> () in
+                self.showToast(response: response)
             }.catch { (error) in
         }
     }
