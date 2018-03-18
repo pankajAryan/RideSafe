@@ -17,8 +17,8 @@ class SettingController: UIViewController {
         var isChecked = false
     }
     var languages = [languageModel(lanCode:"en", langName: "English",localName:"", isChecked: false),
-                     languageModel(lanCode:"hi", langName: "Hindi",localName:"हिन्दी", isChecked: false),
-                     languageModel(lanCode:"ur", langName: "Urdu",localName:"اردو", isChecked: false)]
+                     languageModel(lanCode:"hi-IN", langName: "Hindi",localName:"हिन्दी", isChecked: false),
+                     languageModel(lanCode:"ur-IN", langName: "Urdu",localName:"اردو", isChecked: false)]
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()

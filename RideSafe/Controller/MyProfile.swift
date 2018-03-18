@@ -8,6 +8,7 @@
 
 import UIKit
 import UIDropDown
+import PromiseKit
 
 class MyProfile: UIViewController {
 
@@ -17,8 +18,21 @@ class MyProfile: UIViewController {
     private var selectedDistrictID:String = ""
     private var citizenid = ""
 
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setBackButton()
+        self.title = "My profile"
+        
+    
+            getDistrict()
+           // getJsonFromFileForverifyOTP()
+        
+        
+    }
     fileprivate func getMyProfileData(citizenId:String) {
-         NetworkManager().doServiceCall(serviceType: .getCitizenProfile, params: ["citizenId" : citizenId]).then { (response) -> () in
+        NetworkManager().doServiceCall(serviceType: .getCitizenProfile, params: ["citizenId" : citizenId]).then { (response) -> () in
             let citizenProfile = CitizenProfile(dictionary: response as NSDictionary)
             let citizen = citizenProfile?.responseObject
             self.mobileNumberField.text = citizen?.mobile
@@ -31,16 +45,30 @@ class MyProfile: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setBackButton()
-        self.title = "My profile"
+    fileprivate func getJsonFromFileForverifyOTP()  {
         retriveJSONFrom(fileName: "VerifyOTPResponse").then { response -> () in
-         let citizenid =  VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.citizenId
+            let citizenid =  VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.citizenId
             if let id = citizenid {
                 self.citizenid = id
                 self.getMyProfileData(citizenId: id)
             }
+            }.catch{ (error) in
+        }
+    }
+    private func getDistrict() {
+        firstly{
+            NetworkManager().doServiceCall(serviceType: .getDistrictList, params: ["startIndex": "-1","searchString": "",
+                                                                                   "length": "10","sortBy": "NAME",
+                                                                                   "order": "A","status": "T"])
+            }.then { response -> () in
+                let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
+                //let dictList = json4Swift_Base?.responseObject?.districtList
+                SharedSettings.shared.districtResponse = json4Swift_Base
+               // self.makeDropDow(dictList)
+                
+            }.then { () -> () in
+                self.getJsonFromFileForverifyOTP()
+            }.catch { (error) in
         }
     }
     
