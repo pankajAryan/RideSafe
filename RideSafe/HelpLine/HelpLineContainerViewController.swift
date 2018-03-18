@@ -13,28 +13,35 @@ class HelpLineContainerViewController: UIViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var segmentedController: SWSegmentedControl!
+    var helpLineViewController: HelplineAdministrationViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Emergency Directory"
+        segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
+        segmentedController.setTitle("MVD", forSegmentAt: 1)
+        helpLineViewController = storyboard?.instantiateViewController(withIdentifier: "HelplineAdministrationViewController") as? HelplineAdministrationViewController
+        self.containerView.addSubview((helpLineViewController?.view)!)
+        self.addChildViewController(helpLineViewController!)
 
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    @IBAction func selectedSegmentedController(_ sender: Any) {
+    func switchtoAdministrationTab() {
+        helpLineViewController?.selectedSegmented = 0
+        helpLineViewController?.helpLineTableView.reloadData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func switchMVDTab() {
+        helpLineViewController?.selectedSegmented = 1
+        helpLineViewController?.helpLineTableView.reloadData()
     }
-    */
+    
+    @IBAction func selectedSegmentedController(_ sender: SWSegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            switchtoAdministrationTab()
+        } else {
+            switchMVDTab()
+        }
+    }
 
 }
