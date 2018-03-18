@@ -38,6 +38,7 @@
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
+		2CF24356205EA403007E696C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF24354205EA403007E696C /* Localizable.strings */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
 		B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
 		B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
@@ -95,11 +96,9 @@
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
-		2CF2434A205E92A5007E696C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		2CF2434D205E9ADD007E696C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Main.strings"; sourceTree = "<group>"; };
-		2CF2434E205E9ADD007E696C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		2CF2434F205E9B24007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "ur-IN.lproj/Main.strings"; sourceTree = "<group>"; };
-		2CF24350205E9B24007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "ur-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		2CF24355205EA403007E696C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		2CF24357205EA486007E696C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "../hi-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2CF24358205EA49B007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "../ur-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +198,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				2CF24353205EA403007E696C /* en.lproj */,
 				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
 				B8AFD87A205AD2270044A608 /* HelpLine */,
@@ -278,6 +278,14 @@
 				2CF24345205E7B5D007E696C /* LanguageCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2CF24353205EA403007E696C /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2CF24354205EA403007E696C /* Localizable.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
@@ -389,6 +397,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"hi-IN",
+				"ur-IN",
 			);
 			mainGroup = 2C1EE2A3204E5A440093B3BF;
 			productRefGroup = 2C1EE2AD204E5A440093B3BF /* Products */;
@@ -407,6 +417,7 @@
 			files = (
 				B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
+				2CF24356205EA403007E696C /* Localizable.strings in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
@@ -544,9 +555,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C1EE2B4204E5A440093B3BF /* Base */,
-				2CF2434A205E92A5007E696C /* en */,
-				2CF2434D205E9ADD007E696C /* hi-IN */,
-				2CF2434F205E9B24007E696C /* ur-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -555,10 +563,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				2C1EE2B9204E5A440093B3BF /* Base */,
-				2CF2434E205E9ADD007E696C /* hi-IN */,
-				2CF24350205E9B24007E696C /* ur-IN */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		2CF24354205EA403007E696C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CF24355205EA403007E696C /* en */,
+				2CF24357205EA486007E696C /* hi-IN */,
+				2CF24358205EA49B007E696C /* ur-IN */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
