@@ -25,8 +25,6 @@ class DashboardController: UIViewController {
     var vehicleType = ""
     var drivingIssues:[DropDownDataSource] = []
     
-    private var currentLocation:CLLocation?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         Locator.requestAuthorizationIfNeeded()
