@@ -11,7 +11,10 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.2):
     - PromiseKit/CorePromise
-  - SwiftLocation (3.1.0):
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
+  - SwiftLocation (3.2.0):
     - SwiftyJSON (~> 4.0.0-alpha.1)
   - SwiftyJSON (4.0.0)
   - SWSegmentedControl (2.4.0)
@@ -21,6 +24,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - PromiseKit (~> 4.0)
+  - SDWebImage (~> 4.3)
   - SwiftLocation
   - SWSegmentedControl
   - UIDropDown
@@ -29,12 +33,13 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
-  SwiftLocation: 8f5ef4f510a45e43239de57a3145b3669301e898
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  SwiftLocation: 77ffe8d04c1a743dba87f8fa5c418a9da698c2e9
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   SWSegmentedControl: 6102f2b24ee6e17a84c423885571b5cf0cbb4524
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: fa5ed3476330100c3a2efd2c2502aa241ed5d876
+PODFILE CHECKSUM: 37b0d990f966612254ff01bbd5f15bf6af00be2d
 
 COCOAPODS: 1.4.0

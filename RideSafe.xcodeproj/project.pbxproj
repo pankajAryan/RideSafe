@@ -37,7 +37,6 @@
 		2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */; };
 		2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565D205D5FC0008F9104 /* Citizen.swift */; };
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
-		B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
 		B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
 		B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
@@ -58,6 +57,7 @@
 		B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */; };
 		B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */; };
 		B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */; };
+		C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,8 +93,9 @@
 		2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitizenProfile.swift; sourceTree = "<group>"; };
 		2C3D565D205D5FC0008F9104 /* Citizen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
-		3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
-		9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
+		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
+		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
@@ -115,7 +116,6 @@
 		B8AFD87B205AD23E0044A608 /* HelpLine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HelpLine.storyboard; sourceTree = "<group>"; };
 		B8AFD87D205AD2770044A608 /* HelpLineContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineContainerViewController.swift; sourceTree = "<group>"; };
 		B8AFDA6A205ADB350044A608 /* HelplineAdministrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelplineAdministrationViewController.swift; sourceTree = "<group>"; };
-		EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +123,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B76C2FA410C19A9991E43D8C /* Pods_RideSafe.framework in Frameworks */,
+				C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09B9843564E829FFDA27C580 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */,
+				A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2C1566892051CDE000B4067C /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,8 +176,8 @@
 				2C1566892051CDE000B4067C /* Custom UI */,
 				2C1EE2AE204E5A440093B3BF /* RideSafe */,
 				2C1EE2AD204E5A440093B3BF /* Products */,
-				4B157561EAB4B787B2AA1CDF /* Pods */,
-				E28FEEC0C9735859C1319CF5 /* Frameworks */,
+				09B9843564E829FFDA27C580 /* Pods */,
+				8466DFB9820459677EFEA6B8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,13 +264,12 @@
 			path = getProfile;
 			sourceTree = "<group>";
 		};
-		4B157561EAB4B787B2AA1CDF /* Pods */ = {
+		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */,
-				3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */,
+				A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B821B2AF205D0C9B007D1F32 /* Education */ = {
@@ -319,14 +327,6 @@
 			path = HelpLine;
 			sourceTree = "<group>";
 		};
-		E28FEEC0C9735859C1319CF5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EAD7408D47E5895AE7CCAD7B /* Pods_RideSafe.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,12 +334,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */;
 			buildPhases = (
-				BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */,
+				91533EB2DEB4513B7994C958 /* [CP] Check Pods Manifest.lock */,
 				2C1EE2A8204E5A440093B3BF /* Sources */,
 				2C1EE2A9204E5A440093B3BF /* Frameworks */,
 				2C1EE2AA204E5A440093B3BF /* Resources */,
-				D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */,
-				7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */,
+				269D99F0DFFF07F916A454E6 /* [CP] Embed Pods Frameworks */,
+				8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -405,40 +405,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7CD442981AE5B9B538FF84DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDC518B98A9D6A1A1BD34684 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RideSafe-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D2C777CF3F4B270E122BD011 /* [CP] Embed Pods Frameworks */ = {
+		269D99F0DFFF07F916A454E6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -468,6 +435,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91533EB2DEB4513B7994C958 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RideSafe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -651,7 +651,7 @@
 		};
 		2C1EE2BF204E5A440093B3BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E8586835E37579BB59AB1D9 /* Pods-RideSafe.debug.xcconfig */;
+			baseConfigurationReference = 4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
@@ -669,7 +669,7 @@
 		};
 		2C1EE2C0204E5A440093B3BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3F5133A799A8FDCB1B18DE29 /* Pods-RideSafe.release.xcconfig */;
+			baseConfigurationReference = A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
