@@ -17,6 +17,7 @@ enum ServiceType: String {
     case getEducationalMediaListByType = "getEducationalMediaListByType"
     case getCitizenProfile = "getCitizenProfile"
     case updateCitizenProfile = "updateCitizenProfile"
+    case getDepartmentDirectoryListByDepartment = "getDepartmentDirectoryListByDepartment"
 
 }
 

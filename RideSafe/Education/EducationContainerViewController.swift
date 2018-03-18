@@ -44,11 +44,6 @@ class EducationContainerViewController: UIViewController {
         self.containerView.addSubview((educationPDFVideoController?.view)!)
         self.addChildViewController(educationPDFVideoController!)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     @IBAction func segmentedChanged(_ sender: SWSegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
