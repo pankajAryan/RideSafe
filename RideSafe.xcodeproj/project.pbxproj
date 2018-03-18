@@ -47,6 +47,8 @@
 		B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0B205D920B00ACFF0E /* HelpLineTableViewCell.swift */; };
 		B841ED10205D9ACA00ACFF0E /* DirectoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0E205D9ACA00ACFF0E /* DirectoryResponse.swift */; };
 		B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0F205D9ACA00ACFF0E /* Directory.swift */; };
+		B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84DB416205E32710000A256 /* EmergencyContact.storyboard */; };
+		B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */; };
 		B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32EC205D108B00A6A975 /* MediaResponse.swift */; };
 		B86F32EF205D108C00A6A975 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32ED205D108C00A6A975 /* Media.swift */; };
 		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
@@ -102,6 +104,8 @@
 		B841ED0B205D920B00ACFF0E /* HelpLineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpLineTableViewCell.swift; sourceTree = "<group>"; };
 		B841ED0E205D9ACA00ACFF0E /* DirectoryResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryResponse.swift; sourceTree = "<group>"; };
 		B841ED0F205D9ACA00ACFF0E /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
+		B84DB416205E32710000A256 /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
+		B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
 		B86F32EC205D108B00A6A975 /* MediaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
 		B86F32ED205D108C00A6A975 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				B84DB415205E32390000A256 /* EmergencyContact */,
 				B8AFD87A205AD2270044A608 /* HelpLine */,
 				B8AFD871205AD1F20044A608 /* Education */,
 				2C1566932056A6F900B4067C /* SideSlider */,
@@ -275,6 +280,15 @@
 				B841ED0F205D9ACA00ACFF0E /* Directory.swift */,
 			);
 			path = HelpLine;
+			sourceTree = "<group>";
+		};
+		B84DB415205E32390000A256 /* EmergencyContact */ = {
+			isa = PBXGroup;
+			children = (
+				B84DB416205E32710000A256 /* EmergencyContact.storyboard */,
+				B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */,
+			);
+			path = EmergencyContact;
 			sourceTree = "<group>";
 		};
 		B8AFD871205AD1F20044A608 /* Education */ = {
@@ -380,6 +394,7 @@
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
+				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
@@ -465,6 +480,7 @@
 				B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */,
 				B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
+				B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */,
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
