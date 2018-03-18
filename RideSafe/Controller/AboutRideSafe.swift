@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class AboutRideSafe: UIViewController {
 
@@ -16,3 +17,4 @@ class AboutRideSafe: UIViewController {
         setBackButton()
     }
 }
+

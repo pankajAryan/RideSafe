@@ -8,9 +8,16 @@
 
 import UIKit
 import UIDropDown
+import SwiftLocation
+import CoreLocation
+import PromiseKit
 
-class DashboardController: UIViewController, MenuCellDelegte {
+class DashboardController: UIViewController {
     
+    @IBOutlet weak var vehicleThirdField: UITextField!
+    @IBOutlet weak var vehicleSecondField: UITextField!
+    @IBOutlet weak var vehicleFirstField: UITextField!
+    @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
     @IBOutlet weak var vehicleTypeView: UIView!
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
@@ -18,8 +25,11 @@ class DashboardController: UIViewController, MenuCellDelegte {
     var vehicleType = ""
     var drivingIssues:[DropDownDataSource] = []
     
+    private var currentLocation:CLLocation?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Locator.requestAuthorizationIfNeeded()
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         makeVehicleDropDown()
@@ -33,8 +43,16 @@ class DashboardController: UIViewController, MenuCellDelegte {
         makeDrivingIssuesCatagory()
     }
     
+    @IBAction func reportButtonClicked(_ sender: UIButton) {
+        getLoation().then { location -> () in
+            self.reportIssues(location: location)
+            }.catch { error in
+                print(error)
+        }
+    }
+    
     private func makeVehicleDropDown() {
-       let dropDown = UIDropDown(frame: vehicleTypeView.frame)
+        let dropDown = UIDropDown(frame: vehicleTypeView.frame)
         dropDown.hideOptionsWhenSelect = true
         dropDown.animationType = .Classic
         dropDown.tableHeight = 180
@@ -53,6 +71,7 @@ class DashboardController: UIViewController, MenuCellDelegte {
         
         retriveJSONFrom(fileName: "VerifyOTPResponse").then { response -> () in
             let sresponse =  VerifyOTPResponse.init(dictionary: response as NSDictionary)
+            SharedSettings.shared.verifyOTPResponse = sresponse
             let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
             if let drivingIssues = drivingIssuesCatList {
                 for drivingIssu in drivingIssues {
@@ -61,8 +80,8 @@ class DashboardController: UIViewController, MenuCellDelegte {
             }
             vc.dropDownDataSource = drivingissues
             self.navigationController?.pushViewController(vc, animated: true)
-
-        }.catch { error in }
+            
+            }.catch { error in }
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
@@ -87,6 +106,38 @@ class DashboardController: UIViewController, MenuCellDelegte {
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
         self.navigationController?.pushViewController(educationContainerController, animated: true)
     }
+    
+    func getLoation() -> Promise<CLLocation> {
+        
+        return Promise {fulfill,reject in
+            Locator.currentPosition(accuracy: .room, onSuccess: { loc -> (Void) in
+                fulfill(loc)
+            }) { (err, loc) -> (Void) in
+                reject(err)
+            }
+        }
+    }
+    
+    
+    func reportIssues(location:CLLocation) {
+        NetworkManager().doServiceCall(serviceType: .reportDrivingIssue, params: ["lat":"\(location.coordinate.latitude)",
+            "lon": "\(location.coordinate.longitude)",
+            "description": descriptionText.text,
+            "categoryIds": catagoryIds(),
+            "postedBy": SharedSettings.shared.verifyOTPResponse?.responseObject?.citizenId ?? "",
+            "uploadedImageURL": "h.png",
+            "vehicleNumber": vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! ,
+            "vehicleType": vehicleType])
+            .then { response -> () in
+                
+            }.catch { error in
+        }
+    }
+    
+    
+}
+
+extension DashboardController: MenuCellDelegte {
     func cellCllicked(action: SliderActions?) {
         
         guard let action = action else { return  }
@@ -113,11 +164,9 @@ class DashboardController: UIViewController, MenuCellDelegte {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         self.meuClicked(UIBarButtonItem())
-
+        
     }
-    
 }
-
 
 extension DashboardController: DropDownDelgate{
     func selectedItems(_ items: [DropDownDataSource]) {
@@ -127,5 +176,13 @@ extension DashboardController: DropDownDelgate{
             allIssues =  allIssues + issue.name! + ","
         }
         drivingIssuesLabel.text = String(describing: allIssues.dropLast())
+    }
+    
+    private func catagoryIds() -> String {
+        var ids = ""
+        for id in drivingIssues {
+            ids =  ids + id.id! + ""
+        }
+        return String(describing: ids.dropLast())
     }
 }

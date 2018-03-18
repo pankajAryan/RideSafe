@@ -32,7 +32,7 @@ class NetworkManager {
                     break
                 case .failure(let error):
                     #if DEBUG
-                        print("❌ response code", response.response?.statusCode)
+                        print("❌ response code: \(String(describing:  response.response?.statusCode))")
                     #endif
                     reject(error)
                     SwiftLoader.hide()

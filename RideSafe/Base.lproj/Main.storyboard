@@ -108,7 +108,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
-                                        <rect key="frame" x="0.0" y="-378" width="343" height="52"/>
+                                        <rect key="frame" x="0.0" y="-326" width="343" height="52"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kbd-yc-deP">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="36"/>
@@ -393,7 +393,7 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E.g: 01C" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGo-bw-ObZ">
                                         <rect key="frame" x="118.5" y="0.0" width="98" height="30"/>
@@ -454,6 +454,9 @@
                                     <constraint firstAttribute="width" constant="124" id="Zb2-bw-ajk"/>
                                 </constraints>
                                 <state key="normal" title="Report"/>
+                                <connections>
+                                    <action selector="reportButtonClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="FpW-BG-7ck"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
@@ -512,9 +515,13 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="descriptionText" destination="EdH-7F-eR6" id="ssI-ss-GCg"/>
                         <outlet property="drivingIssuesLabel" destination="Htp-Lj-Me7" id="7pv-r5-hdp"/>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
+                        <outlet property="vehicleFirstField" destination="lRG-c1-AZt" id="oBK-9Q-54f"/>
+                        <outlet property="vehicleSecondField" destination="gGo-bw-ObZ" id="Ryz-5Z-l3D"/>
+                        <outlet property="vehicleThirdField" destination="PEJ-LD-6az" id="XTA-SF-8NV"/>
                         <outlet property="vehicleTypeView" destination="Nir-Mn-CLa" id="xxQ-Bo-KBl"/>
                     </connections>
                 </viewController>

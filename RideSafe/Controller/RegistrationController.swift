@@ -31,7 +31,7 @@ class RegistrationController: UIViewController {
                                                                                    "order": "A","status": "T"])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
-                let dictList =        json4Swift_Base?.responseObject?.districtList
+                let dictList = json4Swift_Base?.responseObject?.districtList
                 SharedSettings.shared.districtResponse = json4Swift_Base
                 self.makeDropDow(dictList)
                 
