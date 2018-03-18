@@ -36,6 +36,10 @@ class DashboardController: UIViewController {
         drivingIssuesLabel.addGestureRecognizer(tapGesture)
         self.view.bringSubview(toFront: self.sideMenu)
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vehicleFirstField.text = "name".localized
+    }
     
     @objc func tapFunction() {
         makeDrivingIssuesCatagory()
