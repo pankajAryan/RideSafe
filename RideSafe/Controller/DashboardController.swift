@@ -44,12 +44,31 @@ class DashboardController: UIViewController {
     }
     
     @IBAction func reportButtonClicked(_ sender: UIButton) {
-        getLoation().then { location -> () in
-            self.reportIssues(location: location)
-            }.catch { error in
-                print(error)
+        getLoation()
+    }
+    func getLoation() {
+        Locator.currentPosition(accuracy: .room, onSuccess: { loc -> (Void) in
+            self.reportIssues(location: loc)
+        }) { (err, loc) -> (Void) in
+            print(err)
         }
     }
+    
+    func reportIssues(location:CLLocation) {
+        NetworkManager().doServiceCall(serviceType: .reportDrivingIssue, params: ["lat":"\(location.coordinate.latitude)",
+            "lon": "\(location.coordinate.longitude)",
+            "description": descriptionText.text,
+            "categoryIds": catagoryIds(),
+            "postedBy": SharedSettings.shared.verifyOTPResponse?.responseObject?.citizenId ?? "",
+            "uploadedImageURL": "h.png",
+            "vehicleNumber": vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! ,
+            "vehicleType": vehicleType])
+            .then { response -> () in
+                print("report successfully submited")
+            }.catch { error in
+        }
+    }
+    
     
     private func makeVehicleDropDown() {
         let dropDown = UIDropDown(frame: vehicleTypeView.frame)
@@ -106,34 +125,6 @@ class DashboardController: UIViewController {
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
         self.navigationController?.pushViewController(educationContainerController, animated: true)
     }
-    
-    func getLoation() -> Promise<CLLocation> {
-        
-        return Promise {fulfill,reject in
-            Locator.currentPosition(accuracy: .room, onSuccess: { loc -> (Void) in
-                fulfill(loc)
-            }) { (err, loc) -> (Void) in
-                reject(err)
-            }
-        }
-    }
-    
-    
-    func reportIssues(location:CLLocation) {
-        NetworkManager().doServiceCall(serviceType: .reportDrivingIssue, params: ["lat":"\(location.coordinate.latitude)",
-            "lon": "\(location.coordinate.longitude)",
-            "description": descriptionText.text,
-            "categoryIds": catagoryIds(),
-            "postedBy": SharedSettings.shared.verifyOTPResponse?.responseObject?.citizenId ?? "",
-            "uploadedImageURL": "h.png",
-            "vehicleNumber": vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! ,
-            "vehicleType": vehicleType])
-            .then { response -> () in
-                
-            }.catch { error in
-        }
-    }
-    
     
 }
 
