@@ -14,7 +14,6 @@
 		2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15669F2056A76D00B4067C /* DashboardController.swift */; };
 		2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A12057DCA000B4067C /* MyProfile.swift */; };
 		2C1566A42057DCC300B4067C /* MyReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A32057DCC300B4067C /* MyReport.swift */; };
-		2C1566A62057DCD800B4067C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A52057DCD800B4067C /* SettingController.swift */; };
 		2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A72057DCF800B4067C /* AboutRideSafe.swift */; };
 		2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A92058013A00B4067C /* RideSafeViewController.swift */; };
 		2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AB2058238800B4067C /* RegistrationController.swift */; };
@@ -37,6 +36,8 @@
 		2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */; };
 		2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565D205D5FC0008F9104 /* Citizen.swift */; };
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
+		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
+		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
 		B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
 		B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
@@ -68,7 +69,6 @@
 		2C15669F2056A76D00B4067C /* DashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardController.swift; sourceTree = "<group>"; };
 		2C1566A12057DCA000B4067C /* MyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfile.swift; sourceTree = "<group>"; };
 		2C1566A32057DCC300B4067C /* MyReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyReport.swift; sourceTree = "<group>"; };
-		2C1566A52057DCD800B4067C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2C1566A72057DCF800B4067C /* AboutRideSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRideSafe.swift; sourceTree = "<group>"; };
 		2C1566A92058013A00B4067C /* RideSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeViewController.swift; sourceTree = "<group>"; };
 		2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
@@ -93,6 +93,8 @@
 		2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitizenProfile.swift; sourceTree = "<group>"; };
 		2C3D565D205D5FC0008F9104 /* Citizen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
+		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
+		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
 				B8AFD87A205AD2270044A608 /* HelpLine */,
 				B8AFD871205AD1F20044A608 /* Education */,
@@ -237,10 +240,10 @@
 				2C15669F2056A76D00B4067C /* DashboardController.swift */,
 				2C1566A12057DCA000B4067C /* MyProfile.swift */,
 				2C1566A32057DCC300B4067C /* MyReport.swift */,
-				2C1566A52057DCD800B4067C /* SettingController.swift */,
 				2C1566A72057DCF800B4067C /* AboutRideSafe.swift */,
 				2C1566A92058013A00B4067C /* RideSafeViewController.swift */,
 				2C1566AB2058238800B4067C /* RegistrationController.swift */,
+				2CF24341205E7880007E696C /* SettingController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -262,6 +265,14 @@
 				2C3D565D205D5FC0008F9104 /* Citizen.swift */,
 			);
 			path = getProfile;
+			sourceTree = "<group>";
+		};
+		2CF24344205E7B33007E696C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2CF24345205E7B5D007E696C /* LanguageCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
@@ -479,12 +490,12 @@
 			files = (
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
-				2C1566A62057DCD800B4067C /* SettingController.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
 				B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */,
 				B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
+				2CF24342205E7880007E696C /* SettingController.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */,
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
@@ -509,6 +520,7 @@
 				2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */,
 				2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
+				2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */,
 				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,

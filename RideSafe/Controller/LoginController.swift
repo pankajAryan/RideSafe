@@ -77,9 +77,15 @@ class LoginController: UIViewController {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
                self.writeJSONTo(fileName: "VerifyOTPResponse", data: response)
-                self.gotoRegistrationPage()
+                VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
             }.catch { error in
         }
+    }
+    
+    private func gotoDashboard() {
+        let str =  UIStoryboard(name: "Main", bundle: nil)
+        let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func gotoRegistrationPage() {
