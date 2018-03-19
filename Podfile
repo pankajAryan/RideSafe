@@ -12,6 +12,5 @@ pod 'UIDropDown'
 pod 'YouTubePlayer-Swift', '~> 1.0'
 pod 'SWSegmentedControl'
 pod 'SDWebImage', '~> 4.3'
-pod 'SwiftLocation'
 pod 'Toast-Swift', '~> 3.0.1'
 end
