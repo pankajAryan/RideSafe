@@ -36,7 +36,7 @@ extension UIViewController {
     
     func writeJSONTo(fileName:String,data:Any) {
         guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        let fileUrl = documentDirectoryUrl.appendingPathComponent(fileName + ".json")
+        let fileUrl = documentDirectoryUrl.appendingPathComponent( selectedLanguage + fileName + ".json")
         do {
             print("file url is:",fileUrl)
             let data = try JSONSerialization.data(withJSONObject: data, options: [])
@@ -69,8 +69,34 @@ extension UIViewController {
     
     func clearUserDefault() {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.isUserLogedin.rawValue)
-        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userID.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.citizenId.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userType.rawValue)
+    }
+    
+    var citizenId:String {
+        get {
+            guard let citizenId = UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) else { return "" }
+            return citizenId
+        }
+    }
+    
+    var userType:String {
+        get {
+            guard let usertype = UserDefaults.standard.string(forKey: UserDefaultsKeys.userType.rawValue) else { return "" }
+            return usertype
+        }
+    }
+    
+    var selectedLanguage:String {
+        get {
+             return UserDefaults.standard.string(forKey: Localization.selectedLanguage.rawValue) ?? "E"
+        }
+    }
+    
+    var deviceID:String {
+        get {
+           return  UIDevice.current.identifierForVendor!.uuidString
+        }
     }
 }
 

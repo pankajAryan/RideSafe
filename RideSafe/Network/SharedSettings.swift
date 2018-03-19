@@ -13,5 +13,5 @@ class SharedSettings {
     private init() { }
     static let shared = SharedSettings()
     var districtResponse:DistrictResponse?
-    var verifyOTPResponse:VerifyOTPResponse?
+    var registerPushNotificationresponse:RegisterCitizenPushNotificationResponse?
 }

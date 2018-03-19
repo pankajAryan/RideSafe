@@ -78,12 +78,13 @@ class LoginController: UIViewController {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
                 self.showToast(response: response)
+                self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
                 let verifyResponseObj = VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject
-                let userid = verifyResponseObj?.citizenId
+                let citizenid = verifyResponseObj?.citizenId
                 let usertype = verifyResponseObj?.userType
-                if let user_type = usertype, let id = userid {
-                    UserDefaults.standard.set(user_type, forKey: UserDefaultsKeys.userID.rawValue)
-                    UserDefaults.standard.set(id, forKey: UserDefaultsKeys.userType.rawValue)
+                if let user_type = usertype, let id = citizenid {
+                    UserDefaults.standard.set(id, forKey: UserDefaultsKeys.citizenId.rawValue)
+                    UserDefaults.standard.set(user_type, forKey: UserDefaultsKeys.userType.rawValue)
                     UserDefaults.standard.synchronize()
                 }
                 verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
@@ -93,6 +94,9 @@ class LoginController: UIViewController {
     }
     
     private func gotoDashboard() {
+        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
+        UserDefaults.standard.synchronize()
+
         let str =  UIStoryboard(name: "Main", bundle: nil)
         let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
         self.navigationController?.pushViewController(vc, animated: true)

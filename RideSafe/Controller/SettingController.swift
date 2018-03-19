@@ -16,16 +16,16 @@ class SettingController: UIViewController {
         var localName = ""
         var isChecked = false
     }
-    var languages = [languageModel(lanCode:"en", langName: "English",localName:"", isChecked: false),
-                     languageModel(lanCode:"hi-IN", langName: "Hindi",localName:"हिन्दी", isChecked: false),
-                     languageModel(lanCode:"ur-IN", langName: "Urdu",localName:"اردو", isChecked: false)]
+    var languages = [languageModel(lanCode:"E", langName: "English",localName:"", isChecked: false),
+                     languageModel(lanCode:"H", langName: "Hindi",localName:"हिन्दी", isChecked: false),
+                     languageModel(lanCode:"U", langName: "Urdu",localName:"اردو", isChecked: false)]
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
     }
     @IBAction func SaveClicked(_ sender: UIButton) {
-       let selectedLanguage = languages.filter { $0.isChecked == true }.first
-        UserDefaults.standard.set(selectedLanguage?.lanCode, forKey: "localizedLanguage")
+       let langselected = languages.filter { $0.isChecked == true }.first
+        UserDefaults.standard.set(langselected?.lanCode, forKey: Localization.selectedLanguage.rawValue)
         UserDefaults.standard.synchronize()
         self.navigationController?.popViewController(animated: true)
     }
@@ -58,30 +58,4 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
             cell?.accessoryType = .none
             languages[indexPath.row].isChecked = !languages[indexPath.row].isChecked
         }
-    
 }
-
-extension String {
-    var localized: String {
-        
-        if let _ = UserDefaults.standard.string(forKey: "localizedLanguage") {} else {
-            // we set a default, just in case
-            UserDefaults.standard.set("en", forKey: "localizedLanguage")
-            UserDefaults.standard.synchronize()
-        }
-
-        
-        let lang = UserDefaults.standard.string(forKey: "localizedLanguage")
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        let bundle = Bundle(path: path!)
-        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
-    }
-}
-
-/*
- Usage
- 
- Just add .localized to your string, as such :
- 
- "MyString".localized , MyString being a key in the Localizable.strings file
- */

@@ -8,7 +8,6 @@
 
 import UIKit
 import UIDropDown
-import SwiftLocation
 import CoreLocation
 import PromiseKit
 
@@ -27,7 +26,6 @@ class DashboardController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Locator.requestAuthorizationIfNeeded()
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         makeVehicleDropDown()
@@ -35,15 +33,25 @@ class DashboardController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         drivingIssuesLabel.addGestureRecognizer(tapGesture)
         self.view.bringSubview(toFront: self.sideMenu)
-        
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isFirstTimeLaunch.rawValue) == false {
+            showWelcomeAlert()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        vehicleFirstField.text = "name".localized
-        
-        if UserDefaults.standard.bool(forKey: "isFirstTimeLaunch") == false {
-            showWelcomeAlert()
+        RegisterForCitizenPushNotification()
+    }
+    
+    func RegisterForCitizenPushNotification() {
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .registerCitizenPushNotificationId, params: ["citizenId": citizenId,
+                                                                                                     "notificationId":  deviceID,
+                                                                                                     "language": selectedLanguage])
+            }.then { response -> () in
+                self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
+            }.catch { (error) in
+                
         }
     }
     
@@ -61,22 +69,16 @@ class DashboardController: UIViewController {
     }
     
     @IBAction func reportButtonClicked(_ sender: UIButton) {
-        getLoation()
+        
     }
-    func getLoation() {
-        Locator.currentPosition(accuracy: .room, onSuccess: { loc -> (Void) in
-            self.reportIssues(location: loc)
-        }) { (err, loc) -> (Void) in
-            print(err)
-        }
-    }
+    
     
     func reportIssues(location:CLLocation) {
         NetworkManager().doServiceCall(serviceType: .reportDrivingIssue, params: ["lat":"\(location.coordinate.latitude)",
             "lon": "\(location.coordinate.longitude)",
             "description": descriptionText.text,
             "categoryIds": catagoryIds(),
-            "postedBy": SharedSettings.shared.verifyOTPResponse?.responseObject?.citizenId ?? "",
+            "postedBy": citizenId,
             "uploadedImageURL": "h.png",
             "vehicleNumber": vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! ,
             "vehicleType": vehicleType])
@@ -98,6 +100,7 @@ class DashboardController: UIViewController {
             self.vehicleType = option
         }
         self.view.addSubview(dropDown)
+        
     }
     
     private func makeDrivingIssuesCatagory() {
@@ -105,15 +108,37 @@ class DashboardController: UIViewController {
         vc.dropDownDelgate = self
         var drivingissues = [DropDownDataSource]()
         
-        retriveJSONFrom(fileName: "VerifyOTPResponse").then { response -> () in
-            let sresponse =  VerifyOTPResponse.init(dictionary: response as NSDictionary)
-            SharedSettings.shared.verifyOTPResponse = sresponse
-            let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
-            if let drivingIssues = drivingIssuesCatList {
-                for drivingIssu in drivingIssues {
-                    drivingissues.append(DropDownDataSource(name: drivingIssu.enName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+        retriveJSONFrom(fileName: selectedLanguage + FileNames.response.rawValue).then { response -> () in
+            switch self.selectedLanguage {
+            case "U":
+                let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
+                SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
+                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
+                if let drivingIssues = drivingIssuesCatList {
+                    for drivingIssu in drivingIssues {
+                        drivingissues.append(DropDownDataSource(name: drivingIssu.urName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+                    }
+                }
+            case "H":
+                let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
+                SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
+                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
+                if let drivingIssues = drivingIssuesCatList {
+                    for drivingIssu in drivingIssues {
+                        drivingissues.append(DropDownDataSource(name: drivingIssu.hiName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+                    }
+                }
+            default :
+                let sresponse =  VerifyOTPResponse.init(dictionary: response as NSDictionary)
+                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
+                if let drivingIssues = drivingIssuesCatList {
+                    for drivingIssu in drivingIssues {
+                        drivingissues.append(DropDownDataSource(name: drivingIssu.enName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+                    }
                 }
             }
+            
+            
             vc.dropDownDataSource = drivingissues
             self.navigationController?.pushViewController(vc, animated: true)
             

@@ -38,11 +38,12 @@
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
-		2CF24356205EA403007E696C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF24354205EA403007E696C /* Localizable.strings */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
 		2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */; };
 		2CF2435E20600242007E696C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2435D20600242007E696C /* AppConstants.swift */; };
 		2CF24360206010B6007E696C /* RideSafeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */; };
+		2CF2436D206031A2007E696C /* RegisterCitizenPushNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */; };
+		2CF2436E206031A2007E696C /* RegisterCitizenPushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2436B206031A2007E696C /* RegisterCitizenPushNotification.swift */; };
 		B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */; };
 		B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
@@ -102,13 +103,12 @@
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
-		2CF24355205EA403007E696C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		2CF24357205EA486007E696C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "../hi-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		2CF24358205EA49B007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "../ur-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
 		2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeAlert.storyboard; sourceTree = "<group>"; };
 		2CF2435D20600242007E696C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeNavigationController.swift; sourceTree = "<group>"; };
+		2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCitizenPushNotificationResponse.swift; sourceTree = "<group>"; };
+		2CF2436B206031A2007E696C /* RegisterCitizenPushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCitizenPushNotification.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -211,7 +211,6 @@
 			isa = PBXGroup;
 			children = (
 				B811FE1E205F5052005F327B /* RoadInfraIssue */,
-				2CF24353205EA403007E696C /* en.lproj */,
 				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
 				B8AFD87A205AD2270044A608 /* HelpLine */,
@@ -233,6 +232,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2CF2436820603190007E696C /* registerCitizenPushNotification */,
 				B841ED0D205D9ACA00ACFF0E /* HelpLine */,
 				2C3D565B205D5FC0008F9104 /* getProfile */,
 				B821B2AF205D0C9B007D1F32 /* Education */,
@@ -297,12 +297,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		2CF24353205EA403007E696C /* en.lproj */ = {
+		2CF2436820603190007E696C /* registerCitizenPushNotification */ = {
 			isa = PBXGroup;
 			children = (
-				2CF24354205EA403007E696C /* Localizable.strings */,
+				2CF2436B206031A2007E696C /* RegisterCitizenPushNotification.swift */,
+				2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */,
 			);
-			path = en.lproj;
+			path = registerCitizenPushNotification;
 			sourceTree = "<group>";
 		};
 		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
@@ -423,8 +424,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"hi-IN",
-				"ur-IN",
 			);
 			mainGroup = 2C1EE2A3204E5A440093B3BF;
 			productRefGroup = 2C1EE2AD204E5A440093B3BF /* Products */;
@@ -443,7 +442,6 @@
 			files = (
 				B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
-				2CF24356205EA403007E696C /* Localizable.strings in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
@@ -532,6 +530,7 @@
 			files = (
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
+				2CF2436E206031A2007E696C /* RegisterCitizenPushNotification.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
 				2CF2435E20600242007E696C /* AppConstants.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
@@ -547,6 +546,7 @@
 				2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */,
 				2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
 				2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
+				2CF2436D206031A2007E696C /* RegisterCitizenPushNotificationResponse.swift in Sources */,
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
 				2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
 				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
@@ -595,16 +595,6 @@
 				2C1EE2B9204E5A440093B3BF /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		2CF24354205EA403007E696C /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CF24355205EA403007E696C /* en */,
-				2CF24357205EA486007E696C /* hi-IN */,
-				2CF24358205EA49B007E696C /* ur-IN */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

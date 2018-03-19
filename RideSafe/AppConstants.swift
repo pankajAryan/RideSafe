@@ -10,8 +10,17 @@ import Foundation
 
 enum UserDefaultsKeys:String {
     case isUserLogedin = "isUserLogedin"
-    case userID = "userID"
+    case citizenId = "citizenId"
     case userType = "userType"
+    case isFirstTimeLaunch = "isFirstTimeLaunch"
+}
+
+enum Localization:String {
+    case selectedLanguage = "selectedLanguage"
+}
+
+enum FileNames:String {
+    case response = "response"
 }
 
 
