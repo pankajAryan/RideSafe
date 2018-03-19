@@ -41,6 +41,8 @@
 		2CF24356205EA403007E696C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF24354205EA403007E696C /* Localizable.strings */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
 		2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */; };
+		B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */; };
+		B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
 		B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
 		B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
@@ -106,6 +108,8 @@
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoadInfraIssue.storyboard; sourceTree = "<group>"; };
+		B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoadInfraIssueViewController.swift; sourceTree = "<group>"; };
 		B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 		B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoTableViewCell.xib; sourceTree = "<group>"; };
 		B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				B811FE1E205F5052005F327B /* RoadInfraIssue */,
 				2CF24353205EA403007E696C /* en.lproj */,
 				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
@@ -300,6 +305,15 @@
 				A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B811FE1E205F5052005F327B /* RoadInfraIssue */ = {
+			isa = PBXGroup;
+			children = (
+				B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */,
+				B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */,
+			);
+			path = RoadInfraIssue;
 			sourceTree = "<group>";
 		};
 		B821B2AF205D0C9B007D1F32 /* Education */ = {
@@ -425,6 +439,7 @@
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
 				2CF24356205EA403007E696C /* Localizable.strings in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
+				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
@@ -532,6 +547,7 @@
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
 				2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
 				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
+				B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */,
 				B841ED10205D9ACA00ACFF0E /* DirectoryResponse.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,
