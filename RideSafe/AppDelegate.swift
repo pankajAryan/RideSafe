@@ -11,12 +11,36 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setRootVC()
         return true
+    }
+    
+    private func setRootVC() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        UserDefaults.standard.bool(forKey:UserDefaultsKeys.isUserLogedin.rawValue) == true ? showRootVC(root: .Dashboard) : showRootVC(root: .Login)
+    }
+    
+    func showRootVC(root:RootController) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var initialViewController:UIViewController?
+        switch root {
+        case .Dashboard:
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "dashboard") as? DashboardController
+        case .Login:
+            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController") as? LoginController
+        }
+        
+        guard let initialVC = initialViewController else { return  }
+        let navController = storyboard.instantiateViewController(withIdentifier: "RideSafeNavigationController") as! RideSafeNavigationController
+        navController.viewControllers = [initialVC]
+        self.window?.rootViewController = navController
+        self.window?.makeKeyAndVisible()
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,5 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+enum RootController {
+    case Dashboard
+    case Login
 }
 

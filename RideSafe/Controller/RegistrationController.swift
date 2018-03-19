@@ -61,6 +61,8 @@ class RegistrationController: UIViewController {
         firstly{
             NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": self.mobileNumber.text!,"districtId": selectedDistrictID])
             }.then { response -> () in
+                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
+                UserDefaults.standard.synchronize()
                 self.showToast(response: response)
                 self.gotodashBoard()
             }.catch { (error) in

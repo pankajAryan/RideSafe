@@ -41,6 +41,8 @@
 		2CF24356205EA403007E696C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF24354205EA403007E696C /* Localizable.strings */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
 		2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */; };
+		2CF2435E20600242007E696C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2435D20600242007E696C /* AppConstants.swift */; };
+		2CF24360206010B6007E696C /* RideSafeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */; };
 		B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */; };
 		B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
@@ -105,6 +107,8 @@
 		2CF24358205EA49B007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "../ur-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
 		2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeAlert.storyboard; sourceTree = "<group>"; };
+		2CF2435D20600242007E696C /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeNavigationController.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +225,7 @@
 				2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
 				2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
 				2C1EE2BB204E5A440093B3BF /* Info.plist */,
+				2CF2435D20600242007E696C /* AppConstants.swift */,
 			);
 			path = RideSafe;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				2C1566A92058013A00B4067C /* RideSafeViewController.swift */,
 				2C1566AB2058238800B4067C /* RegistrationController.swift */,
 				2CF24341205E7880007E696C /* SettingController.swift */,
+				2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -531,6 +537,7 @@
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
+				2CF2435E20600242007E696C /* AppConstants.swift in Sources */,
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
 				B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */,
@@ -548,6 +555,7 @@
 				2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
 				2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */,
 				B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */,
+				2CF24360206010B6007E696C /* RideSafeNavigationController.swift in Sources */,
 				B841ED10205D9ACA00ACFF0E /* DirectoryResponse.swift in Sources */,
 				2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */,
 				2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */,

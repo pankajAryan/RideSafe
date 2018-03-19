@@ -78,8 +78,16 @@ class LoginController: UIViewController {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
                 self.showToast(response: response)
-               self.writeJSONTo(fileName: "VerifyOTPResponse", data: response)
-                VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
+                let verifyResponseObj = VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject
+                let userid = verifyResponseObj?.citizenId
+                let usertype = verifyResponseObj?.userType
+                if let user_type = usertype, let id = userid {
+                    UserDefaults.standard.set(user_type, forKey: UserDefaultsKeys.userID.rawValue)
+                    UserDefaults.standard.set(id, forKey: UserDefaultsKeys.userType.rawValue)
+                    UserDefaults.standard.synchronize()
+                }
+                verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
+                
             }.catch { error in
         }
     }

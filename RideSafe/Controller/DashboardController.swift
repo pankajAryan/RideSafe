@@ -165,14 +165,18 @@ extension DashboardController: MenuCellDelegte {
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             
         case .Share: break
-        case .Logout:  break
+        case .Logout:
+            clearUserDefault()
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+             let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+            self.navigationController?.pushViewController(loginController, animated: true)
+            self.navigationController?.viewControllers = [loginController]
         }
         
         if let vc = vc {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         self.meuClicked(UIBarButtonItem())
-        
     }
 }
 
