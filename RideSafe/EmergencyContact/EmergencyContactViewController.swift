@@ -10,6 +10,9 @@ import UIKit
 
 class EmergencyContactViewController: UIViewController {
 
+    @IBOutlet weak var contact1: UITextField!
+    @IBOutlet weak var contact2: UITextField!
+    @IBOutlet weak var contact3: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +24,15 @@ class EmergencyContactViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func button1Clicked(_ sender: Any) {
     }
-    */
-
+    
+    @IBAction func button2Clicked(_ sender: Any) {
+    }
+    
+    @IBAction func button3Clicked(_ sender: Any) {
+    }
+    @IBAction func saveButtonClicked(_ sender: Any) {
+    }
+    
 }

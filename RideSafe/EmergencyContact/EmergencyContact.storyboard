@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Emergency Contact View Controller-->
         <scene sceneID="zfM-sp-Rox">
             <objects>
-                <viewController id="7rg-ux-iL9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmergencyContactViewController" id="7rg-ux-iL9" customClass="EmergencyContactViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bnm-8l-SgP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,11 +35,17 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7rg-ux-iL9" id="60h-Cn-d6M"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJF-xA-ZCg">
                                 <rect key="frame" x="322" y="80" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_contact_directory"/>
+                                <connections>
+                                    <action selector="button1Clicked:" destination="7rg-ux-iL9" eventType="touchUpInside" id="js1-jo-hLm"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB1-nP-Rxe">
                                 <rect key="frame" x="16" y="138" width="87" height="21"/>
@@ -54,11 +60,17 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7rg-ux-iL9" id="mZ8-9Z-uTO"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tM-YR-hmd">
                                 <rect key="frame" x="322" y="168" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_contact_directory"/>
+                                <connections>
+                                    <action selector="button2Clicked:" destination="7rg-ux-iL9" eventType="touchUpInside" id="riB-OG-Dki"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGA-Z1-R38">
                                 <rect key="frame" x="20" y="224" width="87" height="21"/>
@@ -73,16 +85,35 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7rg-ux-iL9" id="b19-yp-Lu5"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNk-Pt-qbb">
                                 <rect key="frame" x="326" y="254" width="28" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="ic_contact_directory"/>
+                                <connections>
+                                    <action selector="button3Clicked:" destination="7rg-ux-iL9" eventType="touchUpInside" id="1R8-tJ-0QK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k7-KS-kRr">
+                                <rect key="frame" x="164" y="496" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonClicked:" destination="7rg-ux-iL9" eventType="touchUpInside" id="Sti-bz-wzA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="ozW-1h-87N"/>
                     </view>
+                    <connections>
+                        <outlet property="contact1" destination="hTt-6X-cmS" id="6xr-pa-zma"/>
+                        <outlet property="contact2" destination="iKS-pK-Pjv" id="Pc4-Om-8Qt"/>
+                        <outlet property="contact3" destination="ur8-Bq-iMJ" id="qbR-gU-Kx4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHp-KA-vRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
