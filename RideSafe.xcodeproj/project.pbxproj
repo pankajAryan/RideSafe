@@ -38,6 +38,9 @@
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
+		2CF24356205EA403007E696C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2CF24354205EA403007E696C /* Localizable.strings */; };
+		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
+		2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */; };
 		B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A3205CC22E007D1F32 /* VideoTableViewCell.swift */; };
 		B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B821B2A4205CC22E007D1F32 /* VideoTableViewCell.xib */; };
 		B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B2A7205CC23E007D1F32 /* PDFTableViewCell.swift */; };
@@ -95,6 +98,11 @@
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
+		2CF24355205EA403007E696C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
+		2CF24357205EA486007E696C /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "../hi-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2CF24358205EA49B007E696C /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "../ur-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
+		2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WelcomeAlert.storyboard; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +202,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				2CF24353205EA403007E696C /* en.lproj */,
 				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
 				B8AFD87A205AD2270044A608 /* HelpLine */,
@@ -271,8 +280,18 @@
 			isa = PBXGroup;
 			children = (
 				2CF24345205E7B5D007E696C /* LanguageCell.swift */,
+				2CF24359205EC80A007E696C /* WelcomeAlertController.swift */,
+				2CF2435B205EC81F007E696C /* WelcomeAlert.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		2CF24353205EA403007E696C /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				2CF24354205EA403007E696C /* Localizable.strings */,
+			);
+			path = en.lproj;
 			sourceTree = "<group>";
 		};
 		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
@@ -384,6 +403,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"hi-IN",
+				"ur-IN",
 			);
 			mainGroup = 2C1EE2A3204E5A440093B3BF;
 			productRefGroup = 2C1EE2AD204E5A440093B3BF /* Products */;
@@ -402,9 +423,11 @@
 			files = (
 				B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
+				2CF24356205EA403007E696C /* Localizable.strings in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
+				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
@@ -429,6 +452,7 @@
 				"${BUILT_PRODUCTS_DIR}/SWSegmentedControl/SWSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
 			);
@@ -440,6 +464,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
 			);
@@ -478,7 +503,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -501,6 +526,7 @@
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
+				2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */,
 				2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
 				2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
@@ -551,6 +577,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		2CF24354205EA403007E696C /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2CF24355205EA403007E696C /* en */,
+				2CF24357205EA486007E696C /* hi-IN */,
+				2CF24358205EA49B007E696C /* ur-IN */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -558,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -615,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

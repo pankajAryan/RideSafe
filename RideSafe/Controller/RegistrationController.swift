@@ -61,6 +61,7 @@ class RegistrationController: UIViewController {
         firstly{
             NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": self.mobileNumber.text!,"districtId": selectedDistrictID])
             }.then { response -> () in
+                self.showToast(response: response)
                 self.gotodashBoard()
             }.catch { (error) in
         }

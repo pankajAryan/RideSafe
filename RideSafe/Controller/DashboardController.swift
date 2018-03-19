@@ -35,6 +35,25 @@ class DashboardController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapFunction))
         drivingIssuesLabel.addGestureRecognizer(tapGesture)
         self.view.bringSubview(toFront: self.sideMenu)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        vehicleFirstField.text = "name".localized
+        
+        if UserDefaults.standard.bool(forKey: "isFirstTimeLaunch") == false {
+            showWelcomeAlert()
+        }
+    }
+    
+    private func showWelcomeAlert() {
+        if let vc = UIStoryboard(name: "WelcomeAlert", bundle: nil).instantiateViewController(withIdentifier: "WelcomeAlertController") as? WelcomeAlertController {
+            vc.modalPresentationStyle = .overCurrentContext
+            vc.modalTransitionStyle = .crossDissolve
+            self.navigationController?.present(vc, animated: true, completion: nil)
+            UserDefaults.standard.set(true, forKey: "isFirstTimeLaunch")
+        }
     }
     
     @objc func tapFunction() {

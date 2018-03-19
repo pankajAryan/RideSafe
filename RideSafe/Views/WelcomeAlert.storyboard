@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome Alert Controller-->
+        <scene sceneID="b7j-98-Oi0">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeAlertController" id="oY3-Ew-Z80" customClass="WelcomeAlertController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pdH-Xa-X39">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UR5-t3-yEI">
+                                <rect key="frame" x="40" y="80" width="295" height="527"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pc5-Th-GO8">
+                                        <rect key="frame" x="0.0" y="477" width="295" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vxO-px-WBZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="OK">
+                                            <color key="titleColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="okClicked:" destination="oY3-Ew-Z80" eventType="touchUpInside" id="QmN-Gc-xdv"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_jkgovt_logo" translatesAutoresizingMaskIntoConstraints="NO" id="eQD-g8-PdH">
+                                        <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="jVE-Pl-rdh"/>
+                                            <constraint firstAttribute="width" constant="80" id="yba-Ic-g1S"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_mvd_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wN2-Tw-9SS">
+                                        <rect key="frame" x="207" y="8" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="7HF-ye-Iha"/>
+                                            <constraint firstAttribute="width" constant="80" id="XIc-7f-mbh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sunil_kumar_sharma" translatesAutoresizingMaskIntoConstraints="NO" id="vg3-wf-VPM">
+                                        <rect key="frame" x="82.5" y="104" width="130" height="130"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="130" id="WSi-SB-lfK"/>
+                                            <constraint firstAttribute="height" constant="130" id="pM9-ja-ksp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to RIDESAFE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENg-RI-hby">
+                                        <rect key="frame" x="42" y="246" width="211" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power to prevent accidents now in your hands!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUR-rd-9K6">
+                                        <rect key="frame" x="6" y="282" width="283" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courtsey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVc-J1-OfC">
+                                        <rect key="frame" x="120" y="328" width="55.5" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motor Vehicles Department (Transport Dept. J&amp;K))" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i60-qD-8LA">
+                                        <rect key="frame" x="32" y="352" width="231" height="41"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.96862745100000003" blue="0.98039215690000003" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wN2-Tw-9SS" secondAttribute="trailing" constant="8" id="2Ci-St-Jso"/>
+                                    <constraint firstItem="i60-qD-8LA" firstAttribute="leading" secondItem="UR5-t3-yEI" secondAttribute="leading" constant="32" id="32Z-eu-qD8"/>
+                                    <constraint firstItem="vg3-wf-VPM" firstAttribute="centerX" secondItem="UR5-t3-yEI" secondAttribute="centerX" id="8Am-Cw-7Yd"/>
+                                    <constraint firstItem="QUR-rd-9K6" firstAttribute="centerX" secondItem="UR5-t3-yEI" secondAttribute="centerX" id="GiJ-SC-ILo"/>
+                                    <constraint firstItem="ENg-RI-hby" firstAttribute="top" secondItem="vg3-wf-VPM" secondAttribute="bottom" constant="12" id="ISd-zu-tyd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Pc5-Th-GO8" secondAttribute="bottom" id="KIC-kG-hmw"/>
+                                    <constraint firstItem="rVc-J1-OfC" firstAttribute="centerX" secondItem="UR5-t3-yEI" secondAttribute="centerX" id="KO0-CS-DUs"/>
+                                    <constraint firstItem="rVc-J1-OfC" firstAttribute="top" secondItem="QUR-rd-9K6" secondAttribute="bottom" constant="30" id="MG5-Jb-n3O"/>
+                                    <constraint firstItem="QUR-rd-9K6" firstAttribute="top" secondItem="ENg-RI-hby" secondAttribute="bottom" constant="12" id="REh-8R-GT1"/>
+                                    <constraint firstItem="eQD-g8-PdH" firstAttribute="top" secondItem="UR5-t3-yEI" secondAttribute="top" constant="8" id="YFd-In-ZOe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pc5-Th-GO8" secondAttribute="trailing" id="aLH-es-IL6"/>
+                                    <constraint firstItem="vg3-wf-VPM" firstAttribute="top" secondItem="eQD-g8-PdH" secondAttribute="bottom" constant="16" id="cuO-MC-iQV"/>
+                                    <constraint firstItem="eQD-g8-PdH" firstAttribute="leading" secondItem="UR5-t3-yEI" secondAttribute="leading" constant="8" id="fku-Pq-MBI"/>
+                                    <constraint firstItem="ENg-RI-hby" firstAttribute="centerX" secondItem="UR5-t3-yEI" secondAttribute="centerX" id="i0d-Ti-4aK"/>
+                                    <constraint firstAttribute="trailing" secondItem="i60-qD-8LA" secondAttribute="trailing" constant="32" id="iZx-eA-Dcf"/>
+                                    <constraint firstItem="Pc5-Th-GO8" firstAttribute="leading" secondItem="UR5-t3-yEI" secondAttribute="leading" id="jCC-zP-fux"/>
+                                    <constraint firstItem="wN2-Tw-9SS" firstAttribute="top" secondItem="UR5-t3-yEI" secondAttribute="top" constant="8" id="qxq-wP-UJR"/>
+                                    <constraint firstItem="i60-qD-8LA" firstAttribute="top" secondItem="rVc-J1-OfC" secondAttribute="bottom" constant="8" id="weR-3E-tPo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Sxt-Ii-qkI" firstAttribute="bottom" secondItem="UR5-t3-yEI" secondAttribute="bottom" constant="60" id="586-F1-jtn"/>
+                            <constraint firstItem="UR5-t3-yEI" firstAttribute="top" secondItem="Sxt-Ii-qkI" secondAttribute="top" constant="60" id="ELb-zm-act"/>
+                            <constraint firstItem="UR5-t3-yEI" firstAttribute="leading" secondItem="Sxt-Ii-qkI" secondAttribute="leading" constant="40" id="dCb-ol-nVe"/>
+                            <constraint firstItem="Sxt-Ii-qkI" firstAttribute="trailing" secondItem="UR5-t3-yEI" secondAttribute="trailing" constant="40" id="fpn-Nc-f3X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Sxt-Ii-qkI"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFu-nS-uMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="236.13193403298354"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_jkgovt_logo" width="80" height="80"/>
+        <image name="ic_mvd_logo" width="80" height="80"/>
+        <image name="ic_sunil_kumar_sharma" width="130" height="130"/>
+    </resources>
+</document>
