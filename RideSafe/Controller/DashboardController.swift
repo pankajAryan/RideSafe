@@ -157,12 +157,15 @@ class DashboardController: UIViewController {
     @IBAction func shareLiveLocationClicked(_ sender: UIButton) {
     }
     @IBAction func emergencyClicked(_ sender: UIButton) {
+        let emergencyContactViewController: EmergencyContactViewController = UIStoryboard.init(name: "EmergencyContact", bundle: nil).instantiateViewController(withIdentifier: "EmergencyContactViewController") as! EmergencyContactViewController
+        self.navigationController?.pushViewController(emergencyContactViewController, animated: true)
     }
+    
     @IBAction func helpLineClicked(_ sender: UIButton) {
         let helpLineContainerViewController: HelpLineContainerViewController = UIStoryboard.init(name: "HelpLine", bundle: nil).instantiateViewController(withIdentifier: "HelpLineContainerViewController") as! HelpLineContainerViewController
         self.navigationController?.pushViewController(helpLineContainerViewController, animated: true)
-
     }
+    
     @IBAction func educationClicked(_ sender: UIButton) {
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
         self.navigationController?.pushViewController(educationContainerController, animated: true)

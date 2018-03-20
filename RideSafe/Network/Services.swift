@@ -20,7 +20,9 @@ enum ServiceType: String {
     case getDepartmentDirectoryListByDepartment = "getDepartmentDirectoryListByDepartment"
     case reportDrivingIssue = "reportDrivingIssue"
     case registerCitizenPushNotificationId = "registerCitizenPushNotificationId"
-
+    case addEmergencyContacts = "addEmergencyContacts"
+    case updateEmergencyContacts = "updateEmergencyContacts"
+    case getEmergencyContactsList = "getEmergencyContactsList"
 }
 
 

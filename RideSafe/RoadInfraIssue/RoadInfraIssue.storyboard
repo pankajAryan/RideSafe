@@ -14,10 +14,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Road Infra Issue View Controller-->
         <scene sceneID="gcQ-ND-KCd">
             <objects>
-                <viewController id="Hum-IQ-e3f" sceneMemberID="viewController">
+                <viewController id="Hum-IQ-e3f" customClass="RoadInfraIssueViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9I-S7-nlo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,6 +28,9 @@
                                     <constraint firstAttribute="width" constant="44" id="bVI-A9-AW0"/>
                                 </constraints>
                                 <state key="normal" image="dropdown-1"/>
+                                <connections>
+                                    <action selector="dropdownButtonClicked:" destination="Hum-IQ-e3f" eventType="touchUpInside" id="Byb-aX-6nx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Road Issue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TU-px-g9k">
                                 <rect key="frame" x="16" y="41" width="291" height="19"/>
@@ -43,6 +46,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Hum-IQ-e3f" id="T7G-2L-34F"/>
+                                </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46o-Oh-vWa">
                                 <rect key="frame" x="17" y="337" width="80" height="80"/>
@@ -51,14 +57,23 @@
                                     <constraint firstAttribute="height" constant="80" id="gxq-VV-Dcw"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera"/>
+                                <connections>
+                                    <action selector="openCameraClicked:" destination="Hum-IQ-e3f" eventType="touchUpInside" id="8kD-sw-XHu"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-0M-MEu">
                                 <rect key="frame" x="16" y="433" width="343" height="52"/>
-                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.70980392156862748" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="7Jk-e6-rGW"/>
                                 </constraints>
-                                <state key="normal" title="Report"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Report">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportButtonClicked:" destination="Hum-IQ-e3f" eventType="touchUpInside" id="lEt-d5-9dL"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G0t-F7-SIW">
                                 <rect key="frame" x="119" y="238" width="240" height="179"/>
@@ -88,6 +103,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="f8a-xM-N4f"/>
                     </view>
+                    <connections>
+                        <outlet property="dropDownButton" destination="foZ-23-Lxm" id="Z5w-4I-1uU"/>
+                        <outlet property="issueDiscriptionTextView" destination="7Kh-hi-RG9" id="fbw-fS-Uyc"/>
+                        <outlet property="issueImageView" destination="G0t-F7-SIW" id="tQW-U2-8BT"/>
+                        <outlet property="issueTypesLabel" destination="9TU-px-g9k" id="9vb-Iw-qsn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JE-6a-YNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

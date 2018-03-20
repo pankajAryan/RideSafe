@@ -10,6 +10,10 @@ import UIKit
 
 class RoadInfraIssueViewController: UIViewController {
 
+    @IBOutlet weak var issueTypesLabel: UILabel!
+    @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var issueDiscriptionTextView: UITextView!
+    @IBOutlet weak var issueImageView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,5 +24,11 @@ class RoadInfraIssueViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @IBAction func dropdownButtonClicked(_ sender: Any) {
+    }
+    @IBAction func openCameraClicked(_ sender: Any) {
+    }
+    @IBAction func reportButtonClicked(_ sender: Any) {
+    }
+    
 }
