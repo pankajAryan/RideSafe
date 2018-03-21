@@ -41,6 +41,32 @@ class NetworkManager {
         }
     }
     
+    func upload(image: UIImage) -> Promise<String?> {
+        guard let data = UIImageJPEGRepresentation(image, 0.5) else {
+            return Promise(value: "Thsi is i ")
+        }
+        let urlString = makeUrl(restUrl: ServiceType.uploadDrivingIssuePicture.rawValue)
+
+        
+        return  Promise { fullfill,reject in
+            Alamofire.upload(multipartFormData: { (form) in
+                form.append(data, withName: "file", fileName: "file.jpg", mimeType: "multipart/form-data ")
+            }, to: urlString, encodingCompletion: { result in
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseString { response in
+                        print(response.value)
+                        fullfill(response.value)
+                    }
+                case .failure(let encodingError):
+                    print(encodingError)
+                    reject(encodingError.localizedDescription as! Error)
+                }
+            })
+        }
+        
+    }
+    
     private func makeUrl(restUrl:String) -> String {
         let urlString =  Environment.baseUrl + restUrl
         return urlString

@@ -8,6 +8,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -393,21 +398,30 @@
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="textColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3hk-dB-921" id="FZb-EO-khf"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 01C" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGo-bw-ObZ">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 01C" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGo-bw-ObZ">
                                         <rect key="frame" x="118.5" y="0.0" width="98" height="30"/>
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="textColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3hk-dB-921" id="qQF-mc-NOA"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 1234" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEJ-LD-6az">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEJ-LD-6az">
                                         <rect key="frame" x="236.5" y="0.0" width="98.5" height="30"/>
                                         <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="deviceRGB"/>
                                         <color key="textColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="deviceRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3hk-dB-921" id="Ig1-hD-Fnp"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -415,21 +429,24 @@
                                 </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nir-Mn-CLa">
-                                <rect key="frame" x="20" y="139" width="335" height="20"/>
+                                <rect key="frame" x="20" y="139" width="335" height="24"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="v2E-KY-ust"/>
+                                    <constraint firstAttribute="height" constant="24" id="v2E-KY-ust"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Driving Issues" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htp-Lj-Me7">
-                                <rect key="frame" x="20" y="171" width="335" height="19.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="20" y="175" width="335" height="24"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="qFj-Z6-oSo"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Describe Issue" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EdH-7F-eR6">
-                                <rect key="frame" x="20" y="202.5" width="335" height="100"/>
+                                <rect key="frame" x="20" y="211" width="335" height="100"/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="jQ7-XH-VPI"/>
@@ -438,15 +455,18 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NHf-lz-QOe">
-                                <rect key="frame" x="25" y="328.5" width="80" height="80"/>
+                                <rect key="frame" x="25" y="337" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="0zt-wr-oee"/>
                                     <constraint firstAttribute="width" constant="80" id="OXW-7F-sWQ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="camera"/>
+                                <connections>
+                                    <action selector="cameraClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="njw-D5-aI0"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jB-eU-CK8">
-                                <rect key="frame" x="121" y="357" width="124" height="52"/>
+                                <rect key="frame" x="121" y="365.5" width="124" height="52"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="Bki-XB-1LF"/>
@@ -459,6 +479,20 @@
                                     <action selector="reportButtonClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="FpW-BG-7ck"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P2P-u4-Ili" customClass="Checkbox" customModule="RideSafe" customModuleProvider="target">
+                                <rect key="frame" x="121" y="335" width="22" height="22"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="6ZO-mx-Ydt"/>
+                                    <constraint firstAttribute="width" constant="22" id="PAG-Cy-0CY"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Live Tracking" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rV8-IF-hra">
+                                <rect key="frame" x="155" y="339" width="70.5" height="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -469,6 +503,7 @@
                             <constraint firstItem="e0y-rX-9St" firstAttribute="top" secondItem="kAG-wN-c75" secondAttribute="bottom" constant="-8" id="2b8-e5-FcQ"/>
                             <constraint firstItem="NHf-lz-QOe" firstAttribute="top" secondItem="EdH-7F-eR6" secondAttribute="bottom" constant="26" id="3Vo-ly-4ED"/>
                             <constraint firstItem="CCS-Kv-Loe" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" constant="20" id="42j-iY-FvA"/>
+                            <constraint firstItem="rV8-IF-hra" firstAttribute="centerY" secondItem="P2P-u4-Ili" secondAttribute="centerY" id="5Dq-V7-dTQ"/>
                             <constraint firstItem="bF9-vI-Pjc" firstAttribute="bottom" secondItem="hXy-fg-MNp" secondAttribute="bottom" id="664-Fh-71K"/>
                             <constraint firstItem="Tso-Xr-L73" firstAttribute="top" secondItem="rUx-M0-zfB" secondAttribute="bottom" constant="-8" id="6FO-OR-8Zw"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="top" secondItem="MBf-Oi-t1y" secondAttribute="bottom" constant="-8" id="6Fb-Ce-hXS"/>
@@ -482,15 +517,18 @@
                             <constraint firstItem="N2s-ya-AII" firstAttribute="centerX" secondItem="WIk-38-AC4" secondAttribute="centerX" id="HBI-rf-mQt"/>
                             <constraint firstItem="N2s-ya-AII" firstAttribute="top" secondItem="WIk-38-AC4" secondAttribute="bottom" constant="-8" id="KQg-fP-9CN"/>
                             <constraint firstItem="7jB-eU-CK8" firstAttribute="leading" secondItem="NHf-lz-QOe" secondAttribute="trailing" constant="16" id="KTx-b6-Nxn"/>
+                            <constraint firstItem="P2P-u4-Ili" firstAttribute="leading" secondItem="7jB-eU-CK8" secondAttribute="leading" id="LaE-iL-hwc"/>
                             <constraint firstItem="Htp-Lj-Me7" firstAttribute="top" secondItem="Nir-Mn-CLa" secondAttribute="bottom" constant="12" id="MoA-2w-Ywq"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="centerX" secondItem="MBf-Oi-t1y" secondAttribute="centerX" id="Mxr-6A-feX"/>
                             <constraint firstItem="N2s-ya-AII" firstAttribute="width" secondItem="WIk-38-AC4" secondAttribute="width" id="Pnp-Mr-FAM"/>
+                            <constraint firstItem="rV8-IF-hra" firstAttribute="leading" secondItem="P2P-u4-Ili" secondAttribute="trailing" constant="12" id="Vdl-nU-ra3"/>
                             <constraint firstItem="Nir-Mn-CLa" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="bottom" constant="12" id="W8q-72-ZCZ"/>
                             <constraint firstItem="Tso-Xr-L73" firstAttribute="width" secondItem="rUx-M0-zfB" secondAttribute="width" id="Wfp-j0-ptS"/>
                             <constraint firstItem="eVa-r7-TdK" firstAttribute="top" secondItem="hXy-fg-MNp" secondAttribute="top" id="XTW-Ci-BcI"/>
                             <constraint firstItem="BUX-Hk-BfR" firstAttribute="top" secondItem="bF9-vI-Pjc" secondAttribute="top" id="Xre-P0-ywn"/>
                             <constraint firstItem="CCS-Kv-Loe" firstAttribute="top" secondItem="ZNB-Yb-Uhu" secondAttribute="bottom" constant="10" id="Xwp-os-Mos"/>
                             <constraint firstItem="e0y-rX-9St" firstAttribute="centerX" secondItem="kAG-wN-c75" secondAttribute="centerX" id="ZaY-fM-Luf"/>
+                            <constraint firstItem="7jB-eU-CK8" firstAttribute="top" secondItem="P2P-u4-Ili" secondAttribute="bottom" constant="9" id="aQS-Jm-4CT"/>
                             <constraint firstItem="6gK-5L-QqZ" firstAttribute="width" secondItem="MBf-Oi-t1y" secondAttribute="width" id="aRJ-eW-YC4"/>
                             <constraint firstItem="Nir-Mn-CLa" firstAttribute="trailing" secondItem="PEJ-LD-6az" secondAttribute="trailing" id="anr-C5-ZAH"/>
                             <constraint firstItem="ZNB-Yb-Uhu" firstAttribute="leading" secondItem="bF9-vI-Pjc" secondAttribute="leading" constant="20" id="cN7-op-JEg"/>
@@ -516,6 +554,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="cameraButton" destination="NHf-lz-QOe" id="HNU-J0-tmf"/>
                         <outlet property="descriptionText" destination="EdH-7F-eR6" id="ssI-ss-GCg"/>
                         <outlet property="drivingIssuesLabel" destination="Htp-Lj-Me7" id="7pv-r5-hdp"/>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
@@ -793,12 +832,12 @@
                             <textView userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-Cx-FVi">
                                 <rect key="frame" x="20" y="151" width="335" height="496"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <mutableString key="text">RideSafe - A Citizen Centric Initiative to Promote Safe Driving on Roads.
+                                <string key="text">RideSafe - A Citizen Centric Initiative to Promote Safe Driving on Roads.
 
 Brief Concept Note: Irresponsible driving is one of the major causes of accidents in India. In many cases, public transport means like Buses, Small Tempos, Autos etc are driven around by  irresponsible drivers risking lives of all passengers on board. RideSafe empowers these passengers or other drivers on road, with a mechanism to report such vehicles with geo-intelligence. These reportings would immediately be shared with officials in the Transport/Law Enforcement for swift action.
 
 The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Jammu &amp; Kashmir, India. It is implemented by Mobiquel, a Delhi based IT services and product firm.
-</mutableString>
+</string>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>

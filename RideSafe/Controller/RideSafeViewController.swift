@@ -98,6 +98,13 @@ extension UIViewController {
            return  UIDevice.current.identifierForVendor!.uuidString
         }
     }
+    
+}
+
+extension UIImage {
+    var jpegRepresentationData: Data? {
+        return UIImageJPEGRepresentation(self, 1.0)
+    }
 }
 
 

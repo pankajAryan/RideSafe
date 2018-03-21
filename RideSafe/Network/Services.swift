@@ -20,6 +20,7 @@ enum ServiceType: String {
     case getDepartmentDirectoryListByDepartment = "getDepartmentDirectoryListByDepartment"
     case reportDrivingIssue = "reportDrivingIssue"
     case registerCitizenPushNotificationId = "registerCitizenPushNotificationId"
+    case uploadDrivingIssuePicture = "uploadDrivingIssuePicture"
 
 }
 

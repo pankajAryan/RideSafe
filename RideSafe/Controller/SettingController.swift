@@ -16,6 +16,9 @@ class SettingController: UIViewController {
         var localName = ""
         var isChecked = false
     }
+    
+    var selectedIndexPath = IndexPath()
+    
     var languages = [languageModel(lanCode:"E", langName: "English",localName:"", isChecked: false),
                      languageModel(lanCode:"H", langName: "Hindi",localName:"हिन्दी", isChecked: false),
                      languageModel(lanCode:"U", langName: "Urdu",localName:"اردو", isChecked: false)]
@@ -41,21 +44,32 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
         if   let cell = tableView.dequeueReusableCell(withIdentifier: "language") as? LanguageCell{
             cell.textLabel?.text = languages[indexPath.row].langName
             cell.detailTextLabel?.text = languages[indexPath.row].localName
+            cell.accessoryType = self.selectedLanguage == languages[indexPath.row].lanCode ? .checkmark : .none
+            if self.selectedLanguage == languages[indexPath.row].lanCode {
+                selectedIndexPath = indexPath
+                languages[indexPath.row].isChecked = true
+            }
             return cell
         }
         return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        cell?.selectedBackgroundView?.backgroundColor = UIColor.clear
-        cell?.accessoryType =  .checkmark
-        languages[indexPath.row].isChecked = !languages[indexPath.row].isChecked
+        
+        
+        if indexPath != selectedIndexPath {
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.selectedBackgroundView?.backgroundColor = UIColor.clear
+            cell?.accessoryType = .checkmark
+            languages[indexPath.row].isChecked = !languages[indexPath.row].isChecked
+            
+            let selectedCell = tableView.cellForRow(at: selectedIndexPath)
+            selectedCell?.accessoryType = .none
+            languages[selectedIndexPath.row].isChecked = false
+
+            selectedIndexPath = indexPath
+        }
+        
     }
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .none
-            languages[indexPath.row].isChecked = !languages[indexPath.row].isChecked
-        }
 }

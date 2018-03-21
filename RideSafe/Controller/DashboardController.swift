@@ -11,7 +11,7 @@ import UIDropDown
 import CoreLocation
 import PromiseKit
 
-class DashboardController: UIViewController {
+class DashboardController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     @IBOutlet weak var vehicleThirdField: UITextField!
     @IBOutlet weak var vehicleSecondField: UITextField!
@@ -23,9 +23,12 @@ class DashboardController: UIViewController {
     @IBOutlet weak var sideMenu: SideMenu!
     var vehicleType = ""
     var drivingIssues:[DropDownDataSource] = []
-    
+    var imagePicker = UIImagePickerController()
+
+    @IBOutlet weak var cameraButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        vehicleTypeView.backgroundColor = UIColor.clear
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         makeVehicleDropDown()
@@ -36,6 +39,8 @@ class DashboardController: UIViewController {
         if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isFirstTimeLaunch.rawValue) == false {
             showWelcomeAlert()
         }
+        imagePicker.delegate = self
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +74,7 @@ class DashboardController: UIViewController {
     }
     
     @IBAction func reportButtonClicked(_ sender: UIButton) {
-        
+        uploadImage()
     }
     
     
@@ -91,6 +96,7 @@ class DashboardController: UIViewController {
     
     private func makeVehicleDropDown() {
         let dropDown = UIDropDown(frame: vehicleTypeView.frame)
+        dropDown.borderColor = .clear
         dropDown.hideOptionsWhenSelect = true
         dropDown.animationType = .Classic
         dropDown.tableHeight = 180
@@ -139,11 +145,78 @@ class DashboardController: UIViewController {
             }
             
             
-            vc.dropDownDataSource = drivingissues
+            var ccc = [DropDownDataSource]()
+            if self.drivingIssues.count > 0 {
+                for  var localDrivingissyes in drivingissues {
+                    for d in self.drivingIssues {
+                        if d.id == localDrivingissyes.id {
+                            localDrivingissyes.checkMark = true
+                        }
+                    }
+                    ccc.append(localDrivingissyes)
+                }
+            } else {
+                ccc = drivingissues
+            }
+            
+            vc.dropDownDataSource = ccc
             self.navigationController?.pushViewController(vc, animated: true)
             
             }.catch { error in }
     }
+    
+    @IBAction func cameraClicked(_ sender: UIButton) {
+        
+        let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!", message: nil, preferredStyle: .actionSheet)
+        
+        let cameraAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .default) { action -> Void in
+            
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+                self.imagePicker.allowsEditing = false
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        let galleryAction: UIAlertAction = UIAlertAction(title: "Choose From Gallery", style: .default) { action -> Void in
+            
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+                self.imagePicker.allowsEditing = false
+                self.present(self.imagePicker, animated: true, completion: nil)
+            }
+        }
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+        
+        // add actions
+        actionSheetController.addAction(cameraAction)
+        actionSheetController.addAction(galleryAction)
+        actionSheetController.addAction(cancelAction)
+        
+        // present an actionSheet...
+        present(actionSheetController, animated: true, completion: nil)
+    }
+    
+   
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+   
+        if let image  = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.dismiss(animated: true, completion: nil)
+            cameraButton.setBackgroundImage(image, for: .normal)
+        }
+    }
+    
+    func uploadImage() {
+        let d = cameraButton.currentBackgroundImage
+        NetworkManager().upload(image: d!) .then { string -> () in
+            print("data from server is ",string )
+            }.catch { error in
+                print("error is ", error)
+        }
+    }
+    
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
         tableViewleadingConstraint.constant = tableViewleadingConstraint.constant == 0 ? -240 : 0
@@ -213,6 +286,9 @@ extension DashboardController: DropDownDelgate{
             allIssues =  allIssues + issue.name! + ","
         }
         drivingIssuesLabel.text = String(describing: allIssues.dropLast())
+        if drivingIssuesLabel.text == "" {
+            drivingIssuesLabel.text = "Select Driving Issues"
+        }
     }
     
     private func catagoryIds() -> String {
@@ -222,4 +298,39 @@ extension DashboardController: DropDownDelgate{
         }
         return String(describing: ids.dropLast())
     }
+}
+
+
+extension DashboardController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if string == " "
+        {
+            return false
+        }
+        let currentString: NSString = textField.text! as NSString
+        let newString: NSString =
+            currentString.replacingCharacters(in: range, with: string) as NSString
+
+        
+        switch textField {
+        case vehicleFirstField:
+           return newString.length <= 2
+        case vehicleSecondField:
+          return  newString.length <= 3
+
+        case vehicleThirdField:
+           return newString.length <= 4
+        default:
+           return  true
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool  {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
 }

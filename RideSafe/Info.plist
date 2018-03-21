@@ -47,5 +47,9 @@
 	<string>App need access to use location</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>App need access to use location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NSPhotoLibraryUsageDescription</string>
+	<key>NSCameraUsageDescription</key>
+	<string>NSCameraUsageDescription</string>
 </dict>
 </plist>
