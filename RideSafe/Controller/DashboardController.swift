@@ -29,7 +29,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
     var locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
     var imageUrl:String?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         descriptionText.placeholder = "Describe Issues"
@@ -78,7 +78,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
         locationManager.stopUpdatingLocation()
     }
     
-   
+    
     
     func RegisterForCitizenPushNotification() {
         firstly {
@@ -146,7 +146,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
     func uploadImage() {
         
         if (vehicleFirstField.text?.isEmpty)! || (vehicleSecondField.text?.isEmpty)! || (vehicleThirdField.text?.isEmpty)! || vehicleType.count == 0 || drivingIssues.count == 0 {
-           let alert =  UIAlertController(title: "", message: "Veicle No,Vehicle type and Driving issues are mandatory", preferredStyle: .alert)
+            let alert =  UIAlertController(title: "", message: "Veicle No,Vehicle type and Driving issues are mandatory", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler:nil))
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -154,7 +154,6 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
                 NetworkManager().upload(image: image) .then { string -> () in
                     self.imageUrl = string
                     }.catch { error in
-                        print("error is ", error)
                     }.always {
                         self.reportIssues()
                 }
@@ -179,7 +178,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
     @IBAction func helpLineClicked(_ sender: UIButton) {
         let helpLineContainerViewController: HelpLineContainerViewController = UIStoryboard.init(name: "HelpLine", bundle: nil).instantiateViewController(withIdentifier: "HelpLineContainerViewController") as! HelpLineContainerViewController
         self.navigationController?.pushViewController(helpLineContainerViewController, animated: true)
-
+        
     }
     @IBAction func educationClicked(_ sender: UIButton) {
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
@@ -211,7 +210,7 @@ extension DashboardController: MenuCellDelegte {
         case .Logout:
             clearUserDefault()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-             let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+            let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
             self.navigationController?.pushViewController(loginController, animated: true)
             self.navigationController?.viewControllers = [loginController]
         }
@@ -257,18 +256,18 @@ extension DashboardController: UITextFieldDelegate {
         let currentString: NSString = textField.text! as NSString
         let newString: NSString =
             currentString.replacingCharacters(in: range, with: string) as NSString
-
+        
         
         switch textField {
         case vehicleFirstField:
-           return newString.length <= 2
+            return newString.length <= 2
         case vehicleSecondField:
-          return  newString.length <= 3
-
+            return  newString.length <= 3
+            
         case vehicleThirdField:
-           return newString.length <= 4
+            return newString.length <= 4
         default:
-           return  true
+            return  true
         }
     }
     
@@ -334,7 +333,7 @@ extension DashboardController {
         dropDown.placeholder = "Select Vehicle Type"
         dropDown.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
         dropDown.textAlignment = NSTextAlignment.left
-
+        
         dropDown.didSelect { [unowned self] (option, index) in
             self.vehicleType = option
         }
@@ -347,36 +346,24 @@ extension DashboardController {
         vc.dropDownDelgate = self
         var drivingissues = [DropDownDataSource]()
         
-        retriveJSONFrom(fileName: selectedLanguage + FileNames.response.rawValue).then { response -> () in
-            switch self.selectedLanguage {
-            case "U":
-                let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
-                SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
-                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
-                if let drivingIssues = drivingIssuesCatList {
-                    for drivingIssu in drivingIssues {
-                        drivingissues.append(DropDownDataSource(name: drivingIssu.urName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
-                    }
-                }
-            case "H":
-                let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
-                SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
-                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
-                if let drivingIssues = drivingIssuesCatList {
-                    for drivingIssu in drivingIssues {
+        
+        
+        retriveJSONFrom(fileName: FileNames.response.rawValue).then { response -> () in
+            let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
+            SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
+            let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
+            if let drivingIssues = drivingIssuesCatList {
+                for drivingIssu in drivingIssues {
+                    switch self.selectedLanguage {
+                    case "H":
                         drivingissues.append(DropDownDataSource(name: drivingIssu.hiName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
-                    }
-                }
-            default :
-                let sresponse =  VerifyOTPResponse.init(dictionary: response as NSDictionary)
-                let drivingIssuesCatList = sresponse?.responseObject?.drivingIssueCategoryList
-                if let drivingIssues = drivingIssuesCatList {
-                    for drivingIssu in drivingIssues {
+                    case "U":
+                        drivingissues.append(DropDownDataSource(name: drivingIssu.urName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
+                    default:
                         drivingissues.append(DropDownDataSource(name: drivingIssu.enName, id: drivingIssu.drivingIssueCategoryId, checkMark: false))
                     }
                 }
             }
-            
             
             var ccc = [DropDownDataSource]()
             if self.drivingIssues.count > 0 {

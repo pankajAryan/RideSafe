@@ -36,7 +36,7 @@ extension UIViewController {
     
     func writeJSONTo(fileName:String,data:Any) {
         guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        let fileUrl = documentDirectoryUrl.appendingPathComponent( selectedLanguage + fileName + ".json")
+        let fileUrl = documentDirectoryUrl.appendingPathComponent( fileName + ".json")
         do {
             print("file url is:",fileUrl)
             let data = try JSONSerialization.data(withJSONObject: data, options: [])
