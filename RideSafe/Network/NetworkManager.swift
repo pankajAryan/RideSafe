@@ -32,6 +32,8 @@ class NetworkManager {
                     break
                 case .failure(let error):
                     #if DEBUG
+                        print("✅ service: \(serviceType.rawValue)\n✅ paramas: \(params)\n✅ response: \(response) ")
+
                         print("❌ response code: \(String(describing:  response.response?.statusCode))")
                     #endif
                     reject(error)
@@ -42,11 +44,13 @@ class NetworkManager {
     }
     
     func upload(image: UIImage) -> Promise<String?> {
+        
+
         guard let data = UIImageJPEGRepresentation(image, 0.5) else {
             return Promise(value: "Thsi is i ")
         }
         let urlString = makeUrl(restUrl: ServiceType.uploadDrivingIssuePicture.rawValue)
-
+        SwiftLoader.show(animated: true)
         
         return  Promise { fullfill,reject in
             Alamofire.upload(multipartFormData: { (form) in
@@ -57,10 +61,12 @@ class NetworkManager {
                     upload.responseString { response in
                         print(response.value)
                         fullfill(response.value)
+                        SwiftLoader.hide()
                     }
                 case .failure(let encodingError):
                     print(encodingError)
                     reject(encodingError.localizedDescription as! Error)
+                     SwiftLoader.hide()
                 }
             })
         }

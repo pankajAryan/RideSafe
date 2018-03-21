@@ -23,7 +23,7 @@ extension UIViewController {
         let leftButton = UIButton(type: .custom)
         leftButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
         leftButton.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
-       leftButton.setImage(#imageLiteral(resourceName: "emergency"), for: .normal)
+       leftButton.setImage(#imageLiteral(resourceName: "icn_back"), for: .normal)
         leftButton.contentHorizontalAlignment = .left
         leftButton.contentVerticalAlignment = .center
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)

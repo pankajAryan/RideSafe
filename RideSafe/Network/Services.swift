@@ -18,7 +18,7 @@ enum ServiceType: String {
     case getCitizenProfile = "getCitizenProfile"
     case updateCitizenProfile = "updateCitizenProfile"
     case getDepartmentDirectoryListByDepartment = "getDepartmentDirectoryListByDepartment"
-    case reportDrivingIssue = "reportDrivingIssue"
+    case reportDrivingIssue = "reportDrivingIssue" // dashboard report button clicked
     case registerCitizenPushNotificationId = "registerCitizenPushNotificationId"
     case uploadDrivingIssuePicture = "uploadDrivingIssuePicture"
 
