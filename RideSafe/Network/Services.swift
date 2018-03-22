@@ -23,6 +23,8 @@ enum ServiceType: String {
     case addEmergencyContacts = "addEmergencyContacts"
     case updateEmergencyContacts = "updateEmergencyContacts"
     case getEmergencyContactsList = "getEmergencyContactsList"
+    case uploadDrivingIssuePicture = "uploadDrivingIssuePicture"
+
 }
 
 
