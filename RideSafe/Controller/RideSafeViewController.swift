@@ -23,7 +23,7 @@ extension UIViewController {
         let leftButton = UIButton(type: .custom)
         leftButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
         leftButton.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
-       leftButton.setImage(#imageLiteral(resourceName: "emergency"), for: .normal)
+       leftButton.setImage(#imageLiteral(resourceName: "icn_back"), for: .normal)
         leftButton.contentHorizontalAlignment = .left
         leftButton.contentVerticalAlignment = .center
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
@@ -36,7 +36,7 @@ extension UIViewController {
     
     func writeJSONTo(fileName:String,data:Any) {
         guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
-        let fileUrl = documentDirectoryUrl.appendingPathComponent( selectedLanguage + fileName + ".json")
+        let fileUrl = documentDirectoryUrl.appendingPathComponent( fileName + ".json")
         do {
             print("file url is:",fileUrl)
             let data = try JSONSerialization.data(withJSONObject: data, options: [])
@@ -97,6 +97,13 @@ extension UIViewController {
         get {
            return  UIDevice.current.identifierForVendor!.uuidString
         }
+    }
+    
+}
+
+extension UIImage {
+    var jpegRepresentationData: Data? {
+        return UIImageJPEGRepresentation(self, 1.0)
     }
 }
 

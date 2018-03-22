@@ -23,8 +23,7 @@ class NetworkManager {
                 case .success:
                     if let response = response.value as? [String : Any]  {
                         #if DEBUG
-                            print()
-                            print("✅ service: \(serviceType.rawValue)\n✅ paramas: \(params)\n✅ response: \(response) ")
+                            print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
                         #endif
                         fullFilled(response)
                         SwiftLoader.hide()
@@ -32,6 +31,7 @@ class NetworkManager {
                     break
                 case .failure(let error):
                     #if DEBUG
+                        print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
                         print("❌ response code: \(String(describing:  response.response?.statusCode))")
                     #endif
                     reject(error)
@@ -39,6 +39,41 @@ class NetworkManager {
                 }
             }
         }
+    }
+    
+    func upload(image: UIImage) -> Promise<String?> {
+        
+        guard let data = UIImageJPEGRepresentation(image, 0.5) else {
+            return Promise(value: "")
+        }
+        
+        let urlString = makeUrl(restUrl: ServiceType.uploadDrivingIssuePicture.rawValue)
+        SwiftLoader.show(animated: true)
+        
+        return  Promise { fullfill,reject in
+            Alamofire.upload(multipartFormData: { (form) in
+                form.append(data, withName: "file", fileName: "file.jpg", mimeType: "multipart/form-data ")
+            }, to: urlString, encodingCompletion: { result in
+                switch result {
+                case .success(let upload, _, _):
+                    upload.responseString { response in
+                        #if DEBUG
+                            print("File uploaded sucessfully")
+                            print(response.value ?? "response is blank")
+                        #endif
+                        fullfill(response.value)
+                        SwiftLoader.hide()
+                    }
+                case .failure(let encodingError):
+                    #if DEBUG
+                        print("Uploading image failed with \(encodingError.localizedDescription)")
+                    #endif
+                    reject(encodingError.localizedDescription as! Error)
+                    SwiftLoader.hide()
+                }
+            })
+        }
+        
     }
     
     private func makeUrl(restUrl:String) -> String {

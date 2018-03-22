@@ -44,6 +44,7 @@
 		2CF24360206010B6007E696C /* RideSafeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */; };
 		2CF2436D206031A2007E696C /* RegisterCitizenPushNotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */; };
 		2CF2436E206031A2007E696C /* RegisterCitizenPushNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2436B206031A2007E696C /* RegisterCitizenPushNotification.swift */; };
+		2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF2436F2062B126007E696C /* Extension+UITextView.swift */; };
 		B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */; };
 		B811FE22205F519A005F327B /* RoadInfraIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B811FE21205F519A005F327B /* RoadInfraIssueViewController.swift */; };
 		B813A3FD206175A600A1B6F5 /* EmergencyConacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B813A3FB206175A600A1B6F5 /* EmergencyConacts.swift */; };
@@ -111,6 +112,7 @@
 		2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeNavigationController.swift; sourceTree = "<group>"; };
 		2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCitizenPushNotificationResponse.swift; sourceTree = "<group>"; };
 		2CF2436B206031A2007E696C /* RegisterCitizenPushNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCitizenPushNotification.swift; sourceTree = "<group>"; };
+		2CF2436F2062B126007E696C /* Extension+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITextView.swift"; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +170,7 @@
 				2C15668A2051CE0E00B4067C /* Checkbox.swift */,
 				2C3D5650205AD1CE008F9104 /* DropDown.storyboard */,
 				2C3D5652205AD1E8008F9104 /* DropDownController.swift */,
+				2CF2436F2062B126007E696C /* Extension+UITextView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
+				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,

@@ -18,6 +18,7 @@ class DropDownController: UITableViewController {
     weak var dropDownDelgate:DropDownDelgate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackButton()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
