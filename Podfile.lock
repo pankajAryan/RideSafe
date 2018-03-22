@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.0)
+  - IQKeyboardManagerSwift (5.0.8)
   - JFContactsPicker (1.1.0)
   - PromiseKit (4.5.2):
     - PromiseKit/Foundation (= 4.5.2)
@@ -22,6 +23,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - IQKeyboardManagerSwift
   - JFContactsPicker (~> 1.0)
   - PromiseKit (~> 4.0)
   - SDWebImage (~> 4.3)
@@ -32,6 +34,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   JFContactsPicker: fa78d877295a617a5e422c4328507c00809615ac
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
@@ -40,6 +43,6 @@ SPEC CHECKSUMS:
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 9ae3d8571f40f94f25e9b9b26ce2f41d2db8c856
+PODFILE CHECKSUM: c3a99c53bc7e485a91f7463c5ea7efb8b3d1cde3
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

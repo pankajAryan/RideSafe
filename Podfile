@@ -13,6 +13,6 @@ pod 'YouTubePlayer-Swift', '~> 1.0'
 pod 'SWSegmentedControl'
 pod 'SDWebImage', '~> 4.3'
 pod 'Toast-Swift', '~> 3.0.1'
+pod 'IQKeyboardManagerSwift'
 pod 'JFContactsPicker', '~> 1.0'
-
 end

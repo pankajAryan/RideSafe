@@ -120,7 +120,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
         descriptionText.text = ""
         descriptionText.placeholder = "Describe Issues"
         drivingIssuesLabel.text = "Select Driving Issues"
-        cameraButton.setBackgroundImage(nil, for: .normal)
+        cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         imageUrl = nil
         locationManager.stopUpdatingLocation()
         dropDown.options = []

@@ -67,6 +67,10 @@ extension UIViewController {
         self.view.makeToast(response["errorMessage"] as? String, duration: 3.0, position: .bottom)
     }
     
+    func showToast(message:String) {
+        self.view.makeToast(message, duration: 3.0, position: .bottom)
+    }
+    
     func clearUserDefault() {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.isUserLogedin.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.citizenId.rawValue)

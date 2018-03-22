@@ -77,6 +77,7 @@ class LoginController: UIViewController {
         firstly {
             NetworkManager().doServiceCall(serviceType: .verifyOtp, params: ["mobileNumber": mobileNo ,"otp": otp ])
             }.then { response -> () in
+                
                 self.showToast(response: response)
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
                 let verifyResponseObj = VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject
@@ -89,7 +90,9 @@ class LoginController: UIViewController {
                 }
                 verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
                 
-            }.catch { error in
+            }.catch { error   in
+                let err = error as! CustomError
+                self.showToast(message: err.errorMessage)
         }
     }
     

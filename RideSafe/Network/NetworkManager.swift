@@ -25,7 +25,16 @@ class NetworkManager {
                         #if DEBUG
                             print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
                         #endif
-                        fullFilled(response)
+                        
+                        let errorCode = String(describing: response["errorCode"])
+                        
+                        
+                        if errorCode == "Optional(0)" || (errorCode == "0") {
+                                fullFilled(response)
+                            } else {
+                                let _error = CustomError(errorMessage: response["errorMessage"] as! String, errorCode:errorCode )
+                                reject(_error)
+                            }
                         SwiftLoader.hide()
                     }
                     break
