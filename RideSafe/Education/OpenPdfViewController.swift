@@ -16,12 +16,15 @@ class OpenPdfViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = media?.title
+        
         let website = media?.mediaURL
         let reqURL =  URL(string: website!)
         let request = URLRequest(url: reqURL!)
         
         pdfWebView.load(request)
+        setBackButton()
+
     }
 
 }

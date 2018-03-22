@@ -22,6 +22,8 @@ class EmergencyContactViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadEmergencyContact()
+        self.title = "Emergency Contacts"
+        setBackButton()
     }
     
     func loadEmergencyContact() {

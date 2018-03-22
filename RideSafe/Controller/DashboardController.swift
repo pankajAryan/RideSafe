@@ -151,7 +151,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
             self.present(alert, animated: true, completion: nil)
         } else {
             if let image = cameraButton.currentBackgroundImage {
-                NetworkManager().upload(image: image) .then { string -> () in
+                NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
                     self.imageUrl = string
                     }.catch { error in
                     }.always {

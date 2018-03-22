@@ -20,9 +20,12 @@ class YoutubeVideoViewController: UIViewController {
         super.viewDidLoad()
         let myVideoURL = NSURL(string: (media?.mediaURL)!)
         youtubePlayerView.loadVideoURL(myVideoURL! as URL)
+        self.title = media?.title
         videoTitleLabel.text = media?.title
         videoDateTimeLabel.text = media?.postedOn
         descriptionLabel.text = media?.description
+        setBackButton()
+
     }
 
 }

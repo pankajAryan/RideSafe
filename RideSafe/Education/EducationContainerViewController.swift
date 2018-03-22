@@ -26,6 +26,8 @@ class EducationContainerViewController: UIViewController {
         educationPDFVideoController = storyboard?.instantiateViewController(withIdentifier: "EducationPDFViewController") as? EducationPDFViewController
         // Do any additional setup after loading the view.
         switchtoVideoTab()
+        setBackButton()
+
     }
     
     func switchtoVideoTab() {

@@ -41,13 +41,13 @@ class NetworkManager {
         }
     }
     
-    func upload(image: UIImage) -> Promise<String?> {
+    func upload(image: UIImage, serviceType: ServiceType) -> Promise<String?> {
         
         guard let data = UIImageJPEGRepresentation(image, 0.5) else {
             return Promise(value: "")
         }
         
-        let urlString = makeUrl(restUrl: ServiceType.uploadDrivingIssuePicture.rawValue)
+        let urlString = makeUrl(restUrl: serviceType.rawValue)
         SwiftLoader.show(animated: true)
         
         return  Promise { fullfill,reject in

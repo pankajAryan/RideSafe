@@ -23,7 +23,7 @@ class HelpLineContainerViewController: UIViewController {
         helpLineViewController = storyboard?.instantiateViewController(withIdentifier: "HelplineAdministrationViewController") as? HelplineAdministrationViewController
         self.containerView.addSubview((helpLineViewController?.view)!)
         self.addChildViewController(helpLineViewController!)
-
+        setBackButton()
     }
 
     func switchtoAdministrationTab() {
