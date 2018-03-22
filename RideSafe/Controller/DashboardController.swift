@@ -212,7 +212,15 @@ extension DashboardController: MenuCellDelegte {
         case .About:
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             
-        case .Share: break
+        case .Share:
+            let text = "RideSafe"
+            let image = #imageLiteral(resourceName: "logo_large")
+            let myWebsite = NSURL(string:"https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile")!
+            let shareAll = [text , image , myWebsite] as [Any]
+            let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            self.present(activityViewController, animated: true, completion: nil)
+
         case .Logout:
             clearUserDefault()
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
