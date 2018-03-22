@@ -24,6 +24,9 @@ enum ServiceType: String {
     case updateEmergencyContacts = "updateEmergencyContacts"
     case getEmergencyContactsList = "getEmergencyContactsList"
     case uploadDrivingIssuePicture = "uploadDrivingIssuePicture"
+    case reportRoadInfraIssue = "reportRoadInfraIssue"
+    case getRoadInfraCategoryListByLanguage = "getRoadInfraCategoryListByLanguage"
+    case uploadInfraIssuePicture = "uploadInfraIssuePicture"
 
 }
 

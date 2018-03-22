@@ -19,6 +19,14 @@ class RoadInfraIssueViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    private func addtapGestureOnIssueLabel() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openIssueList))
+        issueTypesLabel.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func openIssueList() {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

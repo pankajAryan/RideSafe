@@ -170,6 +170,9 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
     }
     
     @IBAction func roadInfraClicked(_ sender: UIButton) {
+        let roadInfraIssueViewController: RoadInfraIssueViewController = UIStoryboard.init(name: "RoadInfraIssue", bundle: nil).instantiateViewController(withIdentifier: "RoadInfraIssueViewController") as! RoadInfraIssueViewController
+        self.navigationController?.pushViewController(roadInfraIssueViewController, animated: true)
+        
     }
     @IBAction func shareLiveLocationClicked(_ sender: UIButton) {
     }
