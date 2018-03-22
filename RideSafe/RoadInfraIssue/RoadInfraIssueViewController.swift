@@ -29,6 +29,7 @@ class RoadInfraIssueViewController: UIViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        issueDiscriptionTextView.placeholder = "Describe Issues"
         loadIssueListAsperLanguage()
         addtapGestureOnIssueLabel()
         imagePicker.delegate = self
