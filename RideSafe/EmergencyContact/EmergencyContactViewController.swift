@@ -16,11 +16,12 @@ class EmergencyContactViewController: UIViewController {
     @IBOutlet weak var contact2: UITextField!
     @IBOutlet weak var contact3: UITextField!
     var  contactPickerScene: ContactsPicker!
+    var isContactAvailable: Bool!
+    var selectedTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        loadEmergencyContact()
     }
     
     func loadEmergencyContact() {
@@ -28,7 +29,14 @@ class EmergencyContactViewController: UIViewController {
             NetworkManager().doServiceCall(serviceType: .getEmergencyContactsList, params: ["citizenId": citizenId])
             }.then { response -> () in
                 let emergencyContactResponse = EmergencyContactResponce(dictionary: response as NSDictionary)
-                let mediaList = emergencyContactResponse?.responseObject
+                if let emergencyContact = emergencyContactResponse?.responseObject {
+                    self.contact1.text = emergencyContact.emergencyContact1
+                    self.contact2.text = emergencyContact.emergencyContact2
+                    self.contact3.text = emergencyContact.emergencyContact3
+                    self.isContactAvailable = true
+                } else {
+                    self.isContactAvailable = false
+                }
             }.catch { (error) in
         }
     }
@@ -38,18 +46,21 @@ class EmergencyContactViewController: UIViewController {
         contactPickerScene = ContactsPicker(delegate: self, multiSelection: false, subtitleCellType: SubtitleCellValue.email)
         let navigationController = UINavigationController(rootViewController: contactPickerScene)
         self.present(navigationController, animated: true, completion: nil)
+        selectedTextField = contact1
     }
     
     @IBAction func button2Clicked(_ sender: Any) {
        contactPickerScene = ContactsPicker(delegate: self, multiSelection: false, subtitleCellType: SubtitleCellValue.email)
         let navigationController = UINavigationController(rootViewController: contactPickerScene)
         self.present(navigationController, animated: true, completion: nil)
+        selectedTextField = contact2
     }
     
     @IBAction func button3Clicked(_ sender: Any) {
         contactPickerScene = ContactsPicker(delegate: self, multiSelection: false, subtitleCellType: SubtitleCellValue.email)
         let navigationController = UINavigationController(rootViewController: contactPickerScene)
         self.present(navigationController, animated: true, completion: nil)
+        selectedTextField = contact3
     }
     
     @IBAction func saveButtonClicked(_ sender: Any) {
@@ -62,6 +73,18 @@ extension EmergencyContactViewController:  ContactsPickerDelegate {
     {
         print("Contact \(contact.displayName) has been selected")
         contactPickerScene.dismiss(animated: true)
+        selectedTextField.text = contact.phoneNumbers.first?.phoneNumber
     }
     
+}
+
+extension EmergencyContactViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        guard let text = textField.text else { return true }
+        let newLength = text.count + string.count - range.length
+        return newLength <= 10
+    }
+
 }
