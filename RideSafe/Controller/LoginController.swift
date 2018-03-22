@@ -91,8 +91,7 @@ class LoginController: UIViewController {
                 verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
                 
             }.catch { error   in
-                let err = error as! CustomError
-                self.showToast(message: err.errorMessage)
+                self.showError(error: error)
         }
     }
     

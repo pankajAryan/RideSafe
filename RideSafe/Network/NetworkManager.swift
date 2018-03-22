@@ -26,10 +26,8 @@ class NetworkManager {
                             print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
                         #endif
                         
-                        let errorCode = String(describing: response["errorCode"])
-                        
-                        
-                        if errorCode == "Optional(0)" || (errorCode == "0") {
+                        let errorCode = String(describing: response["errorCode"]!)
+                        if errorCode == "0" {
                                 fullFilled(response)
                             } else {
                                 let _error = CustomError(errorMessage: response["errorMessage"] as! String, errorCode:errorCode )
@@ -37,7 +35,7 @@ class NetworkManager {
                             }
                         SwiftLoader.hide()
                     }
-                    break
+//                    break
                 case .failure(let error):
                     #if DEBUG
                         print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")

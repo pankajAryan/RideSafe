@@ -7,17 +7,17 @@
 //
 
 import Foundation
+
 protocol RideSafeErrorProtocol: LocalizedError {
-    
     var errorMessage: String { get }
     var errorCode: String { get }
+
 }
 struct CustomError: RideSafeErrorProtocol {
-    
     var errorMessage: String
     var errorCode: String
     
-    init(errorMessage: String, errorCode: String) {
+    init(errorMessage: String,  errorCode: String) {
         self.errorMessage = errorMessage
         self.errorCode = errorCode
     }
