@@ -16,6 +16,7 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - Segmentio (3.0)
   - SWSegmentedControl (2.4.0)
   - Toast-Swift (3.0.1)
   - UIDropDown (1.1.1)
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - JFContactsPicker (~> 1.0)
   - PromiseKit (~> 4.0)
   - SDWebImage (~> 4.3)
+  - Segmentio (~> 3.0)
   - SWSegmentedControl
   - Toast-Swift (~> 3.0.1)
   - UIDropDown
@@ -38,11 +40,12 @@ SPEC CHECKSUMS:
   JFContactsPicker: fa78d877295a617a5e422c4328507c00809615ac
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  Segmentio: 1607fba3b42230f5f91e997d1a3f337f1176674c
   SWSegmentedControl: 6102f2b24ee6e17a84c423885571b5cf0cbb4524
   Toast-Swift: ba0b01b095aada709d915f9beb1d38184a2721c3
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: c3a99c53bc7e485a91f7463c5ea7efb8b3d1cde3
+PODFILE CHECKSUM: dc226d4771240426ad2481d18a52f85de612f189
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.4.0

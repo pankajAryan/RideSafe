@@ -15,4 +15,5 @@ pod 'SDWebImage', '~> 4.3'
 pod 'Toast-Swift', '~> 3.0.1'
 pod 'IQKeyboardManagerSwift'
 pod 'JFContactsPicker', '~> 1.0'
+pod 'Segmentio', '~> 3.0'
 end

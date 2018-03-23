@@ -37,6 +37,14 @@
 		2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565D205D5FC0008F9104 /* Citizen.swift */; };
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
 		2C63FBEC2064023E00BE8691 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FBEB2064023E00BE8691 /* CustomError.swift */; };
+		2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C63FC102065493B00BE8691 /* FOMain.storyboard */; };
+		2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC122065495C00BE8691 /* FODashboardController.swift */; };
+		2C63FC1720657A9600BE8691 /* InfraIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC1620657A9600BE8691 /* InfraIssueController.swift */; };
+		2C63FC1920657AAB00BE8691 /* TransportController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC1820657AAB00BE8691 /* TransportController.swift */; };
+		2C63FC1B20657ABD00BE8691 /* PoliceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC1A20657ABD00BE8691 /* PoliceController.swift */; };
+		2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */; };
+		2C63FC21206583D600BE8691 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC20206583D600BE8691 /* EmptySegue.swift */; };
+		2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC22206590F900BE8691 /* DrivingIssueController.swift */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
@@ -114,6 +122,14 @@
 		2C3D565D205D5FC0008F9104 /* Citizen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
 		2C63FBEB2064023E00BE8691 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		2C63FC102065493B00BE8691 /* FOMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FOMain.storyboard; sourceTree = "<group>"; };
+		2C63FC122065495C00BE8691 /* FODashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FODashboardController.swift; sourceTree = "<group>"; };
+		2C63FC1620657A9600BE8691 /* InfraIssueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfraIssueController.swift; sourceTree = "<group>"; };
+		2C63FC1820657AAB00BE8691 /* TransportController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportController.swift; sourceTree = "<group>"; };
+		2C63FC1A20657ABD00BE8691 /* PoliceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoliceController.swift; sourceTree = "<group>"; };
+		2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededContainerController.swift; sourceTree = "<group>"; };
+		2C63FC20206583D600BE8691 /* EmptySegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		2C63FC22206590F900BE8691 /* DrivingIssueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingIssueController.swift; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
@@ -236,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				B8C4F2712065340000587E55 /* Reports */,
+				2C63FC0F2065491E00BE8691 /* FieldOfficer */,
 				B811FE1E205F5052005F327B /* RoadInfraIssue */,
 				2CF24344205E7B33007E696C /* Views */,
 				B84DB415205E32390000A256 /* EmergencyContact */,
@@ -314,6 +331,21 @@
 				2C3D565D205D5FC0008F9104 /* Citizen.swift */,
 			);
 			path = getProfile;
+			sourceTree = "<group>";
+		};
+		2C63FC0F2065491E00BE8691 /* FieldOfficer */ = {
+			isa = PBXGroup;
+			children = (
+				2C63FC102065493B00BE8691 /* FOMain.storyboard */,
+				2C63FC122065495C00BE8691 /* FODashboardController.swift */,
+				2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */,
+				2C63FC1620657A9600BE8691 /* InfraIssueController.swift */,
+				2C63FC1820657AAB00BE8691 /* TransportController.swift */,
+				2C63FC1A20657ABD00BE8691 /* PoliceController.swift */,
+				2C63FC20206583D600BE8691 /* EmptySegue.swift */,
+				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
+			);
+			path = FieldOfficer;
 			sourceTree = "<group>";
 		};
 		2CF24344205E7B33007E696C /* Views */ = {
@@ -505,6 +537,7 @@
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
+				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
@@ -533,6 +566,7 @@
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SWSegmentedControl/SWSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Segmentio/Segmentio.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/UIDropDown/UIDropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer-Swift/YouTubePlayer_Swift.framework",
@@ -545,6 +579,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Segmentio.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIDropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer_Swift.framework",
@@ -584,7 +619,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -608,13 +643,16 @@
 				2CF24342205E7880007E696C /* SettingController.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */,
+				2C63FC1920657AAB00BE8691 /* TransportController.swift in Sources */,
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
 				B8C4F27B2065571E00587E55 /* ReportRoadInfraViewController.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
 				2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */,
+				2C63FC1720657A9600BE8691 /* InfraIssueController.swift in Sources */,
 				2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
 				2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
+				2C63FC21206583D600BE8691 /* EmptySegue.swift in Sources */,
 				2CF2436D206031A2007E696C /* RegisterCitizenPushNotificationResponse.swift in Sources */,
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
 				2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */,
@@ -629,6 +667,7 @@
 				B81A18D1206353C1001701F4 /* RoadinfraIssueResponse.swift in Sources */,
 				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
 				B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */,
+				2C63FC1B20657ABD00BE8691 /* PoliceController.swift in Sources */,
 				2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */,
 				B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */,
 				B8C4F2732065561B00587E55 /* ReportsContainerViewController.swift in Sources */,
@@ -645,8 +684,11 @@
 				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,
+				2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */,
+				2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,
+				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
