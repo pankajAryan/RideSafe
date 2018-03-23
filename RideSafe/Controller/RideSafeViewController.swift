@@ -78,6 +78,16 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showAlert(message:String ,handler:((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let actionButton = UIAlertAction(title: "YES", style: .default, handler: handler)
+        let dismissAction = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+        alert.addAction(actionButton)
+        alert.addAction(dismissAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     func showError(error:Error) {
         if  error is CustomError {
             self.showAlert(message: (error as! CustomError).errorMessage)

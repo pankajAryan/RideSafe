@@ -213,20 +213,24 @@ extension DashboardController: MenuCellDelegte {
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             
         case .Share:
-            let text = "RideSafe"
+            let text = "Hi! Please Download Ride Safe app from this link:"
             let image = #imageLiteral(resourceName: "logo_large")
-            let myWebsite = NSURL(string:"https://stackoverflow.com/users/4600136/mr-javed-multani?tab=profile")!
+            let myWebsite = NSURL(string:"http://139.59.81.101:8080/RideSafeapp/ridesafe.apk")!
             let shareAll = [text , image , myWebsite] as [Any]
             let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
             self.present(activityViewController, animated: true, completion: nil)
 
         case .Logout:
-            clearUserDefault()
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-            self.navigationController?.pushViewController(loginController, animated: true)
-            self.navigationController?.viewControllers = [loginController]
+            
+            showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
+                self.clearUserDefault()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+                self.navigationController?.pushViewController(loginController, animated: true)
+                self.navigationController?.viewControllers = [loginController]
+            })
+            
         }
         
         if let vc = vc {
