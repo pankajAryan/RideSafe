@@ -29,6 +29,7 @@ class RoadInfraIssueViewController: UIViewController, UINavigationControllerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Report Issue"
         issueDiscriptionTextView.placeholder = "Describe Issues"
         loadIssueListAsperLanguage()
         addtapGestureOnIssueLabel()

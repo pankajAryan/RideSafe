@@ -12,10 +12,15 @@ import SWSegmentedControl
 class ReportsContainerViewController: UIViewController {
 
     @IBOutlet weak var reportSegmentController: SWSegmentedControl!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "My Reports"
+        reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
+        reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
 
+        setBackButton()
         // Do any additional setup after loading the view.
     }
 

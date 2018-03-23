@@ -204,7 +204,7 @@ extension DashboardController: MenuCellDelegte {
             vc = str.instantiateViewController(withIdentifier: "MyProfile") as! MyProfile
             
         case .Report:
-            vc = str.instantiateViewController(withIdentifier: "MyReport") as! MyReport
+            vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController")
             
         case .Setting:
             vc = str.instantiateViewController(withIdentifier: "SettingController") as! SettingController

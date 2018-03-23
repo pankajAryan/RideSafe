@@ -23,6 +23,17 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Kzl-Z2-F3A"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="unselectedTitleColor">
+                                        <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="indicatorColor">
+                                        <color key="value" red="0.16078431369999999" green="0.2901960784" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="reportSegementClicked:" destination="2aE-Lu-xnJ" eventType="valueChanged" id="dxE-Qb-i40"/>
                                 </connections>
@@ -45,6 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="rui-xP-jy3"/>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="kQy-Wn-OwD" id="6E7-TV-g6X"/>
                         <outlet property="reportSegmentController" destination="2Lv-dk-tEW" id="Dp0-Xa-ntN"/>
                     </connections>
                 </viewController>
