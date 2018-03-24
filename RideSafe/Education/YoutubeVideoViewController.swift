@@ -20,12 +20,29 @@ class YoutubeVideoViewController: UIViewController {
         super.viewDidLoad()
         let myVideoURL = NSURL(string: (media?.mediaURL)!)
         youtubePlayerView.loadVideoURL(myVideoURL! as URL)
+        youtubePlayerView.delegate = self
         self.title = media?.title
         videoTitleLabel.text = media?.title
         videoDateTimeLabel.text = media?.postedOn
         descriptionLabel.text = media?.description
         setBackButton()
+        SwiftLoader.show(animated: true)
 
     }
+}
 
+extension YoutubeVideoViewController: YouTubePlayerDelegate {
+    func playerReady(_ videoPlayer: YouTubePlayerView) {
+        SwiftLoader.hide()
+    }
+    
+    func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
+        
+    }
+    
+    func playerQualityChanged(_ videoPlayer: YouTubePlayerView, playbackQuality: YouTubePlaybackQuality) {
+        
+    }
+    
+    
 }

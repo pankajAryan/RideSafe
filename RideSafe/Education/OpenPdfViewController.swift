@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class OpenPdfViewController: UIViewController {
+class OpenPdfViewController: UIViewController, WKNavigationDelegate {
 
     @IBOutlet weak var pdfWebView: WKWebView!
     var media: Media?
@@ -23,8 +23,15 @@ class OpenPdfViewController: UIViewController {
         let request = URLRequest(url: reqURL!)
         
         pdfWebView.load(request)
+        pdfWebView.navigationDelegate = self
         setBackButton()
 
+        SwiftLoader.show(animated: true)
+    }
+
+    func webView(_ webView: WKWebView,
+                 didFinish navigation: WKNavigation!) {
+        SwiftLoader.hide()
     }
 
 }

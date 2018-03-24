@@ -31,13 +31,10 @@ class EducationContainerViewController: UIViewController {
     }
     
     func switchtoVideoTab() {
-        
         educationPDFVideoController?.removeFromParentViewController()
         educationPDFVideoController?.view.removeFromSuperview()
-        
         self.containerView.addSubview((educationVideoViewController?.view)!)
         self.addChildViewController(educationVideoViewController!)
-        
     }
     
     func switchToPDFTab() {
@@ -54,6 +51,4 @@ class EducationContainerViewController: UIViewController {
             switchToPDFTab()
         }
     }
-    
-    
 }
