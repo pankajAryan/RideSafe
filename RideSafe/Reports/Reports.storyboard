@@ -64,17 +64,21 @@
             </objects>
             <point key="canvasLocation" x="-263" y="157"/>
         </scene>
-        <!--Unsafe Driving View Controller-->
+        <!--Unsafe Driving Issue List View Controller-->
         <scene sceneID="XaB-yV-zKE">
             <objects>
-                <viewController storyboardIdentifier="UnsafeDrivingViewController" id="e2U-Iq-zxH" customClass="UnsafeDrivingViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UnsafeDrivingIssueListViewController" id="e2U-Iq-zxH" customClass="UnsafeDrivingIssueListViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7vL-Ad-Zz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-5h-oSA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pe6-5h-oSA">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="e2U-Iq-zxH" id="QCy-VA-INt"/>
+                                    <outlet property="delegate" destination="e2U-Iq-zxH" id="fF0-Gt-xZh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -86,22 +90,29 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="TuG-JN-B3j"/>
                     </view>
+                    <connections>
+                        <outlet property="unsafeDrivingIssueTableView" destination="pe6-5h-oSA" id="Q70-ZO-V5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EpX-88-2zr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="417" y="157"/>
         </scene>
-        <!--Report Road Infra View Controller-->
+        <!--Road Infra Issue List View Controller-->
         <scene sceneID="c7k-PH-i4L">
             <objects>
-                <viewController storyboardIdentifier="ReportRoadInfraViewController" id="Lol-yE-A4D" customClass="ReportRoadInfraViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoadInfraIssueListViewController" id="Lol-yE-A4D" customClass="RoadInfraIssueListViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="02Q-J3-7q0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c2J-qF-abD">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="c2J-qF-abD">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Lol-yE-A4D" id="Y3B-BR-5Cj"/>
+                                    <outlet property="delegate" destination="Lol-yE-A4D" id="C1H-fI-xTL"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,6 +124,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rx4-7p-4kg"/>
                     </view>
+                    <connections>
+                        <outlet property="roadInfraIssueTableView" destination="c2J-qF-abD" id="S8C-WQ-zh4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUX-Ak-Wf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

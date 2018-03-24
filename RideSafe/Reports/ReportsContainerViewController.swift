@@ -13,34 +13,47 @@ class ReportsContainerViewController: UIViewController {
 
     @IBOutlet weak var reportSegmentController: SWSegmentedControl!
     @IBOutlet weak var containerView: UIView!
+    var unsafeDrivingIssueListViewController: UnsafeDrivingIssueListViewController?
+    var roadInfraIssueListViewController: RoadInfraIssueListViewController?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "My Reports"
         reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
         reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
+        reportSegmentController.selectedSegmentIndex = 1
+        
+        unsafeDrivingIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "UnsafeDrivingIssueListViewController") as? UnsafeDrivingIssueListViewController
+        roadInfraIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "RoadInfraIssueListViewController") as? RoadInfraIssueListViewController
 
-        setBackButton()
+        switchToRoadInfraIssueTab()
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func switchtoUnsafeDrivingIssueTab() {
+        roadInfraIssueListViewController?.removeFromParentViewController()
+        roadInfraIssueListViewController?.view.removeFromSuperview()
+        unsafeDrivingIssueListViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
+        self.containerView.addSubview((unsafeDrivingIssueListViewController?.view)!)
+        self.addChildViewController(unsafeDrivingIssueListViewController!)
+        
     }
     
-    @IBAction func reportSegementClicked(_ sender: Any) {
+    func switchToRoadInfraIssueTab() {
+        unsafeDrivingIssueListViewController?.removeFromParentViewController()
+        unsafeDrivingIssueListViewController?.view.removeFromSuperview()
+        roadInfraIssueListViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
+        self.containerView.addSubview((roadInfraIssueListViewController?.view)!)
+        self.addChildViewController(roadInfraIssueListViewController!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func reportSegementClicked(_ sender: SWSegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            switchtoUnsafeDrivingIssueTab()
+        } else {
+            switchToRoadInfraIssueTab()
+        }
     }
-    */
-
 }
