@@ -138,6 +138,7 @@
                             <constraint firstItem="2sl-ky-igd" firstAttribute="leading" secondItem="Enp-GN-aLp" secondAttribute="trailing" constant="16" id="JvS-0N-2Lt"/>
                             <constraint firstItem="a9T-XK-sm8" firstAttribute="leading" secondItem="mvg-m3-H4j" secondAttribute="trailing" constant="8" id="LtI-fi-cKf"/>
                             <constraint firstItem="Enp-GN-aLp" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="MPj-Sb-nTv"/>
+                            <constraint firstItem="BvM-ew-7LA" firstAttribute="top" secondItem="naN-FO-DgJ" secondAttribute="bottom" constant="14.5" id="Mup-r6-VBb"/>
                             <constraint firstItem="G7T-HS-zKc" firstAttribute="leading" secondItem="sgL-CF-ZMD" secondAttribute="trailing" constant="4" id="OEn-9c-rf4"/>
                             <constraint firstItem="mvg-m3-H4j" firstAttribute="leading" secondItem="zHj-f0-oDl" secondAttribute="trailing" constant="8" id="P4o-nN-69n"/>
                             <constraint firstItem="sgL-CF-ZMD" firstAttribute="leading" secondItem="a9T-XK-sm8" secondAttribute="trailing" constant="7.5" id="PNM-hJ-W2u"/>
@@ -160,7 +161,6 @@
                             <constraint firstAttribute="trailing" secondItem="BvM-ew-7LA" secondAttribute="trailing" id="oCr-SB-I62"/>
                             <constraint firstItem="mvg-m3-H4j" firstAttribute="centerY" secondItem="zHj-f0-oDl" secondAttribute="centerY" id="tBF-RW-5Sh"/>
                             <constraint firstAttribute="trailing" secondItem="naN-FO-DgJ" secondAttribute="trailing" constant="12" id="ugj-xH-AeW"/>
-                            <constraint firstItem="BvM-ew-7LA" firstAttribute="top" secondItem="goV-6G-sLI" secondAttribute="bottom" constant="8" id="y1C-r2-qTY"/>
                         </constraints>
                     </view>
                 </subviews>
