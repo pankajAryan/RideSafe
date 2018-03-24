@@ -45,6 +45,13 @@
 		2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */; };
 		2C63FC21206583D600BE8691 /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC20206583D600BE8691 /* EmptySegue.swift */; };
 		2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC22206590F900BE8691 /* DrivingIssueController.swift */; };
+		2C87E7B62066204F00CAD64C /* DrivingIssueForFieldOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7B42066204F00CAD64C /* DrivingIssueForFieldOfficial.swift */; };
+		2C87E7B72066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7B52066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift */; };
+		2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7B9206622B100CAD64C /* FODrivingIssueCell.swift */; };
+		2C87E7BC2066556D00CAD64C /* NoRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7BB2066556D00CAD64C /* NoRecordView.swift */; };
+		2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C87E7BD2066557D00CAD64C /* NoRecord.xib */; };
+		2C87E7C720665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7C520665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift */; };
+		2C87E7C820665B4400CAD64C /* InfraIssuesForFieldOfficer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7C620665B4400CAD64C /* InfraIssuesForFieldOfficer.swift */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
@@ -134,6 +141,13 @@
 		2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbededContainerController.swift; sourceTree = "<group>"; };
 		2C63FC20206583D600BE8691 /* EmptySegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
 		2C63FC22206590F900BE8691 /* DrivingIssueController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingIssueController.swift; sourceTree = "<group>"; };
+		2C87E7B42066204F00CAD64C /* DrivingIssueForFieldOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssueForFieldOfficial.swift; sourceTree = "<group>"; };
+		2C87E7B52066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingIssueListForFieldOfficial.swift; sourceTree = "<group>"; };
+		2C87E7B9206622B100CAD64C /* FODrivingIssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FODrivingIssueCell.swift; sourceTree = "<group>"; };
+		2C87E7BB2066556D00CAD64C /* NoRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRecordView.swift; sourceTree = "<group>"; };
+		2C87E7BD2066557D00CAD64C /* NoRecord.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoRecord.xib; sourceTree = "<group>"; };
+		2C87E7C520665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfraIssuesListForFieldOfficer.swift; sourceTree = "<group>"; };
+		2C87E7C620665B4400CAD64C /* InfraIssuesForFieldOfficer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfraIssuesForFieldOfficer.swift; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
@@ -283,6 +297,8 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C87E7C420665B4400CAD64C /* FOInfraIssues */,
+				2C87E7B32066204F00CAD64C /* FODrivingIssues */,
 				B8C4F2802065791D00587E55 /* MyReport */,
 				B81A18CE2063539A001701F4 /* RoadInfra */,
 				B813A3FA2061756900A1B6F5 /* EmergencyContact */,
@@ -345,6 +361,7 @@
 		2C63FC0F2065491E00BE8691 /* FieldOfficer */ = {
 			isa = PBXGroup;
 			children = (
+				2C87E7B82066226600CAD64C /* FOViews */,
 				2C63FC102065493B00BE8691 /* FOMain.storyboard */,
 				2C63FC122065495C00BE8691 /* FODashboardController.swift */,
 				2C63FC1E20657D8900BE8691 /* EmbededContainerController.swift */,
@@ -355,6 +372,34 @@
 				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
 			);
 			path = FieldOfficer;
+			sourceTree = "<group>";
+		};
+		2C87E7B32066204F00CAD64C /* FODrivingIssues */ = {
+			isa = PBXGroup;
+			children = (
+				2C87E7B42066204F00CAD64C /* DrivingIssueForFieldOfficial.swift */,
+				2C87E7B52066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift */,
+			);
+			path = FODrivingIssues;
+			sourceTree = "<group>";
+		};
+		2C87E7B82066226600CAD64C /* FOViews */ = {
+			isa = PBXGroup;
+			children = (
+				2C87E7B9206622B100CAD64C /* FODrivingIssueCell.swift */,
+				2C87E7BB2066556D00CAD64C /* NoRecordView.swift */,
+				2C87E7BD2066557D00CAD64C /* NoRecord.xib */,
+			);
+			path = FOViews;
+			sourceTree = "<group>";
+		};
+		2C87E7C420665B4400CAD64C /* FOInfraIssues */ = {
+			isa = PBXGroup;
+			children = (
+				2C87E7C520665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift */,
+				2C87E7C620665B4400CAD64C /* InfraIssuesForFieldOfficer.swift */,
+			);
+			path = FOInfraIssues;
 			sourceTree = "<group>";
 		};
 		2CF24344205E7B33007E696C /* Views */ = {
@@ -561,6 +606,7 @@
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
+				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
@@ -649,9 +695,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C87E7C820665B4400CAD64C /* InfraIssuesForFieldOfficer.swift in Sources */,
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
 				B8C4F284206579D300587E55 /* MyDrivingIssueReportResponse.swift in Sources */,
+				2C87E7B72066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift in Sources */,
 				2CF2436E206031A2007E696C /* RegisterCitizenPushNotification.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
 				2CF2435E20600242007E696C /* AppConstants.swift in Sources */,
@@ -662,6 +710,7 @@
 				B81A18D2206353C1001701F4 /* RoadInfraIssue.swift in Sources */,
 				B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
 				2CF24342205E7880007E696C /* SettingController.swift in Sources */,
+				2C87E7B62066204F00CAD64C /* DrivingIssueForFieldOfficial.swift in Sources */,
 				2C1566A22057DCA000B4067C /* MyProfile.swift in Sources */,
 				B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */,
 				2C63FC1920657AAB00BE8691 /* TransportController.swift in Sources */,
@@ -696,6 +745,7 @@
 				B8C4F2732065561B00587E55 /* ReportsContainerViewController.swift in Sources */,
 				2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */,
 				B8C4F277206556AB00587E55 /* UnsafeDrivingIssueListViewController.swift in Sources */,
+				2C87E7C720665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift in Sources */,
 				2C3D565A205AD37B008F9104 /* DrivingIssueCategory.swift in Sources */,
 				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
 				B8C4F27E2065574600587E55 /* ReportTableViewCell.swift in Sources */,
@@ -707,6 +757,7 @@
 				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,
+				2C87E7BC2066556D00CAD64C /* NoRecordView.swift in Sources */,
 				B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */,
 				2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */,
 				2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */,
@@ -715,6 +766,7 @@
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
+				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
 				B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
 			);
