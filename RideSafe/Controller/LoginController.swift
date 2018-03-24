@@ -81,9 +81,19 @@ class LoginController: UIViewController {
                 self.showToast(response: response)
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
                 let verifyResponseObj = VerifyOTPResponse(dictionary: response as NSDictionary)?.responseObject
-                let citizenid = verifyResponseObj?.citizenId
+                
+                var _citizenid: String?
+
+                if verifyResponseObj?.citizenId != nil {
+                    _citizenid = verifyResponseObj?.citizenId
+                } else if  verifyResponseObj?.fieldOfficialId != nil {
+                    _citizenid = verifyResponseObj?.fieldOfficialId
+                } else {
+                    _citizenid = verifyResponseObj?.escalationOfficialId
+
+                }
                 let usertype = verifyResponseObj?.userType
-                if let user_type = usertype, let id = citizenid {
+                if let user_type = usertype, let id = _citizenid {
                     UserDefaults.standard.set(id, forKey: UserDefaultsKeys.citizenId.rawValue)
                     UserDefaults.standard.set(user_type, forKey: UserDefaultsKeys.userType.rawValue)
                     UserDefaults.standard.synchronize()
@@ -99,9 +109,21 @@ class LoginController: UIViewController {
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
         UserDefaults.standard.synchronize()
 
-        let str =  UIStoryboard(name: "Main", bundle: nil)
-        let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
-        self.navigationController?.pushViewController(vc, animated: true)
+        let delegate =  UIApplication.shared.delegate as! AppDelegate
+        if  delegate.getuserType() == .Citizen {
+            let str =  UIStoryboard(name: "Main", bundle: nil)
+            let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
+            self.navigationController?.pushViewController(vc, animated: true)
+        } else {
+            
+            let str =  UIStoryboard(name: "FOMain", bundle: nil)
+            let vc = str.instantiateViewController(withIdentifier: "FODashboardController") as! FODashboardController
+//            let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RideSafeNavigationController") as! RideSafeNavigationController
+            
+
+            self.navigationController?.pushViewController(vc, animated: true)
+
+        }
     }
     
     private func gotoRegistrationPage() {

@@ -12,31 +12,27 @@ import Foundation
  
 /* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
-public class DrivingIssuesCategoryList {
-	public var isRegistered : String?
-	public var userType : String?
-	public var fieldOfficialId : String?
-	public var citizenId : String?
-	public var escalationLevel : String?
-	public var escalationOfficialId : String?
-	public var drivingIssueCategoryList : Array<DrivingIssueCategory>?
+public class DrivingIssueListForFieldOfficial {
+	public var responseObject : Array<DrivingIssueForFieldOfficial>?
+	public var errorCode : Int?
+	public var errorMessage : String?
 
 /**
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let responseObject_list = DrivingIssuesCategoryList.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let json4Swift_Base_list = drivingIssueListForFieldOfficial.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of DrivingIssuesCategoryList Instances.
+    - returns: Array of drivingIssueListForFieldOfficial Instances.
 */
-    public class func modelsFromDictionaryArray(array:NSArray) -> [DrivingIssuesCategoryList]
+    public class func modelsFromDictionaryArray(array:NSArray) -> [DrivingIssueListForFieldOfficial]
     {
-        var models:[DrivingIssuesCategoryList] = []
+        var models:[DrivingIssueListForFieldOfficial] = []
         for item in array
         {
-            models.append(DrivingIssuesCategoryList(dictionary: item as! NSDictionary)!)
+            models.append(DrivingIssueListForFieldOfficial(dictionary: item as! NSDictionary)!)
         }
         return models
     }
@@ -45,21 +41,17 @@ public class DrivingIssuesCategoryList {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let responseObject = DrivingIssuesCategoryList(someDictionaryFromJSON)
+    let json4Swift_Base = drivingIssueListForFieldOfficial(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: DrivingIssuesCategoryList Instance.
+    - returns: drivingIssueListForFieldOfficial Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 
-		isRegistered = dictionary["isRegistered"] as? String
-		userType = dictionary["userType"] as? String
-		fieldOfficialId = dictionary["fieldOfficialId"] as? String
-		citizenId = dictionary["citizenId"] as? String
-		escalationLevel = dictionary["escalationLevel"] as? String
-		escalationOfficialId = dictionary["escalationOfficialId"] as? String
-        if (dictionary["drivingIssueCategoryList"] != nil) { drivingIssueCategoryList = DrivingIssueCategory.modelsFromDictionaryArray(array: dictionary["drivingIssueCategoryList"] as! NSArray) }
+        if (dictionary["responseObject"] != nil) { responseObject = DrivingIssueForFieldOfficial.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
+		errorCode = dictionary["errorCode"] as? Int
+		errorMessage = dictionary["errorMessage"] as? String
 	}
 
 		
@@ -72,12 +64,8 @@ public class DrivingIssuesCategoryList {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.isRegistered, forKey: "isRegistered")
-		dictionary.setValue(self.userType, forKey: "userType")
-		dictionary.setValue(self.fieldOfficialId, forKey: "fieldOfficialId")
-		dictionary.setValue(self.citizenId, forKey: "citizenId")
-		dictionary.setValue(self.escalationLevel, forKey: "escalationLevel")
-		dictionary.setValue(self.escalationOfficialId, forKey: "escalationOfficialId")
+		dictionary.setValue(self.errorCode, forKey: "errorCode")
+		dictionary.setValue(self.errorMessage, forKey: "errorMessage")
 
 		return dictionary
 	}

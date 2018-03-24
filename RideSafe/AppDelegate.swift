@@ -33,7 +33,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var initialViewController:UIViewController?
         switch root {
         case .Dashboard:
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "dashboard") as? DashboardController
+            
+            let usertype =  getuserType()
+            switch usertype {
+            case .Citizen:
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "dashboard") as? DashboardController
+                
+            case.Official:
+                let storyboard = UIStoryboard(name: "FOMain", bundle: nil)
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "FODashboardController") as? FODashboardController
+            }
+            
         case .Login:
             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginController") as? LoginController
         }
@@ -44,6 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
     }
+    
+    func getuserType() -> UserType {
+        if let usertype = UserDefaults.standard.string(forKey: UserDefaultsKeys.userType.rawValue) {
+            if usertype != "C" {
+                return UserType.Official
+            }
+        }
+        return UserType.Citizen
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -68,10 +88,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
-}
-
-enum RootController {
-    case Dashboard
-    case Login
 }
 

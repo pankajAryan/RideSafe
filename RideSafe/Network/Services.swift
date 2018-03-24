@@ -29,6 +29,9 @@ enum ServiceType: String {
     case uploadInfraIssuePicture = "uploadInfraIssuePicture"
     case getCitizenRoadInfraIssueList = "getCitizenRoadInfraIssueList"
     case getCitizenDrivingIssueList = "getCitizenDrivingIssueList"
+    case getDrivingIssueListForFieldOfficial = "getDrivingIssueListForFieldOfficial"
+    case getRoadInfraIssueListForFieldOfficial = "getRoadInfraIssueListForFieldOfficial"
+    case getFellowFieldOfficialList = "getFellowFieldOfficialList"
 }
 
 
