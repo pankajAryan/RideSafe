@@ -26,6 +26,9 @@ class HelpLineTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func phoneButtonClicked(_ sender: Any) {
+        if let url = URL(string: "tel://\(String(describing: phoneNumberButton.title(for: .normal)!))") {
+            UIApplication.shared.open(url)
+        }
     }
     
 }

@@ -33,6 +33,7 @@ class EducationContainerViewController: UIViewController {
     func switchtoVideoTab() {
         educationPDFVideoController?.removeFromParentViewController()
         educationPDFVideoController?.view.removeFromSuperview()
+        educationVideoViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
         self.containerView.addSubview((educationVideoViewController?.view)!)
         self.addChildViewController(educationVideoViewController!)
     }
@@ -40,6 +41,7 @@ class EducationContainerViewController: UIViewController {
     func switchToPDFTab() {
         educationVideoViewController?.removeFromParentViewController()
         educationVideoViewController?.view.removeFromSuperview()
+        educationPDFVideoController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
         self.containerView.addSubview((educationPDFVideoController?.view)!)
         self.addChildViewController(educationPDFVideoController!)
     }

@@ -20,7 +20,6 @@ class HelplineAdministrationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         helpLineTableView.tableFooterView = UIView()
-        loadData()
     }
     
     func loadData() {
@@ -37,9 +36,6 @@ class HelplineAdministrationViewController: UIViewController {
                 }.catch { (error) in
         }
     }
-    
-    
-    
 }
 
 
@@ -70,6 +66,6 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return 90.0
     }
 }
