@@ -639,7 +639,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -690,6 +690,7 @@
 				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
 				B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */,
 				B8C4F283206579D300587E55 /* MyDrivingIssueReport.swift in Sources */,
+				2C63FC1B20657ABD00BE8691 /* PoliceController.swift in Sources */,
 				2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */,
 				B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */,
 				B8C4F2732065561B00587E55 /* ReportsContainerViewController.swift in Sources */,
@@ -707,6 +708,8 @@
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
 				2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */,
 				B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */,
+				2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */,
+				2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
