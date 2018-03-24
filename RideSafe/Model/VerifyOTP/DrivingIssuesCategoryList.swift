@@ -15,7 +15,7 @@ import Foundation
 public class DrivingIssuesCategoryList {
 	public var isRegistered : String?
 	public var userType : String?
-	public var fieldOfficialId : Int?
+	public var fieldOfficialId : String?
 	public var citizenId : String?
 	public var escalationLevel : String?
 	public var escalationOfficialId : String?
@@ -55,7 +55,7 @@ public class DrivingIssuesCategoryList {
 
 		isRegistered = dictionary["isRegistered"] as? String
 		userType = dictionary["userType"] as? String
-		fieldOfficialId = dictionary["fieldOfficialId"] as? Int
+		fieldOfficialId = dictionary["fieldOfficialId"] as? String
 		citizenId = dictionary["citizenId"] as? String
 		escalationLevel = dictionary["escalationLevel"] as? String
 		escalationOfficialId = dictionary["escalationOfficialId"] as? String

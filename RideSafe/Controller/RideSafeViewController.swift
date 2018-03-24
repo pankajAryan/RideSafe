@@ -63,6 +63,8 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    
+    
     func showToast(response:[String:Any]) {
         self.view.makeToast(response["errorMessage"] as? String, duration: 3.0, position: .bottom)
     }
@@ -129,6 +131,8 @@ extension UIViewController {
         }
     }
     
+    
+    
 }
 
 extension UIImage {
@@ -136,5 +140,16 @@ extension UIImage {
         return UIImageJPEGRepresentation(self, 1.0)
     }
 }
+
+enum RootController {
+    case Dashboard
+    case Login
+}
+
+enum UserType {
+    case Citizen
+    case Official
+}
+
 
 
