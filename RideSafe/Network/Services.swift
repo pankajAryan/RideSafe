@@ -31,6 +31,7 @@ enum ServiceType: String {
     case getCitizenDrivingIssueList = "getCitizenDrivingIssueList"
     case getDrivingIssueListForFieldOfficial = "getDrivingIssueListForFieldOfficial"
     case getRoadInfraIssueListForFieldOfficial = "getRoadInfraIssueListForFieldOfficial"
+    case getFellowFieldOfficialList = "getFellowFieldOfficialList"
 }
 
 
