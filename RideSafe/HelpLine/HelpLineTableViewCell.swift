@@ -12,9 +12,11 @@ class HelpLineTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var designationNameLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: UIButton!
+    @IBOutlet weak var bgView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.bgView.layer.cornerRadius = 4.0
         // Initialization code
     }
 

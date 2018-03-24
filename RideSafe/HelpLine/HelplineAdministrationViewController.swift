@@ -63,6 +63,7 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
         } else {
             directory = self.mvdDirectoryList[indexPath.row]
         }
+        
         cell.nameLabel.text = directory.name
         cell.designationNameLabel.text = directory.departmentName
         cell.phoneNumberButton.setTitle(directory.contactNumber, for: .normal)

@@ -25,7 +25,6 @@ class OpenPdfViewController: UIViewController, WKNavigationDelegate {
         pdfWebView.load(request)
         pdfWebView.navigationDelegate = self
         setBackButton()
-
         SwiftLoader.show(animated: true)
     }
 
@@ -33,5 +32,4 @@ class OpenPdfViewController: UIViewController, WKNavigationDelegate {
                  didFinish navigation: WKNavigation!) {
         SwiftLoader.hide()
     }
-
 }
