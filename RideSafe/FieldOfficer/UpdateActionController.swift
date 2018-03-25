@@ -34,7 +34,9 @@ class UpdateActionController: UIViewController {
         self.dateLabel.text = drivingIssue?.createdOn
         self.nameLabel.text = drivingIssue?.postedByName
         self.phoneNumber = drivingIssue?.postedByMobile ?? ""
+        self.actionTextView.text = drivingIssue?.action
         self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
+        self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
         setBackButton()
         setupUI()
     }
@@ -49,7 +51,7 @@ class UpdateActionController: UIViewController {
         pendingRadioButton.valueChanged = {[unowned self] (value) in
             if value == true {
                 self.resolveRadioButton.isChecked = false
-                self.issueStatus = "PENDING"
+                self.issueStatus = "VOID"
             }
         }
         
@@ -93,7 +95,7 @@ class UpdateActionController: UIViewController {
             "category":(drivingIssue?.category)!,
             "status":issueStatus,
             "action":actionTextView.text,
-            "updatedBy":(drivingIssue?.updatedBy)!
+            "updatedBy":citizenId
             ]).then { (response) -> () in
                 self.showToast(response: response)
             }.then { _ in
