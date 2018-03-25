@@ -28,6 +28,9 @@
 		2C1EE2D5204E6F3E0093B3BF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D3204E6F3E0093B3BF /* Services.swift */; };
 		2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */; };
 		2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2D8204E6F460093B3BF /* LoginController.swift */; };
+		2C23660120677796000981A8 /* UpdateActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23660020677796000981A8 /* UpdateActionController.swift */; };
+		2C2366082067793B000981A8 /* UpdateActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2366062067793B000981A8 /* UpdateActionCell.swift */; };
+		2C2366092067793B000981A8 /* UpdateActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2366072067793B000981A8 /* UpdateActionCell.xib */; };
 		2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D5650205AD1CE008F9104 /* DropDown.storyboard */; };
 		2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5652205AD1E8008F9104 /* DropDownController.swift */; };
 		2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */; };
@@ -128,6 +131,9 @@
 		2C1EE2D3204E6F3E0093B3BF /* Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		2C1EE2D4204E6F3E0093B3BF /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		2C1EE2D8204E6F460093B3BF /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2C23660020677796000981A8 /* UpdateActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateActionController.swift; sourceTree = "<group>"; };
+		2C2366062067793B000981A8 /* UpdateActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateActionCell.swift; sourceTree = "<group>"; };
+		2C2366072067793B000981A8 /* UpdateActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateActionCell.xib; sourceTree = "<group>"; };
 		2C3D5650205AD1CE008F9104 /* DropDown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDown.storyboard; sourceTree = "<group>"; };
 		2C3D5652205AD1E8008F9104 /* DropDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownController.swift; sourceTree = "<group>"; };
 		2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
@@ -379,6 +385,7 @@
 				2C63FC1A20657ABD00BE8691 /* PoliceController.swift */,
 				2C63FC20206583D600BE8691 /* EmptySegue.swift */,
 				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
+				2C23660020677796000981A8 /* UpdateActionController.swift */,
 			);
 			path = FieldOfficer;
 			sourceTree = "<group>";
@@ -400,6 +407,8 @@
 				2C87E7BD2066557D00CAD64C /* NoRecord.xib */,
 				2C87E7C92066654C00CAD64C /* FOContactCell.swift */,
 				2C87E7CA2066654C00CAD64C /* FOContactCell.xib */,
+				2C2366062067793B000981A8 /* UpdateActionCell.swift */,
+				2C2366072067793B000981A8 /* UpdateActionCell.xib */,
 			);
 			path = FOViews;
 			sourceTree = "<group>";
@@ -625,6 +634,7 @@
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
+				2C2366092067793B000981A8 /* UpdateActionCell.xib in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
@@ -765,6 +775,7 @@
 				2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */,
 				B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */,
 				B8C4F2732065561B00587E55 /* ReportsContainerViewController.swift in Sources */,
+				2C2366082067793B000981A8 /* UpdateActionCell.swift in Sources */,
 				2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */,
 				B8C4F277206556AB00587E55 /* UnsafeDrivingIssueListViewController.swift in Sources */,
 				2C87E7C720665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift in Sources */,
@@ -784,6 +795,7 @@
 				B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */,
 				2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */,
 				2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */,
+				2C23660120677796000981A8 /* UpdateActionController.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
