@@ -61,6 +61,9 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.statusLabel.text = issue?.status
             cell.reportedBy.text = issue?.postedByName
             cell.phoneNumber = issue?.postedByMobile ?? ""
+            cell.vehiclelabel.text = issue?.vehicleType
+            cell.actionTakenNote = issue?.action
+            cell.senderVC = self
             return cell
         }
         return UITableViewCell()
