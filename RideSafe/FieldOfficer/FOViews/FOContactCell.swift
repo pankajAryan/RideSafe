@@ -18,6 +18,7 @@ class FOContactCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         containerView.layer.cornerRadius = 4
+        self.selectionStyle = .none
     }
 
     @IBAction func dialNumber(_ sender: UIButton) {

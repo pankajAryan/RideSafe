@@ -11,11 +11,14 @@ import WebKit
 
 class OpenPdfViewController: UIViewController, WKNavigationDelegate {
 
-    @IBOutlet weak var pdfWebView: WKWebView!
+    var pdfWebView: WKWebView!
     var media: Media?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        pdfWebView = WKWebView.init(frame: self.view.bounds, configuration: WKWebViewConfiguration())
+        self.view.addSubview(pdfWebView)
+        
         self.title = media?.title
         
         let website = media?.mediaURL
