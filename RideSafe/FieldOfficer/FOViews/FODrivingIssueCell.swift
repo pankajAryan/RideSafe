@@ -29,6 +29,10 @@ class FODrivingIssueCell: UITableViewCell {
         self.selectionStyle = .none
         
     }
+    @IBAction func directionClicked(_ sender: UIButton) {
+        print("Show Google map")
+    }
+    
     @IBAction func actionTaken(_ sender: UIButton) {
         
         if let note = actionTakenNote {
@@ -54,5 +58,8 @@ class FODrivingIssueCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    @IBAction func showDirection(_ sender: UIButton) {
+        print("show Direction")
+    }
+    
 }
