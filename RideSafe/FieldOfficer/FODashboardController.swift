@@ -188,13 +188,20 @@ class FODashboardController: UIViewController,MenuCellDelegte {
             self.present(activityViewController, animated: true, completion: nil)
             
         case .Logout:
-            
+
             showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
-                self.clearUserDefault()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-                self.navigationController?.pushViewController(loginController, animated: true)
-                self.navigationController?.viewControllers = [loginController]
+                
+                let service =  self.userType.uppercased() == "F" ? ServiceType.logoutFieldOfficial : ServiceType.logoutEscalationOfficia
+                let key = self.userType.uppercased() == "F" ? "fieldOfficialId" : "escalationOfficialId"
+                NetworkManager().doServiceCall(serviceType: service, params: [key : self.citizenId]).then { (response) -> () in
+                    self.clearUserDefault()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+                    self.navigationController?.pushViewController(loginController, animated: true)
+                    self.navigationController?.viewControllers = [loginController]
+                    }.catch{ error in
+                        self.showError(error: error)
+                }
             })
             
         }

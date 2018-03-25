@@ -34,6 +34,7 @@ class UpdateActionController: UIViewController {
         self.dateLabel.text = drivingIssue?.createdOn
         self.nameLabel.text = drivingIssue?.postedByName
         self.phoneNumber = drivingIssue?.postedByMobile ?? ""
+        self.actionTextView.placeholder = "Action Taken"
         self.actionTextView.text = drivingIssue?.action
         self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
         self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
@@ -68,23 +69,6 @@ class UpdateActionController: UIViewController {
                 
             }
         }
-    }
-    
-    private func makeVehicleDropDown() {
-        let dropDown = UIDropDown(frame: dropDownView.bounds)
-        dropDown.borderColor = .clear
-        dropDown.textColor = UIColor.darkGray
-        dropDown.hideOptionsWhenSelect = true
-        dropDown.animationType = .Classic
-        dropDown.tableHeight = 80
-        dropDown.placeholder = "Issue Status"
-        dropDown.options = ["PENDING", "RESOLVED"]
-        dropDown.textAlignment = NSTextAlignment.left
-        dropDown.didSelect { [unowned self] (option, index) in
-            self.issueStatus = option
-        }
-        self.dropDownView.addSubview(dropDown)
-        self.view.bringSubview(toFront: dropDown)
     }
     
     @IBAction func directionClicked(_ sender: UIButton) {

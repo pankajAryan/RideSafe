@@ -33,6 +33,9 @@ enum ServiceType: String {
     case getRoadInfraIssueListForFieldOfficial = "getRoadInfraIssueListForFieldOfficial"
     case getFellowFieldOfficialList = "getFellowFieldOfficialList"
     case updateDrivingIssue = "updateDrivingIssue"
+    case logoutEscalationOfficia = "logoutEscalationOfficia"
+    case logoutFieldOfficial = "logoutFieldOfficial"
+
 }
 
 
