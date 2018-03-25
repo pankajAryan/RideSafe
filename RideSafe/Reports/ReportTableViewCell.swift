@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol ReportCellDelegate: class {
+
+    func openMapViewForRowIndex(index: IndexPath)
+    func showActionForRowIndex(index: IndexPath)
+}
+
 class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var issueImageView: UIImageView!
     @IBOutlet weak var vehicleNumberLable: UILabel!
@@ -17,6 +23,10 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var pendingImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
+    
+    var indexPath: IndexPath!
+    weak var delegate: ReportCellDelegate?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +40,11 @@ class ReportTableViewCell: UITableViewCell {
     }
     
     @IBAction func navigationButtonClicked(_ sender: Any) {
+        delegate?.openMapViewForRowIndex(index: indexPath)
     }
     
     @IBAction func actionClicked(_ sender: Any) {
+        delegate?.showActionForRowIndex(index: indexPath)
     }
     
 }

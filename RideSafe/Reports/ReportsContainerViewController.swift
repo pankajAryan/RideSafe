@@ -23,12 +23,11 @@ class ReportsContainerViewController: UIViewController {
         self.title = "My Reports"
         reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
         reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
-        reportSegmentController.selectedSegmentIndex = 1
         
         unsafeDrivingIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "UnsafeDrivingIssueListViewController") as? UnsafeDrivingIssueListViewController
         roadInfraIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "RoadInfraIssueListViewController") as? RoadInfraIssueListViewController
 
-        switchToRoadInfraIssueTab()
+        switchtoUnsafeDrivingIssueTab()
         // Do any additional setup after loading the view.
     }
 

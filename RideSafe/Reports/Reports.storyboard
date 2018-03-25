@@ -98,6 +98,35 @@
             </objects>
             <point key="canvasLocation" x="417" y="157"/>
         </scene>
+        <!--Issue Map View Controller-->
+        <scene sceneID="mMG-KV-Q5c">
+            <objects>
+                <viewController storyboardIdentifier="IssueMapViewController" id="UA2-4u-T8l" customClass="IssueMapViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GA7-L3-8G9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="QPo-gc-tsX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QPo-gc-tsX" secondAttribute="trailing" id="4O6-27-7Qr"/>
+                            <constraint firstItem="aJ0-d1-MHg" firstAttribute="bottom" secondItem="QPo-gc-tsX" secondAttribute="bottom" id="S1e-wd-pQh"/>
+                            <constraint firstItem="QPo-gc-tsX" firstAttribute="leading" secondItem="aJ0-d1-MHg" secondAttribute="leading" id="U0Y-XV-V03"/>
+                            <constraint firstItem="QPo-gc-tsX" firstAttribute="top" secondItem="aJ0-d1-MHg" secondAttribute="top" id="zgL-Gb-vN2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aJ0-d1-MHg"/>
+                    </view>
+                    <connections>
+                        <outlet property="issueMapView" destination="QPo-gc-tsX" id="KwH-K6-ZsA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CIX-yc-xgy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="457" y="870"/>
+        </scene>
         <!--Road Infra Issue List View Controller-->
         <scene sceneID="c7k-PH-i4L">
             <objects>

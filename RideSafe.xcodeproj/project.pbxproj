@@ -101,6 +101,7 @@
 		B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C4F27D2065574600587E55 /* ReportTableViewCell.xib */; };
 		B8C4F283206579D300587E55 /* MyDrivingIssueReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4F281206579D300587E55 /* MyDrivingIssueReport.swift */; };
 		B8C4F284206579D300587E55 /* MyDrivingIssueReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4F282206579D300587E55 /* MyDrivingIssueReportResponse.swift */; };
+		B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */; };
 		C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */; };
 /* End PBXBuildFile section */
 
@@ -204,6 +205,7 @@
 		B8C4F27D2065574600587E55 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		B8C4F281206579D300587E55 /* MyDrivingIssueReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrivingIssueReport.swift; sourceTree = "<group>"; };
 		B8C4F282206579D300587E55 /* MyDrivingIssueReportResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrivingIssueReportResponse.swift; sourceTree = "<group>"; };
+		B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +542,7 @@
 				B8C4F27A2065571E00587E55 /* RoadInfraIssueListViewController.swift */,
 				B8C4F27C2065574600587E55 /* ReportTableViewCell.swift */,
 				B8C4F27D2065574600587E55 /* ReportTableViewCell.xib */,
+				B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */,
 			);
 			path = Reports;
 			sourceTree = "<group>";
@@ -717,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C87E7C820665B4400CAD64C /* InfraIssuesForFieldOfficer.swift in Sources */,
+				B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */,
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
 				B8C4F284206579D300587E55 /* MyDrivingIssueReportResponse.swift in Sources */,

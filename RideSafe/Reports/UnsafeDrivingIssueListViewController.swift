@@ -48,7 +48,6 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         return self.myDrivingIssueReportList.count
     }
     
-    // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:ReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell!
@@ -58,6 +57,8 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         cell.tagsLabel.text = myDrivingIssue.categoryName
         cell.dateLabel.text = myDrivingIssue.createdOn
         cell.statusLabel.text = myDrivingIssue.status
+        cell.delegate = self
+        cell.indexPath = indexPath
         
         cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         
@@ -71,5 +72,22 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+}
+extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
+    func openMapViewForRowIndex(index: IndexPath) {
+        
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
 
+        let issueMapViewController: IssueMapViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
+        issueMapViewController.issueLatitude = (drivingIssue.lat! as NSString).doubleValue
+        issueMapViewController.issueLongitude = (drivingIssue.lon! as NSString).doubleValue
+        
+        self.navigationController?.pushViewController(issueMapViewController, animated: true)
+    }
+    
+    func showActionForRowIndex(index: IndexPath) {
+        
+    }
+    
+    
 }
