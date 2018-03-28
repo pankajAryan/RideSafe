@@ -16,6 +16,7 @@ class HelplineAdministrationViewController: UIViewController {
     var administrationDirectoryList: [Directory] = []
     var selectedSegmented:Int = 0
     var districId:String? = "4"
+    @IBOutlet weak var noRecordShowLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +44,18 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedSegmented == 0 {
+            if self.administrationDirectoryList.count == 0 {
+                noRecordShowLabel.alpha = 1.0
+            } else {
+                noRecordShowLabel.alpha = 0.0
+            }
             return self.administrationDirectoryList.count
         } else {
+            if self.mvdDirectoryList.count == 0 {
+                noRecordShowLabel.alpha = 1.0
+            } else {
+                noRecordShowLabel.alpha = 0.0
+            }
             return self.mvdDirectoryList.count
         }
     }

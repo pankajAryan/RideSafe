@@ -76,6 +76,33 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
         self.view.bringSubview(toFront: self.sideMenu)
         self.title = "Ride Safe"
         setRightSwitch()
+        
+        vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        vehicleThirdField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+    }
+    
+    @objc func textFieldDidChange(textField: UITextField){
+        
+        let text = textField.text
+        
+        switch textField{
+        case vehicleFirstField:
+            if text?.count == 2 {
+            vehicleSecondField.becomeFirstResponder()
+            }
+        case vehicleSecondField:
+            if text?.count == 3 {
+            vehicleThirdField.becomeFirstResponder()
+            }
+        case vehicleThirdField:
+            if text?.count == 4 {
+                vehicleThirdField.resignFirstResponder()
+            }
+        default:
+            break
+        }
+        
     }
     
     private func setRightSwitch() {
@@ -319,30 +346,6 @@ extension DashboardController: DropDownDelgate{
 
 
 extension DashboardController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if string == " "
-        {
-            return false
-        }
-        let currentString: NSString = textField.text! as NSString
-        let newString: NSString =
-            currentString.replacingCharacters(in: range, with: string) as NSString
-        
-        
-        switch textField {
-        case vehicleFirstField:
-            return newString.length <= 2
-        case vehicleSecondField:
-            return  newString.length <= 3
-            
-        case vehicleThirdField:
-            return newString.length <= 4
-        default:
-            return  true
-        }
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool  {
         textField.resignFirstResponder()

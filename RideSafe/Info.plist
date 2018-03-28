@@ -24,6 +24,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Ride safe need access to Camera </string>
 	<key>NSContactsUsageDescription</key>
 	<string>Ride Safe need access to contacts</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
