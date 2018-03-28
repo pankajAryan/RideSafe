@@ -35,7 +35,7 @@ enum ServiceType: String {
     case updateDrivingIssue = "updateDrivingIssue"
     case logoutEscalationOfficia = "logoutEscalationOfficia"
     case logoutFieldOfficial = "logoutFieldOfficial"
-
+    case recordCitizenLiveLocation = "recordCitizenLiveLocation"
 }
 
 
