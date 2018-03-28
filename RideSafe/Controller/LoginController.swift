@@ -17,6 +17,7 @@ class LoginController: UIViewController {
     @IBOutlet weak var otpView: UIStackView!
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var otpText: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +68,7 @@ class LoginController: UIViewController {
                 self.showToast(response: response)
                 UIView.animate(withDuration: 0.3, animations: {
                     self.otpView.isHidden = false
+                    self.submitButton.setTitle("VERIFY OTP", for: .normal)
                 })
             }.catch { error in
         }
@@ -115,14 +117,9 @@ class LoginController: UIViewController {
             let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
             self.navigationController?.pushViewController(vc, animated: true)
         } else {
-            
             let str =  UIStoryboard(name: "FOMain", bundle: nil)
             let vc = str.instantiateViewController(withIdentifier: "FODashboardController") as! FODashboardController
-//            let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RideSafeNavigationController") as! RideSafeNavigationController
-            
-
             self.navigationController?.pushViewController(vc, animated: true)
-
         }
     }
     
