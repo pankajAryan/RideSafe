@@ -68,6 +68,7 @@ class LoginController: UIViewController {
                 self.showToast(response: response)
                 UIView.animate(withDuration: 0.3, animations: {
                     self.otpView.isHidden = false
+                    self.otpView.layoutIfNeeded()
                     self.submitButton.setTitle("VERIFY OTP", for: .normal)
                 })
             }.catch { error in
