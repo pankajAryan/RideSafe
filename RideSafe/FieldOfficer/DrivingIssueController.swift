@@ -64,6 +64,9 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.vehiclelabel.text = issue?.vehicleType
             cell.actionTakenNote = issue?.action
             cell.senderVC = self
+            cell.delegate = self
+            cell.indexPath = indexPath
+
             return cell
         }
         return UITableViewCell()
@@ -85,4 +88,16 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+}
+
+extension DrivingIssueController: FODrivingIssueCellDelegate {
+    
+    func openMapViewForRowIndex(index: IndexPath) {
+        let issue = drivingIssue?[index.row]
+        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
+        issueMapViewController.issueLatitude = ((issue?.lat)! as NSString).doubleValue
+        issueMapViewController.issueLongitude = ((issue?.lon)! as NSString).doubleValue
+        self.navigationController?.pushViewController(issueMapViewController, animated: true)
+    }
+    
 }

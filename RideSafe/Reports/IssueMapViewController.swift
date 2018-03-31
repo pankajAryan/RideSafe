@@ -30,7 +30,7 @@ class IssueMapViewController: UIViewController {
         let pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(issueLatitude, issueLongitude)
         let objectAnnotation = MKPointAnnotation()
         objectAnnotation.coordinate = pinLocation
-        objectAnnotation.title = "your title"
+//        objectAnnotation.title = ""
         issueMapView.addAnnotation(objectAnnotation)
     }
 

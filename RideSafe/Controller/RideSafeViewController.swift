@@ -73,8 +73,8 @@ extension UIViewController {
         self.view.makeToast(message, duration: 3.0, position: .bottom)
     }
     
-    func showAlert(message:String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+    func showAlert(title: String = "", message:String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(dismissAction)
         self.present(alert, animated: true, completion: nil)
