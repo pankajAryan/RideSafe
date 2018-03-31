@@ -18,6 +18,8 @@ class UpdateActionController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageUploaded: UIImageView!
+    @IBOutlet weak var resolvedLabel: UILabel!
+    @IBOutlet weak var voidLabel: UILabel!
     var uploadedImage:UIImage?
     var phoneNumber = ""
     var issueStatus = ""
@@ -38,6 +40,20 @@ class UpdateActionController: UIViewController {
         self.actionTextView.text = drivingIssue?.action
         self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
         self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
+        
+        if self.updateButton.isHidden {
+            if drivingIssue?.status?.uppercased() == "RESOLVED" {
+                pendingRadioButton.isEnabled = false
+                resolveRadioButton.isChecked = true
+                resolvedLabel.isEnabled = true
+                voidLabel.isEnabled = false
+            } else {
+                resolveRadioButton.isEnabled = false
+                pendingRadioButton.isChecked = true
+                resolvedLabel.isEnabled = false
+                voidLabel.isEnabled = true
+            }
+        }
         setBackButton()
         setupUI()
     }
@@ -72,6 +88,13 @@ class UpdateActionController: UIViewController {
     }
     
     @IBAction func directionClicked(_ sender: UIButton) {
+        
+        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
+        issueMapViewController.issueLatitude = ((drivingIssue?.lat)! as NSString).doubleValue
+        issueMapViewController.issueLongitude = ((drivingIssue?.lon)! as NSString).doubleValue
+        
+        self.navigationController?.pushViewController(issueMapViewController, animated: true)
+
     }
     @IBAction func updateClicked(_ sender: UIButton) {
         NetworkManager().doServiceCall(serviceType: .updateDrivingIssue, params: [

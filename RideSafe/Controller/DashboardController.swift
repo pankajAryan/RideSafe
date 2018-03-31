@@ -144,7 +144,7 @@ class DashboardController: UIViewController,UINavigationControllerDelegate, UIIm
         firstly {
             NetworkManager().doServiceCall(serviceType: .recordCitizenLiveLocation, params: ["citizenId": citizenId,
                                                                                                      "lat":  latitude,
-                                                                                                     "lon": longitude])
+                                                                                                     "lon": longitude], showLoader: false)
             }.then { response -> () in
                 print(response)
             }.catch { (error) in

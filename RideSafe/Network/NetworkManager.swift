@@ -13,8 +13,10 @@ import PromiseKit
 
 class NetworkManager {
     
-    func doServiceCall(serviceType:ServiceType, params:[String:String]) -> Promise<[String:Any]> {
-        SwiftLoader.show(animated: true)
+    func doServiceCall(serviceType:ServiceType, params:[String:String],showLoader: Bool = true) -> Promise<[String:Any]> {
+        if showLoader {
+            SwiftLoader.show(animated: true)
+        }
         let urlString = makeUrl(restUrl: serviceType.rawValue)
         return Promise { fullFilled , reject in
             Alamofire.request(urlString, method: .post, parameters: params).responseJSON {

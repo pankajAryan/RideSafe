@@ -23,6 +23,7 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var pendingImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
+    @IBOutlet weak var actionButton: UIButton!
     
     var indexPath: IndexPath!
     weak var delegate: ReportCellDelegate?

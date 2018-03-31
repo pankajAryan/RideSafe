@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol FODrivingIssueCellDelegate: class {
+    
+    func openMapViewForRowIndex(index: IndexPath)
+ 
+}
 class FODrivingIssueCell: UITableViewCell {
 
     @IBOutlet weak var vehiclelabel: UILabel!
@@ -23,6 +28,10 @@ class FODrivingIssueCell: UITableViewCell {
     var actionTakenNote : String?
     var senderVC: UIViewController?
     
+    var indexPath: IndexPath!
+    weak var delegate: FODrivingIssueCellDelegate?
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -30,7 +39,7 @@ class FODrivingIssueCell: UITableViewCell {
         
     }
     @IBAction func directionClicked(_ sender: UIButton) {
-        print("Show Google map")
+        delegate?.openMapViewForRowIndex(index: indexPath)
     }
     
     @IBAction func actionTaken(_ sender: UIButton) {

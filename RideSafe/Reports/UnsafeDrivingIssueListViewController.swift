@@ -60,6 +60,10 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         cell.delegate = self
         cell.indexPath = indexPath
         
+        if myDrivingIssue.action?.count == 0 {
+            cell.actionButton.isHidden = true
+        }
+        
         cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         
         return cell
@@ -86,7 +90,9 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     }
     
     func showActionForRowIndex(index: IndexPath) {
-        
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
+
+        showAlert(title: "Action Taken", message: drivingIssue.action!)
     }
     
     
