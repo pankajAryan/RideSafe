@@ -39,6 +39,10 @@ class DrivingIssueController: UIViewController {
         super.viewDidLoad()
         recordTable.estimatedRowHeight = 300
         recordTable.rowHeight = UITableViewAutomaticDimension
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchIssuesForOfficials()
     }
 }
