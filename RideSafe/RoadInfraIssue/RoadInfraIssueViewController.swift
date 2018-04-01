@@ -153,7 +153,7 @@ class RoadInfraIssueViewController: UIViewController, UINavigationControllerDele
     @IBAction func reportButtonClicked(_ sender: Any) {
         
         if (issueDiscriptionTextView.text?.isEmpty)! || issueImage == nil || selectedInfraIssueList.count == 0 {
-            let alert =  UIAlertController(title: "", message: "Infra issue type, Infra issue discription and Infra issues image are mandatory", preferredStyle: .alert)
+            let alert =  UIAlertController(title: "", message: "Infra issue type, Infra issue description and Infra issues image are mandatory", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler:nil))
             self.present(alert, animated: true, completion: nil)
         } else {
@@ -171,6 +171,7 @@ class RoadInfraIssueViewController: UIViewController, UINavigationControllerDele
                         self.navigationController?.showToast(response: responce)
                         self.navigationController?.popViewController(animated: true)
                     }.catch { error in
+                        self.showError(error: error)
                     }
             }
         }

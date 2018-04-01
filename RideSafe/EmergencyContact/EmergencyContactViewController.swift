@@ -67,6 +67,15 @@ class EmergencyContactViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
    
+        let serviceType: ServiceType = self.isContactAvailable ? .addEmergencyContacts : .updateEmergencyContacts
+        firstly{
+            NetworkManager().doServiceCall(serviceType: serviceType, params: ["emergencyContact1": contact1.text!, "emergencyContact2": contact2.text!, "emergencyContact3": contact3.text!, "citizenId": citizenId])
+            }.then { responce -> () in
+                self.navigationController?.showToast(response: responce)
+                self.navigationController?.popViewController(animated: true)
+            }.catch { error in
+                self.showError(error: error)
+        }
     }
 }
 
