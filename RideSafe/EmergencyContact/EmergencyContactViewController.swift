@@ -67,7 +67,12 @@ class EmergencyContactViewController: UIViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
    
-        let serviceType: ServiceType = self.isContactAvailable ? .addEmergencyContacts : .updateEmergencyContacts
+        var serviceType: ServiceType
+        if self.isContactAvailable {
+            serviceType = .updateEmergencyContacts
+        } else {
+            serviceType = .addEmergencyContacts
+        }
         firstly{
             NetworkManager().doServiceCall(serviceType: serviceType, params: ["emergencyContact1": contact1.text!, "emergencyContact2": contact2.text!, "emergencyContact3": contact3.text!, "citizenId": citizenId])
             }.then { responce -> () in
