@@ -142,3 +142,24 @@ class LoginController: UIViewController {
     
 }
 
+extension LoginController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == mobileNumber {
+            let newString = textField.text! + string
+            if newString.count > 10 {
+                return false
+            }
+            
+            if otpView.isHidden == false {
+                otpView.isHidden = true
+                self.submitButton.setTitle("NEXT", for: .normal)
+                otpText.text = ""
+            }
+        }
+        
+        return true
+    }
+}
+
