@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 import JFContactsPicker
 
-class EmergencyContactViewController: UIViewController {
+class EmergencyContactViewController: RideSafeViewController {
 
     @IBOutlet weak var contact1: UITextField!
     @IBOutlet weak var contact2: UITextField!

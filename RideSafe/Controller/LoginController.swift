@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class LoginController: UIViewController {
+class LoginController: RideSafeViewController {
     
     
     @IBOutlet weak var officialCheckBox: Checkbox!

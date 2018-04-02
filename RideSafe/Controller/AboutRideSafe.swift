@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class AboutRideSafe: UIViewController {
+class AboutRideSafe: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

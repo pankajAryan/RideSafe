@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class OpenPdfViewController: UIViewController, WKNavigationDelegate {
+class OpenPdfViewController: RideSafeViewController, WKNavigationDelegate {
 
     var pdfWebView: WKWebView!
     var media: Media?

@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class IssueMapViewController: UIViewController {
+class IssueMapViewController: RideSafeViewController {
     @IBOutlet weak var issueMapView: MKMapView!
     var latDelta:CLLocationDegrees = 0.1
     var longDelta:CLLocationDegrees = 0.1

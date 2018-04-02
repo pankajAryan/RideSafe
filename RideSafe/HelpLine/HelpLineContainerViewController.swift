@@ -11,7 +11,7 @@ import SWSegmentedControl
 import UIDropDown
 import PromiseKit
 
-class HelpLineContainerViewController: UIViewController {
+class HelpLineContainerViewController: RideSafeViewController {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var popTableView: UITableView!

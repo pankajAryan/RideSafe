@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyReport: UIViewController {
+class MyReport: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

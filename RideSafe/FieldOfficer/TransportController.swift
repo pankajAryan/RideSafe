@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TransportController: UIViewController {
+class TransportController: RideSafeViewController {
     
     @IBOutlet weak var recordTable: UITableView!
     var fieldOfficers:[FieldOfficer]?

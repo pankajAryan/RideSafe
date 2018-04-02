@@ -11,7 +11,7 @@ import PromiseKit
 import CoreLocation
 
 
-class RoadInfraIssueViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
+class RoadInfraIssueViewController: RideSafeViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
 
     @IBOutlet weak var issueTypesLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!

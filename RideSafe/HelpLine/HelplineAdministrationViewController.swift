@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class HelplineAdministrationViewController: UIViewController {
+class HelplineAdministrationViewController: RideSafeViewController {
 
     @IBOutlet weak var helpLineTableView: UITableView!
     var mvdDirectoryList:[Directory] = []

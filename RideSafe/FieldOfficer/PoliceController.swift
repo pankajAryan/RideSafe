@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PoliceController: UIViewController {
+class PoliceController: RideSafeViewController {
 
 @IBOutlet weak var recordTable: UITableView!
 var fieldOfficers:[FieldOfficer]?

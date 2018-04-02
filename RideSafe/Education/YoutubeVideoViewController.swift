@@ -9,7 +9,7 @@
 import UIKit
 import YouTubePlayer_Swift
 
-class YoutubeVideoViewController: UIViewController {
+class YoutubeVideoViewController: RideSafeViewController {
 
     @IBOutlet weak var youtubePlayerView: YouTubePlayerView!
     @IBOutlet weak var videoTitleLabel: UILabel!

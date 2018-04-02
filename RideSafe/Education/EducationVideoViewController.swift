@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 import SDWebImage
 
-class EducationVideoViewController: UIViewController {
+class EducationVideoViewController: RideSafeViewController {
     @IBOutlet weak var educationVideoTableView: UITableView!
     var mediaList: [Media] = []
     

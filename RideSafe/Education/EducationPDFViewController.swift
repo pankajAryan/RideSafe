@@ -11,7 +11,7 @@ import PromiseKit
 import SDWebImage
 
 
-class EducationPDFViewController: UIViewController {
+class EducationPDFViewController: RideSafeViewController {
     @IBOutlet weak var educationPdfTableView: UITableView!
     var mediaList: [Media] = []
 

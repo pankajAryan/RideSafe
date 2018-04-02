@@ -9,7 +9,7 @@
 import UIKit
 import UIDropDown
 
-class UpdateActionController: UIViewController {
+class UpdateActionController: RideSafeViewController {
 
     @IBOutlet weak var dropDownView: UIView!
     @IBOutlet weak var updateButton: UIButton!

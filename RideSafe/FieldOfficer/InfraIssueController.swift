@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InfraIssueController: UIViewController {
+class InfraIssueController: RideSafeViewController {
     
     @IBOutlet weak var recordTable: UITableView!
      var infraIssues:[InfraIssuesForFieldOfficer]?

@@ -10,7 +10,7 @@ import UIKit
 import PromiseKit
 import UIDropDown
 
-class RegistrationController: UIViewController {
+class RegistrationController: RideSafeViewController {
     
     var phoneNumber = String()
     @IBOutlet weak var district: UITextField!

@@ -14,6 +14,14 @@ class RideSafeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackGround()
+    }
+    
+    private func setBackGround() {
+        let imageView = UIImageView(frame: UIScreen.main.bounds)
+        imageView.image = #imageLiteral(resourceName: "form_bg")
+        view.addSubview(imageView)
+        view.sendSubview(toBack: imageView)
     }
 }
 

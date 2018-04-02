@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmbededContainerController: UIViewController {
+class EmbededContainerController: RideSafeViewController {
     //Manipulating container views
     fileprivate weak var viewController : UIViewController!
     //Keeping track of containerViews

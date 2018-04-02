@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingController: UIViewController {
+class SettingController: RideSafeViewController {
 
      struct languageModel {
         var lanCode = ""

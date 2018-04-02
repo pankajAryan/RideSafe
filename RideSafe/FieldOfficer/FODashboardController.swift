@@ -10,7 +10,7 @@ import UIKit
 import SWSegmentedControl
 import Segmentio
 
-class FODashboardController: UIViewController,MenuCellDelegte {
+class FODashboardController: RideSafeViewController,MenuCellDelegte {
     
     @IBOutlet weak var sideMenu: SideMenu!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!

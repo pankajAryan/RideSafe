@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class RoadInfraIssueListViewController: UIViewController {
+class RoadInfraIssueListViewController: RideSafeViewController {
 
     @IBOutlet weak var roadInfraIssueTableView: UITableView!
     var myRoadInfraIssuesList: [MyRoadInfraIssue] = []

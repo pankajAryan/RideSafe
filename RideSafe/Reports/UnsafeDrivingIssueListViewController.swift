@@ -9,7 +9,7 @@
 import UIKit
 import PromiseKit
 
-class UnsafeDrivingIssueListViewController: UIViewController {
+class UnsafeDrivingIssueListViewController: RideSafeViewController {
 
     @IBOutlet weak var unsafeDrivingIssueTableView: UITableView!
     var myDrivingIssueReportList: [MyDrivingIssueReport] = []

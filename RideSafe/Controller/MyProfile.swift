@@ -10,7 +10,7 @@ import UIKit
 import UIDropDown
 import PromiseKit
 
-class MyProfile: UIViewController {
+class MyProfile: RideSafeViewController {
 
     @IBOutlet weak var districtField: UITextField!
     @IBOutlet weak var mobileNumberField: UITextField!

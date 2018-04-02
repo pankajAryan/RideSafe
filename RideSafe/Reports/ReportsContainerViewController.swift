@@ -9,7 +9,7 @@
 import UIKit
 import SWSegmentedControl
 
-class ReportsContainerViewController: UIViewController {
+class ReportsContainerViewController: RideSafeViewController {
 
     @IBOutlet weak var reportSegmentController: SWSegmentedControl!
     @IBOutlet weak var containerView: UIView!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DrivingIssueController: UIViewController {
+class DrivingIssueController: RideSafeViewController {
     
     @IBOutlet weak var recordTable: UITableView!
     var drivingIssue:[DrivingIssueForFieldOfficial]?

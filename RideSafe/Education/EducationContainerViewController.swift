@@ -9,7 +9,7 @@
 import UIKit
 import SWSegmentedControl
 
-class EducationContainerViewController: UIViewController {
+class EducationContainerViewController: RideSafeViewController {
 
     @IBOutlet weak var educationSegmentedControl: SWSegmentedControl!
     @IBOutlet weak var containerView: UIView!

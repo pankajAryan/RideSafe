@@ -11,7 +11,7 @@ import UIDropDown
 import CoreLocation
 import PromiseKit
 
-class DashboardController: UIViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
+class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
     @IBOutlet weak var vehicleThirdField: UITextField!
     @IBOutlet weak var vehicleSecondField: UITextField!
