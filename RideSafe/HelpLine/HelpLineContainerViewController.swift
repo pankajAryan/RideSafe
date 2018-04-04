@@ -44,6 +44,7 @@ class HelpLineContainerViewController: RideSafeViewController {
         rightButton.setTitle(getDistrictName(from: dictList)?.name, for: .normal)
         self.districtList = dictList!
         rightButton.setTitleColor(UIColor.darkGray, for: .normal)
+        rightButton.titleLabel?.font = UIFont.init(name: "Poppins-Medium", size: 12.0)!
         rightButton.setImage(#imageLiteral(resourceName: "dropdown-1"), for: .normal)
         rightButton.semanticContentAttribute = .forceRightToLeft
 

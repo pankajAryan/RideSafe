@@ -14,6 +14,8 @@ class RideSafeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Poppins-Medium", size: 16)!]
+
         setBackGround()
     }
     
