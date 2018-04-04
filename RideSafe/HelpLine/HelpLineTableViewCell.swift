@@ -16,11 +16,6 @@ class HelpLineTableViewCell: UITableViewCell {
     @IBOutlet weak var bgView: UIView!
     var phoneNumber: String!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        self.bgView.layer.cornerRadius = 4.0
-        // Initialization code
-    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
