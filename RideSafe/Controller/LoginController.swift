@@ -38,6 +38,7 @@ class LoginController: RideSafeViewController {
                 self.showToast(response: response)
                 UIView.animate(withDuration: 0.3, animations: {
                     self.otpView.isHidden = false
+                    self.otpText.becomeFirstResponder()
                     self.otpView.layoutIfNeeded()
                     self.submitButton.setTitle("VERIFY OTP", for: .normal)
                 })
@@ -117,15 +118,18 @@ extension LoginController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == mobileNumber {
+            
             let newString = textField.text! + string
             if newString.count > 10 {
                 return false
             }
             
             if otpView.isHidden == false {
-                otpView.isHidden = true
-                self.submitButton.setTitle("NEXT", for: .normal)
-                otpText.text = ""
+                UIView.animate(withDuration: 0.3, animations: {
+                    self.otpView.isHidden = true
+                    self.submitButton.setTitle("NEXT", for: .normal)
+                    self.otpText.text = ""
+                })
             }
         }
         
