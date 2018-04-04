@@ -34,6 +34,7 @@ class YoutubeVideoViewController: RideSafeViewController {
 extension YoutubeVideoViewController: YouTubePlayerDelegate {
     func playerReady(_ videoPlayer: YouTubePlayerView) {
         SwiftLoader.hide()
+        youtubePlayerView.play()
     }
     
     func playerStateChanged(_ videoPlayer: YouTubePlayerView, playerState: YouTubePlayerState) {
