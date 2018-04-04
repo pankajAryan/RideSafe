@@ -23,11 +23,15 @@ class ReportsContainerViewController: RideSafeViewController {
         self.title = "My Reports"
         reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
         reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
-        
+        reportSegmentController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
+        reportSegmentController.backgroundColor = .white
+
         unsafeDrivingIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "UnsafeDrivingIssueListViewController") as? UnsafeDrivingIssueListViewController
         roadInfraIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "RoadInfraIssueListViewController") as? RoadInfraIssueListViewController
 
         switchtoUnsafeDrivingIssueTab()
+        setBackButton()
+
         // Do any additional setup after loading the view.
     }
 

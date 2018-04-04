@@ -53,11 +53,23 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
         let cell:ReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell!
         let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[indexPath.row]
         
+        cell.vehicleNumberLable.text = ""
         cell.vehicleDiscriptionLabel.text = myRoadInfraIssue.description
         cell.tagsLabel.text = myRoadInfraIssue.categoryName
         cell.dateLabel.text = myRoadInfraIssue.createdOn
         cell.statusLabel.text = myRoadInfraIssue.status
 
+        if myRoadInfraIssue.status == "RESOLVED" {
+            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
+            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+        } else if myRoadInfraIssue.status == "VOID" {
+            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
+        } else {
+            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+        }
+        
         cell.issueImageView.sd_setImage(with: URL(string: myRoadInfraIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         
         return cell
