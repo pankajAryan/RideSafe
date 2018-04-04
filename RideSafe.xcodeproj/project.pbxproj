@@ -59,6 +59,9 @@
 		2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C87E7CA2066654C00CAD64C /* FOContactCell.xib */; };
 		2C87E7D52066694A00CAD64C /* FieldOfficerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7D32066694A00CAD64C /* FieldOfficerList.swift */; };
 		2C87E7D62066694A00CAD64C /* FieldOfficer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C87E7D42066694A00CAD64C /* FieldOfficer.swift */; };
+		2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */; };
+		2CB05AF1207491FE006C547E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */; };
+		2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
@@ -163,6 +166,9 @@
 		2C87E7CA2066654C00CAD64C /* FOContactCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FOContactCell.xib; sourceTree = "<group>"; };
 		2C87E7D32066694A00CAD64C /* FieldOfficerList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficerList.swift; sourceTree = "<group>"; };
 		2C87E7D42066694A00CAD64C /* FieldOfficer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficer.swift; sourceTree = "<group>"; };
+		2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
@@ -272,6 +278,7 @@
 			children = (
 				2C1566892051CDE000B4067C /* Custom UI */,
 				2C1EE2AE204E5A440093B3BF /* RideSafe */,
+				2CB05AEC207491DD006C547E /* Resources */,
 				2C1EE2AD204E5A440093B3BF /* Products */,
 				09B9843564E829FFDA27C580 /* Pods */,
 				8466DFB9820459677EFEA6B8 /* Frameworks */,
@@ -431,6 +438,16 @@
 				2C87E7D42066694A00CAD64C /* FieldOfficer.swift */,
 			);
 			path = FieldOfficerListresponse;
+			sourceTree = "<group>";
+		};
+		2CB05AEC207491DD006C547E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */,
+				2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */,
+				2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		2CF24344205E7B33007E696C /* Views */ = {
@@ -634,6 +651,7 @@
 				2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
+				2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
@@ -643,10 +661,12 @@
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
+				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
 				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
 				B8C4F2752065563500587E55 /* Reports.storyboard in Resources */,
 				B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */,
+				2CB05AF1207491FE006C547E /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
