@@ -26,6 +26,8 @@ class HelpLineContainerViewController: RideSafeViewController {
         self.title = "Emergency Directory"
         segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
         segmentedController.setTitle("MVD", forSegmentAt: 1)
+        segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
+
         segmentedController.backgroundColor = UIColor.white
         helpLineViewController = storyboard?.instantiateViewController(withIdentifier: "HelplineAdministrationViewController") as? HelplineAdministrationViewController
         helpLineViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
@@ -42,6 +44,7 @@ class HelpLineContainerViewController: RideSafeViewController {
         rightButton.setTitle(getDistrictName(from: dictList)?.name, for: .normal)
         self.districtList = dictList!
         rightButton.setTitleColor(UIColor.darkGray, for: .normal)
+        rightButton.titleLabel?.font = UIFont.init(name: "Poppins-Medium", size: 12.0)!
         rightButton.setImage(#imageLiteral(resourceName: "dropdown-1"), for: .normal)
         rightButton.semanticContentAttribute = .forceRightToLeft
 

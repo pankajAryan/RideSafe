@@ -26,9 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" image="form_bg" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-Ck-E1C">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7L-36-hGn" customClass="SWSegmentedControl" customModule="SWSegmentedControl">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -66,11 +63,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T7L-36-hGn" firstAttribute="leading" secondItem="P0u-Y3-DRl" secondAttribute="leading" id="0d7-zt-Pod"/>
-                            <constraint firstItem="7h4-Ck-E1C" firstAttribute="top" secondItem="y1g-eL-N3I" secondAttribute="top" id="1Vq-qk-fUb"/>
-                            <constraint firstItem="7h4-Ck-E1C" firstAttribute="leading" secondItem="y1g-eL-N3I" secondAttribute="leading" id="34H-cv-VRc"/>
                             <constraint firstItem="piv-Z9-Nvn" firstAttribute="leading" secondItem="P0u-Y3-DRl" secondAttribute="leading" id="90G-Al-ysl"/>
-                            <constraint firstAttribute="trailing" secondItem="7h4-Ck-E1C" secondAttribute="trailing" id="EgB-AP-aea"/>
-                            <constraint firstAttribute="bottom" secondItem="7h4-Ck-E1C" secondAttribute="bottom" id="Rjc-gy-9Up"/>
                             <constraint firstItem="P0u-Y3-DRl" firstAttribute="bottom" secondItem="piv-Z9-Nvn" secondAttribute="bottom" id="Z53-sJ-X0o"/>
                             <constraint firstItem="piv-Z9-Nvn" firstAttribute="top" secondItem="T7L-36-hGn" secondAttribute="bottom" id="kUP-kd-1PW"/>
                             <constraint firstItem="T7L-36-hGn" firstAttribute="trailing" secondItem="P0u-Y3-DRl" secondAttribute="trailing" id="mYL-Jt-pn8"/>
@@ -234,7 +227,4 @@
             <point key="canvasLocation" x="1041" y="81"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="form_bg" width="375" height="545"/>
-    </resources>
 </document>

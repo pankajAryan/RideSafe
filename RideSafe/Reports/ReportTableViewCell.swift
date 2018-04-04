@@ -20,7 +20,8 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var vehicleDiscriptionLabel: UILabel!
     @IBOutlet weak var tagsLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var pendingImageView: UIImageView!
+    @IBOutlet weak var voidstatusImageView: UIImageView!
+    @IBOutlet weak var resolvedStatusImageView: UIImageView!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionButton: UIButton!
