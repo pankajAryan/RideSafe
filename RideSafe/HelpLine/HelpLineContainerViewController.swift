@@ -26,6 +26,7 @@ class HelpLineContainerViewController: RideSafeViewController {
         self.title = "Emergency Directory"
         segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
         segmentedController.setTitle("MVD", forSegmentAt: 1)
+        segmentedController.backgroundColor = UIColor.white
         helpLineViewController = storyboard?.instantiateViewController(withIdentifier: "HelplineAdministrationViewController") as? HelplineAdministrationViewController
         helpLineViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
         self.containerView.addSubview((helpLineViewController?.view)!)
