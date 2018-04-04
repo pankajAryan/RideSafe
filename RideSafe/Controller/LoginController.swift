@@ -12,8 +12,7 @@ import PromiseKit
 class LoginController: RideSafeViewController {
     
     
-    @IBOutlet weak var officialCheckBox: Checkbox!
-    @IBOutlet weak var citizenCheckBox: Checkbox!
+  
     @IBOutlet weak var otpView: UIStackView!
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var otpText: UITextField!
@@ -21,37 +20,8 @@ class LoginController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         self.navigationController?.navigationBar.isHidden = true
     }
-    
-    private func setupUI() {
-        citizenCheckBox.uncheckedBorderColor = .black
-        citizenCheckBox.borderStyle = .circle
-        citizenCheckBox.checkedBorderColor = .blue
-        citizenCheckBox.checkmarkColor = .blue
-        citizenCheckBox.checkmarkStyle = .circle
-        
-        citizenCheckBox.valueChanged = { (value) in
-            if value == true {
-                self.officialCheckBox.isChecked = false
-            }
-        }
-        
-        officialCheckBox.uncheckedBorderColor = .black
-        officialCheckBox.borderStyle = .circle
-        officialCheckBox.checkedBorderColor = .blue
-        officialCheckBox.checkmarkColor = .blue
-        officialCheckBox.checkmarkStyle = .circle
-        
-        officialCheckBox.valueChanged = { (value) in
-            if value == true {
-                self.citizenCheckBox.isChecked = false
-                
-            }
-        }
-    }
-    
     
     @IBAction func btnClicked(_ sender: Any) {
         if self.otpView.isHidden {

@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,12 +67,45 @@
                                     <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t77-ko-GFz"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
-                                <rect key="frame" x="30" y="355" width="140.5" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
+                                <rect key="frame" x="16" y="318.5" width="343" height="115.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-gz-hJc">
-                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="33"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-Bw-30s">
+                                        <rect key="frame" x="0.0" y="0.0" width="32" height="26.5"/>
+                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osc-J4-hpQ">
+                                        <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                        <subviews>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="NUz-f7-bYq">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="P7X-dW-6vm"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5463" placeholder="Enter mobile no." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNQ-io-k3i">
+                                                <rect key="frame" x="8" y="6" width="327" height="27"/>
+                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PZ9-Xx-TRg"/>
+                                                </connections>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="ErU-eF-0UB"/>
+                                            <constraint firstAttribute="trailing" secondItem="PNQ-io-k3i" secondAttribute="trailing" constant="8" id="Glh-3M-dIi"/>
+                                            <constraint firstItem="PNQ-io-k3i" firstAttribute="leading" secondItem="osc-J4-hpQ" secondAttribute="leading" constant="8" id="Jdm-98-VjZ"/>
+                                            <constraint firstItem="PNQ-io-k3i" firstAttribute="centerY" secondItem="osc-J4-hpQ" secondAttribute="centerY" id="zD1-4u-KXM"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-gz-hJc">
+                                        <rect key="frame" x="0.0" y="82.5" width="140" height="33"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="BlL-lZ-HDv"/>
@@ -90,7 +122,6 @@
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pankaj" placeholder="Enter mobile no." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnN-2V-ogn">
                                 <rect key="frame" x="24" y="269" width="327" height="27"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -103,11 +134,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dnN-2V-ogn" firstAttribute="centerY" secondItem="YNm-Zy-ytw" secondAttribute="centerY" id="0ft-3B-C0S"/>
+                            <constraint firstItem="UpG-V8-hvP" firstAttribute="top" secondItem="YNm-Zy-ytw" secondAttribute="bottom" constant="16" id="3cN-zT-yYf"/>
                             <constraint firstItem="YNm-Zy-ytw" firstAttribute="leading" secondItem="dnN-2V-ogn" secondAttribute="leading" constant="-8" id="DCw-GT-Wry"/>
                             <constraint firstItem="kpb-iN-w49" firstAttribute="top" secondItem="UlX-h9-gwl" secondAttribute="bottom" constant="8" id="FVQ-cm-ARL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ipP-C3-qxx" secondAttribute="bottom" id="GID-oD-eSg"/>
                             <constraint firstItem="UlX-h9-gwl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="PdR-zb-BK6"/>
+                            <constraint firstItem="UpG-V8-hvP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PfS-XM-CbW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="otN-ze-Ljz" secondAttribute="bottom" constant="50" id="SUv-ax-fsg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UpG-V8-hvP" secondAttribute="trailing" constant="16" id="Zkd-Y8-Gx8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="otN-ze-Ljz" secondAttribute="trailing" constant="16" id="bwW-1m-G6c"/>
                             <constraint firstItem="YNm-Zy-ytw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cQo-ko-aPQ"/>
                             <constraint firstItem="otN-ze-Ljz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ehH-gg-SN2"/>
@@ -127,6 +161,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="mobileNumber" destination="dnN-2V-ogn" id="iMu-ik-Tcq"/>
+                        <outlet property="otpText" destination="PNQ-io-k3i" id="h75-PN-qXv"/>
                         <outlet property="otpView" destination="UpG-V8-hvP" id="6kJ-oh-YPS"/>
                         <outlet property="submitButton" destination="otN-ze-Ljz" id="7nj-5s-rpA"/>
                     </connections>
@@ -643,7 +678,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdX-CT-6yh">
                                 <rect key="frame" x="20" y="495" width="335" height="50"/>
-                                <color key="backgroundColor" name="ButtonBGYellow"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Poi-Tl-zdh"/>
                                 </constraints>
@@ -858,8 +893,5 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
         <image name="menu" width="25" height="25"/>
         <image name="road_infra" width="33" height="33"/>
         <image name="text_field" width="319" height="44"/>
-        <namedColor name="ButtonBGYellow">
-            <color red="0.96100002527236938" green="0.75700002908706665" blue="0.2669999897480011" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>
