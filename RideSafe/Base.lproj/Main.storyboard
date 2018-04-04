@@ -67,50 +67,55 @@
                                     <action selector="btnClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t77-ko-GFz"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
-                                <rect key="frame" x="16" y="318.5" width="343" height="115.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
+                                <rect key="frame" x="16" y="318.5" width="343" height="129.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-Bw-30s">
-                                        <rect key="frame" x="0.0" y="0.0" width="32" height="26.5"/>
-                                        <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osc-J4-hpQ">
-                                        <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CXe-ac-Q9J">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="74.5"/>
                                         <subviews>
-                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="NUz-f7-bYq">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-Bw-30s">
+                                                <rect key="frame" x="0.0" y="0.0" width="32" height="26.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osc-J4-hpQ">
+                                                <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                                <subviews>
+                                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="NUz-f7-bYq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="P7X-dW-6vm"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5463" placeholder="Enter mobile no." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNQ-io-k3i">
+                                                        <rect key="frame" x="8" y="6" width="327" height="27"/>
+                                                        <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="PZ9-Xx-TRg"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="P7X-dW-6vm"/>
+                                                    <constraint firstAttribute="height" constant="40" id="ErU-eF-0UB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="PNQ-io-k3i" secondAttribute="trailing" constant="8" id="Glh-3M-dIi"/>
+                                                    <constraint firstItem="PNQ-io-k3i" firstAttribute="leading" secondItem="osc-J4-hpQ" secondAttribute="leading" constant="8" id="Jdm-98-VjZ"/>
+                                                    <constraint firstItem="PNQ-io-k3i" firstAttribute="centerY" secondItem="osc-J4-hpQ" secondAttribute="centerY" id="zD1-4u-KXM"/>
                                                 </constraints>
-                                            </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="5463" placeholder="Enter mobile no." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNQ-io-k3i">
-                                                <rect key="frame" x="8" y="6" width="327" height="27"/>
-                                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="phonePad" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="PZ9-Xx-TRg"/>
-                                                </connections>
-                                            </textField>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ErU-eF-0UB"/>
-                                            <constraint firstAttribute="trailing" secondItem="PNQ-io-k3i" secondAttribute="trailing" constant="8" id="Glh-3M-dIi"/>
-                                            <constraint firstItem="PNQ-io-k3i" firstAttribute="leading" secondItem="osc-J4-hpQ" secondAttribute="leading" constant="8" id="Jdm-98-VjZ"/>
-                                            <constraint firstItem="PNQ-io-k3i" firstAttribute="centerY" secondItem="osc-J4-hpQ" secondAttribute="centerY" id="zD1-4u-KXM"/>
-                                        </constraints>
-                                    </view>
+                                    </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-gz-hJc">
-                                        <rect key="frame" x="0.0" y="82.5" width="140" height="33"/>
+                                        <rect key="frame" x="101.5" y="90.5" width="140" height="39"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="BlL-lZ-HDv"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                         <state key="normal" title="Resend OTP">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
