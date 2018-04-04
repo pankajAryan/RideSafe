@@ -13,10 +13,10 @@ import UIDropDown
 class RegistrationController: RideSafeViewController {
     
     var phoneNumber = String()
+    private var selectedDistrictID:String = ""
     @IBOutlet weak var district: UITextField!
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var name: UITextField!
-    private var selectedDistrictID:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +43,14 @@ class RegistrationController: RideSafeViewController {
         let drop = UIDropDown(frame: self.district.frame)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 300
-        drop.placeholder = "Select your district..."
+        drop.tableHeight = 160
+        drop.placeholder = "Select your district"
+        drop.font = "Poppins-Medium"
+        drop.fontSize = 16.0
+        drop.optionsFont = "Poppins-Regular"
+        drop.optionsSize = 14.0
+        drop.borderColor = .white
+
         var districtNames = [String]()
         for i in dictList! {
             districtNames.append(i.name!)
