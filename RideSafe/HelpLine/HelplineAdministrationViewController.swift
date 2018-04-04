@@ -73,7 +73,8 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
         
         cell.nameLabel.text = directory.name
         cell.designationNameLabel.text = directory.departmentName
-        cell.phoneNumberButton.setTitle(directory.contactNumber, for: .normal)
+        cell.phoneNumberLabel.text = "Ph. \(String(describing: directory.contactNumber!))"
+        cell.phoneNumber = directory.contactNumber!
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

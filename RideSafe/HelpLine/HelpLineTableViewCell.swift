@@ -12,7 +12,9 @@ class HelpLineTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var designationNameLabel: UILabel!
     @IBOutlet weak var phoneNumberButton: UIButton!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
+    var phoneNumber: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +28,7 @@ class HelpLineTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func phoneButtonClicked(_ sender: Any) {
-        if let url = URL(string: "tel://\(String(describing: phoneNumberButton.title(for: .normal)!))") {
+        if let url = URL(string: "tel://\(String(describing: phoneNumber!))") {
             UIApplication.shared.open(url)
         }
     }
