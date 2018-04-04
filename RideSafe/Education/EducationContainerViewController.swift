@@ -22,6 +22,7 @@ class EducationContainerViewController: RideSafeViewController {
         self.title = "Road Safety Education"
         educationSegmentedControl.setTitle("VIDEOS", forSegmentAt: 0)
         educationSegmentedControl.setTitle("PDF", forSegmentAt: 1)
+        educationSegmentedControl.backgroundColor = .white
         educationVideoViewController = storyboard?.instantiateViewController(withIdentifier: "EducationVideoViewController") as? EducationVideoViewController
         educationPDFVideoController = storyboard?.instantiateViewController(withIdentifier: "EducationPDFViewController") as? EducationPDFViewController
         // Do any additional setup after loading the view.

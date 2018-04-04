@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,46 +28,60 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-xi-0qm">
-                        <rect key="frame" x="8" y="8" width="120" height="104"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQA-nA-164">
+                        <rect key="frame" x="10" y="8" width="300" height="109.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-xi-0qm">
+                                <rect key="frame" x="28" y="25" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="caK-7X-tgL"/>
+                                    <constraint firstAttribute="width" constant="60" id="tSd-gP-RF1"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-tv-QIM">
+                                <rect key="frame" x="116" y="8" width="176" height="19.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-x9-HGv">
+                                <rect key="frame" x="116" y="35" width="176" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09K-LG-pDQ">
+                                <rect key="frame" x="116" y="57" width="176" height="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="120" id="tSd-gP-RF1"/>
+                            <constraint firstItem="09K-LG-pDQ" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="4cZ-0k-mrp"/>
+                            <constraint firstAttribute="trailing" secondItem="09K-LG-pDQ" secondAttribute="trailing" constant="8" id="8dC-ru-mbJ"/>
+                            <constraint firstItem="eZr-x9-HGv" firstAttribute="top" secondItem="2PP-tv-QIM" secondAttribute="bottom" constant="8" id="JGB-vL-tws"/>
+                            <constraint firstItem="eZr-x9-HGv" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="Q31-7g-6QG"/>
+                            <constraint firstItem="2PP-tv-QIM" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="VXp-Pt-rb1"/>
+                            <constraint firstItem="09K-LG-pDQ" firstAttribute="top" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8" id="fZA-jn-IVr"/>
+                            <constraint firstItem="l8A-xi-0qm" firstAttribute="leading" secondItem="hQA-nA-164" secondAttribute="leading" constant="28" id="qOZ-eU-BYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="2PP-tv-QIM" secondAttribute="trailing" constant="8" id="sJf-XF-bGS"/>
+                            <constraint firstItem="l8A-xi-0qm" firstAttribute="centerY" secondItem="hQA-nA-164" secondAttribute="centerY" id="smM-pr-xsx"/>
+                            <constraint firstItem="2PP-tv-QIM" firstAttribute="top" secondItem="hQA-nA-164" secondAttribute="top" constant="8" id="szf-kn-HFQ"/>
+                            <constraint firstAttribute="trailing" secondItem="eZr-x9-HGv" secondAttribute="trailing" constant="8" id="uy7-u3-gai"/>
                         </constraints>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-tv-QIM">
-                        <rect key="frame" x="136" y="8" width="176" height="19.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-x9-HGv">
-                        <rect key="frame" x="136" y="35" width="176" height="14.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09K-LG-pDQ">
-                        <rect key="frame" x="136" y="57.5" width="176" height="14"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="eZr-x9-HGv" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="55B-Ej-fuj"/>
-                    <constraint firstAttribute="bottom" secondItem="l8A-xi-0qm" secondAttribute="bottom" constant="8" id="CjF-YB-Q93"/>
-                    <constraint firstItem="2PP-tv-QIM" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="JGG-TW-Gzv"/>
-                    <constraint firstItem="09K-LG-pDQ" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="PJ9-yq-Lbv"/>
-                    <constraint firstAttribute="trailing" secondItem="2PP-tv-QIM" secondAttribute="trailing" constant="8" id="VyB-ao-bbc"/>
-                    <constraint firstAttribute="trailing" secondItem="eZr-x9-HGv" secondAttribute="trailing" constant="8" id="dBP-Kt-6HI"/>
-                    <constraint firstItem="2PP-tv-QIM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="do5-tu-WaC"/>
-                    <constraint firstAttribute="trailing" secondItem="09K-LG-pDQ" secondAttribute="trailing" constant="8" id="qZ0-P6-ZIQ"/>
-                    <constraint firstItem="09K-LG-pDQ" firstAttribute="top" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8" id="vPZ-Ra-6TJ"/>
-                    <constraint firstItem="eZr-x9-HGv" firstAttribute="top" secondItem="2PP-tv-QIM" secondAttribute="bottom" constant="8" id="vme-qf-FQi"/>
-                    <constraint firstItem="l8A-xi-0qm" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="vqq-Ma-eLM"/>
-                    <constraint firstItem="l8A-xi-0qm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="w4X-ij-GsH"/>
+                    <constraint firstAttribute="bottom" secondItem="hQA-nA-164" secondAttribute="bottom" constant="2" id="Kja-xn-FFt"/>
+                    <constraint firstAttribute="trailing" secondItem="hQA-nA-164" secondAttribute="trailing" constant="10" id="adJ-bn-vVL"/>
+                    <constraint firstItem="hQA-nA-164" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cUs-ZG-eEF"/>
+                    <constraint firstItem="hQA-nA-164" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="de6-Rh-ldI"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="pdfDateLabel" destination="eZr-x9-HGv" id="OnY-fx-XQD"/>
