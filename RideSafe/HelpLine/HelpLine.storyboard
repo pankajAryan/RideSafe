@@ -12,7 +12,12 @@
     <customFonts key="customFonts">
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
-            <string>HelveticaNeue-Medium</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -120,12 +125,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Record to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-MB-bhQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ofb-jz-U3E">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -141,14 +140,14 @@
                                                     <rect key="frame" x="10" y="2" width="355" height="80"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gof-Hf-gU9">
-                                                            <rect key="frame" x="8" y="4" width="339" height="19.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="16"/>
+                                                            <rect key="frame" x="8" y="4" width="339" height="26.5"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                                             <color key="textColor" red="0.050729791580000003" green="0.26553291639999999" blue="0.59636801859999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6L-nH-Euc">
-                                                            <rect key="frame" x="8" y="30" width="339" height="16.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <rect key="frame" x="8" y="34.5" width="339" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -167,8 +166,8 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ph. 9890453682" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Bx-7R-yQR">
-                                                            <rect key="frame" x="8" y="54.5" width="102.5" height="16.5"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                            <rect key="frame" x="8" y="57" width="88" height="18.5"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -179,11 +178,11 @@
                                                         <constraint firstItem="2Bx-7R-yQR" firstAttribute="leading" secondItem="q6L-nH-Euc" secondAttribute="leading" id="8aG-3M-bMp"/>
                                                         <constraint firstItem="q6L-nH-Euc" firstAttribute="leading" secondItem="GHk-TE-Pm9" secondAttribute="leading" constant="8" id="9Mv-kW-OZV"/>
                                                         <constraint firstAttribute="trailing" secondItem="q6L-nH-Euc" secondAttribute="trailing" constant="8" id="9UD-zw-gzB"/>
-                                                        <constraint firstItem="q6L-nH-Euc" firstAttribute="top" secondItem="Gof-Hf-gU9" secondAttribute="bottom" constant="6" id="S6k-Vk-9ig"/>
+                                                        <constraint firstItem="q6L-nH-Euc" firstAttribute="top" secondItem="Gof-Hf-gU9" secondAttribute="bottom" constant="4" id="S6k-Vk-9ig"/>
                                                         <constraint firstItem="Gof-Hf-gU9" firstAttribute="leading" secondItem="GHk-TE-Pm9" secondAttribute="leading" constant="8" id="Zjr-cD-YzG"/>
                                                         <constraint firstAttribute="trailing" secondItem="tgg-u9-tcE" secondAttribute="trailing" constant="16" id="aB8-07-ZAp"/>
                                                         <constraint firstItem="Gof-Hf-gU9" firstAttribute="top" secondItem="GHk-TE-Pm9" secondAttribute="top" constant="4" id="bAi-fz-iUR"/>
-                                                        <constraint firstItem="2Bx-7R-yQR" firstAttribute="top" secondItem="q6L-nH-Euc" secondAttribute="bottom" constant="8" id="jU7-iX-dW2"/>
+                                                        <constraint firstItem="2Bx-7R-yQR" firstAttribute="top" secondItem="q6L-nH-Euc" secondAttribute="bottom" constant="4" id="jU7-iX-dW2"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gof-Hf-gU9" secondAttribute="trailing" constant="8" id="lsI-0m-nvn"/>
                                                     </constraints>
                                                 </view>
@@ -211,6 +210,12 @@
                                     <outlet property="delegate" destination="zUo-hg-fQp" id="Mnw-V4-EPA"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Record to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-MB-bhQ">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
