@@ -951,7 +951,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_launcher" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-F8-mIF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top_logo" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-F8-mIF">
                                 <rect key="frame" x="157.5" y="40" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Nxo-1W-CVF"/>
@@ -959,13 +959,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-0p-UAO">
-                                <rect key="frame" x="165" y="108" width="45" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <rect key="frame" x="163" y="108" width="49.5" height="23"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-Cx-FVi">
-                                <rect key="frame" x="20" y="151" width="335" height="496"/>
+                                <rect key="frame" x="20" y="158" width="335" height="489"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">RideSafe - A Citizen Centric Initiative to Promote Safe Driving on Roads.
 
@@ -973,8 +973,8 @@ Brief Concept Note: Irresponsible driving is one of the major causes of accident
 
 The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Jammu &amp; Kashmir, India. It is implemented by Mobiquel, a Delhi based IT services and product firm.
 </string>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textView>
                         </subviews>
@@ -1004,12 +1004,12 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
         <image name="emergency" width="33" height="33"/>
         <image name="form_bg" width="375" height="545"/>
         <image name="ic_citizen_circle" width="80" height="80"/>
-        <image name="ic_launcher" width="48" height="48"/>
         <image name="icn_frwd" width="24" height="24"/>
         <image name="live_share" width="33" height="33"/>
         <image name="logo_large" width="211" height="78"/>
         <image name="menu" width="25" height="25"/>
         <image name="road_infra" width="33" height="33"/>
         <image name="text_field" width="319" height="44"/>
+        <image name="top_logo" width="78" height="29"/>
     </resources>
 </document>

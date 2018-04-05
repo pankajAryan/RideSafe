@@ -17,6 +17,7 @@ class FOMyProfileController: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Official Profile"
         getMyProfileData(citizenId: citizenId)
         setBackButton()
     }
