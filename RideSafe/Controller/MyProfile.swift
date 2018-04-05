@@ -12,7 +12,8 @@ import PromiseKit
 
 class MyProfile: RideSafeViewController {
 
-    @IBOutlet weak var districtField: UITextField!
+    @IBOutlet weak var districtField: UIDropDown!
+    //@IBOutlet weak var districtField: UITextField!
     @IBOutlet weak var mobileNumberField: UITextField!
     @IBOutlet weak var nameFiled: UITextField!
     private var selectedDistrictID:String = ""
@@ -22,6 +23,7 @@ class MyProfile: RideSafeViewController {
         setBackButton()
         self.title = "My profile"
             getDistrict()
+        self.view.bringSubview(toFront: districtField)
     }
     
     fileprivate func getMyProfileData(citizenId:String) {
@@ -31,7 +33,6 @@ class MyProfile: RideSafeViewController {
             self.mobileNumberField.text = citizen?.mobile
             self.nameFiled.text = citizen?.name
             self.selectedDistrictID = citizen?.districtId ?? "no district"
-            // self.districtField.text
             let dictList =  SharedSettings.shared.districtResponse?.responseObject?.districtList
             self.makeDropDow(dictList)
             }.catch { (error) in
@@ -53,21 +54,20 @@ class MyProfile: RideSafeViewController {
     }
     
     private func makeDropDow(_ dictList: [District]?) {
-        let drop = UIDropDown(frame: self.districtField.frame)
-        drop.animationType = .Classic
-        drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 300
-        drop.placeholder = getDistrictName(from: dictList)?.name ?? "no district found"
+        districtField.animationType = .Classic
+        districtField.hideOptionsWhenSelect = true
+        districtField.tableHeight = 200
+        districtField.textAlignment = .left
+        districtField.placeholder = getDistrictName(from: dictList)?.name ?? "no district found"
         var districtNames = [String]()
         for i in dictList! {
             districtNames.append(i.name!)
         }
-        drop.options = districtNames
+        districtField.options = districtNames
         
-        drop.didSelect { (option, index) in
+        districtField.didSelect { (option, index) in
             self.selectedDistrictID = (dictList?[index].districtId)!
         }
-        self.view.addSubview(drop)
     }
     
     @IBAction func updateProfile(_ sender: UIButton) {

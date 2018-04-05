@@ -21,7 +21,8 @@ override func viewDidLoad() {
     recordTable.tableFooterView = UIView()
     recordTable.estimatedRowHeight = 200
     recordTable.rowHeight = UITableViewAutomaticDimension
-    
+    recordTable.backgroundColor = .clear
+    recordTable.separatorStyle = .none
     
     NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "2"]).then { response -> () in
         self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
@@ -44,7 +45,7 @@ extension PoliceController:UITableViewDelegate,UITableViewDataSource {
             let contact = fieldOfficers?[indexPath.row]
             cell.nameLabel.text = contact?.name
             cell.number = contact?.mobile ?? ""
-            cell.numberbtn.setTitle(contact?.mobile, for: .normal)
+            cell.phoneNumber.text = "Ph. \(contact?.mobile ?? "")"
             return cell
         }
         return UITableViewCell()
