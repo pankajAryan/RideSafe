@@ -15,8 +15,8 @@ import UIKit
 
 public class InfraIssuesForFieldOfficer {
 	public var roadInfraIssueId : String?
-	public var lat : Double?
-	public var lon : Double?
+	public var lat : String?
+	public var lon : String?
 	public var description : String?
 	public var category : String?
 	public var categoryName : String?
@@ -63,8 +63,8 @@ public class InfraIssuesForFieldOfficer {
 	required public init?(dictionary: NSDictionary) {
 
 		roadInfraIssueId = dictionary["roadInfraIssueId"] as? String
-		lat = dictionary["lat"] as? Double
-		lon = dictionary["lon"] as? Double
+		lat = dictionary["lat"] as? String
+		lon = dictionary["lon"] as? String
 		description = dictionary["description"] as? String
 		category = dictionary["category"] as? String
 		categoryName = dictionary["categoryName"] as? String

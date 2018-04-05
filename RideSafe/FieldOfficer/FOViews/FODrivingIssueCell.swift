@@ -16,12 +16,10 @@ protocol FODrivingIssueCellDelegate: class {
 class FODrivingIssueCell: UITableViewCell {
 
     @IBOutlet weak var vehiclelabel: UILabel!
-    @IBOutlet weak var borberView: UIView!
     @IBOutlet weak var uploadedImage: UIImageView!
     @IBOutlet weak var decriptionlabel: UILabel!
     @IBOutlet weak var catagoryLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet weak var reportedBy: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     

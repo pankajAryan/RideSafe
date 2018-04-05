@@ -61,7 +61,9 @@ extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.statusLabel.text = issue?.status
             cell.reportedBy.text = issue?.postedByName
             cell.phoneNumber = issue?.postedByMobile ?? ""
-            
+            cell.delegate = self
+            cell.indexPath = indexPath
+
             cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
             cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
 
@@ -82,4 +84,16 @@ extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+}
+
+extension InfraIssueController: FODrivingIssueCellDelegate {
+    
+    func openMapViewForRowIndex(index: IndexPath) {
+        let issue = infraIssues?[index.row]
+        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
+        issueMapViewController.issueLatitude = ((issue?.lat)! as NSString).doubleValue
+        issueMapViewController.issueLongitude = ((issue?.lon)! as NSString).doubleValue
+        self.navigationController?.pushViewController(issueMapViewController, animated: true)
+    }
+    
 }
