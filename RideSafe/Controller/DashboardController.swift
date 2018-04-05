@@ -18,11 +18,10 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     @IBOutlet weak var vehicleFirstField: UITextField!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
-    @IBOutlet weak var vehicleTypeView: UIView!
+    @IBOutlet weak var vehicleTypeView: UIDropDown!
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenu: SideMenu!
     @IBOutlet weak var cameraButton: UIButton!
-    var dropDown = UIDropDown()
     var vehicleType = ""
     var drivingIssues:[DropDownDataSource] = []
     var imagePicker = UIImagePickerController()
@@ -197,8 +196,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         imageUrl = nil
         locationManager.stopUpdatingLocation()
-        dropDown.options = []
-        dropDown.placeholder = "Select Vehicle Type"
+        vehicleTypeView.options = []
+        vehicleTypeView.placeholder = "Select Vehicle Type"
     }
     
     func reportIssues() {
@@ -400,21 +399,23 @@ extension DashboardController {
 
 extension DashboardController {
     private func makeVehicleDropDown() {
-        dropDown = UIDropDown(frame: vehicleTypeView.frame)
-        dropDown.borderColor = .clear
-        dropDown.textColor = UIColor.darkGray
-        dropDown.hideOptionsWhenSelect = true
-        dropDown.animationType = .Classic
-        dropDown.tableHeight = 180
-        dropDown.placeholder = "Select Vehicle Type"
-        dropDown.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
-        dropDown.textAlignment = NSTextAlignment.left
+        vehicleTypeView.textColor = UIColor.darkText
+        vehicleTypeView.hideOptionsWhenSelect = true
+        vehicleTypeView.animationType = .Classic
+        vehicleTypeView.tableHeight = 180
+        vehicleTypeView.placeholder = "Select Vehicle Type"
+        vehicleTypeView.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
+        vehicleTypeView.textAlignment = NSTextAlignment.left
+        vehicleTypeView.font = "Poppins-Medium"
+        vehicleTypeView.fontSize = 16.0
+        vehicleTypeView.optionsFont = "Poppins-Regular"
+        vehicleTypeView.optionsSize = 14.0
+        vehicleTypeView.borderColor = .white
+
         
-        dropDown.didSelect { [unowned self] (option, index) in
+        vehicleTypeView.didSelect { [unowned self] (option, index) in
             self.vehicleType = option
         }
-        self.view.addSubview(dropDown)
-        
     }
     
     private func makeDrivingIssuesCatagory() {
