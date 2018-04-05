@@ -13,6 +13,7 @@ import PromiseKit
 
 class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
+    @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var vehicleThirdField: UITextField!
     @IBOutlet weak var vehicleSecondField: UITextField!
     @IBOutlet weak var vehicleFirstField: UITextField!
@@ -193,7 +194,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         descriptionText.text = ""
         descriptionText.placeholder = "Describe Issues"
         drivingIssuesLabel.text = "Select Driving Issues"
-        cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
+       // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
+        selectedImage.image = #imageLiteral(resourceName: "camera")
         imageUrl = nil
         locationManager.stopUpdatingLocation()
         vehicleTypeView.options = []
@@ -223,7 +225,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler:nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            if let image = cameraButton.currentBackgroundImage {
+            if let image = selectedImage.image {
                 NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
                     self.imageUrl = string
                     }.catch { error in
@@ -392,7 +394,7 @@ extension DashboardController {
         
         if let image  = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.dismiss(animated: true, completion: nil)
-            cameraButton.setBackgroundImage(image, for: .normal)
+            selectedImage.image = image
         }
     }
 }
