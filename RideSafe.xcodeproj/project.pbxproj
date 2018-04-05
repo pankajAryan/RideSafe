@@ -31,6 +31,8 @@
 		2C23660120677796000981A8 /* UpdateActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C23660020677796000981A8 /* UpdateActionController.swift */; };
 		2C2366082067793B000981A8 /* UpdateActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2366062067793B000981A8 /* UpdateActionCell.swift */; };
 		2C2366092067793B000981A8 /* UpdateActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C2366072067793B000981A8 /* UpdateActionCell.xib */; };
+		2C27D16B20767E3600F23736 /* FOMyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C27D16A20767E3600F23736 /* FOMyProfile.storyboard */; };
+		2C27D16D20767E7300F23736 /* FOMyProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C27D16C20767E7300F23736 /* FOMyProfileController.swift */; };
 		2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C3D5650205AD1CE008F9104 /* DropDown.storyboard */; };
 		2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5652205AD1E8008F9104 /* DropDownController.swift */; };
 		2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */; };
@@ -39,6 +41,8 @@
 		2C3D565E205D5FC0008F9104 /* CitizenProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */; };
 		2C3D565F205D5FC0008F9104 /* Citizen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D565D205D5FC0008F9104 /* Citizen.swift */; };
 		2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C3D5660205D62CB008F9104 /* SharedSettings.swift */; };
+		2C4F940920768B6800BC5D31 /* FieldOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F940720768B6700BC5D31 /* FieldOfficial.swift */; };
+		2C4F940A20768B6800BC5D31 /* FieldOfficialProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F940820768B6700BC5D31 /* FieldOfficialProfileResponse.swift */; };
 		2C63FBEC2064023E00BE8691 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FBEB2064023E00BE8691 /* CustomError.swift */; };
 		2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C63FC102065493B00BE8691 /* FOMain.storyboard */; };
 		2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC122065495C00BE8691 /* FODashboardController.swift */; };
@@ -138,6 +142,8 @@
 		2C23660020677796000981A8 /* UpdateActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateActionController.swift; sourceTree = "<group>"; };
 		2C2366062067793B000981A8 /* UpdateActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateActionCell.swift; sourceTree = "<group>"; };
 		2C2366072067793B000981A8 /* UpdateActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateActionCell.xib; sourceTree = "<group>"; };
+		2C27D16A20767E3600F23736 /* FOMyProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FOMyProfile.storyboard; sourceTree = "<group>"; };
+		2C27D16C20767E7300F23736 /* FOMyProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FOMyProfileController.swift; sourceTree = "<group>"; };
 		2C3D5650205AD1CE008F9104 /* DropDown.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DropDown.storyboard; sourceTree = "<group>"; };
 		2C3D5652205AD1E8008F9104 /* DropDownController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownController.swift; sourceTree = "<group>"; };
 		2C3D5655205AD37B008F9104 /* VerifyOTPResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOTPResponse.swift; sourceTree = "<group>"; };
@@ -146,6 +152,8 @@
 		2C3D565C205D5FC0008F9104 /* CitizenProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CitizenProfile.swift; sourceTree = "<group>"; };
 		2C3D565D205D5FC0008F9104 /* Citizen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Citizen.swift; sourceTree = "<group>"; };
 		2C3D5660205D62CB008F9104 /* SharedSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedSettings.swift; sourceTree = "<group>"; };
+		2C4F940720768B6700BC5D31 /* FieldOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficial.swift; sourceTree = "<group>"; };
+		2C4F940820768B6700BC5D31 /* FieldOfficialProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficialProfileResponse.swift; sourceTree = "<group>"; };
 		2C63FBEB2064023E00BE8691 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		2C63FC102065493B00BE8691 /* FOMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FOMain.storyboard; sourceTree = "<group>"; };
 		2C63FC122065495C00BE8691 /* FODashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FODashboardController.swift; sourceTree = "<group>"; };
@@ -320,6 +328,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2C4F940620768B6700BC5D31 /* FieldOfficialProfile */,
 				2C87E7D22066694A00CAD64C /* FieldOfficerListresponse */,
 				2C87E7C420665B4400CAD64C /* FOInfraIssues */,
 				2C87E7B32066204F00CAD64C /* FODrivingIssues */,
@@ -382,6 +391,15 @@
 			path = getProfile;
 			sourceTree = "<group>";
 		};
+		2C4F940620768B6700BC5D31 /* FieldOfficialProfile */ = {
+			isa = PBXGroup;
+			children = (
+				2C4F940720768B6700BC5D31 /* FieldOfficial.swift */,
+				2C4F940820768B6700BC5D31 /* FieldOfficialProfileResponse.swift */,
+			);
+			path = FieldOfficialProfile;
+			sourceTree = "<group>";
+		};
 		2C63FC0F2065491E00BE8691 /* FieldOfficer */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +412,7 @@
 				2C63FC1A20657ABD00BE8691 /* PoliceController.swift */,
 				2C63FC20206583D600BE8691 /* EmptySegue.swift */,
 				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
+				2C27D16C20767E7300F23736 /* FOMyProfileController.swift */,
 				2C23660020677796000981A8 /* UpdateActionController.swift */,
 			);
 			path = FieldOfficer;
@@ -418,6 +437,7 @@
 				2C87E7CA2066654C00CAD64C /* FOContactCell.xib */,
 				2C2366062067793B000981A8 /* UpdateActionCell.swift */,
 				2C2366072067793B000981A8 /* UpdateActionCell.xib */,
+				2C27D16A20767E3600F23736 /* FOMyProfile.storyboard */,
 			);
 			path = FOViews;
 			sourceTree = "<group>";
@@ -647,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
+				2C27D16B20767E3600F23736 /* FOMyProfile.storyboard in Resources */,
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
 				2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
@@ -773,6 +794,7 @@
 				B821B2A5205CC22E007D1F32 /* VideoTableViewCell.swift in Sources */,
 				B803CD9C2065E15700475AB9 /* MyRoadInfraIssue.swift in Sources */,
 				B8C4F27B2065571E00587E55 /* RoadInfraIssueListViewController.swift in Sources */,
+				2C4F940A20768B6800BC5D31 /* FieldOfficialProfileResponse.swift in Sources */,
 				2C15668B2051CE0E00B4067C /* Checkbox.swift in Sources */,
 				2C1566972056A6F900B4067C /* SideMenu.swift in Sources */,
 				2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */,
@@ -800,6 +822,7 @@
 				B821B2A9205CC23E007D1F32 /* PDFTableViewCell.swift in Sources */,
 				B8C4F2732065561B00587E55 /* ReportsContainerViewController.swift in Sources */,
 				2C2366082067793B000981A8 /* UpdateActionCell.swift in Sources */,
+				2C27D16D20767E7300F23736 /* FOMyProfileController.swift in Sources */,
 				2C3D5658205AD37B008F9104 /* VerifyOTPResponse.swift in Sources */,
 				B8C4F277206556AB00587E55 /* UnsafeDrivingIssueListViewController.swift in Sources */,
 				2C87E7C720665B4400CAD64C /* InfraIssuesListForFieldOfficer.swift in Sources */,
@@ -829,6 +852,7 @@
 				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
 				B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
+				2C4F940920768B6800BC5D31 /* FieldOfficial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

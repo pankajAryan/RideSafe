@@ -167,14 +167,11 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
         var vc : UIViewController?
         switch action {
         case .Profile:
-            vc = str.instantiateViewController(withIdentifier: "MyProfile") as! MyProfile
+            let str =  UIStoryboard(name: "FOMyProfile", bundle: nil)
+                vc = str.instantiateViewController(withIdentifier: "FOMyProfileController") as! FOMyProfileController
             
-        case .Report:
-            vc = str.instantiateViewController(withIdentifier: "MyReport") as! MyReport
-            
-        case .Setting:
-            vc = str.instantiateViewController(withIdentifier: "SettingController") as! SettingController
-            
+        case .Report: break
+        case .Setting: break
         case .About:
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             

@@ -25,6 +25,7 @@ class SideMenu: UITableView,UITableViewDelegate,UITableViewDataSource {
                       slideData(slideImage: #imageLiteral(resourceName: "ic_logout"), slideText: "Logout",         action:.Logout)]
     
     
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -36,6 +37,16 @@ class SideMenu: UITableView,UITableViewDelegate,UITableViewDataSource {
         self.delegate = self
         self.dataSource = self
         registerNib()
+        
+        if let usertype = UserDefaults.standard.string(forKey: UserDefaultsKeys.userType.rawValue) {
+            if usertype != "C" {
+                 sliderData = [slideData(slideImage: #imageLiteral(resourceName: "ic_profile"), slideText: "My Profile",    action:.Profile),
+                                  slideData(slideImage: #imageLiteral(resourceName: "ic_about"), slideText: "About RideSafe",action:.About),
+                                  slideData(slideImage: #imageLiteral(resourceName: "ic_share"), slideText: "Share",         action:.Share),
+                                  slideData(slideImage: #imageLiteral(resourceName: "ic_logout"), slideText: "Logout",         action:.Logout)]
+            }
+        }
+        
     }
     
     fileprivate func registerNib() {
