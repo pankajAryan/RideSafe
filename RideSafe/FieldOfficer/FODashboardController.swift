@@ -68,6 +68,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
         super.viewDidLoad()
         
         setupUI()
+        let yellowColor = UIColor(red: 245.0/255.0, green: 193.0/255.0, blue: 68.0/255.0, alpha: 1)
         segmentedControl.setup(content: [SegmentioItem(title: "DRIVING ISSUE", image: nil),
                                          SegmentioItem(title: "INFRA ISSUE", image: nil),
                                          SegmentioItem(title: "TRANSPORT", image: nil),
@@ -79,8 +80,8 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
                                                          indicatorOptions: SegmentioIndicatorOptions(
                                                             type: .bottom,
                                                             ratio: 1,
-                                                            height: 1,
-                                                            color: .blue),
+                                                            height: 2,
+                                                            color: yellowColor),
                                                          horizontalSeparatorOptions: SegmentioHorizontalSeparatorOptions(
                                                             type: SegmentioHorizontalSeparatorType.none, // Top, Bottom, TopAndBottom
                                                             height: 1,
@@ -93,14 +94,14 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
                                                          labelTextNumberOfLines: 0,
                                                          segmentStates: SegmentioStates(
                                                             defaultState: SegmentioState( backgroundColor: .clear,
-                                                                                          titleFont: UIFont.boldSystemFont(ofSize: 14),
-                                                                                          titleTextColor: .darkGray),
+                                                                                          titleFont: UIFont(name: "Poppins-Medium", size: 14.0)!,
+                                                                                          titleTextColor: .darkText),
                                                             selectedState: SegmentioState(backgroundColor: .clear,
-                                                                                          titleFont: UIFont.boldSystemFont(ofSize: 14),
-                                                                                          titleTextColor: .darkGray),
+                                                                                          titleFont: UIFont(name: "Poppins-Medium", size: 14.0)!,
+                                                                                          titleTextColor: .darkText),
                                                             highlightedState: SegmentioState( backgroundColor: UIColor.clear,
-                                                                                              titleFont: UIFont.boldSystemFont(ofSize: 14),
-                                                                                              titleTextColor: .darkGray)
+                                                                                              titleFont: UIFont(name: "Poppins-Medium", size: 14.0)!,
+                                                                                              titleTextColor: .darkText)
                                 ),
                                                          animationDuration: 0.1))
         segmentedControl.selectedSegmentioIndex = 0

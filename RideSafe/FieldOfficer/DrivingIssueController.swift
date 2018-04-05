@@ -15,7 +15,7 @@ class DrivingIssueController: RideSafeViewController {
     
     private func showNoRecordView() {
         let norecordView = UINib(nibName: "NoRecord", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        norecordView.frame = self.view.bounds
+        norecordView.frame = self.view.frame
         self.view.addSubview( norecordView)
     }
     
