@@ -24,6 +24,10 @@ class FODrivingIssueCell: UITableViewCell {
     @IBOutlet weak var statusImage: UIImageView!
     @IBOutlet weak var reportedBy: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    
+    @IBOutlet weak var resolvedStatusImageView: UIImageView!
+    @IBOutlet weak var voidstatusImageView: UIImageView!
+    
     var phoneNumber = ""
     var actionTakenNote : String?
     var senderVC: UIViewController?

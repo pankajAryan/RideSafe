@@ -58,10 +58,18 @@ extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.decriptionlabel.text = issue?.description
             cell.catagoryLabel.text = issue?.categoryName
             cell.dateLabel.text = issue?.createdOn
-            cell.statusImage.image = issue?.statusImage
             cell.statusLabel.text = issue?.status
             cell.reportedBy.text = issue?.postedByName
             cell.phoneNumber = issue?.postedByMobile ?? ""
+            
+            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+
+            if issue?.status == "RESOLVED" {
+                cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
+            } else if issue?.status == "VOID" {
+                cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
+            }
             return cell
         }
         return UITableViewCell()
