@@ -10,6 +10,7 @@ import UIKit
 
 class FOContactCell: UITableViewCell {
 
+    @IBOutlet weak var phoneNumber: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var numberbtn: UIButton!
     @IBOutlet weak var nameLabel: UILabel!
