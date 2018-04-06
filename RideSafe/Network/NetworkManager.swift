@@ -40,7 +40,7 @@ class NetworkManager {
 //                    break
                 case .failure(let error):
                     #if DEBUG
-                        print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
+                        print("❌ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
                         print("❌ response code: \(String(describing:  response.response?.statusCode))")
                     #endif
                     reject(error)

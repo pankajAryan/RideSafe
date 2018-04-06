@@ -19,6 +19,7 @@ class DropDownController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -33,6 +34,7 @@ class DropDownController: UITableViewController {
         let model = dropDownDataSource?[indexPath.row]
         cell.textLabel?.text = model?.name ?? "no name"
         cell.accessoryType = model?.checkMark == true ? .checkmark : .none
+        cell.textLabel?.numberOfLines = 0
         return cell
     }
  

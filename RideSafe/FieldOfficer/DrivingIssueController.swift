@@ -70,14 +70,14 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.delegate = self
             cell.indexPath = indexPath
 
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-            
-            if issue?.status == "RESOLVED" {
-                cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-            } else if issue?.status == "VOID" {
-                cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-            }
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+//            
+//            if issue?.status == "RESOLVED" {
+//                cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//            } else if issue?.status == "VOID" {
+//                cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//            }
             
             return cell
         }
