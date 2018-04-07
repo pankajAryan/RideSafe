@@ -668,7 +668,13 @@
                         <outlet property="cameraButton" destination="NHf-lz-QOe" id="HNU-J0-tmf"/>
                         <outlet property="descriptionText" destination="EdH-7F-eR6" id="ssI-ss-GCg"/>
                         <outlet property="drivingIssuesLabel" destination="Htp-Lj-Me7" id="7pv-r5-hdp"/>
+                        <outlet property="educationLabel" destination="xXL-7K-QOh" id="cNr-xY-OaG"/>
+                        <outlet property="emegencyLabel" destination="N2s-ya-AII" id="skR-4Q-bu9"/>
+                        <outlet property="helpLineLabel" destination="6gK-5L-QqZ" id="LdD-7W-QoF"/>
+                        <outlet property="reportButton" destination="7jB-eU-CK8" id="mRF-Ld-6GD"/>
+                        <outlet property="reportInfraLabel" destination="Tso-Xr-L73" id="WWi-au-GgT"/>
                         <outlet property="selectedImage" destination="nX7-lu-eSM" id="jna-Ox-K0O"/>
+                        <outlet property="shareLiveLocationLabel" destination="e0y-rX-9St" id="yiZ-eF-3I8"/>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
                         <outlet property="vehicleFirstField" destination="lRG-c1-AZt" id="oBK-9Q-54f"/>

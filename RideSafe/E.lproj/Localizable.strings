@@ -3,8 +3,8 @@
 "Tempo" = "Tempo";
 "Mini Bus" = "Mini Bus";
 "Bus" = "Bus";
-"Describe issue" = "Describe issue"; // x
-"Vehicle Number" = "Vehicle Number"; //x
+"Describe issue" = "Describe issue";
+"Vehicle Number" = "Vehicle Number";
 "Select Driving Issues" = "Select Driving Issues" ;
 "Eg: JK" = "Eg: JK" ;
 "Eg: 01C" = "Eg: 01C";
@@ -19,6 +19,4 @@
 "Photo" = "Photo";
 "Location OFF" = "Location OFF";
 "Location ON" =  "Location ON" ;
-"Select Driving Issues" = "Select Driving Issues" ;
 "Select Road Issues" = "Select Road Issues" ;
-"Describe Issue" = "Describe Issue";

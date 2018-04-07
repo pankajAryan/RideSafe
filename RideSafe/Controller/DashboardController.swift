@@ -35,6 +35,12 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     var counter = 0
     var liveLocationSwitch: UISwitch!
     
+    @IBOutlet weak var shareLiveLocationLabel: UILabel!
+    @IBOutlet weak var educationLabel: UILabel!
+    @IBOutlet weak var helpLineLabel: UILabel!
+    @IBOutlet weak var emegencyLabel: UILabel!
+    @IBOutlet weak var reportInfraLabel: UILabel!
+    @IBOutlet weak var reportButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
@@ -486,6 +492,13 @@ extension DashboardController:SettingControllerProtocol {
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
         descriptionText.placeholder = "Describe issue".localized
+         educationLabel.text = "Education".localized
+         helpLineLabel.text = "Help Line".localized
+         emegencyLabel.text = "Emergency Contacts".localized
+         reportInfraLabel.text = "Road Infra".localized
+        shareLiveLocationLabel.text =  "Share Live Location".localized
+         reportButton.setTitle("Report".localized, for: .normal)
+        cameraButton.setTitle("Photo".localized, for: .normal)
 
     }
 }
