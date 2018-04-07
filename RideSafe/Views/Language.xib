@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LanguageCell" rowHeight="89" id="KGk-i7-Jjw" customClass="LanguageCell" customModule="RideSafe" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="353" height="89"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="353" height="88.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86z-L5-0o2">
+                        <rect key="frame" x="0.0" y="0.0" width="353" height="88.5"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dMf-IQ-jaG">
+                                <rect key="frame" x="8" y="0.0" width="345" height="88.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsP-ca-RrI">
+                                        <rect key="frame" x="0.0" y="0.0" width="345" height="44.5"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81h-uK-WZa">
+                                        <rect key="frame" x="0.0" y="44.5" width="345" height="44"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dMf-IQ-jaG" firstAttribute="leading" secondItem="86z-L5-0o2" secondAttribute="leading" constant="8" id="7uo-EU-voH"/>
+                            <constraint firstAttribute="bottom" secondItem="dMf-IQ-jaG" secondAttribute="bottom" id="Aev-Lk-6lI"/>
+                            <constraint firstAttribute="trailing" secondItem="dMf-IQ-jaG" secondAttribute="trailing" id="Pgd-NZ-oTb"/>
+                            <constraint firstItem="dMf-IQ-jaG" firstAttribute="top" secondItem="86z-L5-0o2" secondAttribute="top" id="U7j-TV-HAE"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="86z-L5-0o2" secondAttribute="trailing" id="45Q-1Y-yRg"/>
+                    <constraint firstItem="86z-L5-0o2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="73B-1P-fz0"/>
+                    <constraint firstAttribute="bottom" secondItem="86z-L5-0o2" secondAttribute="bottom" id="InM-ga-waH"/>
+                    <constraint firstItem="86z-L5-0o2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ptv-3p-4YP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="LanguageName" destination="81h-uK-WZa" id="L2U-Nu-RvQ"/>
+                <outlet property="localizedLanguageName" destination="AsP-ca-RrI" id="EwT-uT-JE4"/>
+            </connections>
+            <point key="canvasLocation" x="24.5" y="76.5"/>
+        </tableViewCell>
+    </objects>
+</document>

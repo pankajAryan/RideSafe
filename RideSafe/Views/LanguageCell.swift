@@ -10,11 +10,12 @@ import UIKit
 
 class LanguageCell: UITableViewCell {
 
-    @IBOutlet weak var localizedLanguageName: UILabel!
     @IBOutlet weak var LanguageName: UILabel!
+    @IBOutlet weak var localizedLanguageName: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

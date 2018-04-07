@@ -16,6 +16,7 @@ class SettingController: RideSafeViewController {
         var localName = ""
         var isChecked = false
     }
+    @IBOutlet weak var tabble: UITableView!
     
     var selectedIndexPath = IndexPath()
     
@@ -25,6 +26,11 @@ class SettingController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
+        
+//        self.tabble.register(UINib(nibName: "Language", bundle: nil), forCellReuseIdentifier: "LanguageCell")
+        
+
+        
     }
     @IBAction func SaveClicked(_ sender: UIButton) {
        let langselected = languages.filter { $0.isChecked == true }.first
@@ -41,9 +47,11 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if   let cell = tableView.dequeueReusableCell(withIdentifier: "language") as? LanguageCell{
-            cell.textLabel?.text = languages[indexPath.row].langName
-            cell.detailTextLabel?.text = languages[indexPath.row].localName
+        if   let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as? LanguageCell{
+//            cell.textLabel?.text = languages[indexPath.row].langName
+//            cell.detailTextLabel?.text = languages[indexPath.row].localName
+            cell.localizedLanguageName.text = languages[indexPath.row].localName
+            cell.LanguageName.text = languages[indexPath.row].langName
             cell.accessoryType = self.selectedLanguage == languages[indexPath.row].lanCode ? .checkmark : .none
             if self.selectedLanguage == languages[indexPath.row].lanCode {
                 selectedIndexPath = indexPath
