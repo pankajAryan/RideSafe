@@ -13,7 +13,7 @@ extension String {
         
         if let _ = UserDefaults.standard.string(forKey: Localization.selectedLanguage.rawValue) {} else {
             // we set a default, just in case
-            UserDefaults.standard.set("en", forKey: Localization.selectedLanguage.rawValue)
+            UserDefaults.standard.set("E", forKey: Localization.selectedLanguage.rawValue)
             UserDefaults.standard.synchronize()
         }
         
