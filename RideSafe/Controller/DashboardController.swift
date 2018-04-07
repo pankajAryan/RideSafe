@@ -49,6 +49,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        vehicleFirstField.placeholder = "name".localized
         RegisterForCitizenPushNotification()
     }
     
