@@ -17,4 +17,9 @@ pod 'IQKeyboardManagerSwift'
 pod 'JFContactsPicker', '~> 1.0'
 pod 'Segmentio', '~> 3.0'
 
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
+
 end
