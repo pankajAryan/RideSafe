@@ -499,6 +499,7 @@ extension DashboardController:SettingControllerProtocol {
         shareLiveLocationLabel.text =  "Share Live Location".localized
          reportButton.setTitle("Report".localized, for: .normal)
         cameraButton.setTitle("Photo".localized, for: .normal)
+        makeVehicleDropDown()
 
     }
 }
