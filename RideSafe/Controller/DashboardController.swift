@@ -37,7 +37,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        descriptionText.placeholder = "Describe Issues"
         setupLocationManager()
         setupVehicleTypeDropDown()
         addtappinggestureRecognizerOnDrivingIssueLabel()
@@ -46,15 +45,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         }
         imagePicker.delegate = self
         setupUI()
+        setLocalizedText()
+//        descriptionText.placeholder = "Describe issue".localized
+//        drivingIssuesLabel.text = "Select Driving Issues".localized
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        vehicleFirstField.placeholder = "Eg: JK".localized
-        vehicleSecondField.placeholder = "Eg: 01C".localized
-        vehicleThirdField.placeholder = "Eg: 1234".localized
-        vehicleNumber.text = "Vehicle Number".localized
-        makeVehicleDropDown()
         RegisterForCitizenPushNotification()
     }
     
@@ -296,7 +294,9 @@ extension DashboardController: MenuCellDelegte {
             vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController")
             
         case .Setting:
-            vc = str.instantiateViewController(withIdentifier: "SettingController") as! SettingController
+            let _vc = str.instantiateViewController(withIdentifier: "SettingController") as! SettingController
+            _vc.delegate = self
+            vc = _vc
             
         case .About:
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
@@ -340,6 +340,8 @@ extension DashboardController: DropDownDelgate{
         if drivingIssuesLabel.text == "" {
             drivingIssuesLabel.text = "Select Driving Issues".localized
         }
+        
+        
     }
     
     private func catagoryIds() -> String {
@@ -468,5 +470,22 @@ extension DashboardController {
             self.navigationController?.pushViewController(vc, animated: true)
             
             }.catch { error in }
+    }
+}
+
+extension DashboardController:SettingControllerProtocol {
+    func language(chnaged: Bool) {
+        setLocalizedText()
+    }
+    
+    func setLocalizedText() {
+        vehicleFirstField.placeholder = "Eg: JK".localized
+        vehicleSecondField.placeholder = "Eg: 01C".localized
+        vehicleThirdField.placeholder = "Eg: 1234".localized
+        vehicleNumber.text = "Vehicle Number".localized
+        vehicleTypeView.placeholder = "Select Vehicle Type".localized
+        drivingIssuesLabel.text = "Select Driving Issues".localized
+        descriptionText.placeholder = "Describe issue".localized
+
     }
 }

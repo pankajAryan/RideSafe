@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SettingControllerProtocol:class {
+    func language(chnaged:Bool)
+}
+
 class SettingController: RideSafeViewController {
 
      struct languageModel {
@@ -17,7 +21,7 @@ class SettingController: RideSafeViewController {
         var isChecked = false
     }
     @IBOutlet weak var tabble: UITableView!
-    
+    weak var delegate:SettingControllerProtocol?
     var selectedIndexPath = IndexPath()
     
     var languages = [languageModel(lanCode:"E", langName: "English",localName:"", isChecked: false),
@@ -26,12 +30,18 @@ class SettingController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
+        
     }
     
     @IBAction func SaveClicked(_ sender: UIButton) {
        let langselected = languages.filter { $0.isChecked == true }.first
-        UserDefaults.standard.set(langselected?.lanCode, forKey: Localization.selectedLanguage.rawValue)
-        UserDefaults.standard.synchronize()
+        
+        
+        if langselected?.lanCode != selectedLanguage {
+            UserDefaults.standard.set(langselected?.lanCode, forKey: Localization.selectedLanguage.rawValue)
+            UserDefaults.standard.synchronize()
+            delegate?.language(chnaged: true)
+        }
         self.navigationController?.popViewController(animated: true)
     }
 }
