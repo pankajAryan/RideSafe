@@ -672,6 +672,7 @@
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
                         <outlet property="vehicleFirstField" destination="lRG-c1-AZt" id="oBK-9Q-54f"/>
+                        <outlet property="vehicleNumber" destination="ZNB-Yb-Uhu" id="dID-zn-YDf"/>
                         <outlet property="vehicleSecondField" destination="gGo-bw-ObZ" id="Ryz-5Z-l3D"/>
                         <outlet property="vehicleThirdField" destination="PEJ-LD-6az" id="XTA-SF-8NV"/>
                         <outlet property="vehicleTypeView" destination="Nir-Mn-CLa" id="xxQ-Bo-KBl"/>

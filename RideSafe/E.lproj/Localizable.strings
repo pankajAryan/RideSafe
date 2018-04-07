@@ -3,13 +3,13 @@
 "Tempo" = "Tempo";
 "Mini Bus" = "Mini Bus";
 "Bus" = "Bus";
-"Describe issue" = "Describe issue";
-"Vehicle Number" = "Vehicle Number";
+"Describe issue" = "Describe issue"; // x
+"Vehicle Number" = "Vehicle Number"; //x
 "Select Driving Issues" = "Select Driving Issues" ;
 "Eg: JK" = "Eg: JK" ;
 "Eg: 01C" = "Eg: 01C";
 "Eg: 1234" = "Eg: 1234";
-"Road Infra" = "Road Infra";
+"Road Infra" = "Road Infra"; //
 "Help Line" = "Help Line";
 "Education" = "Education" ;
 "Emergency Contacts" = "Emergency Contacts" ;

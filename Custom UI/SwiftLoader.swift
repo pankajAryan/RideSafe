@@ -301,17 +301,17 @@ public class SwiftLoader: UIView {
         /**
          *  Size of loader
          */
-        public var size : CGFloat = 120.0
+        public var size : CGFloat = 90.0
         
         /**
          *  Color of spinner view
          */
-        public var spinnerColor = UIColor.red
+        public var spinnerColor = UIColor.white
         
         /**
          *  S
          */
-        public var spinnerLineWidth :Float = 1.0
+        public var spinnerLineWidth :Float = 4.0
         
         /**
          *  Color of title text
@@ -331,7 +331,7 @@ public class SwiftLoader: UIView {
         /**
          *  Background color for loader
          */
-        public var backgroundColor = UIColor.white
+        public var backgroundColor = UIColor(red: 245.0/255.0, green: 193.0/255.0, blue: 68.0/255.0, alpha: 1)
         
         /**
          *  Foreground color
@@ -346,7 +346,7 @@ public class SwiftLoader: UIView {
         /**
          *  Corner radius for loader
          */
-        public var cornerRadius : CGFloat = 10.0
+        public var cornerRadius : CGFloat = 4.0
         
         public init() {}
         

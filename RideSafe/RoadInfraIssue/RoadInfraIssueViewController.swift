@@ -188,7 +188,7 @@ extension RoadInfraIssueViewController: DropDownDelgate{
         }
         issueTypesLabel.text = String(describing: allIssues.dropLast())
         if issueTypesLabel.text == "" {
-            issueTypesLabel.text = "Select Driving Issues"
+            issueTypesLabel.text = "Select Driving Issues".localized
         }
     }
     

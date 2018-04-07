@@ -13,6 +13,7 @@ import PromiseKit
 
 class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
+    @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
     @IBOutlet weak var vehicleThirdField: UITextField!
     @IBOutlet weak var vehicleSecondField: UITextField!
@@ -49,7 +50,11 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        vehicleFirstField.placeholder = "name".localized
+        vehicleFirstField.placeholder = "Eg: JK".localized
+        vehicleSecondField.placeholder = "Eg: 01C".localized
+        vehicleThirdField.placeholder = "Eg: 1234".localized
+        vehicleNumber.text = "Vehicle Number".localized
+        makeVehicleDropDown()
         RegisterForCitizenPushNotification()
     }
     
@@ -193,14 +198,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         vehicleType = ""
         drivingIssues = []
         descriptionText.text = ""
-        descriptionText.placeholder = "Describe Issues"
-        drivingIssuesLabel.text = "Select Driving Issues"
+        descriptionText.placeholder = "Describe Issues".localized
+        drivingIssuesLabel.text = "Select Driving Issues".localized
        // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         selectedImage.image = #imageLiteral(resourceName: "camera")
         imageUrl = nil
         locationManager.stopUpdatingLocation()
         vehicleTypeView.options = []
-        vehicleTypeView.placeholder = "Select Vehicle Type"
+        vehicleTypeView.placeholder = "Select Vehicle Type".localized
     }
     
     func reportIssues() {
@@ -333,7 +338,7 @@ extension DashboardController: DropDownDelgate{
         }
         drivingIssuesLabel.text = String(describing: allIssues.dropLast())
         if drivingIssuesLabel.text == "" {
-            drivingIssuesLabel.text = "Select Driving Issues"
+            drivingIssuesLabel.text = "Select Driving Issues".localized
         }
     }
     
@@ -406,8 +411,8 @@ extension DashboardController {
         vehicleTypeView.hideOptionsWhenSelect = true
         vehicleTypeView.animationType = .Classic
         vehicleTypeView.tableHeight = 180
-        vehicleTypeView.placeholder = "Select Vehicle Type"
-        vehicleTypeView.options = ["Taxi", "Tempo", "Mini Bus", "Bus"]
+        vehicleTypeView.placeholder = "Select Vehicle Type".localized
+        vehicleTypeView.options = ["Taxi".localized, "Tempo".localized, "Mini Bus".localized, "Bus".localized]
         vehicleTypeView.textAlignment = NSTextAlignment.left
         vehicleTypeView.font = "Poppins-Medium"
         vehicleTypeView.fontSize = 16.0
