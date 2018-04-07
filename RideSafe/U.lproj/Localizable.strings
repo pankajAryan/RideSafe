@@ -1,2 +1,24 @@
-"name" = "نام";
-
+"Select Vehicle Type" = "گاڑی کی قسم منتخب کریں";
+"Taxi" = "ٹیکسی" ;
+"Tempo" = "طےپو";
+"Mini Bus" = "مینی بس";
+"Bus" = "بس";
+"Describe issue" = "مسئلہ بیان کریں";
+"Vehicle Number" = "گاڑی نمبر";
+"Select Driving Issues" = "ڈرائیونگ کے مسائل کا انتخاب کریں";
+"Eg: JK" = "مثال: JK" ;
+"Eg: 01C" = "مثال: 01C";
+"Eg: 1234"= "مثال: 1234";
+"Road Infra" = "روڈ انفراسٹرکچر";
+"Help Line" = "مدد لائن";
+"Education" = "تعلیم " ;
+"Emergency Contacts" = "ہنگامی رابطے" ;
+"Share Live Location" =  "لائیو مقام کا اشتراک کریں"  ;
+"Report" = "رپورٹ" ;
+"Live Tracking" = "لائیو ٹریکنگ";
+"Photo" = "تصویر";
+"Location OFF" = "مقام آف";
+"Location ON" =  "مقام ہن" ;
+"Select Driving Issues" = "ڈرائیونگ کے مسائل کا انتخاب کریں" ;
+"Select Road Issues" = "روڈ کے مسائل کا انتخاب کریں" ;
+"Describe Issue" = "مسئلہ بیان کریں";

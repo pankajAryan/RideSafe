@@ -1,1 +1,25 @@
-"name" = "नाम";
+"Select Vehicle Type" = "वाहन प्रकार का चयन करें";
+"Taxi" = "टैक्सी" ;
+"Tempo" = "टेमपो";
+"Mini Bus" = "मिनी बस";
+"Bus" = "बस";
+"Describe issue" = "समस्या का वर्णन करें";
+"Vehicle Number" = "गाडी नंबर";
+"Select Driving Issues" = "ड्राइविंग मुद्दे चुनें";
+"Eg: JK" = "उदा: JK" ;
+"Eg: 01C" = "उदाहरण: 01C";
+"Eg: 1234" = "उदाहरण: 1234";
+"Road Infra" = "सड़क इंफ्रास्ट्रक्चर";
+"Help Line" = "सहायता लाइन";
+"Education" = "शिक्षा" ;
+"Emergency Contacts" = "आपातकालीन संपर्क" ;
+"Share Live Location" =  "लाइव स्थान साझा करें"  ;
+"Report" = "रिपोर्ट" ;
+"Live Tracking" = "लाइव ट्रैकिंग";
+"Photo" = "तस्वीर";
+"Location OFF" = "स्थान बंद";
+"Location ON" =  "स्थान पर" ;
+"Select Driving Issues" = "ड्राइविंग मुद्दे चुनें" ;
+"Select Road Issues" = "सड़क मुद्दे चुनें" ;
+"Describe Issue" = "समस्या का वर्णन करेंं";
+
