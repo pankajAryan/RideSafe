@@ -43,10 +43,10 @@ class RegistrationController: RideSafeViewController {
         let drop = UIDropDown(frame: self.district.frame)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 100
+        drop.tableHeight = 150
         drop.placeholder = "Select your district"
         drop.font = "Poppins-Medium"
-        drop.fontSize = 16.0
+        drop.fontSize = 14.0
         drop.optionsFont = "Poppins-Regular"
         drop.optionsSize = 14.0
         drop.borderColor = .white
@@ -64,14 +64,20 @@ class RegistrationController: RideSafeViewController {
     }
     
     @IBAction func completeRegistration(_ sender: UIButton) {
-        firstly{
-            NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": self.mobileNumber.text!,"districtId": selectedDistrictID])
-            }.then { response -> () in
-                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
-                UserDefaults.standard.synchronize()
-                self.showToast(response: response)
-                self.gotodashBoard()
-            }.catch { (error) in
+        
+        if (name.text?.count)! > 0 && (mobileNumber.text?.count)! > 0 && selectedDistrictID.count > 0 {
+            
+            firstly{
+                NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": mobileNumber.text!,"districtId": selectedDistrictID])
+                }.then { response -> () in
+                    UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
+                    UserDefaults.standard.synchronize()
+                    self.showToast(response: response)
+                    self.gotodashBoard()
+                }.catch { (error) in
+            }
+        } else {
+            self.showToast(message: "Please provide input for all the fields.")
         }
     }
     
