@@ -15,11 +15,10 @@ class RideSafeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "Poppins-Medium", size: 16)!]
-
-        setBackGround()
+        setBackgroundImage()
     }
     
-    private func setBackGround() {
+    private func setBackgroundImage() {
         let imageView = UIImageView(frame: UIScreen.main.bounds)
         imageView.image = #imageLiteral(resourceName: "form_bg")
         view.addSubview(imageView)
@@ -33,11 +32,10 @@ extension UIViewController {
         let leftButton = UIButton(type: .custom)
         leftButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
         leftButton.addTarget(self, action: #selector(leftButtonClicked), for: .touchUpInside)
-       leftButton.setImage(#imageLiteral(resourceName: "icn_back"), for: .normal)
+       leftButton.setImage(#imageLiteral(resourceName: "back"), for: .normal)
         leftButton.contentHorizontalAlignment = .left
         leftButton.contentVerticalAlignment = .center
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftButton)
-
     }
     
    @objc func leftButtonClicked() {
