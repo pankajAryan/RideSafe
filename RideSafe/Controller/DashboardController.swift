@@ -85,7 +85,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
         self.title = "Ride Safe"
-        setRightSwitch()
+        //setRightSwitch()
         
         vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
@@ -340,9 +340,9 @@ extension DashboardController: DropDownDelgate{
         drivingIssues = items
         var allIssues = ""
         for issue in drivingIssues {
-            allIssues =  allIssues + issue.name! + ","
+            allIssues =  allIssues + issue.name! + ", "
         }
-        drivingIssuesLabel.text = String(describing: allIssues.dropLast())
+        drivingIssuesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
         if drivingIssuesLabel.text == "" {
             drivingIssuesLabel.text = "Select Driving Issues".localized
         }
@@ -418,16 +418,15 @@ extension DashboardController {
         vehicleTypeView.textColor = UIColor.darkText
         vehicleTypeView.hideOptionsWhenSelect = true
         vehicleTypeView.animationType = .Classic
-        vehicleTypeView.tableHeight = 180
+        vehicleTypeView.tableHeight = 150
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         vehicleTypeView.options = ["Taxi".localized, "Tempo".localized, "Mini Bus".localized, "Bus".localized]
         vehicleTypeView.textAlignment = NSTextAlignment.left
         vehicleTypeView.font = "Poppins-Medium"
-        vehicleTypeView.fontSize = 16.0
+        vehicleTypeView.fontSize = 14.0
         vehicleTypeView.optionsFont = "Poppins-Regular"
         vehicleTypeView.optionsSize = 14.0
         vehicleTypeView.borderColor = .white
-
         
         vehicleTypeView.didSelect { [unowned self] (option, index) in
             self.vehicleType = option
@@ -438,9 +437,7 @@ extension DashboardController {
         let vc = UIStoryboard(name: "DropDown", bundle: nil).instantiateViewController(withIdentifier: "DropDownController") as! DropDownController
         vc.dropDownDelgate = self
         var drivingissues = [DropDownDataSource]()
-        
-        
-        
+
         retriveJSONFrom(fileName: FileNames.response.rawValue).then { response -> () in
             let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
             SharedSettings.shared.registerPushNotificationresponse = sresponse?.responseObject
