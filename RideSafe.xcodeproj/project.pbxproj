@@ -70,6 +70,9 @@
 		2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */; };
 		2CB05AF1207491FE006C547E /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */; };
 		2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */; };
+		2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */; };
+		2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A30207A947F00B7AAFD /* futuram_C.ttf */; };
+		2CC96A35207A965800B7AAFD /* futura-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A34207A965800B7AAFD /* futura-regular.ttf */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
@@ -185,6 +188,9 @@
 		2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
 		2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaStd-Heavy.otf"; sourceTree = "<group>"; };
+		2CC96A30207A947F00B7AAFD /* futuram_C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futuram_C.ttf; sourceTree = "<group>"; };
+		2CC96A34207A965800B7AAFD /* futura-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "futura-regular.ttf"; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
@@ -496,6 +502,9 @@
 		2CB05AEC207491DD006C547E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CC96A34207A965800B7AAFD /* futura-regular.ttf */,
+				2CC96A30207A947F00B7AAFD /* futuram_C.ttf */,
+				2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */,
 				2C4F944C2078A12B00BC5D31 /* E.lproj */,
 				2C4F944F2078A12B00BC5D31 /* H.lproj */,
 				2C4F94492078A12B00BC5D31 /* U.lproj */,
@@ -707,6 +716,7 @@
 				B821B2A6205CC22E007D1F32 /* VideoTableViewCell.xib in Resources */,
 				2C27D16B20767E3600F23736 /* FOMyProfile.storyboard in Resources */,
 				2C1EE2BA204E5A440093B3BF /* LaunchScreen.storyboard in Resources */,
+				2CC96A35207A965800B7AAFD /* futura-regular.ttf in Resources */,
 				2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
@@ -719,12 +729,14 @@
 				2C2366092067793B000981A8 /* UpdateActionCell.xib in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				2C4F94522078A12C00BC5D31 /* Localizable.strings in Resources */,
+				2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
 				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
+				2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */,
 				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
 				B8C4F2752065563500587E55 /* Reports.storyboard in Resources */,
 				B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */,

@@ -41,6 +41,9 @@
 		<string>Poppins-Medium.ttf</string>
 		<string>Poppins-Regular.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
+		<string>futura-regular.ttf</string>
+		<string>futuram_C.ttf</string>
+		<string>FuturaStd-Heavy.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
