@@ -19,6 +19,9 @@ class EducationVideoViewController: RideSafeViewController {
         super.viewDidLoad()
         self.educationVideoTableView.register(UINib(nibName: "VideoTableViewCell", bundle: nil), forCellReuseIdentifier: "VideoTableViewCellIdentifier")
         educationVideoTableView.tableFooterView = UIView()
+        educationVideoTableView.estimatedRowHeight = 100.0
+        educationVideoTableView.rowHeight = UITableViewAutomaticDimension
+
         loadData()
     }
     
@@ -59,9 +62,12 @@ extension EducationVideoViewController: UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return UITableViewAutomaticDimension
     }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let youtubeViewController: YoutubeVideoViewController = self.storyboard?.instantiateViewController(withIdentifier: "YoutubeVideoViewController") as! YoutubeVideoViewController

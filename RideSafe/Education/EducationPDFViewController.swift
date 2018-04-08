@@ -20,6 +20,10 @@ class EducationPDFViewController: RideSafeViewController {
         self.educationPdfTableView.register(UINib(nibName: "PDFTableViewCell", bundle: nil), forCellReuseIdentifier: "PDFTableViewCellIdentifier")
         educationPdfTableView.tableFooterView = UIView()
         loadData()
+        
+        educationPdfTableView.estimatedRowHeight = 120.0
+        educationPdfTableView.rowHeight = UITableViewAutomaticDimension
+
     }
     
     func loadData() {
@@ -60,7 +64,11 @@ extension EducationPDFViewController: UITableViewDataSource, UITableViewDelegate
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120.0
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

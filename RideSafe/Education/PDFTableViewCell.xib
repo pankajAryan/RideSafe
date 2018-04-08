@@ -21,63 +21,64 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PDFTableViewCellIdentifier" id="KGk-i7-Jjw" customClass="PDFTableViewCell" customModule="RideSafe" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="119.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="111.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQA-nA-164">
-                        <rect key="frame" x="10" y="8" width="300" height="109.5"/>
+                        <rect key="frame" x="16" y="16" width="288" height="95.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-xi-0qm">
-                                <rect key="frame" x="28" y="25" width="60" height="60"/>
+                                <rect key="frame" x="8" y="18" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="caK-7X-tgL"/>
                                     <constraint firstAttribute="width" constant="60" id="tSd-gP-RF1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PP-tv-QIM">
-                                <rect key="frame" x="116" y="8" width="176" height="26.5"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                <rect key="frame" x="76" y="8" width="204" height="23"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="14 feb 2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eZr-x9-HGv">
-                                <rect key="frame" x="116" y="42" width="176" height="16.5"/>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                                <rect key="frame" x="76" y="67" width="204" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09K-LG-pDQ">
-                                <rect key="frame" x="116" y="66" width="176" height="16.5"/>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09K-LG-pDQ">
+                                <rect key="frame" x="76" y="39" width="204" height="20"/>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="09K-LG-pDQ" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="4cZ-0k-mrp"/>
-                            <constraint firstAttribute="trailing" secondItem="09K-LG-pDQ" secondAttribute="trailing" constant="8" id="8dC-ru-mbJ"/>
-                            <constraint firstItem="eZr-x9-HGv" firstAttribute="top" secondItem="2PP-tv-QIM" secondAttribute="bottom" constant="8" id="JGB-vL-tws"/>
-                            <constraint firstItem="eZr-x9-HGv" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="Q31-7g-6QG"/>
-                            <constraint firstItem="2PP-tv-QIM" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="28" id="VXp-Pt-rb1"/>
-                            <constraint firstItem="09K-LG-pDQ" firstAttribute="top" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8" id="fZA-jn-IVr"/>
-                            <constraint firstItem="l8A-xi-0qm" firstAttribute="leading" secondItem="hQA-nA-164" secondAttribute="leading" constant="28" id="qOZ-eU-BYZ"/>
+                            <constraint firstAttribute="trailing" secondItem="eZr-x9-HGv" secondAttribute="trailing" constant="8" id="5ty-sY-y4s"/>
+                            <constraint firstItem="09K-LG-pDQ" firstAttribute="top" secondItem="2PP-tv-QIM" secondAttribute="bottom" constant="8" id="9GB-M4-HbP"/>
+                            <constraint firstAttribute="trailing" secondItem="09K-LG-pDQ" secondAttribute="trailing" constant="8" id="ASC-S5-Xl5"/>
+                            <constraint firstItem="09K-LG-pDQ" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="F1x-aE-aXN"/>
+                            <constraint firstItem="2PP-tv-QIM" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="VXp-Pt-rb1"/>
+                            <constraint firstItem="eZr-x9-HGv" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="Wkr-Qf-PbN"/>
+                            <constraint firstAttribute="bottom" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8" id="h3L-Pd-E8J"/>
+                            <constraint firstItem="eZr-x9-HGv" firstAttribute="top" secondItem="09K-LG-pDQ" secondAttribute="bottom" constant="8" id="oIa-a4-obJ"/>
+                            <constraint firstItem="l8A-xi-0qm" firstAttribute="leading" secondItem="hQA-nA-164" secondAttribute="leading" constant="8" id="qOZ-eU-BYZ"/>
                             <constraint firstAttribute="trailing" secondItem="2PP-tv-QIM" secondAttribute="trailing" constant="8" id="sJf-XF-bGS"/>
                             <constraint firstItem="l8A-xi-0qm" firstAttribute="centerY" secondItem="hQA-nA-164" secondAttribute="centerY" id="smM-pr-xsx"/>
                             <constraint firstItem="2PP-tv-QIM" firstAttribute="top" secondItem="hQA-nA-164" secondAttribute="top" constant="8" id="szf-kn-HFQ"/>
-                            <constraint firstAttribute="trailing" secondItem="eZr-x9-HGv" secondAttribute="trailing" constant="8" id="uy7-u3-gai"/>
                         </constraints>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="hQA-nA-164" secondAttribute="bottom" constant="2" id="Kja-xn-FFt"/>
-                    <constraint firstAttribute="trailing" secondItem="hQA-nA-164" secondAttribute="trailing" constant="10" id="adJ-bn-vVL"/>
-                    <constraint firstItem="hQA-nA-164" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cUs-ZG-eEF"/>
-                    <constraint firstItem="hQA-nA-164" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="de6-Rh-ldI"/>
+                    <constraint firstAttribute="bottom" secondItem="hQA-nA-164" secondAttribute="bottom" id="Kja-xn-FFt"/>
+                    <constraint firstAttribute="trailing" secondItem="hQA-nA-164" secondAttribute="trailing" constant="16" id="adJ-bn-vVL"/>
+                    <constraint firstItem="hQA-nA-164" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="cUs-ZG-eEF"/>
+                    <constraint firstItem="hQA-nA-164" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="de6-Rh-ldI"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
