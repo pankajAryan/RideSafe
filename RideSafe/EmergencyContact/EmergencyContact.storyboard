@@ -138,10 +138,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1k7-KS-kRr">
-                                <rect key="frame" x="16" y="388.5" width="343" height="48"/>
+                                <rect key="frame" x="16" y="388.5" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.96470588239999999" green="0.70980392160000005" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="oRW-A6-5NZ"/>
+                                    <constraint firstAttribute="height" constant="45" id="oRW-A6-5NZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <state key="normal" title="SAVE">
