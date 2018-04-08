@@ -324,9 +324,6 @@
 				2C1EE2D2204E6F3E0093B3BF /* Network */,
 				2C1EE2CF204E6F040093B3BF /* Model */,
 				2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */,
-				2C4F944C2078A12B00BC5D31 /* E.lproj */,
-				2C4F944F2078A12B00BC5D31 /* H.lproj */,
-				2C4F94492078A12B00BC5D31 /* U.lproj */,
 				2C1EE2B3204E5A440093B3BF /* Main.storyboard */,
 				2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
 				2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
@@ -499,6 +496,9 @@
 		2CB05AEC207491DD006C547E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2C4F944C2078A12B00BC5D31 /* E.lproj */,
+				2C4F944F2078A12B00BC5D31 /* H.lproj */,
+				2C4F94492078A12B00BC5D31 /* U.lproj */,
 				2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */,
 				2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */,
 				2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */,
