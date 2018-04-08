@@ -43,7 +43,7 @@ class RegistrationController: RideSafeViewController {
         let drop = UIDropDown(frame: self.district.frame)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 160
+        drop.tableHeight = 100
         drop.placeholder = "Select your district"
         drop.font = "Poppins-Medium"
         drop.fontSize = 16.0

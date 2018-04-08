@@ -311,7 +311,7 @@ public class SwiftLoader: UIView {
         /**
          *  S
          */
-        public var spinnerLineWidth :Float = 4.0
+        public var spinnerLineWidth :Float = 10.0
         
         /**
          *  Color of title text
