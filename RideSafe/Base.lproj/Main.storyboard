@@ -39,19 +39,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Mobile No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kpb-iN-w49">
-                                <rect key="frame" x="16" y="204" width="259" height="26.5"/>
+                                <rect key="frame" x="16" y="204" width="259" height="19"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-Zy-ytw">
-                                <rect key="frame" x="16" y="238.5" width="343" height="40"/>
+                                <rect key="frame" x="16" y="231" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="fnG-77-n9z"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter mobile no." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dnN-2V-ogn">
-                                <rect key="frame" x="24" y="244.5" width="327" height="27"/>
+                                <rect key="frame" x="24" y="241" width="327" height="19"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -61,19 +61,19 @@
                                 </connections>
                             </textField>
                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="UpG-V8-hvP">
-                                <rect key="frame" x="16" y="294" width="343" height="137.5"/>
+                                <rect key="frame" x="16" y="286.5" width="343" height="122"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CXe-ac-Q9J">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="74.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="OTP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZd-Bw-30s">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="osc-J4-hpQ">
-                                                <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                                <rect key="frame" x="0.0" y="27" width="343" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="NUz-f7-bYq">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -82,7 +82,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter OTP" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PNQ-io-k3i">
-                                                        <rect key="frame" x="8" y="6" width="327" height="27"/>
+                                                        <rect key="frame" x="8" y="10" width="327" height="19"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -106,7 +106,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gB-gz-hJc">
-                                        <rect key="frame" x="101.5" y="98.5" width="140" height="39"/>
+                                        <rect key="frame" x="101.5" y="91" width="140" height="31"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="140" id="BlL-lZ-HDv"/>
@@ -205,19 +205,19 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jRK-kb-QKe">
-                                <rect key="frame" x="16" y="204" width="343" height="165"/>
+                                <rect key="frame" x="16" y="204" width="343" height="150"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zAg-7K-ma8">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="74.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="67"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="piW-73-Jh1">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3pl-Kv-OVZ">
-                                                <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                                <rect key="frame" x="0.0" y="27" width="343" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-FS-K6h">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -226,7 +226,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Fn3-MX-hbh">
-                                                        <rect key="frame" x="8" y="6" width="327" height="27"/>
+                                                        <rect key="frame" x="8" y="10" width="327" height="19"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -247,16 +247,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-o6-J3c">
-                                        <rect key="frame" x="0.0" y="90.5" width="343" height="74.5"/>
+                                        <rect key="frame" x="0.0" y="83" width="343" height="67"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Mobile No." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFO-HN-ug6">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="19"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hn6-v3-bch">
-                                                <rect key="frame" x="0.0" y="34.5" width="343" height="40"/>
+                                                <rect key="frame" x="0.0" y="27" width="343" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="tPY-jD-8es">
                                                         <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
@@ -265,7 +265,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="10 Digit Mobile No." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7cM-UG-uH9">
-                                                        <rect key="frame" x="8" y="6" width="327" height="27"/>
+                                                        <rect key="frame" x="8" y="10" width="327" height="19"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
@@ -288,19 +288,19 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="District" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mz-ef-cOG">
-                                <rect key="frame" x="16" y="385" width="56" height="26.5"/>
+                                <rect key="frame" x="16" y="370" width="50.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-ya-DbW">
-                                <rect key="frame" x="16" y="419.5" width="343" height="40"/>
+                                <rect key="frame" x="16" y="397" width="343" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DS0-kg-HVY"/>
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pfA-y7-zGJ">
-                                <rect key="frame" x="16" y="428" width="343" height="23"/>
+                                <rect key="frame" x="16" y="408.5" width="343" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -1039,7 +1039,7 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
         <image name="contact" width="33" height="33"/>
         <image name="education" width="33" height="33"/>
         <image name="emergency" width="33" height="33"/>
-        <image name="form_bg" width="375" height="545"/>
+        <image name="form_bg" width="375" height="666"/>
         <image name="ic_citizen_circle" width="80" height="80"/>
         <image name="icn_frwd" width="24" height="24"/>
         <image name="live_share" width="33" height="33"/>
