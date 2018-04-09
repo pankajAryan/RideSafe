@@ -20,6 +20,7 @@ class SettingController: RideSafeViewController {
         var localName = ""
         var isChecked = false
     }
+    
     @IBOutlet weak var tabble: UITableView!
     weak var delegate:SettingControllerProtocol?
     var selectedIndexPath = IndexPath()
@@ -30,7 +31,6 @@ class SettingController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        
     }
     
     @IBAction func SaveClicked(_ sender: UIButton) {
@@ -61,6 +61,13 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
                 selectedIndexPath = indexPath
                 languages[indexPath.row].isChecked = true
             }
+            
+            if indexPath.row == 0 {
+                cell.localizedLanguageName.isHidden = true
+            } else {
+                cell.localizedLanguageName.isHidden = false
+            }
+            
             return cell
         }
         return UITableViewCell()
@@ -80,7 +87,6 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
 
             selectedIndexPath = indexPath
         }
-        
     }
     
 }
