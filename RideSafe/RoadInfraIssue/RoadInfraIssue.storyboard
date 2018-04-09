@@ -59,7 +59,7 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9g-0M-MEu">
-                                <rect key="frame" x="16" y="606" width="343" height="45"/>
+                                <rect key="frame" x="16" y="572" width="343" height="45"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.70980392156862748" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="7Jk-e6-rGW"/>
@@ -112,7 +112,7 @@
                             <constraint firstItem="8UP-4l-7tW" firstAttribute="leading" secondItem="f8a-xM-N4f" secondAttribute="leading" constant="16" id="8ij-PR-FYg"/>
                             <constraint firstItem="8UP-4l-7tW" firstAttribute="centerY" secondItem="9TU-px-g9k" secondAttribute="centerY" id="BYx-oK-lkx"/>
                             <constraint firstItem="f9g-0M-MEu" firstAttribute="leading" secondItem="f8a-xM-N4f" secondAttribute="leading" constant="16" id="SK8-uG-JYS"/>
-                            <constraint firstItem="f8a-xM-N4f" firstAttribute="bottom" secondItem="f9g-0M-MEu" secondAttribute="bottom" constant="16" id="U1f-db-nnV"/>
+                            <constraint firstItem="f8a-xM-N4f" firstAttribute="bottom" secondItem="f9g-0M-MEu" secondAttribute="bottom" constant="50" id="U1f-db-nnV"/>
                             <constraint firstItem="foZ-23-Lxm" firstAttribute="top" secondItem="9TU-px-g9k" secondAttribute="top" id="X8h-3P-gCq"/>
                             <constraint firstItem="f8a-xM-N4f" firstAttribute="trailing" secondItem="8yD-54-h7X" secondAttribute="trailing" constant="16" id="ZXB-rP-te0"/>
                             <constraint firstItem="7Kh-hi-RG9" firstAttribute="top" secondItem="8UP-4l-7tW" secondAttribute="bottom" constant="16" id="bbz-bf-j8W"/>
