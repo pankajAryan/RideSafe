@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kGa-QG-amc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kGa-QG-amc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -986,16 +986,16 @@
                                                     <rect key="frame" x="8" y="8" width="288" height="156"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cFc-ys-Tox">
-                                                            <rect key="frame" x="8" y="0.0" width="280" height="156"/>
+                                                            <rect key="frame" x="8" y="8" width="272" height="140"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqa-cj-qUm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="78"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="272" height="70"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-SL-vCY">
-                                                                    <rect key="frame" x="0.0" y="78" width="280" height="78"/>
+                                                                    <rect key="frame" x="0.0" y="70" width="272" height="70"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -1011,9 +1011,9 @@
                                                         <constraint firstAttribute="trailing" secondItem="L0r-h8-Vqh" secondAttribute="trailing" constant="8" id="IJP-Oe-TrC"/>
                                                         <constraint firstItem="L0r-h8-Vqh" firstAttribute="centerY" secondItem="Qmk-Mj-71u" secondAttribute="centerY" id="KB6-Xu-G88"/>
                                                         <constraint firstItem="cFc-ys-Tox" firstAttribute="leading" secondItem="Qmk-Mj-71u" secondAttribute="leading" constant="8" id="KT7-r5-4e3"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cFc-ys-Tox" secondAttribute="trailing" id="OcT-v0-R42"/>
-                                                        <constraint firstAttribute="bottom" secondItem="cFc-ys-Tox" secondAttribute="bottom" id="OrQ-Yj-PhU"/>
-                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="top" secondItem="Qmk-Mj-71u" secondAttribute="top" id="pHq-ac-nd7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cFc-ys-Tox" secondAttribute="trailing" constant="8" id="OcT-v0-R42"/>
+                                                        <constraint firstAttribute="bottom" secondItem="cFc-ys-Tox" secondAttribute="bottom" constant="8" id="OrQ-Yj-PhU"/>
+                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="top" secondItem="Qmk-Mj-71u" secondAttribute="top" constant="8" id="pHq-ac-nd7"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1045,7 +1045,7 @@
                                     <constraint firstAttribute="height" constant="44" id="WmL-w0-zLL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                                <state key="normal" title="Save">
+                                <state key="normal" title="SAVE">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
