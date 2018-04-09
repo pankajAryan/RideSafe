@@ -1095,14 +1095,14 @@
                                     <constraint firstAttribute="height" constant="131" id="Nxo-1W-CVF"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-0p-UAO">
-                                <rect key="frame" x="131.5" y="167" width="58" height="26.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-0p-UAO">
+                                <rect key="frame" x="114.5" y="167" width="92.5" height="26.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView userInteractionEnabled="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-Cx-FVi">
-                                <rect key="frame" x="20" y="220.5" width="280" height="327.5"/>
+                                <rect key="frame" x="16" y="209.5" width="288" height="338.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">RideSafe - A Citizen Centric Initiative to Promote Safe Driving on Roads.
 
@@ -1118,14 +1118,14 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
                         <color key="backgroundColor" red="0.76912147714401868" green="0.76912147714401868" blue="0.76912147714401868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="top" secondItem="8ei-dN-CYt" secondAttribute="top" id="EnS-ju-U4v"/>
-                            <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="9Id-Cx-FVi" secondAttribute="trailing" constant="20" id="FFj-67-wG5"/>
+                            <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="9Id-Cx-FVi" secondAttribute="trailing" constant="16" id="FFj-67-wG5"/>
                             <constraint firstItem="8ei-dN-CYt" firstAttribute="bottom" secondItem="9Id-Cx-FVi" secondAttribute="bottom" constant="20" id="SaR-tE-83G"/>
                             <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="xh1-F8-mIF" secondAttribute="trailing" id="Vde-Es-lNU"/>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="centerX" secondItem="fws-Xw-Pqf" secondAttribute="centerX" id="XNi-f2-bKT"/>
                             <constraint firstItem="jD4-0p-UAO" firstAttribute="top" secondItem="xh1-F8-mIF" secondAttribute="bottom" constant="16" id="auo-rd-E5z"/>
-                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="top" secondItem="jD4-0p-UAO" secondAttribute="bottom" constant="27" id="fLl-sA-SEh"/>
+                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="top" secondItem="jD4-0p-UAO" secondAttribute="bottom" constant="16" id="fLl-sA-SEh"/>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" id="kKy-qR-RMN"/>
-                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" constant="20" id="wFe-uk-VJl"/>
+                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" constant="16" id="wFe-uk-VJl"/>
                             <constraint firstItem="jD4-0p-UAO" firstAttribute="centerX" secondItem="fws-Xw-Pqf" secondAttribute="centerX" id="ykh-AZ-qg7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ei-dN-CYt"/>
