@@ -28,7 +28,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQA-nA-164">
-                        <rect key="frame" x="16" y="16" width="288" height="95.5"/>
+                        <rect key="frame" x="16" y="8" width="288" height="95.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l8A-xi-0qm">
                                 <rect key="frame" x="8" y="18" width="60" height="60"/>
@@ -64,9 +64,9 @@
                             <constraint firstItem="09K-LG-pDQ" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="F1x-aE-aXN"/>
                             <constraint firstItem="2PP-tv-QIM" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="VXp-Pt-rb1"/>
                             <constraint firstItem="eZr-x9-HGv" firstAttribute="leading" secondItem="l8A-xi-0qm" secondAttribute="trailing" constant="8" id="Wkr-Qf-PbN"/>
-                            <constraint firstAttribute="bottom" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8" id="h3L-Pd-E8J"/>
                             <constraint firstItem="eZr-x9-HGv" firstAttribute="top" secondItem="09K-LG-pDQ" secondAttribute="bottom" constant="8" id="oIa-a4-obJ"/>
                             <constraint firstItem="l8A-xi-0qm" firstAttribute="leading" secondItem="hQA-nA-164" secondAttribute="leading" constant="8" id="qOZ-eU-BYZ"/>
+                            <constraint firstAttribute="bottom" secondItem="eZr-x9-HGv" secondAttribute="bottom" constant="8.5" id="r5v-Ta-W92"/>
                             <constraint firstAttribute="trailing" secondItem="2PP-tv-QIM" secondAttribute="trailing" constant="8" id="sJf-XF-bGS"/>
                             <constraint firstItem="l8A-xi-0qm" firstAttribute="centerY" secondItem="hQA-nA-164" secondAttribute="centerY" id="smM-pr-xsx"/>
                             <constraint firstItem="2PP-tv-QIM" firstAttribute="top" secondItem="hQA-nA-164" secondAttribute="top" constant="8" id="szf-kn-HFQ"/>
@@ -75,9 +75,9 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="hQA-nA-164" secondAttribute="bottom" id="Kja-xn-FFt"/>
+                    <constraint firstAttribute="bottom" secondItem="hQA-nA-164" secondAttribute="bottom" constant="8" id="Kja-xn-FFt"/>
                     <constraint firstAttribute="trailing" secondItem="hQA-nA-164" secondAttribute="trailing" constant="16" id="adJ-bn-vVL"/>
-                    <constraint firstItem="hQA-nA-164" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="cUs-ZG-eEF"/>
+                    <constraint firstItem="hQA-nA-164" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="cUs-ZG-eEF"/>
                     <constraint firstItem="hQA-nA-164" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="de6-Rh-ldI"/>
                 </constraints>
             </tableViewCellContentView>

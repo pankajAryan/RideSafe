@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="height" constant="45" id="7Jk-e6-rGW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
-                                <state key="normal" title="Report">
+                                <state key="normal" title="REP0RT">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>

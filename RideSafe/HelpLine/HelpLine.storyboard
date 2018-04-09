@@ -130,7 +130,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GHk-TE-Pm9">
-                                                    <rect key="frame" x="16" y="16" width="343" height="96"/>
+                                                    <rect key="frame" x="16" y="8" width="343" height="96"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gof-Hf-gU9">
                                                             <rect key="frame" x="8" y="8" width="327" height="23"/>
@@ -172,7 +172,7 @@
                                                         <constraint firstItem="q6L-nH-Euc" firstAttribute="leading" secondItem="GHk-TE-Pm9" secondAttribute="leading" constant="8" id="9Mv-kW-OZV"/>
                                                         <constraint firstAttribute="trailing" secondItem="q6L-nH-Euc" secondAttribute="trailing" constant="8" id="9UD-zw-gzB"/>
                                                         <constraint firstItem="Gof-Hf-gU9" firstAttribute="leading" secondItem="GHk-TE-Pm9" secondAttribute="leading" constant="8" id="DzD-y9-14N"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2Bx-7R-yQR" secondAttribute="bottom" constant="8.5" id="Lxo-rh-cKa"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2Bx-7R-yQR" secondAttribute="bottom" constant="8.5" id="Syb-el-N8r"/>
                                                         <constraint firstItem="q6L-nH-Euc" firstAttribute="top" secondItem="Gof-Hf-gU9" secondAttribute="bottom" constant="8" id="YQ3-8j-vpk"/>
                                                         <constraint firstAttribute="trailing" secondItem="Gof-Hf-gU9" secondAttribute="trailing" constant="8" id="Yg8-wW-7lB"/>
                                                         <constraint firstAttribute="trailing" secondItem="tgg-u9-tcE" secondAttribute="trailing" constant="16" id="aB8-07-ZAp"/>
@@ -184,8 +184,8 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="GHk-TE-Pm9" secondAttribute="bottom" id="1Nf-2V-Uok"/>
-                                                <constraint firstItem="GHk-TE-Pm9" firstAttribute="top" secondItem="aGf-CG-GIH" secondAttribute="top" constant="16" id="2rI-3g-fxq"/>
+                                                <constraint firstAttribute="bottom" secondItem="GHk-TE-Pm9" secondAttribute="bottom" constant="8" id="1Nf-2V-Uok"/>
+                                                <constraint firstItem="GHk-TE-Pm9" firstAttribute="top" secondItem="aGf-CG-GIH" secondAttribute="top" constant="8" id="2rI-3g-fxq"/>
                                                 <constraint firstAttribute="trailing" secondItem="GHk-TE-Pm9" secondAttribute="trailing" constant="16" id="NpV-cd-3Gm"/>
                                                 <constraint firstItem="GHk-TE-Pm9" firstAttribute="leading" secondItem="aGf-CG-GIH" secondAttribute="leading" constant="16" id="NpW-Bj-t2r"/>
                                             </constraints>
