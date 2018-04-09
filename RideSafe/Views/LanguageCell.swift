@@ -12,6 +12,7 @@ class LanguageCell: UITableViewCell {
 
     @IBOutlet weak var LanguageName: UILabel!
     @IBOutlet weak var localizedLanguageName: UILabel!
+    @IBOutlet weak var chechMarkImageView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

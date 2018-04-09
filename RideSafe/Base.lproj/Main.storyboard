@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kGa-QG-amc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kGa-QG-amc">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -654,7 +653,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBf-Oi-t1y">
-                                        <rect key="frame" x="156" y="0.0" width="75" height="60"/>
+                                        <rect key="frame" x="158" y="0.0" width="75" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" image="contact">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -688,7 +687,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Help Line" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gK-5L-QqZ">
-                                <rect key="frame" x="160" y="524.5" width="75" height="20"/>
+                                <rect key="frame" x="162" y="524.5" width="75" height="20"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <color key="textColor" white="0.123046875" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -925,7 +924,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PdX-CT-6yh" secondAttribute="height" multiplier="343:44" id="8gW-vQ-M2w"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <state key="normal" title="UPDATE PROFILE">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -984,46 +983,52 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qmk-Mj-71u">
-                                                    <rect key="frame" x="15" y="15" width="274" height="146"/>
+                                                    <rect key="frame" x="8" y="8" width="288" height="156"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cFc-ys-Tox">
-                                                            <rect key="frame" x="0.0" y="0.0" width="274" height="146"/>
+                                                            <rect key="frame" x="8" y="0.0" width="280" height="156"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lqa-cj-qUm">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="274" height="73"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="78"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y6W-SL-vCY">
-                                                                    <rect key="frame" x="0.0" y="73" width="274" height="73"/>
+                                                                    <rect key="frame" x="0.0" y="78" width="280" height="78"/>
                                                                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
+                                                        <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_action_right_tick" translatesAutoresizingMaskIntoConstraints="NO" id="L0r-h8-Vqh">
+                                                            <rect key="frame" x="256" y="66" width="24" height="24"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="leading" secondItem="Qmk-Mj-71u" secondAttribute="leading" id="CCW-U0-dOF"/>
-                                                        <constraint firstAttribute="trailing" secondItem="cFc-ys-Tox" secondAttribute="trailing" id="NlG-YW-S5B"/>
-                                                        <constraint firstAttribute="bottom" secondItem="cFc-ys-Tox" secondAttribute="bottom" id="Wbd-xV-RZ9"/>
-                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="top" secondItem="Qmk-Mj-71u" secondAttribute="top" id="Yg1-EA-do2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="L0r-h8-Vqh" secondAttribute="trailing" constant="8" id="IJP-Oe-TrC"/>
+                                                        <constraint firstItem="L0r-h8-Vqh" firstAttribute="centerY" secondItem="Qmk-Mj-71u" secondAttribute="centerY" id="KB6-Xu-G88"/>
+                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="leading" secondItem="Qmk-Mj-71u" secondAttribute="leading" constant="8" id="KT7-r5-4e3"/>
+                                                        <constraint firstAttribute="trailing" secondItem="cFc-ys-Tox" secondAttribute="trailing" id="OcT-v0-R42"/>
+                                                        <constraint firstAttribute="bottom" secondItem="cFc-ys-Tox" secondAttribute="bottom" id="OrQ-Yj-PhU"/>
+                                                        <constraint firstItem="cFc-ys-Tox" firstAttribute="top" secondItem="Qmk-Mj-71u" secondAttribute="top" id="pHq-ac-nd7"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Qmk-Mj-71u" secondAttribute="bottom" id="Dri-Uz-zFg"/>
-                                                <constraint firstItem="Qmk-Mj-71u" firstAttribute="top" secondItem="7nG-eC-hsG" secondAttribute="topMargin" constant="4" id="Ebj-GY-sd5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Qmk-Mj-71u" secondAttribute="trailing" id="Hzi-W3-khn"/>
-                                                <constraint firstItem="Qmk-Mj-71u" firstAttribute="leading" secondItem="7nG-eC-hsG" secondAttribute="leadingMargin" id="wK3-Vs-Gv7"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qmk-Mj-71u" secondAttribute="trailing" constant="8" id="6ka-sm-fPI"/>
+                                                <constraint firstItem="Qmk-Mj-71u" firstAttribute="top" secondItem="7nG-eC-hsG" secondAttribute="top" constant="8" id="71t-js-ayw"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qmk-Mj-71u" secondAttribute="bottom" constant="8" id="vB3-Ko-7uj"/>
+                                                <constraint firstItem="Qmk-Mj-71u" firstAttribute="leading" secondItem="7nG-eC-hsG" secondAttribute="leading" constant="8" id="xvr-4d-0s9"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="LanguageName" destination="Lqa-cj-qUm" id="oG0-nD-eb5"/>
+                                            <outlet property="chechMarkImageView" destination="L0r-h8-Vqh" id="TI4-nH-bFH"/>
                                             <outlet property="localizedLanguageName" destination="Y6W-SL-vCY" id="BQv-hO-4b5"/>
                                         </connections>
                                     </tableViewCell>
@@ -1039,9 +1044,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="WmL-w0-zLL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="SaveClicked:" destination="clI-9Z-y4s" eventType="touchUpInside" id="DWU-Bn-z9w"/>
@@ -1143,6 +1148,7 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
         <image name="education" width="33" height="33"/>
         <image name="emergency" width="33" height="33"/>
         <image name="form_bg" width="375" height="666"/>
+        <image name="ic_action_right_tick" width="24" height="24"/>
         <image name="ic_citizen_circle" width="80" height="80"/>
         <image name="icn_dropdown" width="24" height="24"/>
         <image name="icn_frwd" width="24" height="24"/>

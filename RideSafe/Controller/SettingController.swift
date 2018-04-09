@@ -56,7 +56,7 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
         if   let cell = tableView.dequeueReusableCell(withIdentifier: "LanguageCell") as? LanguageCell{
             cell.localizedLanguageName.text = languages[indexPath.row].localName
             cell.LanguageName.text = languages[indexPath.row].langName
-            cell.accessoryType = self.selectedLanguage == languages[indexPath.row].lanCode ? .checkmark : .none
+            cell.chechMarkImageView.alpha = self.selectedLanguage == languages[indexPath.row].lanCode ? 1.0 : 0.0
             if self.selectedLanguage == languages[indexPath.row].lanCode {
                 selectedIndexPath = indexPath
                 languages[indexPath.row].isChecked = true
@@ -69,13 +69,13 @@ extension SettingController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath != selectedIndexPath {
-            let cell = tableView.cellForRow(at: indexPath)
+            let cell = tableView.cellForRow(at: indexPath) as? LanguageCell
             cell?.selectedBackgroundView?.backgroundColor = UIColor.clear
-            cell?.accessoryType = .checkmark
+            cell?.chechMarkImageView.alpha = 1.0
             languages[indexPath.row].isChecked = !languages[indexPath.row].isChecked
             
-            let selectedCell = tableView.cellForRow(at: selectedIndexPath)
-            selectedCell?.accessoryType = .none
+            let selectedCell = tableView.cellForRow(at: selectedIndexPath) as? LanguageCell
+            selectedCell?.chechMarkImageView.alpha = 0.0
             languages[selectedIndexPath.row].isChecked = false
 
             selectedIndexPath = indexPath
