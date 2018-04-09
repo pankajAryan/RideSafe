@@ -335,7 +335,8 @@ extension DashboardController: MenuCellDelegte {
     }
 }
 
-extension DashboardController: DropDownDelgate{
+extension DashboardController: DropDownDelgate {
+    
     func selectedItems(_ items: [DropDownDataSource]) {
         drivingIssues = items
         var allIssues = ""
@@ -346,8 +347,6 @@ extension DashboardController: DropDownDelgate{
         if drivingIssuesLabel.text == "" {
             drivingIssuesLabel.text = "Select Driving Issues".localized
         }
-        
-        
     }
     
     private func catagoryIds() -> String {
