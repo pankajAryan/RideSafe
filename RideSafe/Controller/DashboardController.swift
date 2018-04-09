@@ -343,8 +343,10 @@ extension DashboardController: DropDownDelgate {
         for issue in drivingIssues {
             allIssues =  allIssues + issue.name! + ", "
         }
-        drivingIssuesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
-        if drivingIssuesLabel.text == "" {
+        
+        if allIssues != "" {
+            drivingIssuesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
+        } else {
             drivingIssuesLabel.text = "Select Driving Issues".localized
         }
     }

@@ -62,6 +62,7 @@ class SideMenu: UITableView,UITableViewDelegate,UITableViewDataSource {
             cell.sideImage.image = sliderModel.slideImage
             cell.sideText.text = sliderModel.slideText
             cell.action = sliderModel.action
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell ()
@@ -73,7 +74,6 @@ class SideMenu: UITableView,UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell =  tableView.cellForRow(at: indexPath) as? MenuCell {
-            cell.contentView.backgroundColor = UIColor.red
             menuCellDelegte?.cellCllicked(action: cell.action)
             self .deselectRow(at: indexPath, animated: true)
         }

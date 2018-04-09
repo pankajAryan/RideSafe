@@ -12,8 +12,7 @@ import PromiseKit
 
 class MyProfile: RideSafeViewController {
 
-    @IBOutlet weak var districtField: UIDropDown!
-    //@IBOutlet weak var districtField: UITextField!
+    @IBOutlet weak var districtField: UITextField!
     @IBOutlet weak var mobileNumberField: UITextField!
     @IBOutlet weak var nameFiled: UITextField!
     private var selectedDistrictID:String = ""
@@ -22,7 +21,7 @@ class MyProfile: RideSafeViewController {
         super.viewDidLoad()
         setBackButton()
         self.title = "My profile"
-            getDistrict()
+        getDistrict()
         self.view.bringSubview(toFront: districtField)
     }
     
@@ -54,20 +53,27 @@ class MyProfile: RideSafeViewController {
     }
     
     private func makeDropDow(_ dictList: [District]?) {
-        districtField.animationType = .Classic
-        districtField.hideOptionsWhenSelect = true
-        districtField.tableHeight = 200
-        districtField.textAlignment = .left
-        districtField.placeholder = getDistrictName(from: dictList)?.name ?? "no district found"
+        let drop = UIDropDown(frame: self.districtField.frame)
+        drop.animationType = .Classic
+        drop.hideOptionsWhenSelect = true
+        drop.tableHeight = 150
+        drop.font = "Poppins-Medium"
+        drop.fontSize = 14.0
+        drop.optionsFont = "Poppins-Regular"
+        drop.optionsSize = 14.0
+        drop.borderColor = .white
+        drop.placeholder = getDistrictName(from: dictList)?.name ?? "Select your district"
+        
         var districtNames = [String]()
         for i in dictList! {
             districtNames.append(i.name!)
         }
-        districtField.options = districtNames
+        drop.options = districtNames
         
-        districtField.didSelect { (option, index) in
+        drop.didSelect { (option, index) in
             self.selectedDistrictID = (dictList?[index].districtId)!
         }
+        self.view.addSubview(drop)
     }
     
     @IBAction func updateProfile(_ sender: UIButton) {

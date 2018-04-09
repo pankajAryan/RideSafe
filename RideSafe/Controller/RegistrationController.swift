@@ -34,7 +34,6 @@ class RegistrationController: RideSafeViewController {
                 let dictList = json4Swift_Base?.responseObject?.districtList
                 SharedSettings.shared.districtResponse = json4Swift_Base
                 self.makeDropDow(dictList)
-                
             }.catch { (error) in
         }
     }
