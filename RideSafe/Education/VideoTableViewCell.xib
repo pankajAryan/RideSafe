@@ -33,6 +33,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MJm-FU-qra">
                                 <rect key="frame" x="8" y="8" width="105" height="50.5"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="afc-g8-LwA"/>
                                     <constraint firstAttribute="width" constant="105" id="fY2-FT-1Nl"/>
                                 </constraints>
                             </imageView>
@@ -60,7 +61,6 @@
                             <constraint firstItem="MJm-FU-qra" firstAttribute="leading" secondItem="YFc-dj-MJ6" secondAttribute="leading" constant="8" id="tb4-ZX-vjT"/>
                             <constraint firstAttribute="trailing" secondItem="U9P-r0-C9P" secondAttribute="trailing" constant="8" id="u9F-VE-0yQ"/>
                             <constraint firstItem="wuN-mR-ceu" firstAttribute="leading" secondItem="MJm-FU-qra" secondAttribute="trailing" constant="8" id="xny-xs-vTa"/>
-                            <constraint firstAttribute="bottom" secondItem="MJm-FU-qra" secondAttribute="bottom" constant="8" id="yDC-Va-bwk"/>
                         </constraints>
                     </view>
                 </subviews>

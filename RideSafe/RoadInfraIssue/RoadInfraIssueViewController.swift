@@ -105,7 +105,22 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     @IBAction func dropdownButtonClicked(_ sender: UIButton) {
         let vc = UIStoryboard(name: "DropDown", bundle: nil).instantiateViewController(withIdentifier: "DropDownController") as! DropDownController
         vc.dropDownDelgate = self
-        vc.dropDownDataSource = infraIssueList
+
+        var ccc = [DropDownDataSource]()
+        if self.selectedInfraIssueList.count > 0 {
+            for  var localInfraIssueList in infraIssueList {
+                for d in self.selectedInfraIssueList {
+                    if d.id == localInfraIssueList.id {
+                        localInfraIssueList.checkMark = true
+                    }
+                }
+                ccc.append(localInfraIssueList)
+            }
+        } else {
+            ccc = infraIssueList
+        }
+        vc.dropDownDataSource = ccc
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -184,9 +199,9 @@ extension RoadInfraIssueViewController: DropDownDelgate{
         selectedInfraIssueList = items
         var allIssues = ""
         for issue in selectedInfraIssueList {
-            allIssues =  allIssues + issue.name! + ","
+            allIssues =  allIssues + issue.name! + ", "
         }
-        issueTypesLabel.text = String(describing: allIssues.dropLast())
+        issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
         if issueTypesLabel.text == "" {
             issueTypesLabel.text = "Select Driving Issues".localized
         }
