@@ -32,6 +32,10 @@ class LoginController: RideSafeViewController {
     }
     
     private func generateOtp(phonNo:String) {
+        if (mobileNumber.text?.count)! < 10 {
+            showAlert(message: "Please enter valid mobile number")
+            return
+        }
         firstly {
             NetworkManager().doServiceCall(serviceType: .generateOtp, params: ["phoneNo" : phonNo])
             }.then { response -> () in
