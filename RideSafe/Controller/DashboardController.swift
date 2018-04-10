@@ -431,7 +431,6 @@ extension DashboardController {
         vehicleTypeView.optionsSize = 14.0
         vehicleTypeView.borderColor = .white
 
-        
         vehicleTypeView.didSelect { [unowned self] (option, index) in
             self.vehicleType = option
         }
