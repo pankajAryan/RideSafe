@@ -201,8 +201,10 @@ extension RoadInfraIssueViewController: DropDownDelgate{
         for issue in selectedInfraIssueList {
             allIssues =  allIssues + issue.name! + ", "
         }
-        issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
-        if issueTypesLabel.text == "" {
+        
+        if allIssues != "" {
+            issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
+        } else {
             issueTypesLabel.text = "Select Driving Issues".localized
         }
     }
