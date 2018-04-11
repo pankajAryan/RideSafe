@@ -17,6 +17,7 @@ class NotificationViewController: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Notifications"
         notificationTableView.tableFooterView = UIView()
         notificationTableView.estimatedRowHeight = 464
         notificationTableView.rowHeight = UITableViewAutomaticDimension
@@ -25,8 +26,9 @@ class NotificationViewController: RideSafeViewController {
     }
     
     func loadData() {
+        let usrType = userType == "C" ? "Citizen" : "Official"
         firstly{
-            NetworkManager().doServiceCall(serviceType: .getNotificationListForUserType, params: ["userType": userType])
+            NetworkManager().doServiceCall(serviceType: .getNotificationListForUserType, params: ["userType": usrType])
             }.then { response -> () in
                 let notificationResponse = NotificationResponse(dictionary: response as NSDictionary)
                 let notificationList = notificationResponse?.responseObject
@@ -49,7 +51,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCellIdentifier") as! NotificationTableViewCell!
+        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCellIDentifier") as! NotificationTableViewCell!
         let notification: Notification = self.notificationList[indexPath.row]
         
         cell.notificationLabel.text = notification.title!

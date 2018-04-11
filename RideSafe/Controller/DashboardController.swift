@@ -85,12 +85,29 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
         self.title = "Ride Safe"
-        //setRightSwitch()
+        setRightButton()
         
         vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         vehicleThirdField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
     }
+    
+    private func setRightButton() {
+        let rightButton = UIButton(type: .custom)
+        rightButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
+        rightButton.addTarget(self, action: #selector(openNotification), for: .touchUpInside)
+        rightButton.setImage(#imageLiteral(resourceName: "icn_notification"), for: .normal)
+        
+        rightButton.contentHorizontalAlignment = .right
+        rightButton.contentVerticalAlignment = .center
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
+    }
+    
+    @objc func openNotification() {
+        let notificationViewController: NotificationViewController = UIStoryboard.init(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+        self.navigationController?.pushViewController(notificationViewController, animated: true)
+    }
+        
     
     @objc func textFieldDidChange(textField: UITextField){
         
