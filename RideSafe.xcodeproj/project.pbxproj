@@ -101,6 +101,9 @@
 		B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0F205D9ACA00ACFF0E /* Directory.swift */; };
 		B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84DB416205E32710000A256 /* EmergencyContact.storyboard */; };
 		B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */; };
+		B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B865FFE6207DE18900B675F3 /* Notification.storyboard */; };
+		B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */; };
+		B865FFEB207DE56700B675F3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */; };
 		B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32EC205D108B00A6A975 /* MediaResponse.swift */; };
 		B86F32EF205D108C00A6A975 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32ED205D108C00A6A975 /* Media.swift */; };
 		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
@@ -222,6 +225,9 @@
 		B841ED0F205D9ACA00ACFF0E /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		B84DB416205E32710000A256 /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
 		B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
+		B865FFE6207DE18900B675F3 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
+		B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		B86F32EC205D108B00A6A975 /* MediaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
 		B86F32ED205D108C00A6A975 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
@@ -318,6 +324,7 @@
 		2C1EE2AE204E5A440093B3BF /* RideSafe */ = {
 			isa = PBXGroup;
 			children = (
+				B865FFE3207DE14600B675F3 /* Notification */,
 				B8C4F2712065340000587E55 /* Reports */,
 				2C63FC0F2065491E00BE8691 /* FieldOfficer */,
 				B811FE1E205F5052005F327B /* RoadInfraIssue */,
@@ -596,6 +603,16 @@
 			path = EmergencyContact;
 			sourceTree = "<group>";
 		};
+		B865FFE3207DE14600B675F3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B865FFE6207DE18900B675F3 /* Notification.storyboard */,
+				B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */,
+				B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		B8AFD871205AD1F20044A608 /* Education */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +749,7 @@
 				2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
+				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
 				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
@@ -905,10 +923,12 @@
 				2C23660120677796000981A8 /* UpdateActionController.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,
+				B865FFEB207DE56700B675F3 /* NotificationTableViewCell.swift in Sources */,
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
 				2C87E7CB2066654C00CAD64C /* FOContactCell.swift in Sources */,
+				B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */,
 				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
 				B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
