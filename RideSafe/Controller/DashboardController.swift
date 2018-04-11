@@ -84,7 +84,9 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
-        self.title = "Ride Safe"
+        let logo = UIImage(named: "top_logo")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         setRightButton()
         
         vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
