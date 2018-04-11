@@ -35,6 +35,7 @@ class DropDownController: UITableViewController {
         cell.textLabel?.text = model?.name ?? "no name"
         cell.accessoryType = model?.checkMark == true ? .checkmark : .none
         cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
         return cell
     }
  
