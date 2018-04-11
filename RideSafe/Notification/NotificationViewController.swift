@@ -7,29 +7,73 @@
 //
 
 import UIKit
+import PromiseKit
+import SDWebImage
 
-class NotificationViewController: UIViewController {
+class NotificationViewController: RideSafeViewController {
+
+    @IBOutlet weak var notificationTableView: UITableView!
+    var notificationList: [Notification] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        notificationTableView.tableFooterView = UIView()
+        notificationTableView.estimatedRowHeight = 464
+        notificationTableView.rowHeight = UITableViewAutomaticDimension
+        loadData()
+        setBackButton()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadData() {
+        firstly{
+            NetworkManager().doServiceCall(serviceType: .getNotificationListForUserType, params: ["userType": userType])
+            }.then { response -> () in
+                let notificationResponse = NotificationResponse(dictionary: response as NSDictionary)
+                let notificationList = notificationResponse?.responseObject
+                self.reloadData(notificationList: notificationList!)
+            }.catch { (error) in
+        }
     }
-    */
+    
+    func reloadData(notificationList: [Notification]) {
+        self.notificationList = notificationList
+        notificationTableView.reloadData()
+    }
+}
 
+extension NotificationViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.notificationList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCellIdentifier") as! NotificationTableViewCell!
+        let notification: Notification = self.notificationList[indexPath.row]
+        
+        cell.notificationLabel.text = notification.title!
+        cell.notificationDescriptionLabel.text = notification.description
+        cell.notificationDateLabel.text = notification.createdOn
+        
+        
+        if (notification.imageURL?.count)! > 0 {
+        
+        cell.notificationImageView.sd_setImage(with: URL(string: notification.imageURL!), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.notificationImageHeightConstraint.constant = 150
+            
+        } else {
+            cell.notificationImageHeightConstraint.constant = 0
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }

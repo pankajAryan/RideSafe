@@ -104,6 +104,8 @@
 		B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B865FFE6207DE18900B675F3 /* Notification.storyboard */; };
 		B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */; };
 		B865FFEB207DE56700B675F3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */; };
+		B865FFEE207DE91300B675F3 /* NotificationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFED207DE91300B675F3 /* NotificationResponse.swift */; };
+		B865FFF0207DE91C00B675F3 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFEF207DE91C00B675F3 /* Notification.swift */; };
 		B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32EC205D108B00A6A975 /* MediaResponse.swift */; };
 		B86F32EF205D108C00A6A975 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86F32ED205D108C00A6A975 /* Media.swift */; };
 		B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8AFD872205AD1F20044A608 /* Education.storyboard */; };
@@ -228,6 +230,8 @@
 		B865FFE6207DE18900B675F3 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		B865FFED207DE91300B675F3 /* NotificationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationResponse.swift; sourceTree = "<group>"; };
+		B865FFEF207DE91C00B675F3 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		B86F32EC205D108B00A6A975 /* MediaResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaResponse.swift; sourceTree = "<group>"; };
 		B86F32ED205D108C00A6A975 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
 		B8AFD872205AD1F20044A608 /* Education.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Education.storyboard; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B865FFEC207DE8E100B675F3 /* Notification */,
 				2C4F940620768B6700BC5D31 /* FieldOfficialProfile */,
 				2C87E7D22066694A00CAD64C /* FieldOfficerListresponse */,
 				2C87E7C420665B4400CAD64C /* FOInfraIssues */,
@@ -609,6 +614,15 @@
 				B865FFE6207DE18900B675F3 /* Notification.storyboard */,
 				B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */,
 				B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B865FFEC207DE8E100B675F3 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B865FFED207DE91300B675F3 /* NotificationResponse.swift */,
+				B865FFEF207DE91C00B675F3 /* Notification.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -892,6 +906,7 @@
 				B8AFD878205AD1F20044A608 /* EducationPDFViewController.swift in Sources */,
 				B81A18D1206353C1001701F4 /* RoadinfraIssueResponse.swift in Sources */,
 				2C1566A42057DCC300B4067C /* MyReport.swift in Sources */,
+				B865FFF0207DE91C00B675F3 /* Notification.swift in Sources */,
 				B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */,
 				B8C4F283206579D300587E55 /* MyDrivingIssueReport.swift in Sources */,
 				2C63FC1B20657ABD00BE8691 /* PoliceController.swift in Sources */,
@@ -927,6 +942,7 @@
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
+				B865FFEE207DE91300B675F3 /* NotificationResponse.swift in Sources */,
 				2C87E7CB2066654C00CAD64C /* FOContactCell.swift in Sources */,
 				B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */,
 				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,

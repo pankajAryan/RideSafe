@@ -9,7 +9,12 @@
 import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var notificationImageView: UIImageView!
+    @IBOutlet weak var notificationLabel: UILabel!
+    @IBOutlet weak var notificationDescriptionLabel: UILabel!
+    @IBOutlet weak var notificationDateLabel: UILabel!
+    @IBOutlet weak var notificationImageHeightConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
