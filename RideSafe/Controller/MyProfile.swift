@@ -78,7 +78,7 @@ class MyProfile: RideSafeViewController {
     
     @IBAction func updateProfile(_ sender: UIButton) {
         NetworkManager().doServiceCall(serviceType: .updateCitizenProfile, params: ["citizenId": citizenId, "name": nameFiled.text!,"districtId": selectedDistrictID]).then { response -> () in
-            self.showToast(response: response)
+            self.navigationController?.showToast(response: response)
             self.navigationController?.popViewController(animated: true)
             }.catch { (error) in }
     }
