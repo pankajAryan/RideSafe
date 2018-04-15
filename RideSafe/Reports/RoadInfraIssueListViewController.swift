@@ -50,7 +50,7 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:ReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell!
+        let cell:ReportTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell?)!
         let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[indexPath.row]
         
         cell.vehicleNumberLable.text = ""
@@ -58,17 +58,18 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
         cell.tagsLabel.text = myRoadInfraIssue.categoryName
         cell.dateLabel.text = myRoadInfraIssue.createdOn
         cell.statusLabel.text = myRoadInfraIssue.status
+        cell.selectionStyle = .none
 
-        if myRoadInfraIssue.status == "RESOLVED" {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-        } else if myRoadInfraIssue.status == "VOID" {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-        } else {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-        }
+//        if myRoadInfraIssue.status == "RESOLVED" {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+//        } else if myRoadInfraIssue.status == "VOID" {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//        } else {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+//        }
         
         cell.issueImageView.sd_setImage(with: URL(string: myRoadInfraIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         

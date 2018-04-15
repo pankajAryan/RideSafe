@@ -18,6 +18,7 @@ struct CustomError: RideSafeErrorProtocol {
     var errorCode: String
     
     init(errorMessage: String,  errorCode: String) {
+        
         self.errorMessage = errorMessage
         self.errorCode = errorCode
     }

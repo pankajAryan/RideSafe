@@ -27,8 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
         setRootVC()
        // registerForPushNotification(application)
+        
         return true
     }
+    
+    
     
     private func registerForPushNotification(_ application: UIApplication) {
         FirebaseApp.configure()

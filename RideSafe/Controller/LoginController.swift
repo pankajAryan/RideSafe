@@ -47,6 +47,7 @@ class LoginController: RideSafeViewController {
                     self.submitButton.setTitle("VERIFY OTP", for: .normal)
                 })
             }.catch { error in
+                self.showError(error: error)
         }
     }
     

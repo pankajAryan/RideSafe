@@ -14,37 +14,46 @@ import PromiseKit
 class NetworkManager {
     
     func doServiceCall(serviceType:ServiceType, params:[String:String],showLoader: Bool = true) -> Promise<[String:Any]> {
-        if showLoader {
-            SwiftLoader.show(animated: true)
-        }
-        let urlString = makeUrl(restUrl: serviceType.rawValue)
-        return Promise { fullFilled , reject in
-            Alamofire.request(urlString, method: .post, parameters: params).responseJSON {
-                response in
-                switch response.result {
-                case .success:
-                    if let response = response.value as? [String : Any]  {
-                        #if DEBUG
-                            print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
-                        #endif
-                        
-                        let errorCode = String(describing: response["errorCode"]!)
-                        if errorCode == "0" {
-                                fullFilled(response)
-                            } else {
-                                let _error = CustomError(errorMessage: response["errorMessage"] as! String, errorCode:errorCode )
-                                reject(_error)
-                            }
-                        SwiftLoader.hide()
+        return hasInternetConnectivity.then { isConnected in
+            return Promise { fullFilled , reject in
+                if isConnected {
+                    if showLoader {
+                        SwiftLoader.show(animated: true)
                     }
-//                    break
-                case .failure(let error):
-                    #if DEBUG
-                        print("❌ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
-                        print("❌ response code: \(String(describing:  response.response?.statusCode))")
-                    #endif
-                    reject(error)
-                    SwiftLoader.hide()
+                    let urlString = self.makeUrl(restUrl: serviceType.rawValue)
+                    
+                    Alamofire.request(urlString, method: .post, parameters: params).responseJSON {
+                        response in
+                        switch response.result {
+                        case .success:
+                            if let response = response.value as? [String : Any]  {
+                                #if DEBUG
+                                print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
+                                #endif
+                                
+                                let errorCode = String(describing: response["errorCode"]!)
+                                if errorCode == "0" {
+                                    fullFilled(response)
+                                } else {
+                                    let _error = CustomError(errorMessage: response["errorMessage"] as! String, errorCode:errorCode )
+                                    reject(_error)
+                                }
+                                SwiftLoader.hide()
+                            }
+                        //                    break
+                        case .failure(let error):
+                            #if DEBUG
+                            print("❌ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
+                            print("❌ response code: \(String(describing:  response.response?.statusCode))")
+                            #endif
+                            reject(error)
+                            SwiftLoader.hide()
+                        }
+                    }
+                } else {
+                    let _error = CustomError(errorMessage: "Internet connectivity is unavailable", errorCode:"-10009" )
+                    reject(_error)
+                    
                 }
             }
         }
@@ -83,6 +92,11 @@ class NetworkManager {
             })
         }
         
+    }
+    
+    
+    var hasInternetConnectivity: Promise<Bool> {
+        return Promise(value: NetworkReachabilityManager()!.isReachable)
     }
     
     private func makeUrl(restUrl:String) -> String {

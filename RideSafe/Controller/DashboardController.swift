@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MessageUI
 import UIDropDown
 import CoreLocation
 import PromiseKit
+import Alamofire
 
 class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
@@ -258,13 +260,25 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
                 NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
                     self.imageUrl = string
                     }.catch { error in
+                        
                     }.always {
-                        self.reportIssues()
+                        NetworkReachabilityManager()!.isReachable ? self.reportIssues() : self.sendSMS()
                 }
             }
         }
     }
     
+    
+    func sendSMS() {
+        if (true) {
+            let controller = MFMessageComposeViewController()
+          let body  = "JHQP3:lat: " + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! + ":vehicleType:" + vehicleType
+            controller.body = body
+            controller.recipients = ["9220592205"]
+            controller.messageComposeDelegate = self
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
         tableViewleadingConstraint.constant = tableViewleadingConstraint.constant == 0 ? -240 : 0
@@ -521,4 +535,19 @@ extension DashboardController:SettingControllerProtocol {
         makeVehicleDropDown()
 
     }
+}
+
+extension DashboardController:MFMessageComposeViewControllerDelegate {
+     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+//    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+//        //... handle sms screen actions
+//        self.dismissViewControllerAnimated(true, completion: nil)
+//    }
+//
+//    override func viewWillDisappear(animated: Bool) {
+//        self.navigationController?.navigationBarHidden = false
+//    }
 }

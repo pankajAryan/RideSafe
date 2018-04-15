@@ -50,7 +50,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:ReportTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell!
+        let cell:ReportTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell?)!
         let myDrivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[indexPath.row]
         
         cell.vehicleNumberLable.text = "Vehicle: " + myDrivingIssue.vehicleNumber!
@@ -60,21 +60,22 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         cell.statusLabel.text = myDrivingIssue.status
         cell.delegate = self
         cell.indexPath = indexPath
+        cell.selectionStyle = .none
         
         if myDrivingIssue.action?.count == 0 {
             cell.actionButton.isHidden = true
         }
         
-        if myDrivingIssue.status == "RESOLVED" {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-        } else if myDrivingIssue.status == "VOID" {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-        } else {
-            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-        }
+//        if myDrivingIssue.status == "RESOLVED" {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+//        } else if myDrivingIssue.status == "VOID" {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
+//        } else {
+//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
+//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
+//        }
         
         cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         

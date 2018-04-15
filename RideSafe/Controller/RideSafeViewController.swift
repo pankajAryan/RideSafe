@@ -9,6 +9,7 @@
 import UIKit
 import PromiseKit
 import Toast_Swift
+import Alamofire
 
 class RideSafeViewController: UIViewController {
 
@@ -26,6 +27,25 @@ class RideSafeViewController: UIViewController {
         view.addSubview(imageView)
         view.sendSubview(toBack: imageView)
     }
+    
+    func checkRechability() -> Bool {
+        let reachabilityManager = NetworkReachabilityManager()
+        var status = false
+        reachabilityManager?.startListening()
+        reachabilityManager?.listener = { _ in
+            if let isNetworkReachable = reachabilityManager?.isReachable,
+                isNetworkReachable == true {
+                //Internet Available
+                status = true
+                
+            } else {
+                //Internet Not Available"
+               status = false
+            }
+        }
+        return status
+    }
+    
 }
 
 extension UIViewController {
