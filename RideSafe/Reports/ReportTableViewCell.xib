@@ -105,7 +105,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Vehicle: AS eff 5050" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sl-ky-igd">
-                                <rect key="frame" x="8" y="263" width="343" height="26.5"/>
+                                <rect key="frame" x="8" y="263" width="285" height="26"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
                                 <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -121,6 +121,19 @@
                                     <action selector="giveFeedBackClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oJg-rs-0d7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAc-lA-TDN">
+                                <rect key="frame" x="301" y="258.5" width="53" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="U7l-OD-aKR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                <state key="normal" title="Reopen">
+                                    <color key="titleColor" red="0.61568627450000002" green="0.21960784310000001" blue="0.2274509804" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="reopenIssue:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hUl-Sk-elE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -134,9 +147,10 @@
                             <constraint firstItem="G7T-HS-zKc" firstAttribute="trailing" secondItem="aF1-np-tfn" secondAttribute="trailing" constant="-8" id="Ir2-V7-kwZ"/>
                             <constraint firstItem="3Nu-59-Kcc" firstAttribute="leading" secondItem="a9T-XK-sm8" secondAttribute="trailing" constant="16" id="KVk-FT-aYR"/>
                             <constraint firstItem="mvg-m3-H4j" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="PkX-Uw-FCk"/>
-                            <constraint firstAttribute="trailing" secondItem="2sl-ky-igd" secondAttribute="trailing" constant="8" id="Q82-M6-ZLz"/>
+                            <constraint firstItem="NAc-lA-TDN" firstAttribute="leading" secondItem="2sl-ky-igd" secondAttribute="trailing" constant="8" id="V4I-dj-C9D"/>
                             <constraint firstItem="goV-6G-sLI" firstAttribute="top" secondItem="naN-FO-DgJ" secondAttribute="top" id="aqu-m8-PIZ"/>
                             <constraint firstItem="G7T-HS-zKc" firstAttribute="top" secondItem="aF1-np-tfn" secondAttribute="top" constant="8" id="bQB-1h-4ot"/>
+                            <constraint firstItem="NAc-lA-TDN" firstAttribute="centerY" secondItem="2sl-ky-igd" secondAttribute="centerY" id="cFL-HG-FbU"/>
                             <constraint firstItem="a9T-XK-sm8" firstAttribute="centerY" secondItem="mvg-m3-H4j" secondAttribute="centerY" id="cTE-aq-Sk9"/>
                             <constraint firstItem="naN-FO-DgJ" firstAttribute="top" secondItem="KK8-nA-i3z" secondAttribute="bottom" constant="8" id="cTT-Kx-MFI"/>
                             <constraint firstAttribute="bottom" secondItem="mvg-m3-H4j" secondAttribute="bottom" constant="8" id="cks-Mg-D2B"/>
@@ -149,6 +163,7 @@
                             <constraint firstAttribute="trailing" secondItem="3Nu-59-Kcc" secondAttribute="trailing" constant="16" id="oHq-bi-Hco"/>
                             <constraint firstItem="aF1-np-tfn" firstAttribute="trailing" secondItem="dPO-oW-wW7" secondAttribute="trailing" id="sf5-6q-O9j"/>
                             <constraint firstItem="KK8-nA-i3z" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="t1k-2A-Skx"/>
+                            <constraint firstItem="NAc-lA-TDN" firstAttribute="trailing" secondItem="aF1-np-tfn" secondAttribute="trailing" id="tLl-LB-vrz"/>
                             <constraint firstItem="3Nu-59-Kcc" firstAttribute="centerY" secondItem="mvg-m3-H4j" secondAttribute="centerY" id="tSZ-6P-rWy"/>
                             <constraint firstAttribute="trailing" secondItem="naN-FO-DgJ" secondAttribute="trailing" constant="12" id="ugj-xH-AeW"/>
                             <constraint firstItem="BvM-ew-7LA" firstAttribute="top" secondItem="naN-FO-DgJ" secondAttribute="bottom" constant="9" id="uz6-p9-6eC"/>
@@ -171,6 +186,7 @@
                 <outlet property="dateLabel" destination="mvg-m3-H4j" id="E7Y-Eh-QaN"/>
                 <outlet property="issueImageView" destination="aF1-np-tfn" id="V2d-Ji-VSf"/>
                 <outlet property="ratingButton" destination="dPO-oW-wW7" id="ksG-sE-8HX"/>
+                <outlet property="reopenButton" destination="NAc-lA-TDN" id="i3w-Ks-Wxp"/>
                 <outlet property="statusLabel" destination="G7T-HS-zKc" id="vdp-cy-iKF"/>
                 <outlet property="tagsLabel" destination="naN-FO-DgJ" id="BHb-eN-Vac"/>
                 <outlet property="vehicleDiscriptionLabel" destination="KK8-nA-i3z" id="ykf-oN-J0c"/>

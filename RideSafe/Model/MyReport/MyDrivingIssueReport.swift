@@ -35,6 +35,7 @@ public class MyDrivingIssueReport {
 	public var isLevel2EscalationTriggered : String?
 	public var level1EscalationTriggeredByOfficial : String?
 	public var level2EscalationTriggeredByOfficial : String?
+    public var rating : String?
 
 /**
     Returns an array of models based on given dictionary.
@@ -90,6 +91,7 @@ public class MyDrivingIssueReport {
 		isLevel2EscalationTriggered = dictionary["isLevel2EscalationTriggered"] as? String
 		level1EscalationTriggeredByOfficial = dictionary["level1EscalationTriggeredByOfficial"] as? String
 		level2EscalationTriggeredByOfficial = dictionary["level2EscalationTriggeredByOfficial"] as? String
+        rating = dictionary["rating"] as? String
 	}
 
 		
@@ -124,6 +126,7 @@ public class MyDrivingIssueReport {
 		dictionary.setValue(self.isLevel2EscalationTriggered, forKey: "isLevel2EscalationTriggered")
 		dictionary.setValue(self.level1EscalationTriggeredByOfficial, forKey: "level1EscalationTriggeredByOfficial")
 		dictionary.setValue(self.level2EscalationTriggeredByOfficial, forKey: "level2EscalationTriggeredByOfficial")
+        dictionary.setValue(self.rating, forKey: "rating")
 
 		return dictionary
 	}

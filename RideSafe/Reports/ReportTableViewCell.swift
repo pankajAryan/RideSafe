@@ -13,6 +13,7 @@ protocol ReportCellDelegate: class {
     func openMapViewForRowIndex(index: IndexPath)
     func showActionForRowIndex(index: IndexPath)
     func showRatingFor(index: IndexPath)
+    func reopenIssue(index: IndexPath)
 }
 
 class ReportTableViewCell: UITableViewCell {
@@ -27,6 +28,7 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var reopenButton: UIButton!
     
     var indexPath: IndexPath!
     weak var delegate: ReportCellDelegate?
@@ -52,6 +54,9 @@ class ReportTableViewCell: UITableViewCell {
     
     @IBAction func actionClicked(_ sender: Any) {
         delegate?.showActionForRowIndex(index: indexPath)
+    }
+    @IBAction func reopenIssue(_ sender: UIButton) {
+        delegate?.reopenIssue(index: indexPath)
     }
     
 }

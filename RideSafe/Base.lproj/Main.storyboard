@@ -1157,6 +1157,7 @@
                     </view>
                     <connections>
                         <outlet property="ratingView" destination="6fj-e2-4jx" id="AmA-7h-KkN"/>
+                        <outlet property="submitButton" destination="ewD-NU-EDh" id="Sy3-Lh-lAb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xha-PM-FhC" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,15 +11,24 @@ import Cosmos
 
 class RatingController: RideSafeViewController {
 
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var ratingView: CosmosView!
     var drivingIssueId = ""
-    private var startRating = "0.5"
+    var startRating = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Give Feedback"
         setBackButton()
-        ratingView.didFinishTouchingCosmos = didFinishTouchingCosmos // Register touch handlers
+        if startRating != "" {
+            submitButton.isHidden = true
+            ratingView.rating = Double(startRating) ?? 0.0
+        } else {
+             ratingView.didFinishTouchingCosmos = didFinishTouchingCosmos // Register touch handlers
+            submitButton.isHidden = false 
+        }
+        
+       
     }
     
     @IBAction func submitRating(_ sender: UIButton) {

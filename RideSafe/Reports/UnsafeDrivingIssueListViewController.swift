@@ -67,6 +67,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
             cell.actionButton.isHidden = true
         }
         cell.ratingButton.isHidden = myDrivingIssue.status == "RESOLVED" ? false : true
+        cell.reopenButton.isHidden = myDrivingIssue.status?.uppercased() != "RESOLVED" ? true : false
 //        if myDrivingIssue.status == "RESOLVED" {
 //            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
 //            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
@@ -115,7 +116,25 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
         
         let ratingController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingController") as! RatingController
         ratingController.drivingIssueId = drivingIssue.drivingIssueId ?? ""
+        ratingController.startRating = drivingIssue.rating ?? ""
         self.navigationController?.pushViewController(ratingController, animated: true)
     }
+    
+    func reopenIssue(index: IndexPath) {
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
+        
+        let param = [ "drivingIssueId":drivingIssue.drivingIssueId ?? "",
+                      "status": drivingIssue.status ?? "",
+                      "action":drivingIssue.action ?? "",
+                      "updatedBy":drivingIssue.updatedBy ?? ""
+        ]
+        
+        NetworkManager().doServiceCall(serviceType: .reOpenDrivingIssueByCitizen, params: param).then { response -> () in
+            self.showToast(response: response)
+            }.catch{ error in
+                self.showError(error: error)
+        }
+    }
+    
     
 }
