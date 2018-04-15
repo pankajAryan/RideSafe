@@ -1085,6 +1085,84 @@
             </objects>
             <point key="canvasLocation" x="-36" y="2027.136431784108"/>
         </scene>
+        <!--Rating Controller-->
+        <scene sceneID="FdS-Ij-HJT">
+            <objects>
+                <viewController storyboardIdentifier="RatingController" id="SC0-I3-5AZ" customClass="RatingController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XT7-Er-vip">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6fj-e2-4jx" customClass="CosmosView" customModule="Cosmos">
+                                <rect key="frame" x="16" y="117" width="288" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6fj-e2-4jx" secondAttribute="height" multiplier="144:25" id="c22-mI-HTa"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                        <real key="value" value="53"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="textMargin">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                        <color key="value" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                        <color key="value" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                        <color key="value" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewD-NU-EDh">
+                                <rect key="frame" x="16" y="512" width="288" height="40"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5TA-Tk-JHb"/>
+                                </constraints>
+                                <state key="normal" title="Submit Rating">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitRating:" destination="SC0-I3-5AZ" eventType="touchUpInside" id="rFD-rY-ZKf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="z6x-jl-X10" firstAttribute="trailing" secondItem="6fj-e2-4jx" secondAttribute="trailing" constant="16" id="4ca-La-L7t"/>
+                            <constraint firstItem="z6x-jl-X10" firstAttribute="trailing" secondItem="ewD-NU-EDh" secondAttribute="trailing" constant="16" id="6Zc-84-M8d"/>
+                            <constraint firstItem="6fj-e2-4jx" firstAttribute="centerX" secondItem="XT7-Er-vip" secondAttribute="centerX" id="7hA-Kh-fTN"/>
+                            <constraint firstItem="ewD-NU-EDh" firstAttribute="leading" secondItem="z6x-jl-X10" secondAttribute="leading" constant="16" id="S6a-SK-ffD"/>
+                            <constraint firstItem="6fj-e2-4jx" firstAttribute="centerY" secondItem="XT7-Er-vip" secondAttribute="centerY" multiplier="0.5" id="Sll-qw-sfS"/>
+                            <constraint firstItem="6fj-e2-4jx" firstAttribute="leading" secondItem="z6x-jl-X10" secondAttribute="leading" constant="16" id="l5h-Fv-dNh"/>
+                            <constraint firstItem="z6x-jl-X10" firstAttribute="bottom" secondItem="ewD-NU-EDh" secondAttribute="bottom" constant="16" id="mPv-o7-ZhL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="z6x-jl-X10"/>
+                    </view>
+                    <connections>
+                        <outlet property="ratingView" destination="6fj-e2-4jx" id="AmA-7h-KkN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xha-PM-FhC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1344.375" y="2307.0422535211269"/>
+        </scene>
         <!--About Ride Safe-->
         <scene sceneID="Eae-xz-BAr">
             <objects>

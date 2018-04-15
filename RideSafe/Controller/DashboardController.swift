@@ -246,6 +246,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
                 self.clearInputFields()
                 self.showToast(response: response)
             }.catch { error in
+                self.showError(error: error)
         }
     }
     
@@ -270,7 +271,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     
     func sendSMS() {
-        if (true) {
+        if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
           let body  = "JHQP3:lat: " + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! + ":vehicleType:" + vehicleType
             controller.body = body

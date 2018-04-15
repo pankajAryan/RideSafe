@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.0)
+  - Cosmos (15.0.0)
   - Crashlytics (3.10.1):
     - Fabric (~> 1.7.5)
   - Fabric (1.7.5)
@@ -59,6 +60,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
+  - Cosmos (~> 15.0)
   - Crashlytics
   - Fabric
   - Firebase/Core
@@ -75,6 +77,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Cosmos: a6dbd3d0baa0cc8f51f8598f7508d5a09d0a9ade
   Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
   Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
@@ -95,6 +98,6 @@ SPEC CHECKSUMS:
   UIDropDown: 22e6e3e22d419884c8f21d95ea9be36aac905ed4
   YouTubePlayer-Swift: ae82f4bcb504162a872b852596a9dc1fa3828c34
 
-PODFILE CHECKSUM: 718468faaa6d232eed6f0faae7094fb23253ed93
+PODFILE CHECKSUM: f8440e060007450d08f594d7b768b9aac8c1ae8e
 
 COCOAPODS: 1.4.0

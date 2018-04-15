@@ -38,6 +38,7 @@ enum ServiceType: String {
     case recordCitizenLiveLocation = "recordCitizenLiveLocation"
     case getFieldOfficialById = "getFieldOfficialById"
     case getNotificationListForUserType = "getNotificationListForUserType"
+    case rateDrivingIssueByCitizen =  "rateDrivingIssueByCitizen"
 }
 
 

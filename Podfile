@@ -16,7 +16,7 @@ pod 'Toast-Swift', '~> 3.0.1'
 pod 'IQKeyboardManagerSwift'
 pod 'JFContactsPicker', '~> 1.0'
 pod 'Segmentio', '~> 3.0'
-
+pod 'Cosmos', '~> 15.0'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'Firebase/Core'
