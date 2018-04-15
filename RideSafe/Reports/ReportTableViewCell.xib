@@ -110,6 +110,17 @@
                                 <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPO-oW-wW7">
+                                <rect key="frame" x="261" y="223" width="93" height="32"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                <state key="normal" title=" ★ Give Rating ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="giveFeedBackClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="oJg-rs-0d7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -129,12 +140,14 @@
                             <constraint firstItem="a9T-XK-sm8" firstAttribute="centerY" secondItem="mvg-m3-H4j" secondAttribute="centerY" id="cTE-aq-Sk9"/>
                             <constraint firstItem="naN-FO-DgJ" firstAttribute="top" secondItem="KK8-nA-i3z" secondAttribute="bottom" constant="8" id="cTT-Kx-MFI"/>
                             <constraint firstAttribute="bottom" secondItem="mvg-m3-H4j" secondAttribute="bottom" constant="8" id="cks-Mg-D2B"/>
+                            <constraint firstItem="dPO-oW-wW7" firstAttribute="bottom" secondItem="aF1-np-tfn" secondAttribute="bottom" id="hJe-lo-gh8"/>
                             <constraint firstItem="goV-6G-sLI" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="mJh-uX-cbd"/>
                             <constraint firstAttribute="trailing" secondItem="KK8-nA-i3z" secondAttribute="trailing" constant="8" id="n7O-C5-Ben"/>
                             <constraint firstItem="naN-FO-DgJ" firstAttribute="leading" secondItem="goV-6G-sLI" secondAttribute="trailing" constant="8" id="nOY-QI-qxJ"/>
                             <constraint firstItem="aF1-np-tfn" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="5" id="oBL-Xm-tLx"/>
                             <constraint firstAttribute="trailing" secondItem="BvM-ew-7LA" secondAttribute="trailing" constant="8" id="oCr-SB-I62"/>
                             <constraint firstAttribute="trailing" secondItem="3Nu-59-Kcc" secondAttribute="trailing" constant="16" id="oHq-bi-Hco"/>
+                            <constraint firstItem="aF1-np-tfn" firstAttribute="trailing" secondItem="dPO-oW-wW7" secondAttribute="trailing" id="sf5-6q-O9j"/>
                             <constraint firstItem="KK8-nA-i3z" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="t1k-2A-Skx"/>
                             <constraint firstItem="3Nu-59-Kcc" firstAttribute="centerY" secondItem="mvg-m3-H4j" secondAttribute="centerY" id="tSZ-6P-rWy"/>
                             <constraint firstAttribute="trailing" secondItem="naN-FO-DgJ" secondAttribute="trailing" constant="12" id="ugj-xH-AeW"/>
@@ -157,6 +170,7 @@
                 <outlet property="bgView" destination="H2p-sc-9uM" id="kWf-G2-wNv"/>
                 <outlet property="dateLabel" destination="mvg-m3-H4j" id="E7Y-Eh-QaN"/>
                 <outlet property="issueImageView" destination="aF1-np-tfn" id="V2d-Ji-VSf"/>
+                <outlet property="ratingButton" destination="dPO-oW-wW7" id="ksG-sE-8HX"/>
                 <outlet property="statusLabel" destination="G7T-HS-zKc" id="vdp-cy-iKF"/>
                 <outlet property="tagsLabel" destination="naN-FO-DgJ" id="BHb-eN-Vac"/>
                 <outlet property="vehicleDiscriptionLabel" destination="KK8-nA-i3z" id="ykf-oN-J0c"/>

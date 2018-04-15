@@ -12,6 +12,7 @@ protocol ReportCellDelegate: class {
 
     func openMapViewForRowIndex(index: IndexPath)
     func showActionForRowIndex(index: IndexPath)
+    func showRatingFor(index: IndexPath)
 }
 
 class ReportTableViewCell: UITableViewCell {
@@ -22,6 +23,7 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
 //    @IBOutlet weak var voidstatusImageView: UIImageView!
 //    @IBOutlet weak var resolvedStatusImageView: UIImageView!
+    @IBOutlet weak var ratingButton: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionButton: UIButton!
@@ -39,6 +41,9 @@ class ReportTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func giveFeedBackClicked(_ sender: UIButton) {
+        delegate?.showRatingFor(index: indexPath)
     }
     
     @IBAction func navigationButtonClicked(_ sender: Any) {

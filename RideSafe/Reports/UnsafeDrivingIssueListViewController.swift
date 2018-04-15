@@ -66,7 +66,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         if myDrivingIssue.action?.count == 0 {
             cell.actionButton.isHidden = true
         }
-        
+        cell.ratingButton.isHidden = myDrivingIssue.status == "RESOLVED" ? false : true
 //        if myDrivingIssue.status == "RESOLVED" {
 //            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
 //            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
@@ -92,6 +92,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
     }
 }
 extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
+    
     func openMapViewForRowIndex(index: IndexPath) {
         
         let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
@@ -106,8 +107,15 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     func showActionForRowIndex(index: IndexPath) {
         let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
 
-        showAlert(title: "Action Taken", message: drivingIssue.action!)
+        showAlert(title: "Action Taken", message: drivingIssue.action ?? "")
     }
     
+    func showRatingFor(index: IndexPath) {
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
+        
+        let ratingController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingController") as! RatingController
+        ratingController.drivingIssueId = drivingIssue.drivingIssueId ?? ""
+        self.navigationController?.pushViewController(ratingController, animated: true)
+    }
     
 }

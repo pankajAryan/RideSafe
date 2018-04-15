@@ -17,13 +17,14 @@ class RatingController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Give Feedback"
         setBackButton()
         ratingView.didFinishTouchingCosmos = didFinishTouchingCosmos // Register touch handlers
     }
     
     @IBAction func submitRating(_ sender: UIButton) {
         NetworkManager().doServiceCall(serviceType: .rateDrivingIssueByCitizen, params:["drivingIssueId": drivingIssueId, "rating": startRating]).then { response -> () in
-            //
+            self.showToast(message: "Rating Submitted Successfully.")
             }.catch { error  in
                 self.showError(error: error)
         }
