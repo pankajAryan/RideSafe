@@ -77,6 +77,7 @@ class HelpLineContainerViewController: RideSafeViewController {
             }.then { () -> () in
                 self.getMyProfileData(citizenId: self.citizenId)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     
@@ -91,6 +92,7 @@ class HelpLineContainerViewController: RideSafeViewController {
             self.helpLineViewController?.districId = citizen?.districtId ?? dictList?[0].districtId
             self.helpLineViewController?.loadData()
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
 

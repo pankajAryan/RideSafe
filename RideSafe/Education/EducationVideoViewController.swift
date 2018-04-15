@@ -33,6 +33,7 @@ class EducationVideoViewController: RideSafeViewController {
                 let mediaList = mediaResponse?.responseObject
                 self.reloadData(medialist: mediaList!)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

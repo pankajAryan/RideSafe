@@ -179,6 +179,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             }.then { response -> () in
                 print(response)
             }.catch { (error) in
+                self.showError(error: error)
                 
         }
     }
@@ -261,7 +262,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
                 NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
                     self.imageUrl = string
                     }.catch { error in
-                        
+                        //self.showError(error: error)
                     }.always {
                         NetworkReachabilityManager()!.isReachable ? self.reportIssues() : self.sendSMS()
                 }
@@ -509,7 +510,9 @@ extension DashboardController {
             vc.dropDownDataSource = ccc
             self.navigationController?.pushViewController(vc, animated: true)
             
-            }.catch { error in }
+            }.catch { error in
+                self.showError(error: error)
+        }
     }
 }
 

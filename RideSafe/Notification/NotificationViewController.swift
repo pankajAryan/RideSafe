@@ -34,6 +34,7 @@ class NotificationViewController: RideSafeViewController {
                 let notificationList = notificationResponse?.responseObject
                 self.reloadData(notificationList: notificationList!)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

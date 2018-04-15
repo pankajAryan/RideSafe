@@ -32,6 +32,7 @@ class RoadInfraIssueListViewController: RideSafeViewController {
                 let myRoadInfraIssueList = myRoadInfraIssueResponse?.responseObject
                 self.reloadData(myRoadInfraIssues: myRoadInfraIssueList!)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

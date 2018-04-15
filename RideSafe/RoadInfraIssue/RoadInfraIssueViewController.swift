@@ -83,6 +83,7 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
                 }
                 
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

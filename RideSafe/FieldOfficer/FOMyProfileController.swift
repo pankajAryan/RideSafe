@@ -30,6 +30,7 @@ class FOMyProfileController: RideSafeViewController {
             self.designation.text =  foProfile?.designation
             self.department.text =  foProfile?.departmentName
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

@@ -35,6 +35,7 @@ class MyProfile: RideSafeViewController {
             let dictList =  SharedSettings.shared.districtResponse?.responseObject?.districtList
             self.makeDropDow(dictList)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     
@@ -49,6 +50,7 @@ class MyProfile: RideSafeViewController {
             }.then { () -> () in
                 self.getMyProfileData(citizenId: self.citizenId)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     
@@ -80,7 +82,9 @@ class MyProfile: RideSafeViewController {
         NetworkManager().doServiceCall(serviceType: .updateCitizenProfile, params: ["citizenId": citizenId, "name": nameFiled.text!,"districtId": selectedDistrictID]).then { response -> () in
             self.navigationController?.showToast(response: response)
             self.navigationController?.popViewController(animated: true)
-            }.catch { (error) in }
+            }.catch { (error) in
+                self.showError(error: error)
+        }
     }
     
     

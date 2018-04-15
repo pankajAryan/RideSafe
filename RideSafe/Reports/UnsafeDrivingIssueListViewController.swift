@@ -32,6 +32,7 @@ class UnsafeDrivingIssueListViewController: RideSafeViewController {
                 let myDrivingIssueList = myDrivingIssueReportResponse?.responseObject
                 self.reloadData(myDrivingIssueList: myDrivingIssueList!)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

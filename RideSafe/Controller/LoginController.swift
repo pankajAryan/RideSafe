@@ -113,6 +113,7 @@ class LoginController: RideSafeViewController {
             }.then { (response) -> () in
                 self.showToast(response: response)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     

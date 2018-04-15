@@ -35,6 +35,7 @@ class HelplineAdministrationViewController: RideSafeViewController {
                 self.mvdDirectoryList = (directoryResponse?.responseObject)!
                 self.helpLineTableView.reloadData()
                 }.catch { (error) in
+                    self.showError(error: error)
         }
     }
 }

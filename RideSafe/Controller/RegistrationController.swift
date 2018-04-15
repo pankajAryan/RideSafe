@@ -35,6 +35,7 @@ class RegistrationController: RideSafeViewController {
                 SharedSettings.shared.districtResponse = json4Swift_Base
                 self.makeDropDow(dictList)
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     
@@ -74,6 +75,7 @@ class RegistrationController: RideSafeViewController {
                     self.showToast(response: response)
                     self.gotodashBoard()
                 }.catch { (error) in
+                    self.showError(error: error)
             }
         } else {
             self.showToast(message: "Please provide input for all the fields.")

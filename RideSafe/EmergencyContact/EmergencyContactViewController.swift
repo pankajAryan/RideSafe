@@ -40,6 +40,7 @@ class EmergencyContactViewController: RideSafeViewController {
                     self.isContactAvailable = false
                 }
             }.catch { (error) in
+                self.showError(error: error)
         }
     }
     
