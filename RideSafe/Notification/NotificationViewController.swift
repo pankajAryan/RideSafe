@@ -9,6 +9,7 @@
 import UIKit
 import PromiseKit
 import SDWebImage
+import SafariServices
 
 class NotificationViewController: RideSafeViewController {
 
@@ -38,6 +39,13 @@ class NotificationViewController: RideSafeViewController {
         }
     }
     
+    @IBAction func linkDidTap(_ sender: UIButton) {
+        if let url = URL(string: (sender.titleLabel?.text)!) {
+            let vc = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            present(vc, animated: true)
+        }
+    }
+    
     func reloadData(notificationList: [Notification]) {
         self.notificationList = notificationList
         notificationTableView.reloadData()
@@ -52,13 +60,22 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell:NotificationTableViewCell = tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCellIDentifier") as! NotificationTableViewCell!
+        let cell:NotificationTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "NotificationTableViewCellIDentifier") as! NotificationTableViewCell?)!
         let notification: Notification = self.notificationList[indexPath.row]
         
         cell.notificationLabel.text = notification.title!
         cell.notificationDescriptionLabel.text = notification.description
         cell.notificationDateLabel.text = notification.createdOn
         
+        if let linkString = notification.link, linkString.count > 0 {
+            cell.linkButton.setTitle(linkString, for: .normal)
+            cell.linkButton.isHidden = false
+            cell.linkIcon.isHidden = false
+        }
+        else {
+            cell.linkButton.isHidden = true
+            cell.linkIcon.isHidden = true
+        }
         
         if (notification.imageURL?.count)! > 0 {
         

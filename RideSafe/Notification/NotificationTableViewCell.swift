@@ -14,6 +14,8 @@ class NotificationTableViewCell: UITableViewCell {
     @IBOutlet weak var notificationDescriptionLabel: UILabel!
     @IBOutlet weak var notificationDateLabel: UILabel!
     @IBOutlet weak var notificationImageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var linkIcon: UIImageView!
+    @IBOutlet weak var linkButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
