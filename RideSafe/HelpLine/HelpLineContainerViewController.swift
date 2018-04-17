@@ -23,7 +23,7 @@ class HelpLineContainerViewController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Emergency Directory"
+        self.title = "Helpline"
         segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
         segmentedController.setTitle("MVD", forSegmentAt: 1)
         segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
@@ -39,7 +39,7 @@ class HelpLineContainerViewController: RideSafeViewController {
     
     private func setRightButton(_ dictList: [District]?) {
         let rightButton = UIButton(type: .custom)
-        rightButton.frame = CGRect(origin: .zero, size: CGSize(width: 44, height: 34))
+        rightButton.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 34))
         rightButton.addTarget(self, action: #selector(showDropDown), for: .touchUpInside)
         rightButton.setTitle(getDistrictName(from: dictList)?.name, for: .normal)
         self.districtList = dictList!

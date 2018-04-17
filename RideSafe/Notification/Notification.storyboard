@@ -80,7 +80,7 @@
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9v4-dp-Oe9">
                                                             <rect key="frame" x="192.5" y="212" width="142.5" height="18.5"/>
-                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
+                                                            <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="11"/>
                                                             <state key="normal" title="Button"/>
                                                             <connections>
                                                                 <action selector="linkDidTap:" destination="ccK-N9-mVO" eventType="touchUpInside" id="AnM-FE-4Gj"/>
