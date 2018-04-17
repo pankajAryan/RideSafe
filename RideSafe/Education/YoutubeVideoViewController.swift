@@ -14,7 +14,8 @@ class YoutubeVideoViewController: RideSafeViewController {
     @IBOutlet weak var youtubePlayerView: YouTubePlayerView!
     @IBOutlet weak var videoTitleLabel: UILabel!
     @IBOutlet weak var videoDateTimeLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
     var media: Media?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,7 @@ class YoutubeVideoViewController: RideSafeViewController {
         self.title = media?.title
         videoTitleLabel.text = media?.title
         videoDateTimeLabel.text = media?.postedOn
-        descriptionLabel.text = media?.description
+        descriptionTextView.text = media?.description
         setBackButton()
         SwiftLoader.show(animated: true)
 

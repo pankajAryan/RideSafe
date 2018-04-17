@@ -533,7 +533,7 @@ extension DashboardController:SettingControllerProtocol {
          helpLineLabel.text = "Help Line".localized
          emegencyLabel.text = "Emergency Contacts".localized
          reportInfraLabel.text = "Road Infra".localized
-        shareLiveLocationLabel.text =  "Share Live Location".localized
+//        shareLiveLocationLabel.text =  "Share Live Location".localized
          reportButton.setTitle("Report".localized, for: .normal)
         cameraButton.setTitle("Photo".localized, for: .normal)
         makeVehicleDropDown()

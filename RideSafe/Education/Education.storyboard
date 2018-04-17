@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -130,7 +130,7 @@
                                     <constraint firstAttribute="height" constant="290" id="dEL-EP-jJd"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-T1-TlB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfb-T1-TlB">
                                 <rect key="frame" x="16" y="306" width="343" height="23"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -142,32 +142,34 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruc-he-AO6">
-                                <rect key="frame" x="16" y="365" width="343" height="20"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-9c-u3Z">
+                                <rect key="frame" x="16" y="365" width="343" height="302"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176469999998" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Ayh-KF-Ua1" firstAttribute="bottom" secondItem="PGI-9c-u3Z" secondAttribute="bottom" id="0bm-Bg-G44"/>
                             <constraint firstItem="Ucc-YU-6yV" firstAttribute="leading" secondItem="Ayh-KF-Ua1" secondAttribute="leading" constant="16" id="2tm-BD-ZEd"/>
+                            <constraint firstItem="Ayh-KF-Ua1" firstAttribute="trailing" secondItem="PGI-9c-u3Z" secondAttribute="trailing" constant="16" id="3mG-oW-sYo"/>
                             <constraint firstItem="Ucc-YU-6yV" firstAttribute="top" secondItem="rfb-T1-TlB" secondAttribute="bottom" constant="8" id="4bU-oU-Z0k"/>
-                            <constraint firstItem="Ayh-KF-Ua1" firstAttribute="trailing" secondItem="ruc-he-AO6" secondAttribute="trailing" constant="16" id="7Op-pt-Y7d"/>
                             <constraint firstItem="rfb-T1-TlB" firstAttribute="leading" secondItem="Ayh-KF-Ua1" secondAttribute="leading" constant="16" id="BMU-Uw-Bzg"/>
                             <constraint firstItem="Ayh-KF-Ua1" firstAttribute="trailing" secondItem="Ucc-YU-6yV" secondAttribute="trailing" constant="16" id="Gjo-54-VRh"/>
                             <constraint firstItem="rfb-T1-TlB" firstAttribute="top" secondItem="wmK-DP-p0Z" secondAttribute="bottom" constant="16" id="TIu-QK-vFd"/>
-                            <constraint firstItem="ruc-he-AO6" firstAttribute="top" secondItem="Ucc-YU-6yV" secondAttribute="bottom" constant="8" id="XwY-li-OB8"/>
-                            <constraint firstItem="ruc-he-AO6" firstAttribute="leading" secondItem="Ayh-KF-Ua1" secondAttribute="leading" constant="16" id="aM8-UL-IvH"/>
+                            <constraint firstItem="PGI-9c-u3Z" firstAttribute="top" secondItem="Ucc-YU-6yV" secondAttribute="bottom" constant="8" id="WBz-hC-kjy"/>
                             <constraint firstItem="wmK-DP-p0Z" firstAttribute="top" secondItem="6vy-6m-WA3" secondAttribute="top" id="bnq-7S-m8C"/>
                             <constraint firstItem="wmK-DP-p0Z" firstAttribute="leading" secondItem="Ayh-KF-Ua1" secondAttribute="leading" id="gK8-eQ-Hrj"/>
                             <constraint firstItem="wmK-DP-p0Z" firstAttribute="trailing" secondItem="Ayh-KF-Ua1" secondAttribute="trailing" id="kYs-ZM-jG1"/>
+                            <constraint firstItem="PGI-9c-u3Z" firstAttribute="leading" secondItem="Ayh-KF-Ua1" secondAttribute="leading" constant="16" id="tDP-Nl-fuv"/>
                             <constraint firstItem="Ayh-KF-Ua1" firstAttribute="trailing" secondItem="rfb-T1-TlB" secondAttribute="trailing" constant="16" id="wUt-Gv-bxk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ayh-KF-Ua1"/>
                     </view>
                     <connections>
-                        <outlet property="descriptionLabel" destination="ruc-he-AO6" id="yPl-39-F9N"/>
+                        <outlet property="descriptionTextView" destination="PGI-9c-u3Z" id="HwA-xQ-W1W"/>
                         <outlet property="videoDateTimeLabel" destination="Ucc-YU-6yV" id="S9d-Ud-wga"/>
                         <outlet property="videoTitleLabel" destination="rfb-T1-TlB" id="6Wo-W8-4cB"/>
                         <outlet property="youtubePlayerView" destination="wmK-DP-p0Z" id="g31-Aw-zMd"/>
