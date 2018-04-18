@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-class RatingController: RideSafeViewController {
+class RatingController: UIViewController {
 
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var ratingView: CosmosView!
@@ -18,6 +18,7 @@ class RatingController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.4)
         title = "Give Feedback"
         setBackButton()
         if startRating != "" {
@@ -38,9 +39,12 @@ class RatingController: RideSafeViewController {
                 self.showError(error: error)
         }
     }
+    @IBAction func closeClicked(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     private func didFinishTouchingCosmos(_ rating: Double) {
-        startRating = String(format: "%.2f", rating)
+        startRating = String(Int(rating))
         ratingView.rating = rating
     }
 }

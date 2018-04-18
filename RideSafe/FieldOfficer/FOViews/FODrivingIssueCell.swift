@@ -51,7 +51,6 @@ class FODrivingIssueCell: UITableViewCell {
             let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(dismissAction)
             senderVC?.present(alert, animated: true, completion: nil)
-
         }
     }
     

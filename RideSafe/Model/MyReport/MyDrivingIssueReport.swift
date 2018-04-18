@@ -25,6 +25,7 @@ public class MyDrivingIssueReport {
 	public var createdOn : String?
 	public var status : String?
 	public var action : String?
+    public var actionList : [String]?
 	public var updatedBy : String?
 	public var updatedByName : String?
 	public var vehicleNumber : String?
@@ -81,6 +82,7 @@ public class MyDrivingIssueReport {
 		createdOn = dictionary["createdOn"] as? String
 		status = dictionary["status"] as? String
 		action = dictionary["action"] as? String
+        actionList = dictionary["actionList"] as? [String]
 		updatedBy = dictionary["updatedBy"] as? String
 		updatedByName = dictionary["updatedByName"] as? String
 		vehicleNumber = dictionary["vehicleNumber"] as? String

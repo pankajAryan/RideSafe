@@ -57,27 +57,23 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FODrivingIssueCell") as? FODrivingIssueCell {
             let issue = drivingIssue?[indexPath.row]
-            cell.uploadedImage.sd_setImage(with: URL(string: (issue?.uploadedImageURL)!), completed: nil)
+            cell.uploadedImage.sd_setImage(with: URL(string: (issue?.uploadedImageURL)!), placeholderImage: UIImage(named: "placeholder.png"))
+            
+            cell.vehiclelabel.text = "Vehicle: " + (issue?.vehicleNumber ?? "")
+            if let vehicleType = issue?.vehicleType {
+                cell.vehiclelabel.text = "\(cell.vehiclelabel.text!) (\(vehicleType))".uppercased()
+            }
+            
             cell.decriptionlabel.text = issue?.description
             cell.catagoryLabel.text = issue?.categoryName
             cell.dateLabel.text = issue?.createdOn
             cell.statusLabel.text = issue?.status
             cell.reportedBy.text = issue?.postedByName
             cell.phoneNumber = issue?.postedByMobile ?? ""
-            cell.vehiclelabel.text = issue?.vehicleType
             cell.actionTakenNote = issue?.action
             cell.senderVC = self
             cell.delegate = self
             cell.indexPath = indexPath
-
-//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-//            
-//            if issue?.status == "RESOLVED" {
-//                cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//            } else if issue?.status == "VOID" {
-//                cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//            }
             
             return cell
         }

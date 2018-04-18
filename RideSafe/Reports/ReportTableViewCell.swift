@@ -14,6 +14,7 @@ protocol ReportCellDelegate: class {
     func showActionForRowIndex(index: IndexPath)
     func showRatingFor(index: IndexPath)
     func reopenIssue(index: IndexPath)
+    func makeCall(index: IndexPath)
 }
 
 class ReportTableViewCell: UITableViewCell {
@@ -29,6 +30,7 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var reopenButton: UIButton!
+    @IBOutlet weak var callButton: UIButton!
     
     var indexPath: IndexPath!
     weak var delegate: ReportCellDelegate?
@@ -57,6 +59,9 @@ class ReportTableViewCell: UITableViewCell {
     }
     @IBAction func reopenIssue(_ sender: UIButton) {
         delegate?.reopenIssue(index: indexPath)
+    }
+    @IBAction func callDidTap(_ sender: Any) {
+        delegate?.makeCall(index: indexPath)
     }
     
 }

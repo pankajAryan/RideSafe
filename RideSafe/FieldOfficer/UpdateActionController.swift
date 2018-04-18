@@ -11,61 +11,75 @@ import UIDropDown
 
 class UpdateActionController: RideSafeViewController {
 
-    @IBOutlet weak var dropDownView: UIView!
+    @IBOutlet weak var dropDownView: UIDropDown!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var actionTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var vehicleLabel: UILabel!
+    @IBOutlet weak var catagoryLabel: UILabel!
     @IBOutlet weak var imageUploaded: UIImageView!
-    @IBOutlet weak var resolvedLabel: UILabel!
-    @IBOutlet weak var voidLabel: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     var uploadedImage:UIImage?
     var phoneNumber = ""
     var issueStatus = ""
     
     @IBOutlet weak var callingButton: UIButton!
-    @IBOutlet weak var pendingRadioButton: Checkbox!
-    @IBOutlet weak var resolveRadioButton: Checkbox!
+
     var drivingIssue: DrivingIssueForFieldOfficial?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Update Action, Case # \(drivingIssue?.drivingIssueId ?? "")"
         self.imageUploaded?.image = uploadedImage
+        
+        vehicleLabel.text = "Vehicle: " + (drivingIssue?.vehicleNumber ?? "")
+        if let vehicleType = drivingIssue?.vehicleType {
+            vehicleLabel.text = "\(vehicleLabel.text!) (\(vehicleType))".uppercased()
+        }
+        
+        catagoryLabel.text = drivingIssue?.categoryName
         self.descriptionLabel.text = drivingIssue?.description
         self.dateLabel.text = (drivingIssue?.createdOn)! + " |"
         self.nameLabel.text = drivingIssue?.postedByName
         self.phoneNumber = drivingIssue?.postedByMobile ?? ""
         self.actionTextView.placeholder = "Action Taken"
         self.actionTextView.text = drivingIssue?.action
-        self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
-        callingButton.isHidden = self.updateButton.isHidden
-        self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
-        if (drivingIssue?.status?.uppercased() == "PENDING") {
-            dropDownView.isHidden = false
-        } else {
-            dropDownView.isHidden = true
-
-        }
+//        self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
+//        callingButton.isHidden = self.updateButton.isHidden
+//        self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
+//        if (drivingIssue?.status?.uppercased() == "PENDING") {
+//            dropDownView.isHidden = false
+//        } else {
+//            dropDownView.isHidden = true
+//
+//        }
         statusLabel.text = drivingIssue?.status
         
-        if self.updateButton.isHidden {
-            if drivingIssue?.status?.uppercased() == "RESOLVED" {
-                pendingRadioButton.isEnabled = false
-                resolveRadioButton.isChecked = true
-                resolvedLabel.isEnabled = true
-                voidLabel.isEnabled = false
-            } else {
-                resolveRadioButton.isEnabled = false
-                pendingRadioButton.isChecked = true
-                resolvedLabel.isEnabled = false
-                voidLabel.isEnabled = true
-            }
-        }
         setBackButton()
-        setupUI()
+        self.makeDropDow(["PENDING", "VOID", "RESOLVED"])
+    }
+    
+    private func makeDropDow(_ statusArray: [String]) {
+        let drop = UIDropDown(frame: self.dropDownView.frame)
+        drop.animationType = .Classic
+        drop.hideOptionsWhenSelect = true
+        drop.tableHeight = 150
+        drop.placeholder = "Select your district"
+        drop.font = "Poppins-Medium"
+        drop.fontSize = 14.0
+        drop.optionsFont = "Poppins-Regular"
+        drop.optionsSize = 14.0
+        drop.borderColor = .white
+
+        drop.options = statusArray
+        
+        drop.didSelect { (option, index) in
+            self.issueStatus = (statusArray[index])
+        }
     }
     
     @IBAction func callClicked(_ sender: UIButton) {
@@ -81,35 +95,6 @@ class UpdateActionController: RideSafeViewController {
     @IBAction func commentClicked(_ sender: UIButton) {
     }
     
-    private func setupUI() {
-        pendingRadioButton.uncheckedBorderColor = .black
-        pendingRadioButton.borderStyle = .circle
-        pendingRadioButton.checkedBorderColor = .blue
-        pendingRadioButton.checkmarkColor = .blue
-        pendingRadioButton.checkmarkStyle = .circle
-        
-        pendingRadioButton.valueChanged = {[unowned self] (value) in
-            if value == true {
-                self.resolveRadioButton.isChecked = false
-                self.issueStatus = "VOID"
-            }
-        }
-        
-        resolveRadioButton.uncheckedBorderColor = .black
-        resolveRadioButton.borderStyle = .circle
-        resolveRadioButton.checkedBorderColor = .blue
-        resolveRadioButton.checkmarkColor = .blue
-        resolveRadioButton.checkmarkStyle = .circle
-        
-        resolveRadioButton.valueChanged = {[unowned self] (value) in
-            if value == true {
-                self.pendingRadioButton.isChecked = false
-                self.issueStatus = "RESOLVED"
-                
-            }
-        }
-    }
-    
     @IBAction func directionClicked(_ sender: UIButton) {
         
         let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
@@ -119,6 +104,7 @@ class UpdateActionController: RideSafeViewController {
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
 
     }
+    
     @IBAction func updateClicked(_ sender: UIButton) {
         NetworkManager().doServiceCall(serviceType: .updateDrivingIssue, params: [
             "drivingIssueId": (drivingIssue?.drivingIssueId)!,

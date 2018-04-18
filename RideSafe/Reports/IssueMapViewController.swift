@@ -20,7 +20,8 @@ class IssueMapViewController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        setBackButton()
+        self.title = "Issue report location"
         let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         let pointLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake( issueLatitude, issueLongitude)
         

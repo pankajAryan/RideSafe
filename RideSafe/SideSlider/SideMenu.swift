@@ -18,7 +18,7 @@ class SideMenu: UITableView,UITableViewDelegate,UITableViewDataSource {
     weak var menuCellDelegte: MenuCellDelegte?
     
     var sliderData = [slideData(slideImage: #imageLiteral(resourceName: "ic_profile"), slideText: "My Profile",    action:.Profile),
-                      slideData(slideImage: #imageLiteral(resourceName: "ic_my_report"), slideText: "My Report",     action:.Report),
+                      slideData(slideImage: #imageLiteral(resourceName: "ic_my_report"), slideText: "My Reports",     action:.Report),
                       slideData(slideImage: #imageLiteral(resourceName: "ic_settings"), slideText: "Settings",       action:.Setting),
                       slideData(slideImage: #imageLiteral(resourceName: "ic_about"), slideText: "About RideSafe",action:.About),
                       slideData(slideImage: #imageLiteral(resourceName: "ic_share"), slideText: "Share",         action:.Share),

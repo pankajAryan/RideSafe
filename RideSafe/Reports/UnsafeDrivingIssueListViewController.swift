@@ -54,7 +54,10 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         let cell:ReportTableViewCell = (tableView.dequeueReusableCell(withIdentifier: "ReportTableViewCellIdentifier") as! ReportTableViewCell?)!
         let myDrivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[indexPath.row]
         
-        cell.vehicleNumberLable.text = "Vehicle: " + myDrivingIssue.vehicleNumber!
+        cell.vehicleNumberLable.text = "Vehicle: " + (myDrivingIssue.vehicleNumber ?? "")
+        if let vehicleType = myDrivingIssue.vehicleType {
+            cell.vehicleNumberLable.text = "\(cell.vehicleNumberLable.text!) (\(vehicleType))".uppercased()
+        }
         cell.vehicleDiscriptionLabel.text = myDrivingIssue.description
         cell.tagsLabel.text = myDrivingIssue.categoryName
         cell.dateLabel.text = myDrivingIssue.createdOn
@@ -66,18 +69,42 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         if myDrivingIssue.action?.count == 0 {
             cell.actionButton.isHidden = true
         }
-        cell.ratingButton.isHidden = myDrivingIssue.status == "RESOLVED" ? false : true
-        cell.reopenButton.isHidden = myDrivingIssue.status?.uppercased() != "RESOLVED" ? true : false
-//        if myDrivingIssue.status == "RESOLVED" {
-//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-//        } else if myDrivingIssue.status == "VOID" {
-//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//        } else {
-//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-//        }
+        
+        if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
+            cell.actionButton.isHidden = false
+        } else {
+            cell.actionButton.isHidden = true
+        }
+        
+        cell.ratingButton.isUserInteractionEnabled = true
+
+        
+        if myDrivingIssue.status?.uppercased() == "RESOLVED"   {
+            if let rating = myDrivingIssue.rating , rating.count > 0 {
+                cell.reopenButton.isHidden = true
+                cell.ratingButton.isHidden = false
+                cell.ratingButton.setTitle(" ★  " + myDrivingIssue.rating!, for: .normal)
+                cell.ratingButton.isUserInteractionEnabled = false
+
+                //TODO:- uncomment below line and Show only rating stars
+                //cell.ratingButton.isHidden = true
+            }
+            else {
+                cell.ratingButton.isHidden = false
+                cell.ratingButton.isUserInteractionEnabled = true
+                cell.reopenButton.isHidden = false
+            }
+        }
+        else if myDrivingIssue.status?.uppercased() == "VOID" {
+            cell.ratingButton.isHidden = true
+            cell.reopenButton.isHidden = false
+        }
+        else {
+            cell.ratingButton.isHidden = true
+            
+            cell.reopenButton.isHidden = true
+        }
+        
         
         cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
         
@@ -107,8 +134,22 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     
     func showActionForRowIndex(index: IndexPath) {
         let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
-
+        //TODO:- get action list array and show on new screen
         showAlert(title: "Action Taken", message: drivingIssue.action ?? "")
+    }
+    
+    func makeCall(index: IndexPath) {
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
+        
+        if let phoneNumber = drivingIssue.updatedByMobile {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
     }
     
     func showRatingFor(index: IndexPath) {
@@ -117,6 +158,13 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
         let ratingController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "RatingController") as! RatingController
         ratingController.drivingIssueId = drivingIssue.drivingIssueId ?? ""
         ratingController.startRating = drivingIssue.rating ?? ""
+        
+        ratingController.modalPresentationStyle = .overCurrentContext
+        ratingController.modalTransitionStyle = .crossDissolve
+        self.navigationController?.present(ratingController, animated: true, completion: nil)
+
+        
+        
         self.navigationController?.pushViewController(ratingController, animated: true)
     }
     
