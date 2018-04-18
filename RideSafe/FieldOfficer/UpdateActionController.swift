@@ -64,22 +64,25 @@ class UpdateActionController: RideSafeViewController {
     }
     
     private func makeDropDow(_ statusArray: [String]) {
-        let drop = UIDropDown(frame: self.dropDownView.frame)
-        drop.animationType = .Classic
-        drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 150
-        drop.placeholder = "Select your district"
-        drop.font = "Poppins-Medium"
-        drop.fontSize = 14.0
-        drop.optionsFont = "Poppins-Regular"
-        drop.optionsSize = 14.0
-        drop.borderColor = .white
 
-        drop.options = statusArray
-        
-        drop.didSelect { (option, index) in
-            self.issueStatus = (statusArray[index])
-        }
+            dropDownView.textColor = UIColor.darkText
+            dropDownView.tint = UIColor.white
+            dropDownView.optionsTextColor = UIColor.darkText
+            dropDownView.hideOptionsWhenSelect = true
+            dropDownView.animationType = .Classic
+            dropDownView.tableHeight = 150
+            dropDownView.placeholder = "Select Vehicle Type".localized
+            dropDownView.options = statusArray
+            dropDownView.textAlignment = NSTextAlignment.left
+            dropDownView.font = "Poppins-Medium"
+            dropDownView.fontSize = 14.0
+            dropDownView.optionsFont = "Poppins-Regular"
+            dropDownView.optionsSize = 14.0
+            dropDownView.borderColor = .white
+            
+            dropDownView.didSelect { [unowned self] (option, index) in
+                self.issueStatus = option
+            }
     }
     
     @IBAction func callClicked(_ sender: UIButton) {

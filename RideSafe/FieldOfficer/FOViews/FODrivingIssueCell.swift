@@ -15,6 +15,8 @@ protocol FODrivingIssueCellDelegate: class {
 }
 class FODrivingIssueCell: UITableViewCell {
 
+    @IBOutlet weak var drivingIssurating: UILabel!
+    @IBOutlet weak var rating: UILabel!
     @IBOutlet weak var vehiclelabel: UILabel!
     @IBOutlet weak var uploadedImage: UIImageView!
     @IBOutlet weak var decriptionlabel: UILabel!

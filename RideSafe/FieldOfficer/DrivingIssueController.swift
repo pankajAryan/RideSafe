@@ -74,6 +74,7 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.senderVC = self
             cell.delegate = self
             cell.indexPath = indexPath
+            cell.drivingIssurating.text =  issue?.rating ?? ""
             
             return cell
         }
