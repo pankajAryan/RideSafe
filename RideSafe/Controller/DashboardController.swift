@@ -452,7 +452,7 @@ extension DashboardController {
 extension DashboardController {
     private func makeVehicleDropDown() {
         vehicleTypeView.textColor = UIColor.darkText
-        vehicleTypeView.tint = UIColor.white
+        vehicleTypeView.tint = UIColor.clear
         vehicleTypeView.optionsTextColor = UIColor.darkText
         vehicleTypeView.hideOptionsWhenSelect = true
         vehicleTypeView.animationType = .Classic
@@ -464,7 +464,7 @@ extension DashboardController {
         vehicleTypeView.fontSize = 14.0
         vehicleTypeView.optionsFont = "Poppins-Regular"
         vehicleTypeView.optionsSize = 14.0
-        vehicleTypeView.borderColor = .white
+        vehicleTypeView.borderColor = .clear
 
         vehicleTypeView.didSelect { [unowned self] (option, index) in
             self.vehicleType = option

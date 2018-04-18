@@ -66,7 +66,7 @@ class UpdateActionController: RideSafeViewController {
     private func makeDropDow(_ statusArray: [String]) {
 
             dropDownView.textColor = UIColor.darkText
-            dropDownView.tint = UIColor.white
+            dropDownView.tint = UIColor.clear
             dropDownView.optionsTextColor = UIColor.darkText
             dropDownView.hideOptionsWhenSelect = true
             dropDownView.animationType = .Classic
@@ -78,7 +78,7 @@ class UpdateActionController: RideSafeViewController {
             dropDownView.fontSize = 14.0
             dropDownView.optionsFont = "Poppins-Regular"
             dropDownView.optionsSize = 14.0
-            dropDownView.borderColor = .white
+            dropDownView.borderColor = .clear
             
             dropDownView.didSelect { [unowned self] (option, index) in
                 self.issueStatus = option
