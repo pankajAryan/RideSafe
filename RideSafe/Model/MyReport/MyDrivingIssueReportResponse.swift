@@ -49,7 +49,9 @@ public class MyDrivingIssueReportResponse {
 */
 	required public init?(dictionary: NSDictionary) {
 
-        if (dictionary["responseObject"] != nil) { responseObject = MyDrivingIssueReport.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
+        if (dictionary["responseObject"] != nil) {
+            responseObject = MyDrivingIssueReport.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray)
+        }
 		errorCode = dictionary["errorCode"] as? Int
 		errorMessage = dictionary["errorMessage"] as? String
 	}

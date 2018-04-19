@@ -10,7 +10,7 @@ import UIKit
 
 class IssueStatusTableVC: RideSafeViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var statusArray: [String] = []
+    var actionArray: Array<ActionListItem>?
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -27,12 +27,17 @@ class IssueStatusTableVC: RideSafeViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return actionArray != nil ? (actionArray?.count)! : 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IssueStatusTableViewCell", for: indexPath) as! IssueStatusTableViewCell
-
+        let actionDetail = actionArray![indexPath.row]
+        cell.statusLabel.text = actionDetail.status
+        cell.commentLabel.text = actionDetail.action
+        cell.dateLabel.text = actionDetail.createdOn
+        cell.updatedByLabel.text = actionDetail.postedBy
+        
         return cell
     }
 }

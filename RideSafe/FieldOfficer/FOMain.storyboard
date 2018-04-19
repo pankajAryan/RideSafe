@@ -273,6 +273,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="actionButton" destination="kpx-Zf-Ffp" id="dlt-lW-Cn9"/>
                                             <outlet property="catagoryLabel" destination="7tJ-aC-9Xb" id="fE2-rO-s7j"/>
                                             <outlet property="dateLabel" destination="0J8-pU-AA8" id="QSJ-jj-a3M"/>
                                             <outlet property="decriptionlabel" destination="zVJ-1d-Wll" id="PGP-Tn-aVH"/>
@@ -638,6 +639,7 @@
                         <viewLayoutGuide key="safeArea" id="xA6-LI-ruB"/>
                     </view>
                     <connections>
+                        <outlet property="actionButton" destination="siS-oH-zwA" id="wdY-MN-p6v"/>
                         <outlet property="actionTextView" destination="qcf-fU-5ds" id="wyn-Us-OUF"/>
                         <outlet property="callingButton" destination="8Sa-JF-aDK" id="nrt-8q-Pfg"/>
                         <outlet property="catagoryLabel" destination="Bk2-wU-7qj" id="2qU-6a-wDa"/>
@@ -858,6 +860,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
+                                            <outlet property="actionButton" destination="soL-7Y-TDg" id="80P-Xd-8Xp"/>
                                             <outlet property="catagoryLabel" destination="UOd-hJ-rLK" id="PPr-GM-FFs"/>
                                             <outlet property="dateLabel" destination="uX4-Su-U04" id="GRw-Qu-fEp"/>
                                             <outlet property="decriptionlabel" destination="yaJ-5q-bM4" id="puR-4I-Y1D"/>

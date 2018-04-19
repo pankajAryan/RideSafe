@@ -66,10 +66,6 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         cell.indexPath = indexPath
         cell.selectionStyle = .none
         
-        if myDrivingIssue.action?.count == 0 {
-            cell.actionButton.isHidden = true
-        }
-        
         if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
             cell.actionButton.isHidden = false
         } else {
@@ -102,8 +98,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
             cell.reopenButton.isHidden = true
         }
         
-        
-        cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         
         return cell
     }
@@ -116,6 +111,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         return UITableViewAutomaticDimension
     }
 }
+
 extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     
     func openMapViewForRowIndex(index: IndexPath) {
@@ -133,7 +129,7 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
         let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
         
         let issueStatusListVC = storyboard?.instantiateViewController(withIdentifier: "IssueStatusTableVC") as? IssueStatusTableVC
-        issueStatusListVC?.statusArray = drivingIssue.actionList!
+        issueStatusListVC?.actionArray = drivingIssue.actionList
         issueStatusListVC?.title = "Case # \(drivingIssue.drivingIssueId ?? "") - Actions"
         self.navigationController?.pushViewController(issueStatusListVC!, animated: true)
     }
@@ -162,10 +158,6 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
         ratingController.modalPresentationStyle = .overCurrentContext
         ratingController.modalTransitionStyle = .crossDissolve
         self.navigationController?.present(ratingController, animated: true, completion: nil)
-
-        
-        
-        self.navigationController?.pushViewController(ratingController, animated: true)
     }
     
     func reopenIssue(index: IndexPath) {

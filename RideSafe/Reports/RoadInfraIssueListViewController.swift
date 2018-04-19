@@ -60,8 +60,16 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
         cell.dateLabel.text = myRoadInfraIssue.createdOn
         cell.statusLabel.text = myRoadInfraIssue.status
         cell.selectionStyle = .none
+        cell.delegate = self
+        cell.indexPath = indexPath
+
+        if let action = myRoadInfraIssue.action, action.count > 0 {
+            cell.actionButton.isHidden = false
+        } else {
+            cell.actionButton.isHidden = true
+        }
         
-        cell.issueImageView.sd_setImage(with: URL(string: myRoadInfraIssue.uploadedImageURL!), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.issueImageView.sd_setImage(with: URL(string: myRoadInfraIssue.uploadedImageURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         
         return cell
     }
@@ -72,5 +80,45 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+}
+
+
+extension RoadInfraIssueListViewController: ReportCellDelegate {
+    
+    func openMapViewForRowIndex(index: IndexPath) {
+        
+        let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[index.row]
+
+        let issueMapViewController: IssueMapViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
+        issueMapViewController.issueLatitude = (myRoadInfraIssue.lat! as NSString).doubleValue
+        issueMapViewController.issueLongitude = (myRoadInfraIssue.lon! as NSString).doubleValue
+        
+        self.navigationController?.pushViewController(issueMapViewController, animated: true)
+    }
+    
+    func showActionForRowIndex(index: IndexPath) {
+        let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[index.row]
+        showAlert(title: "Action Taken", message: myRoadInfraIssue.action ?? "")
+    }
+    
+    func makeCall(index: IndexPath) {
+        let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[index.row]
+
+        if let phoneNumber = myRoadInfraIssue.postedByMobile {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
+    
+    func showRatingFor(index: IndexPath) {
+    }
+    
+    func reopenIssue(index: IndexPath) {
     }
 }

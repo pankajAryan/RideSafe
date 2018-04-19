@@ -57,7 +57,7 @@ extension EducationVideoViewController: UITableViewDataSource, UITableViewDelega
         
         cell.videoTitleLabel.text = media.title
         cell.dateTitleLabel.text = media.postedOn
-        cell.videoIconImageView.sd_setImage(with: URL(string: media.thumbnailURL!), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.videoIconImageView.sd_setImage(with: URL(string: media.thumbnailURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
         
         return cell
     }

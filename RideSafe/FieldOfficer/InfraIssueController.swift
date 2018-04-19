@@ -63,15 +63,13 @@ extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.phoneNumber = issue?.postedByMobile ?? ""
             cell.delegate = self
             cell.indexPath = indexPath
-
-//            cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio")
-//            cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio")
-
-//            if issue?.status == "RESOLVED" {
-//                cell.resolvedStatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//            } else if issue?.status == "VOID" {
-//                cell.voidstatusImageView.image = #imageLiteral(resourceName: "radio_on")
-//            }
+            
+            if let action = issue?.action, action.count > 0 {
+                cell.actionButton.isHidden = false
+            } else {
+                cell.actionButton.isHidden = true
+            }
+            
             return cell
         }
         return UITableViewCell()
@@ -96,4 +94,8 @@ extension InfraIssueController: FODrivingIssueCellDelegate {
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     
+    func showActionForRowIndex(index: IndexPath) {
+        let issue = infraIssues?[index.row]
+        showAlert(title: "Action Taken", message: issue?.action ?? "")
+    }
 }

@@ -79,7 +79,7 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
         
         if (notification.imageURL?.count)! > 0 {
         
-        cell.notificationImageView.sd_setImage(with: URL(string: notification.imageURL!), placeholderImage: UIImage(named: "placeholder.png"))
+        cell.notificationImageView.sd_setImage(with: URL(string: notification.imageURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
             cell.notificationImageHeightConstraint.constant = 150
             
         } else {

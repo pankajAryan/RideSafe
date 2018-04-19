@@ -57,11 +57,17 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FODrivingIssueCell") as? FODrivingIssueCell {
             let issue = drivingIssue?[indexPath.row]
-            cell.uploadedImage.sd_setImage(with: URL(string: (issue?.uploadedImageURL)!), placeholderImage: UIImage(named: "placeholder.png"))
+            cell.uploadedImage.sd_setImage(with: URL(string: (issue?.uploadedImageURL)!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
             
             cell.vehiclelabel.text = "Vehicle: " + (issue?.vehicleNumber ?? "")
             if let vehicleType = issue?.vehicleType {
                 cell.vehiclelabel.text = "\(cell.vehiclelabel.text!) (\(vehicleType))".uppercased()
+            }
+            
+            if let actionListArray = issue?.actionList, actionListArray.count > 0  {
+                cell.actionButton.isHidden = false
+            } else {
+                cell.actionButton.isHidden = true
             }
             
             cell.decriptionlabel.text = issue?.description
@@ -109,4 +115,12 @@ extension DrivingIssueController: FODrivingIssueCellDelegate {
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     
+    func showActionForRowIndex(index: IndexPath) {
+        let issue = drivingIssue?[index.row]
+
+        let issueStatusListVC = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueStatusTableVC") as? IssueStatusTableVC
+        issueStatusListVC?.actionArray = issue?.actionList
+        issueStatusListVC?.title = "Case # \(issue?.drivingIssueId ?? "") - Actions"
+        self.navigationController?.pushViewController(issueStatusListVC!, animated: true)
+    }
 }

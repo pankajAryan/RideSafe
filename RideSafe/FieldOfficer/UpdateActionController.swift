@@ -22,7 +22,8 @@ class UpdateActionController: RideSafeViewController {
     @IBOutlet weak var catagoryLabel: UILabel!
     @IBOutlet weak var imageUploaded: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var actionButton: UIButton!
+
     var uploadedImage:UIImage?
     var phoneNumber = ""
     var issueStatus = ""
@@ -48,15 +49,11 @@ class UpdateActionController: RideSafeViewController {
         self.phoneNumber = drivingIssue?.postedByMobile ?? ""
         self.actionTextView.placeholder = "Action Taken"
         self.actionTextView.text = drivingIssue?.action
-//        self.updateButton.isHidden = drivingIssue?.status?.uppercased() == "PENDING" ? false : true
-//        callingButton.isHidden = self.updateButton.isHidden
-//        self.actionTextView.isEditable = drivingIssue?.status?.uppercased() == "PENDING" ?  true : false
-//        if (drivingIssue?.status?.uppercased() == "PENDING") {
-//            dropDownView.isHidden = false
-//        } else {
-//            dropDownView.isHidden = true
-//
-//        }
+        if let actionListArray = drivingIssue?.actionList, actionListArray.count > 0  {
+            actionButton.isHidden = false
+        } else {
+            actionButton.isHidden = true
+        }
         statusLabel.text = drivingIssue?.status
         
         setBackButton()
@@ -96,6 +93,11 @@ class UpdateActionController: RideSafeViewController {
     }
     
     @IBAction func commentClicked(_ sender: UIButton) {
+        
+        let issueStatusListVC = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueStatusTableVC") as? IssueStatusTableVC
+        issueStatusListVC?.actionArray = drivingIssue?.actionList
+        issueStatusListVC?.title = "Case # \(drivingIssue?.drivingIssueId ?? "") - Actions"
+        self.navigationController?.pushViewController(issueStatusListVC!, animated: true)
     }
     
     @IBAction func directionClicked(_ sender: UIButton) {

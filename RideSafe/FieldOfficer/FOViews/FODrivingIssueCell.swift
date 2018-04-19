@@ -11,8 +11,9 @@ import UIKit
 protocol FODrivingIssueCellDelegate: class {
     
     func openMapViewForRowIndex(index: IndexPath)
- 
+    func showActionForRowIndex(index: IndexPath)
 }
+
 class FODrivingIssueCell: UITableViewCell {
 
     @IBOutlet weak var drivingIssurating: UILabel!
@@ -24,9 +25,7 @@ class FODrivingIssueCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var reportedBy: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
-    @IBOutlet weak var resolvedStatusImageView: UIImageView!
-    @IBOutlet weak var voidstatusImageView: UIImageView!
+    @IBOutlet weak var actionButton: UIButton!
     
     var phoneNumber = ""
     var actionTakenNote : String?
@@ -48,12 +47,7 @@ class FODrivingIssueCell: UITableViewCell {
     
     @IBAction func actionTaken(_ sender: UIButton) {
         
-        if let note = actionTakenNote {
-            let alert = UIAlertController(title: "Action Taken!", message: note, preferredStyle: .alert)
-            let dismissAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(dismissAction)
-            senderVC?.present(alert, animated: true, completion: nil)
-        }
+        delegate?.showActionForRowIndex(index: indexPath)
     }
     
     @IBAction func callReporter(_ sender: UIButton) {
@@ -65,13 +59,5 @@ class FODrivingIssueCell: UITableViewCell {
             }
         }
     }
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
-    }
-    @IBAction func showDirection(_ sender: UIButton) {
-        print("show Direction")
-    }
-    
 }
