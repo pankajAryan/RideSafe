@@ -70,11 +70,11 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
             cell.actionButton.isHidden = true
         }
         
-//        if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
-//            cell.actionButton.isHidden = false
-//        } else {
-//            cell.actionButton.isHidden = true
-//        }
+        if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
+            cell.actionButton.isHidden = false
+        } else {
+            cell.actionButton.isHidden = true
+        }
         
         cell.ratingButton.isUserInteractionEnabled = true
 
@@ -183,6 +183,4 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
                 self.showError(error: error)
         }
     }
-    
-    
 }
