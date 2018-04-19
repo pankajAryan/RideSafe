@@ -80,10 +80,16 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.senderVC = self
             cell.delegate = self
             cell.indexPath = indexPath
-            cell.drivingIssurating.text =  issue?.rating ?? ""
+            if let rating = issue?.rating, rating.count > 0 {
+                cell.ratingButton.isHidden = false
+                cell.ratingButton.setTitle("  Rating: " + rating + " ★  ", for: .normal)
+            } else {
+                cell.ratingButton.isHidden = true
+            }
             
             return cell
         }
+        
         return UITableViewCell()
     }
     

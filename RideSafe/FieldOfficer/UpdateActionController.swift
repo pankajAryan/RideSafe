@@ -23,6 +23,7 @@ class UpdateActionController: RideSafeViewController {
     @IBOutlet weak var imageUploaded: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var actionButton: UIButton!
+    @IBOutlet weak var ratingButton: UIButton!
 
     var uploadedImage:UIImage?
     var phoneNumber = ""

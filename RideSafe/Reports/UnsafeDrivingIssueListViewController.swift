@@ -73,13 +73,12 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         }
         
         cell.ratingButton.isUserInteractionEnabled = true
-
         
         if myDrivingIssue.status?.uppercased() == "RESOLVED"   {
             if let rating = myDrivingIssue.rating , rating.count > 0 {
                 cell.reopenButton.isHidden = true
                 cell.ratingButton.isHidden = false
-                cell.ratingButton.setTitle(" ★  " + myDrivingIssue.rating!, for: .normal)
+                cell.ratingButton.setTitle("  Rating: " + myDrivingIssue.rating! + " ★  ", for: .normal)
                 cell.ratingButton.isUserInteractionEnabled = false
             }
             else {
