@@ -70,11 +70,11 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
             cell.actionButton.isHidden = true
         }
         
-        if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
-            cell.actionButton.isHidden = false
-        } else {
-            cell.actionButton.isHidden = true
-        }
+//        if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
+//            cell.actionButton.isHidden = false
+//        } else {
+//            cell.actionButton.isHidden = true
+//        }
         
         cell.ratingButton.isUserInteractionEnabled = true
 
@@ -85,9 +85,6 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
                 cell.ratingButton.isHidden = false
                 cell.ratingButton.setTitle(" ★  " + myDrivingIssue.rating!, for: .normal)
                 cell.ratingButton.isUserInteractionEnabled = false
-
-                //TODO:- uncomment below line and Show only rating stars
-                //cell.ratingButton.isHidden = true
             }
             else {
                 cell.ratingButton.isHidden = false
@@ -134,8 +131,11 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     
     func showActionForRowIndex(index: IndexPath) {
         let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
-        //TODO:- get action list array and show on new screen
-        showAlert(title: "Action Taken", message: drivingIssue.action ?? "")
+        
+        let issueStatusListVC = storyboard?.instantiateViewController(withIdentifier: "IssueStatusTableVC") as? IssueStatusTableVC
+        issueStatusListVC?.statusArray = drivingIssue.actionList!
+        issueStatusListVC?.title = "Case # \(drivingIssue.drivingIssueId ?? "") - Actions"
+        self.navigationController?.pushViewController(issueStatusListVC!, animated: true)
     }
     
     func makeCall(index: IndexPath) {
