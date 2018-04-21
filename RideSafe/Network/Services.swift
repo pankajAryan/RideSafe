@@ -45,4 +45,5 @@ enum ServiceType: String {
 
 struct Environment {
     static let baseUrl = "http://139.59.81.101:8080/RideSafe/rest/service/"
+    static let appID = "123456"
 }

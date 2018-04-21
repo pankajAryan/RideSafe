@@ -120,6 +120,12 @@ extension UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    func showForceUpdateAlert(handler:((UIAlertAction) -> Void)?) {
+        let alert = UIAlertController(title: "", message: "We released a much improved version of the RideSafe app. To continue using RideSafe, Please update the app.", preferredStyle: .alert)
+        let actionButton = UIAlertAction(title: "Go To AppStore", style: .default, handler: handler)
+        alert.addAction(actionButton)
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func showError(error:Error) {
         if  error is CustomError {

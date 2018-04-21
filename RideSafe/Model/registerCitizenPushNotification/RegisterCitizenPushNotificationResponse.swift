@@ -48,7 +48,7 @@ public class RegisterCitizenPushNotificationResponse {
 */
 	required public init?(dictionary: NSDictionary) {
 
-		appVersion = dictionary["appVersion"] as? String
+		appVersion = dictionary["iOSVersion"] as? String
         if (dictionary["drivingIssueCategoryList"] != nil) { drivingIssueCategoryList = DrivingIssueCategory.modelsFromDictionaryArray(array: dictionary["drivingIssueCategoryList"] as! NSArray) }
 	}
 

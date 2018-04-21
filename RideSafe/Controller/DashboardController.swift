@@ -39,7 +39,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     var liveLocationSwitch: UISwitch!
     var isFirstCallToPushNotificationAPI = true
     
-    @IBOutlet weak var shareLiveLocationLabel: UILabel!
     @IBOutlet weak var educationLabel: UILabel!
     @IBOutlet weak var helpLineLabel: UILabel!
     @IBOutlet weak var emegencyLabel: UILabel!
@@ -197,9 +196,20 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             NetworkManager().doServiceCall(serviceType: .registerCitizenPushNotificationId, params: ["citizenId": citizenId,
                                                                                                      "notificationId":  deviceID,
                                                                                                      "language": selectedLanguage], showLoader: isFirstCallToPushNotificationAPI)
-            }.then { response -> () in
-                self.isFirstCallToPushNotificationAPI = false
+            }.then { [self] response -> () in
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
+
+                if self.isFirstCallToPushNotificationAPI == true {
+                    self.isFirstCallToPushNotificationAPI = false
+                    self.retriveJSONFrom(fileName: FileNames.response.rawValue).then { response -> () in
+                        let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
+                        if self.isForceUpdateRequired(for: sresponse?.responseObject?.appVersion) == true {
+                            self.showForceUpdateAlert(handler: { (action) in
+                                self.launchAppStore()
+                            })
+                        }
+                    }
+                }
             }.catch { (error) in
         }
     }

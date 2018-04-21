@@ -86,6 +86,7 @@
 		2CF7E57D2087DFE300BE4D84 /* IssueStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */; };
 		2CF7E5812089166000BE4D84 /* ActionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E5802089166000BE4D84 /* ActionListItem.swift */; };
 		2CF7E584208A19A300BE4D84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */; };
+		2CF7E587208BC27900BE4D84 /* UIViewController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */; };
 		2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCDA2020832170007C9C99 /* RatingController.swift */; };
 		B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD992065E15600475AB9 /* MyRoadInfraIssueResponse.swift */; };
 		B803CD9C2065E15700475AB9 /* MyRoadInfraIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD9A2065E15600475AB9 /* MyRoadInfraIssue.swift */; };
@@ -214,6 +215,7 @@
 		2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueStatusTableViewCell.swift; sourceTree = "<group>"; };
 		2CF7E5802089166000BE4D84 /* ActionListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionListItem.swift; sourceTree = "<group>"; };
 		2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extention.swift"; sourceTree = "<group>"; };
 		2CFCDA2020832170007C9C99 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
@@ -290,7 +292,6 @@
 				2C15668A2051CE0E00B4067C /* Checkbox.swift */,
 				2C3D5650205AD1CE008F9104 /* DropDown.storyboard */,
 				2C3D5652205AD1E8008F9104 /* DropDownController.swift */,
-				2CF2436F2062B126007E696C /* Extension+UITextView.swift */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -318,6 +319,7 @@
 		2C1EE2A3204E5A440093B3BF = {
 			isa = PBXGroup;
 			children = (
+				2CF7E585208BC21A00BE4D84 /* Extentions */,
 				2C1566892051CDE000B4067C /* Custom UI */,
 				2C1EE2AE204E5A440093B3BF /* RideSafe */,
 				2CB05AEC207491DD006C547E /* Resources */,
@@ -358,7 +360,6 @@
 				2C1EE2BB204E5A440093B3BF /* Info.plist */,
 				2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */,
 				2CF2435D20600242007E696C /* AppConstants.swift */,
-				2C4F94452078915300BC5D31 /* String+Extenstion.swift */,
 			);
 			path = RideSafe;
 			sourceTree = "<group>";
@@ -556,6 +557,16 @@
 				2CF2436A206031A1007E696C /* RegisterCitizenPushNotificationResponse.swift */,
 			);
 			path = registerCitizenPushNotification;
+			sourceTree = "<group>";
+		};
+		2CF7E585208BC21A00BE4D84 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				2CF2436F2062B126007E696C /* Extension+UITextView.swift */,
+				2C4F94452078915300BC5D31 /* String+Extenstion.swift */,
+				2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 		2CFCDA1F2083214D007C9C99 /* Rating */ = {
@@ -902,6 +913,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF7E587208BC27900BE4D84 /* UIViewController+Extention.swift in Sources */,
 				2C87E7C820665B4400CAD64C /* InfraIssuesForFieldOfficer.swift in Sources */,
 				B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */,
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
