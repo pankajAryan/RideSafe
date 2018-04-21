@@ -15,6 +15,7 @@ class EmergencyContactViewController: RideSafeViewController {
     @IBOutlet weak var contact1: UITextField!
     @IBOutlet weak var contact2: UITextField!
     @IBOutlet weak var contact3: UITextField!
+    @IBOutlet weak var liveLocationSwitch: UISwitch!
     var  contactPickerScene: ContactsPicker!
     var isContactAvailable: Bool!
     var selectedTextField: UITextField!
@@ -24,6 +25,12 @@ class EmergencyContactViewController: RideSafeViewController {
         loadEmergencyContact()
         self.title = "Emergency Contacts"
         setBackButton()
+        if let _ = ShareLiveLocation.shared.timer {
+            liveLocationSwitch.setOn(true, animated: false)
+        } else {
+            liveLocationSwitch.setOn(false, animated: false)
+        }
+        
     }
     
     func loadEmergencyContact() {
@@ -44,7 +51,22 @@ class EmergencyContactViewController: RideSafeViewController {
         }
     }
     
-
+    @IBAction func turnOffLiveLocation(_ sender: UISwitch) {
+        
+        if !liveLocationSwitch.isOn {
+            print("location off")
+            ShareLiveLocation.shared.timer?.invalidate()
+            ShareLiveLocation.shared.counter = 0
+            ShareLiveLocation.shared.timer = nil
+        } else {
+            ShareLiveLocation.shared.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fetchLiveLocation), userInfo: nil, repeats: true)
+            ShareLiveLocation.shared.setupLocationManager()
+        }
+    }
+    @objc func fetchLiveLocation() {
+        ShareLiveLocation.shared.setupLocationManager()
+    }
+    
     @IBAction func button1Clicked(_ sender: Any) {
         contactPickerScene = ContactsPicker(delegate: self, multiSelection: false, subtitleCellType: SubtitleCellValue.email)
         let navigationController = UINavigationController(rootViewController: contactPickerScene)

@@ -107,6 +107,7 @@
 		B841ED11205D9ACA00ACFF0E /* Directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B841ED0F205D9ACA00ACFF0E /* Directory.swift */; };
 		B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84DB416205E32710000A256 /* EmergencyContact.storyboard */; };
 		B84DB419205E328D0000A256 /* EmergencyContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */; };
+		B85BB358208ACB8400FE3C79 /* ShareLiveLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85BB357208ACB8400FE3C79 /* ShareLiveLocation.swift */; };
 		B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B865FFE6207DE18900B675F3 /* Notification.storyboard */; };
 		B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */; };
 		B865FFEB207DE56700B675F3 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */; };
@@ -239,6 +240,7 @@
 		B841ED0F205D9ACA00ACFF0E /* Directory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Directory.swift; sourceTree = "<group>"; };
 		B84DB416205E32710000A256 /* EmergencyContact.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmergencyContact.storyboard; sourceTree = "<group>"; };
 		B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmergencyContactViewController.swift; sourceTree = "<group>"; };
+		B85BB357208ACB8400FE3C79 /* ShareLiveLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareLiveLocation.swift; sourceTree = "<group>"; };
 		B865FFE6207DE18900B675F3 /* Notification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Notification.storyboard; sourceTree = "<group>"; };
 		B865FFE8207DE1A100B675F3 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		B865FFEA207DE56700B675F3 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -635,6 +637,7 @@
 			children = (
 				B84DB416205E32710000A256 /* EmergencyContact.storyboard */,
 				B84DB418205E328D0000A256 /* EmergencyContactViewController.swift */,
+				B85BB357208ACB8400FE3C79 /* ShareLiveLocation.swift */,
 			);
 			path = EmergencyContact;
 			sourceTree = "<group>";
@@ -1000,6 +1003,7 @@
 				2C1566B120582F8D00B4067C /* District.swift in Sources */,
 				B865FFEE207DE91300B675F3 /* NotificationResponse.swift in Sources */,
 				2C87E7CB2066654C00CAD64C /* FOContactCell.swift in Sources */,
+				B85BB358208ACB8400FE3C79 /* ShareLiveLocation.swift in Sources */,
 				B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */,
 				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
@@ -1175,7 +1179,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E2QM53C59J;
+				DEVELOPMENT_TEAM = B5T85P5Z5Z;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1195,7 +1199,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E2QM53C59J;
+				DEVELOPMENT_TEAM = B5T85P5Z5Z;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
