@@ -11,8 +11,8 @@ import MapKit
 
 class IssueMapViewController: RideSafeViewController {
     @IBOutlet weak var issueMapView: MKMapView!
-    var latDelta:CLLocationDegrees = 0.1
-    var longDelta:CLLocationDegrees = 0.1
+    var latDelta:CLLocationDegrees = 0.02
+    var longDelta:CLLocationDegrees = 0.02
 
     var issueLatitude:CLLocationDegrees = 0.01
     var issueLongitude:CLLocationDegrees = 0.01
@@ -29,10 +29,28 @@ class IssueMapViewController: RideSafeViewController {
         issueMapView.setRegion(region, animated: true)
         
         let pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(issueLatitude, issueLongitude)
-        let objectAnnotation = MKPointAnnotation()
-        objectAnnotation.coordinate = pinLocation
-//        objectAnnotation.title = ""
+        let objectAnnotation = Artwork(title: "\(issueLatitude), \(issueLongitude)", locationName: "", discipline: "", coordinate: pinLocation)
         issueMapView.addAnnotation(objectAnnotation)
-    }
 
+    }
 }
+
+class Artwork: NSObject, MKAnnotation {
+    let title: String?
+    let locationName: String
+    let discipline: String
+    let coordinate: CLLocationCoordinate2D
+    
+    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
+        self.title = title
+        self.locationName = locationName
+        self.discipline = discipline
+        self.coordinate = coordinate        
+        super.init()
+    }
+    
+    var subtitle: String? {
+        return locationName
+    }
+}
+
