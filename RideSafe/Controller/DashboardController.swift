@@ -12,6 +12,7 @@ import UIDropDown
 import CoreLocation
 import PromiseKit
 import Alamofire
+import Firebase
 
 class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
@@ -36,6 +37,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     var timer: Timer?
     var counter = 0
     var liveLocationSwitch: UISwitch!
+    var isFirstCallToPushNotificationAPI = true
     
     @IBOutlet weak var shareLiveLocationLabel: UILabel!
     @IBOutlet weak var educationLabel: UILabel!
@@ -54,9 +56,13 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         imagePicker.delegate = self
         setupUI()
         setLocalizedText()
-//        descriptionText.placeholder = "Describe issue".localized
-//        drivingIssuesLabel.text = "Select Driving Issues".localized
 
+        NotificationCenter.default.addObserver(self, selector: #selector(fcmTokeUpdated), name: NSNotification.Name.MessagingRegistrationTokenRefreshed, object: nil)
+    }
+    
+    @objc func fcmTokeUpdated() {
+        NotificationCenter.default.removeObserver(self)
+        RegisterForCitizenPushNotification()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -190,11 +196,11 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         firstly {
             NetworkManager().doServiceCall(serviceType: .registerCitizenPushNotificationId, params: ["citizenId": citizenId,
                                                                                                      "notificationId":  deviceID,
-                                                                                                     "language": selectedLanguage])
+                                                                                                     "language": selectedLanguage], showLoader: isFirstCallToPushNotificationAPI)
             }.then { response -> () in
+                self.isFirstCallToPushNotificationAPI = false
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
             }.catch { (error) in
-                
         }
     }
     

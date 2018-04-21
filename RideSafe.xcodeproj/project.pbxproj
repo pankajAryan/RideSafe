@@ -85,6 +85,7 @@
 		2CF7E57B2087DC2B00BE4D84 /* IssueStatusTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E57A2087DC2B00BE4D84 /* IssueStatusTableVC.swift */; };
 		2CF7E57D2087DFE300BE4D84 /* IssueStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */; };
 		2CF7E5812089166000BE4D84 /* ActionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E5802089166000BE4D84 /* ActionListItem.swift */; };
+		2CF7E584208A19A300BE4D84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */; };
 		2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCDA2020832170007C9C99 /* RatingController.swift */; };
 		B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD992065E15600475AB9 /* MyRoadInfraIssueResponse.swift */; };
 		B803CD9C2065E15700475AB9 /* MyRoadInfraIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD9A2065E15600475AB9 /* MyRoadInfraIssue.swift */; };
@@ -213,6 +214,7 @@
 		2CF7E57A2087DC2B00BE4D84 /* IssueStatusTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueStatusTableVC.swift; sourceTree = "<group>"; };
 		2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueStatusTableViewCell.swift; sourceTree = "<group>"; };
 		2CF7E5802089166000BE4D84 /* ActionListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionListItem.swift; sourceTree = "<group>"; };
+		2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CFCDA2020832170007C9C99 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
 				2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
 				2C1EE2BB204E5A440093B3BF /* Info.plist */,
+				2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */,
 				2CF2435D20600242007E696C /* AppConstants.swift */,
 				2C4F94452078915300BC5D31 /* String+Extenstion.swift */,
 			);
@@ -716,6 +719,7 @@
 				2C1EE2AA204E5A440093B3BF /* Resources */,
 				269D99F0DFFF07F916A454E6 /* [CP] Embed Pods Frameworks */,
 				8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */,
+				2CF7E5822089ECB900BE4D84 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -784,6 +788,7 @@
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				2C4F94522078A12C00BC5D31 /* Localizable.strings in Resources */,
 				2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */,
+				2CF7E584208A19A300BE4D84 /* GoogleService-Info.plist in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
@@ -845,6 +850,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		2CF7E5822089ECB900BE4D84 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" fa506f2d0c79bb4c344d622501053e44b4abe05d c49739fc7d8fcbdd04b9ac3768b5b351ba23a481dce95b8ab3939dc646ef12fd";
 		};
 		8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
