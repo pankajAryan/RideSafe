@@ -26,7 +26,7 @@ class ShareLiveLocation:NSObject, CLLocationManagerDelegate {
     }
 
 
-    private func setupLocationManager() {
+    func setupLocationManager() {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -40,6 +40,7 @@ class ShareLiveLocation:NSObject, CLLocationManagerDelegate {
         guard let locVal = manager.location?.coordinate else { return }
         userLocation = locVal
         locationManager.stopUpdatingLocation()
+
         if self.timer != nil {
             counter = counter + 1
             let latitude: String = String(locVal.latitude)
@@ -52,6 +53,10 @@ class ShareLiveLocation:NSObject, CLLocationManagerDelegate {
             counter = 0
             timer = nil
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("failed")
     }
     
     private func updateServerWithLiveLocation(latitude: String, longitude: String) {

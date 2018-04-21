@@ -34,9 +34,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     var userLocation = CLLocationCoordinate2D()
     var imageUrl:String?
     
-    var timer: Timer?
-    var counter = 0
-    var liveLocationSwitch: UISwitch!
     var isFirstCallToPushNotificationAPI = true
     
     @IBOutlet weak var shareLiveLocationLabel: UILabel!
@@ -142,55 +139,12 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         
     }
     
-    private func setRightSwitch() {
-        liveLocationSwitch = UISwitch.init(frame: CGRect(origin: .zero, size: CGSize(width: 44, height: 34)))
-        liveLocationSwitch.addTarget(self, action: #selector(turnOffLiveLocation), for: UIControlEvents.valueChanged)
-        liveLocationSwitch.isUserInteractionEnabled = false
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: liveLocationSwitch)
-    }
-    
-    @objc private func turnOffLiveLocation() {
-        if !liveLocationSwitch.isOn {
-            timer?.invalidate()
-            counter = 0
-            timer = nil
-            liveLocationSwitch.isUserInteractionEnabled = false
-        }
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locVal = manager.location?.coordinate else { return }
         userLocation = locVal
         locationManager.stopUpdatingLocation()
-        if self.timer != nil {
-            counter = counter + 1
-            let latitude: String = String(locVal.latitude)
-            let longitude: String = String(locVal.longitude)
-            self.updateServerWithLiveLocation(latitude: latitude, longitude: longitude)
-        }
-        
-        if counter == 90 { // Stop Timer after 15 min
-            timer?.invalidate()
-            counter = 0
-            timer = nil
-        }
+
     }
-    
-    private func updateServerWithLiveLocation(latitude: String, longitude: String) {
-        
-        firstly {
-            NetworkManager().doServiceCall(serviceType: .recordCitizenLiveLocation, params: ["citizenId": citizenId,
-                                                                                                     "lat":  latitude,
-                                                                                                     "lon": longitude], showLoader: false)
-            }.then { response -> () in
-                print(response)
-            }.catch { (error) in
-                self.showError(error: error)
-                
-        }
-    }
-    
-    
     
     func RegisterForCitizenPushNotification() {
         firstly {
@@ -300,16 +254,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         self.navigationController?.pushViewController(roadInfraIssueViewController, animated: true)
         
     }
-    @objc func fetchLiveLocation() {
-        setupLocationManager()
-    }
+
     
-    @IBAction func shareLiveLocationClicked(_ sender: UIButton) {
-        
-        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fetchLiveLocation), userInfo: nil, repeats: true)
-        liveLocationSwitch.isOn = true
-        liveLocationSwitch.isUserInteractionEnabled = true
-    }
     @IBAction func emergencyClicked(_ sender: UIButton) {
         let emergencyContactViewController: EmergencyContactViewController = UIStoryboard.init(name: "EmergencyContact", bundle: nil).instantiateViewController(withIdentifier: "EmergencyContactViewController") as! EmergencyContactViewController
         self.navigationController?.pushViewController(emergencyContactViewController, animated: true)
