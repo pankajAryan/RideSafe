@@ -14,6 +14,7 @@ enum ServiceType: String {
     case verifyOtp =  "verifyOtp"
     case resendOtp = "resendOtp"
     case getDistrictList = "getDistrictList"
+    case getDistrictListForApp = "getDistrictListForApp"
     case getEducationalMediaListByType = "getEducationalMediaListByType"
     case getCitizenProfile = "getCitizenProfile"
     case updateCitizenProfile = "updateCitizenProfile"
@@ -44,6 +45,6 @@ enum ServiceType: String {
 
 
 struct Environment {
-    static let baseUrl = "http://139.59.81.101:8080/RideSafe/rest/service/"
+    static let baseUrl = "http://ridesafe.jk.gov.in:8080/RideSafe/rest/service/"
     static let appID = "123456"
 }

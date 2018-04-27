@@ -140,12 +140,21 @@ extension UIViewController {
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.isUserLogedin.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.citizenId.rawValue)
         UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.userType.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultsKeys.token.rawValue)
+
     }
     
     var citizenId:String {
         get {
             guard let citizenId = UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) else { return "" }
             return citizenId
+        }
+    }
+    
+    var token:String {
+        get {
+            guard let token = UserDefaults.standard.string(forKey: UserDefaultsKeys.token.rawValue) else { return "" }
+            return token
         }
     }
     
@@ -185,7 +194,24 @@ enum RootController {
 
 enum UserType {
     case Citizen
+    case FieldOfficial
+    case EscalationOfficial
     case Official
+    
+    func getTokenUserType(userType: String) -> String {
+        switch userType {
+        case "C":
+            return "citizen"
+        case "f":
+            return "field_official"
+        case "E":
+            return "escalation_official"
+        case "O":
+            return "official"
+        default:
+            return ""
+        }
+    }
 }
 
 

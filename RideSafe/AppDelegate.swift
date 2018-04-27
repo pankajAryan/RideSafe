@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             case .Citizen:
                 initialViewController = storyboard.instantiateViewController(withIdentifier: "dashboard") as? DashboardController
                 
-            case.Official:
+            case.Official, .FieldOfficial, .EscalationOfficial:
                 let storyboard = UIStoryboard(name: "FOMain", bundle: nil)
                 initialViewController = storyboard.instantiateViewController(withIdentifier: "FODashboardController") as? FODashboardController
             }
