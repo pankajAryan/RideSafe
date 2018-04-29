@@ -26,9 +26,7 @@ class RegistrationController: RideSafeViewController {
     
     private func getDistrict() {
         firstly{
-            NetworkManager().doServiceCall(serviceType: .getDistrictList, params: ["startIndex": "-1","searchString": "",
-                                                                                   "length": "10","sortBy": "NAME",
-                                                                                   "order": "A","status": "T"])
+            NetworkManager().doServiceCall(serviceType: .getDistrictListForApp, params: [:])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 let dictList = json4Swift_Base?.responseObject?.districtList
@@ -71,6 +69,9 @@ class RegistrationController: RideSafeViewController {
                 NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": mobileNumber.text!,"districtId": selectedDistrictID])
                 }.then { response -> () in
                     UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
+                    if let token = response["token"] {
+                        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
+                    }
                     UserDefaults.standard.synchronize()
                     self.showToast(response: response)
                     self.gotodashBoard()

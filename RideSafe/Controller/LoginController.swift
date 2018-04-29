@@ -75,8 +75,13 @@ class LoginController: RideSafeViewController {
                 if let user_type = usertype, let id = _citizenid {
                     UserDefaults.standard.set(id, forKey: UserDefaultsKeys.citizenId.rawValue)
                     UserDefaults.standard.set(user_type, forKey: UserDefaultsKeys.userType.rawValue)
+                    if let token = verifyResponseObj?.token {
+                        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
+                    }
                     UserDefaults.standard.synchronize()
                 }
+                
+                
                 verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()
                 
             }.catch { error   in

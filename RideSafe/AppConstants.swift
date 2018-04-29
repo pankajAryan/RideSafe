@@ -13,6 +13,7 @@ enum UserDefaultsKeys:String {
     case citizenId = "citizenId"
     case userType = "userType"
     case isFirstTimeLaunch = "isFirstTimeLaunch"
+    case token = "token"
 }
 
 enum Localization:String {

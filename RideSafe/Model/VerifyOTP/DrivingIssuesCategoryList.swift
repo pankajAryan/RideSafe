@@ -15,6 +15,7 @@ import Foundation
 public class DrivingIssuesCategoryList {
 	public var isRegistered : String?
 	public var userType : String?
+    public var token : String?
 	public var fieldOfficialId : String?
 	public var citizenId : String?
 	public var escalationLevel : String?
@@ -57,6 +58,7 @@ public class DrivingIssuesCategoryList {
 		userType = dictionary["userType"] as? String
 		fieldOfficialId = dictionary["fieldOfficialId"] as? String
 		citizenId = dictionary["citizenId"] as? String
+        token = dictionary["token"] as? String
 		escalationLevel = dictionary["escalationLevel"] as? String
 		escalationOfficialId = dictionary["escalationOfficialId"] as? String
         if (dictionary["drivingIssueCategoryList"] != nil) { drivingIssueCategoryList = DrivingIssueCategory.modelsFromDictionaryArray(array: dictionary["drivingIssueCategoryList"] as! NSArray) }

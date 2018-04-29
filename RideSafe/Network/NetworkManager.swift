@@ -14,6 +14,16 @@ import PromiseKit
 class NetworkManager {
     
     func doServiceCall(serviceType:ServiceType, params:[String:String],showLoader: Bool = true) -> Promise<[String:Any]> {
+        var parameter = params
+        if let token = UserDefaults.standard.string(forKey: UserDefaultsKeys.token.rawValue) {
+            parameter[UserDefaultsKeys.token.rawValue] = token
+        }
+        if let userType =  UserDefaults.standard.string(forKey: UserDefaultsKeys.userType.rawValue) {
+            parameter["tokenUserType"] = UserType.Citizen.getTokenUserType(userType: userType)
+        }
+        if let citizenId =  UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) {
+            parameter["tokenUserId"] = citizenId
+        }
         return hasInternetConnectivity.then { isConnected in
             return Promise { fullFilled , reject in
                 if isConnected {
@@ -22,13 +32,13 @@ class NetworkManager {
                     }
                     let urlString = self.makeUrl(restUrl: serviceType.rawValue)
                     
-                    Alamofire.request(urlString, method: .post, parameters: params).responseJSON {
+                    Alamofire.request(urlString, method: .post, parameters: parameter).responseJSON {
                         response in
                         switch response.result {
                         case .success:
                             if let response = response.value as? [String : Any]  {
                                 #if DEBUG
-                                print("✅ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
+                                print("✅ service: \(serviceType.rawValue)\n paramas: \(parameter)\n response: \(response) ")
                                 #endif
                                 
                                 let errorCode = String(describing: response["errorCode"]!)
@@ -43,7 +53,7 @@ class NetworkManager {
                         //                    break
                         case .failure(let error):
                             #if DEBUG
-                            print("❌ service: \(serviceType.rawValue)\n paramas: \(params)\n response: \(response) ")
+                            print("❌ service: \(serviceType.rawValue)\n paramas: \(parameter)\n response: \(response) ")
                             print("❌ response code: \(String(describing:  response.response?.statusCode))")
                             #endif
                             reject(error)

@@ -150,7 +150,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             NetworkManager().doServiceCall(serviceType: .registerCitizenPushNotificationId, params: ["citizenId": citizenId,
                                                                                                      "notificationId":  deviceID,
                                                                                                      "language": selectedLanguage], showLoader: isFirstCallToPushNotificationAPI)
-            }.then { [self] response -> () in
+            }.then { [unowned self] response -> () in
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
 
                 if self.isFirstCallToPushNotificationAPI == true {
