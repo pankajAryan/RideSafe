@@ -23,11 +23,11 @@ public class District {
     Returns an array of models based on given dictionary.
     
     Sample usage:
-    let districtList_list = DistrictList.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
+    let responseObject_list = District.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
     - parameter array:  NSArray from JSON dictionary.
 
-    - returns: Array of DistrictList Instances.
+    - returns: Array of District Instances.
 */
     public class func modelsFromDictionaryArray(array:NSArray) -> [District]
     {
@@ -43,11 +43,11 @@ public class District {
     Constructs the object based on the given dictionary.
     
     Sample usage:
-    let districtList = DistrictList(someDictionaryFromJSON)
+    let responseObject = District(someDictionaryFromJSON)
 
     - parameter dictionary:  NSDictionary from JSON.
 
-    - returns: DistrictList Instance.
+    - returns: District Instance.
 */
 	required public init?(dictionary: NSDictionary) {
 

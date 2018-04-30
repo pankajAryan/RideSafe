@@ -68,9 +68,7 @@ class HelpLineContainerViewController: RideSafeViewController {
     
     private func getDistrict() {
         firstly{
-            NetworkManager().doServiceCall(serviceType: .getDistrictList, params: ["startIndex": "-1","searchString": "",
-                                                                                   "length": "10","sortBy": "NAME",
-                                                                                   "order": "A","status": "T"])
+            NetworkManager().doServiceCall(serviceType: .getDistrictListForApp, params: [:])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 SharedSettings.shared.districtResponse = json4Swift_Base
@@ -86,7 +84,7 @@ class HelpLineContainerViewController: RideSafeViewController {
             let citizenProfile = CitizenProfile(dictionary: response as NSDictionary)
             let citizen = citizenProfile?.responseObject
             self.selectedDistrictID = citizen?.districtId ?? "no district"
-            let dictList =  SharedSettings.shared.districtResponse?.responseObject?.districtList
+            let dictList =  SharedSettings.shared.districtResponse?.responseObject
             self.setRightButton(dictList)
 
             self.helpLineViewController?.districId = citizen?.districtId ?? dictList?[0].districtId

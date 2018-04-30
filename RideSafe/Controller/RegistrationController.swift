@@ -29,7 +29,7 @@ class RegistrationController: RideSafeViewController {
             NetworkManager().doServiceCall(serviceType: .getDistrictListForApp, params: [:])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
-                let dictList = json4Swift_Base?.responseObject?.districtList
+                let dictList = json4Swift_Base?.responseObject
                 SharedSettings.shared.districtResponse = json4Swift_Base
                 self.makeDropDow(dictList)
             }.catch { (error) in

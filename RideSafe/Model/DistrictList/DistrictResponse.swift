@@ -10,13 +10,23 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import Foundation
  
+/* For support, please feel free to contact me at https://www.linkedin.com/in/syedabsar */
 
 public class DistrictResponse {
-	public var responseObject : DistrictList?
+	public var responseObject : Array<District>?
 	public var errorCode : Int?
 	public var errorMessage : String?
 
+/**
+    Returns an array of models based on given dictionary.
+    
+    Sample usage:
+    let json4Swift_Base_list = DistrictResponse.modelsFromDictionaryArray(someDictionaryArrayFromJSON)
 
+    - parameter array:  NSArray from JSON dictionary.
+
+    - returns: Array of DistrictResponse Instances.
+*/
     public class func modelsFromDictionaryArray(array:NSArray) -> [DistrictResponse]
     {
         var models:[DistrictResponse] = []
@@ -27,20 +37,33 @@ public class DistrictResponse {
         return models
     }
 
+/**
+    Constructs the object based on the given dictionary.
+    
+    Sample usage:
+    let json4Swift_Base = DistrictResponse(someDictionaryFromJSON)
 
+    - parameter dictionary:  NSDictionary from JSON.
+
+    - returns: DistrictResponse Instance.
+*/
 	required public init?(dictionary: NSDictionary) {
 
-		if (dictionary["responseObject"] != nil) { responseObject = DistrictList(dictionary: dictionary["responseObject"] as! NSDictionary) }
+        if (dictionary["responseObject"] != nil) { responseObject = District.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
 		errorCode = dictionary["errorCode"] as? Int
 		errorMessage = dictionary["errorMessage"] as? String
 	}
 
-
+		
+/**
+    Returns the dictionary representation for the current instance.
+    
+    - returns: NSDictionary.
+*/
 	public func dictionaryRepresentation() -> NSDictionary {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.responseObject?.dictionaryRepresentation(), forKey: "responseObject")
 		dictionary.setValue(self.errorCode, forKey: "errorCode")
 		dictionary.setValue(self.errorMessage, forKey: "errorMessage")
 

@@ -17,8 +17,6 @@
 		2C1566A82057DCF800B4067C /* AboutRideSafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A72057DCF800B4067C /* AboutRideSafe.swift */; };
 		2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566A92058013A00B4067C /* RideSafeViewController.swift */; };
 		2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AB2058238800B4067C /* RegistrationController.swift */; };
-		2C1566B120582F8D00B4067C /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AE20582F8D00B4067C /* District.swift */; };
-		2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566AF20582F8D00B4067C /* DistrictResponse.swift */; };
 		2C1566B320582F8D00B4067C /* DistrictList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B020582F8D00B4067C /* DistrictList.swift */; };
 		2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1566B620584B7400B4067C /* SwiftLoader.swift */; };
 		2C1EE2B0204E5A440093B3BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */; };
@@ -130,6 +128,8 @@
 		B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8C4F27D2065574600587E55 /* ReportTableViewCell.xib */; };
 		B8C4F283206579D300587E55 /* MyDrivingIssueReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4F281206579D300587E55 /* MyDrivingIssueReport.swift */; };
 		B8C4F284206579D300587E55 /* MyDrivingIssueReportResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C4F282206579D300587E55 /* MyDrivingIssueReportResponse.swift */; };
+		B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77072095C97A00CA603A /* DistrictResponse.swift */; };
+		B8ED770A2095C97C00CA603A /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77082095C97B00CA603A /* District.swift */; };
 		B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */; };
 		C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */; };
 /* End PBXBuildFile section */
@@ -145,8 +145,6 @@
 		2C1566A72057DCF800B4067C /* AboutRideSafe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRideSafe.swift; sourceTree = "<group>"; };
 		2C1566A92058013A00B4067C /* RideSafeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideSafeViewController.swift; sourceTree = "<group>"; };
 		2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
-		2C1566AE20582F8D00B4067C /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
-		2C1566AF20582F8D00B4067C /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
 		2C1566B020582F8D00B4067C /* DistrictList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictList.swift; sourceTree = "<group>"; };
 		2C1566B620584B7400B4067C /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
 		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,6 +261,8 @@
 		B8C4F27D2065574600587E55 /* ReportTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportTableViewCell.xib; sourceTree = "<group>"; };
 		B8C4F281206579D300587E55 /* MyDrivingIssueReport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrivingIssueReport.swift; sourceTree = "<group>"; };
 		B8C4F282206579D300587E55 /* MyDrivingIssueReportResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyDrivingIssueReportResponse.swift; sourceTree = "<group>"; };
+		B8ED77072095C97A00CA603A /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
+		B8ED77082095C97B00CA603A /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -311,8 +311,8 @@
 		2C1566AD20582F8D00B4067C /* DistrictList */ = {
 			isa = PBXGroup;
 			children = (
-				2C1566AE20582F8D00B4067C /* District.swift */,
-				2C1566AF20582F8D00B4067C /* DistrictResponse.swift */,
+				B8ED77072095C97A00CA603A /* DistrictResponse.swift */,
+				B8ED77082095C97B00CA603A /* District.swift */,
 				2C1566B020582F8D00B4067C /* DistrictList.swift */,
 			);
 			path = DistrictList;
@@ -980,7 +980,6 @@
 				2C1566982056A6F900B4067C /* MenuCell.swift in Sources */,
 				2CF7E57D2087DFE300BE4D84 /* IssueStatusTableViewCell.swift in Sources */,
 				B8C4F27E2065574600587E55 /* ReportTableViewCell.swift in Sources */,
-				2C1566B220582F8D00B4067C /* DistrictResponse.swift in Sources */,
 				2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */,
 				B813A3FD206175A600A1B6F5 /* EmergencyConacts.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
@@ -1000,7 +999,7 @@
 				B865FFEB207DE56700B675F3 /* NotificationTableViewCell.swift in Sources */,
 				2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */,
 				2C1566AA2058013A00B4067C /* RideSafeViewController.swift in Sources */,
-				2C1566B120582F8D00B4067C /* District.swift in Sources */,
+				B8ED770A2095C97C00CA603A /* District.swift in Sources */,
 				B865FFEE207DE91300B675F3 /* NotificationResponse.swift in Sources */,
 				2C87E7CB2066654C00CAD64C /* FOContactCell.swift in Sources */,
 				B85BB358208ACB8400FE3C79 /* ShareLiveLocation.swift in Sources */,
@@ -1009,6 +1008,7 @@
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
 				B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
 				2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */,
+				B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */,
 				2C4F940920768B6800BC5D31 /* FieldOfficial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

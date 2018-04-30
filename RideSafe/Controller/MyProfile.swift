@@ -32,7 +32,7 @@ class MyProfile: RideSafeViewController {
             self.mobileNumberField.text = citizen?.mobile
             self.nameFiled.text = citizen?.name
             self.selectedDistrictID = citizen?.districtId ?? "no district"
-            let dictList =  SharedSettings.shared.districtResponse?.responseObject?.districtList
+            let dictList =  SharedSettings.shared.districtResponse?.responseObject
             self.makeDropDow(dictList)
             }.catch { (error) in
                 self.showError(error: error)
