@@ -202,7 +202,7 @@ enum UserType {
         switch userType {
         case "C":
             return "citizen"
-        case "f":
+        case "F":
             return "field_official"
         case "E":
             return "escalation_official"
