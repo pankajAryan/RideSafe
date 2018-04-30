@@ -93,7 +93,6 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         }
         else {
             cell.ratingButton.isHidden = true
-            
             cell.reopenButton.isHidden = true
         }
         
