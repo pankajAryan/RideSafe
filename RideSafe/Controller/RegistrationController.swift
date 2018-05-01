@@ -69,8 +69,14 @@ class RegistrationController: RideSafeViewController {
                 NetworkManager().doServiceCall(serviceType: .registerCitizen, params: ["name": name.text!,"mobile": mobileNumber.text!,"districtId": selectedDistrictID])
                 }.then { response -> () in
                     UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isUserLogedin.rawValue)
-                    if let token = response["token"] {
-                        UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
+                    if let responseObject = response["responseObject"] as? Dictionary<String, String> {
+                        if let token = responseObject["token"] {
+                            UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
+                        }
+                        if let id = responseObject["citizenId"] {
+                            UserDefaults.standard.set(id, forKey: UserDefaultsKeys.citizenId.rawValue)
+                        }
+                        UserDefaults.standard.set("C", forKey: UserDefaultsKeys.userType.rawValue)
                     }
                     UserDefaults.standard.synchronize()
                     self.showToast(response: response)

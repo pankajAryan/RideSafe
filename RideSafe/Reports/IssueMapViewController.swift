@@ -16,7 +16,9 @@ class IssueMapViewController: RideSafeViewController {
 
     var issueLatitude:CLLocationDegrees = 0.01
     var issueLongitude:CLLocationDegrees = 0.01
-
+    
+    var locationArray:[CLLocation] = []
+    var routeLine:MKPolyline?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,37 @@ class IssueMapViewController: RideSafeViewController {
         let pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(issueLatitude, issueLongitude)
         let objectAnnotation = Artwork(title: "\(issueLatitude), \(issueLongitude)", locationName: "", discipline: "", coordinate: pinLocation)
         issueMapView.addAnnotation(objectAnnotation)
+        
+        if locationArray.count > 0 {
+            self.drawLineWithLocationArray(locationArray: locationArray)
+        }
+        
+        self.issueMapView.delegate = self
+    }
+    
+    func drawLineWithLocationArray(locationArray: [CLLocation]) {
+        let pointCount = locationArray.count
+        var coordinateArray:[CLLocationCoordinate2D] = []
+        for location in locationArray {
+            coordinateArray.append(location.coordinate)
+        }
+        self.routeLine  = MKPolyline.init(coordinates: coordinateArray, count: pointCount)
+        self.issueMapView.setVisibleMapRect((routeLine?.boundingMapRect)!, animated: true)
+        self.issueMapView.add(routeLine!)
+    }
+}
 
+extension IssueMapViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if (overlay is MKPolyline) {
+            let pr = MKPolylineRenderer.init(polyline: self.routeLine!)
+            pr.strokeColor = UIColor.red.withAlphaComponent(0.5)
+            pr.lineWidth = 5
+            return pr
+        }
+        
+        return MKPolylineRenderer.init(polyline: self.routeLine!)
     }
 }
 

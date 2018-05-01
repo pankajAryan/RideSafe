@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class DrivingIssueController: RideSafeViewController {
     
@@ -118,6 +119,11 @@ extension DrivingIssueController: FODrivingIssueCellDelegate {
         let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
         issueMapViewController.issueLatitude = ((issue?.lat)! as NSString).doubleValue
         issueMapViewController.issueLongitude = ((issue?.lon)! as NSString).doubleValue
+        
+        for drivingLocation in (issue?.drivingCaseLocationList)! {
+            let location: CLLocation = CLLocation.init(latitude: ((drivingLocation.lat)! as NSString).doubleValue, longitude: ((drivingLocation.lon)! as NSString).doubleValue)
+            issueMapViewController.locationArray.append(location)
+        }
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     

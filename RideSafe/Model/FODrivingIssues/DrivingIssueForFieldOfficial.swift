@@ -37,7 +37,7 @@ public class DrivingIssueForFieldOfficial {
 	public var isLevel2EscalationTriggered : String?
 	public var level1EscalationTriggeredByOfficial : String?
 	public var level2EscalationTriggeredByOfficial : String?
-    
+    public var drivingCaseLocationList : Array<DrivingCaseLocationList>?
     public var rating : String?
 
 /**
@@ -97,6 +97,9 @@ public class DrivingIssueForFieldOfficial {
 		isLevel2EscalationTriggered = dictionary["isLevel2EscalationTriggered"] as? String
 		level1EscalationTriggeredByOfficial = dictionary["level1EscalationTriggeredByOfficial"] as? String
 		level2EscalationTriggeredByOfficial = dictionary["level2EscalationTriggeredByOfficial"] as? String
+        if (dictionary["drivingCaseLocationList"] != nil) {
+            drivingCaseLocationList = DrivingCaseLocationList.modelsFromDictionaryArray(array: dictionary["drivingCaseLocationList"] as! NSArray)
+        }
         rating = dictionary["rating"] as? String
 
 	}
@@ -133,8 +136,7 @@ public class DrivingIssueForFieldOfficial {
 		dictionary.setValue(self.isLevel2EscalationTriggered, forKey: "isLevel2EscalationTriggered")
 		dictionary.setValue(self.level1EscalationTriggeredByOfficial, forKey: "level1EscalationTriggeredByOfficial")
 		dictionary.setValue(self.level2EscalationTriggeredByOfficial, forKey: "level2EscalationTriggeredByOfficial")
-        rating = dictionary["rating"] as? String
-
+        dictionary.setValue(self.rating, forKey: "rating")
 
 		return dictionary
 	}
