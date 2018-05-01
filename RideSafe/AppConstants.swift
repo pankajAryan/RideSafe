@@ -14,6 +14,7 @@ enum UserDefaultsKeys:String {
     case userType = "userType"
     case isFirstTimeLaunch = "isFirstTimeLaunch"
     case token = "token"
+    case escalationLevel = "escalationLevel"
 }
 
 enum Localization:String {

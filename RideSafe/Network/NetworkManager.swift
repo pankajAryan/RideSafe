@@ -19,10 +19,10 @@ class NetworkManager {
             parameter[UserDefaultsKeys.token.rawValue] = token
         }
         if let userType =  UserDefaults.standard.string(forKey: UserDefaultsKeys.userType.rawValue) {
-            parameter["tokenUserType"] = UserType.Citizen.getTokenUserType(userType: userType)
+            parameter["tokenUserType"] = UserType.Citizen.getTokenUserType(userType: userType).rawValue
         }
-        if let citizenId =  UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) {
-            parameter["tokenUserId"] = citizenId
+        if let userId =  UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) {
+            parameter["tokenUserId"] = userId
         }
         return hasInternetConnectivity.then { isConnected in
             return Promise { fullFilled , reject in

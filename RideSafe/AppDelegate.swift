@@ -49,6 +49,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             case.Official, .FieldOfficial, .EscalationOfficial:
                 let storyboard = UIStoryboard(name: "FOMain", bundle: nil)
                 initialViewController = storyboard.instantiateViewController(withIdentifier: "FODashboardController") as? FODashboardController
+                
+            case .none:
+                return
             }
             
         case .Login:

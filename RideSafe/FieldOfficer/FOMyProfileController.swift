@@ -23,7 +23,16 @@ class FOMyProfileController: RideSafeViewController {
     }
     
     fileprivate func getMyProfileData(citizenId:String) {
-        NetworkManager().doServiceCall(serviceType: .getFieldOfficialById, params: ["fieldOfficialId" : citizenId]).then { (response) -> () in
+        var service: ServiceType = .getFieldOfficialById
+        var paramsKey = "fieldOfficialId"
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .EscalationOfficial {
+            service = .getEscalationOfficialById
+            paramsKey = "officialId"
+        }
+        
+        NetworkManager().doServiceCall(serviceType: service, params: [paramsKey : citizenId]).then { (response) -> () in
             let foProfile = FieldOfficialProfileResponse(dictionary: response as NSDictionary)?.responseObject
             self.mobile.text = foProfile?.mobile
             self.fullName.text = foProfile?.name

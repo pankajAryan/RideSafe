@@ -63,14 +63,14 @@ class LoginController: RideSafeViewController {
                 
                 var _citizenid: String?
 
-                if verifyResponseObj?.citizenId != nil {
+                if verifyResponseObj?.citizenId != nil, (verifyResponseObj?.citizenId?.count)! > 0 {
                     _citizenid = verifyResponseObj?.citizenId
-                } else if  verifyResponseObj?.fieldOfficialId != nil {
+                } else if verifyResponseObj?.fieldOfficialId != nil, (verifyResponseObj?.fieldOfficialId?.count)! > 0 {
                     _citizenid = verifyResponseObj?.fieldOfficialId
-                } else {
+                } else if verifyResponseObj?.escalationOfficialId != nil, (verifyResponseObj?.escalationOfficialId?.count)! > 0 {
                     _citizenid = verifyResponseObj?.escalationOfficialId
-
                 }
+                
                 let usertype = verifyResponseObj?.userType
                 if let user_type = usertype, let id = _citizenid {
                     UserDefaults.standard.set(id, forKey: UserDefaultsKeys.citizenId.rawValue)
@@ -78,6 +78,11 @@ class LoginController: RideSafeViewController {
                     if let token = verifyResponseObj?.token {
                         UserDefaults.standard.set(token, forKey: UserDefaultsKeys.token.rawValue)
                     }
+                    
+                    if verifyResponseObj?.escalationLevel != nil, (verifyResponseObj?.escalationLevel?.count)! > 0 {
+                        UserDefaults.standard.set(verifyResponseObj?.escalationLevel, forKey: UserDefaultsKeys.escalationLevel.rawValue)
+                    }
+                    
                     UserDefaults.standard.synchronize()
                 }
                 verifyResponseObj?.isRegistered == "T" ? self.gotoDashboard() : self.gotoRegistrationPage()

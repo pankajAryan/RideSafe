@@ -15,47 +15,8 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
     @IBOutlet weak var sideMenu: SideMenu!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentedControl: Segmentio!
-    
-//    lazy var drivingControllr:DrivingIssueController = {
-//        let drivingViewControllr = UIStoryboard(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "DrivingIssueController") as! DrivingIssueController
-//        self.addViewControllerAsChiledViewController(childViewController:drivingViewControllr)
-//        return drivingViewControllr
-//    }()
-//
-//    lazy var infraControllr:InfraIssueController = {
-//        let infraIssueViewController = UIStoryboard(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "InfraIssueController") as! InfraIssueController
-//        self.addViewControllerAsChiledViewController(childViewController:infraIssueViewController)
-//        return infraIssueViewController
-//    }()
-//
-//    lazy var transportController:TransportController = {
-//        let transportViewController = UIStoryboard(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "TransportController") as! TransportController
-//        self.addViewControllerAsChiledViewController(childViewController:transportViewController)
-//        return transportViewController
-//    }()
-//
-//    lazy var policeController:PoliceController = {
-//        let policeViewController = UIStoryboard(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "PoliceController") as! PoliceController
-//        self.addViewControllerAsChiledViewController(childViewController:policeViewController)
-//        return policeViewController
-//    }()
-//
-//    private  func addViewControllerAsChiledViewController(childViewController:UIViewController) {
-//        addChildViewController(childViewController)
-//        view.addSubview(childViewController.view)
-//        childViewController.view.frame = view.bounds
-//        childViewController.view.autoresizingMask = [.flexibleWidth,.flexibleHeight]
-//        childViewController.didMove(toParentViewController: self)
-//    }
-//
-//    private func removeViewControllerAsChiledViewController(childViewController:UIViewController) {
-//        childViewController.willMove(toParentViewController: nil)
-//        childViewController.view.removeFromSuperview()
-//        childViewController.removeFromParentViewController()
-//    }
-    
-      var container: EmbededContainerController!
-    
+
+    var container: EmbededContainerController!
     
     @IBAction func menuClicked(_ sender: UIBarButtonItem) {
         leftConstraint.constant =   leftConstraint.constant == 0 ? -240 : 0

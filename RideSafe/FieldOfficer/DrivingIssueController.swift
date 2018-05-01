@@ -21,7 +21,21 @@ class DrivingIssueController: RideSafeViewController {
     }
     
     fileprivate func fetchIssuesForOfficials() {
-        NetworkManager().doServiceCall(serviceType: .getDrivingIssueListForFieldOfficial, params: ["fieldOfficialId" : citizenId]).then { response -> () in
+        var service: ServiceType = .getDrivingIssueListForFieldOfficial
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .EscalationOfficial {
+            guard let escLevel = UserDefaults.standard.string(forKey: UserDefaultsKeys.escalationLevel.rawValue) else { return }
+
+            if escLevel == "1" {
+                service = .getDrivingIssueListForEscalationLevel1
+            }
+            else {
+                service = .getDrivingIssueListForEscalationLevel2
+            }
+        }
+        
+        NetworkManager().doServiceCall(serviceType: service, params: ["fieldOfficialId" : citizenId]).then { response -> () in
             self.drivingIssue = DrivingIssueListForFieldOfficial(dictionary: response as NSDictionary)?.responseObject
             
             if (self.drivingIssue?.count)! > 0 {

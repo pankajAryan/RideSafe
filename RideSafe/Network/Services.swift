@@ -34,7 +34,6 @@ enum ServiceType: String {
     case getRoadInfraIssueListForFieldOfficial = "getRoadInfraIssueListForFieldOfficial"
     case getFellowFieldOfficialList = "getFellowFieldOfficialList"
     case updateDrivingIssue = "updateDrivingIssue"
-    case logoutEscalationOfficial = "logoutEscalationOfficial"
     case logoutFieldOfficial = "logoutFieldOfficial"
     case recordCitizenLiveLocation = "recordCitizenLiveLocation"
     case getFieldOfficialById = "getFieldOfficialById"
@@ -42,6 +41,13 @@ enum ServiceType: String {
     case rateDrivingIssueByCitizen =  "rateDrivingIssueByCitizen"
     case reOpenDrivingIssueByCitizen = "reOpenDrivingIssueByCitizen"
     case logoutCitizen = "logoutCitizen"
+    // Escalation official apis
+    case getDrivingIssueListForEscalationLevel1 = "getDrivingIssueListForEscalationLevel1"
+    case getDrivingIssueListForEscalationLevel2 = "getDrivingIssueListForEscalationLevel2"
+    case getEscalationOfficialById              = "getEscalationOfficialById"
+    case logoutEscalationOfficial               = "logoutEscalationOfficial"
+    
+    case noService = ""
 }
 
 
