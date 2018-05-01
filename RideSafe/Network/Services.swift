@@ -41,12 +41,14 @@ enum ServiceType: String {
     case rateDrivingIssueByCitizen =  "rateDrivingIssueByCitizen"
     case reOpenDrivingIssueByCitizen = "reOpenDrivingIssueByCitizen"
     case logoutCitizen = "logoutCitizen"
+    case registerFieldOfficialPushNotificationId = "registerFieldOfficialPushNotificationId"
     // Escalation official apis
     case getDrivingIssueListForEscalationLevel1 = "getDrivingIssueListForEscalationLevel1"
     case getDrivingIssueListForEscalationLevel2 = "getDrivingIssueListForEscalationLevel2"
     case getEscalationOfficialById              = "getEscalationOfficialById"
     case logoutEscalationOfficial               = "logoutEscalationOfficial"
-    
+    case registerEscalationOfficialPushNotificationId = "registerEscalationOfficialPushNotificationId"
+
     case noService = ""
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import PromiseKit
 
 class DrivingIssueController: RideSafeViewController {
     
@@ -54,6 +55,30 @@ class DrivingIssueController: RideSafeViewController {
         super.viewDidLoad()
         recordTable.estimatedRowHeight = 300
         recordTable.rowHeight = UITableViewAutomaticDimension
+        RegisterForPushNotification()
+    }
+    
+    func RegisterForPushNotification() {
+        var service: ServiceType = .registerFieldOfficialPushNotificationId
+        var paramsKey = "fieldOfficialId"
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .EscalationOfficial {
+            service = .registerEscalationOfficialPushNotificationId
+            paramsKey = "escalationOfficialId"
+        }
+        
+        firstly {
+            NetworkManager().doServiceCall(serviceType: service, params: [paramsKey: citizenId, "notificationId":  deviceID], showLoader: false)
+            }.then { [unowned self] response -> () in
+                let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
+                if self.isForceUpdateRequired(for: sresponse?.responseObject?.appVersion) == true {
+                    self.showForceUpdateAlert(handler: { (action) in
+                        self.launchAppStore()
+                    })
+                }
+            }.catch { (error) in
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +86,7 @@ class DrivingIssueController: RideSafeViewController {
         fetchIssuesForOfficials()
     }
 }
+
 extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = drivingIssue?.count {
