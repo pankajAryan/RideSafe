@@ -41,6 +41,7 @@ enum ServiceType: String {
     case getNotificationListForUserType = "getNotificationListForUserType"
     case rateDrivingIssueByCitizen =  "rateDrivingIssueByCitizen"
     case reOpenDrivingIssueByCitizen = "reOpenDrivingIssueByCitizen"
+    case logoutCitizen = "logoutCitizen"
 }
 
 

@@ -316,11 +316,16 @@ extension DashboardController: MenuCellDelegte {
         case .Logout:
             
             showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
-                self.clearUserDefault()
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-                self.navigationController?.pushViewController(loginController, animated: true)
-                self.navigationController?.viewControllers = [loginController]
+                
+                NetworkManager().doServiceCall(serviceType: .logoutCitizen, params: ["citizenId" : self.citizenId]).then { (response) -> () in
+                    self.clearUserDefault()
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+                    self.navigationController?.pushViewController(loginController, animated: true)
+                    self.navigationController?.viewControllers = [loginController]
+                    }.catch{ error in
+                        self.showError(error: error)
+                }
             })
             
         }
