@@ -581,18 +581,23 @@
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Select issue status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-8J-kQ1">
-                                        <rect key="frame" x="0.0" y="355" width="132" height="23"/>
-                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
-                                        <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-25-09m">
-                                        <rect key="frame" x="0.0" y="384" width="304" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="IG9-H0-ZVK"/>
-                                        </constraints>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="wjT-tJ-5hD">
+                                        <rect key="frame" x="0.0" y="355" width="304" height="69"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Select issue status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-8J-kQ1">
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="23"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
+                                                <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-25-09m">
+                                                <rect key="frame" x="0.0" y="29" width="304" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="IG9-H0-ZVK"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ooI-ET-fZT" customClass="UIDropDown" customModule="UIDropDown">
                                         <rect key="frame" x="8" y="386" width="286" height="36"/>
                                         <subviews>
@@ -613,28 +618,25 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="9jP-gn-9qp" firstAttribute="leading" secondItem="yME-Oh-5UM" secondAttribute="leading" id="0Aw-Cr-bj7"/>
+                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="top" secondItem="p7Q-25-09m" secondAttribute="top" constant="2" id="2il-70-DIb"/>
                                     <constraint firstItem="PDU-3h-h58" firstAttribute="centerX" secondItem="9jP-gn-9qp" secondAttribute="centerX" id="5t3-Bi-Pgm"/>
-                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="bottom" secondItem="p7Q-25-09m" secondAttribute="bottom" constant="-2" id="6cC-Xp-zgf"/>
-                                    <constraint firstItem="p7Q-25-09m" firstAttribute="trailing" secondItem="9jP-gn-9qp" secondAttribute="trailing" id="7aP-A5-apD"/>
                                     <constraint firstAttribute="bottom" secondItem="PDU-3h-h58" secondAttribute="bottom" constant="16" id="7zR-A6-gWv"/>
-                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="trailing" secondItem="p7Q-25-09m" secondAttribute="trailing" constant="-10" id="Bgv-Li-lZ3"/>
+                                    <constraint firstItem="wjT-tJ-5hD" firstAttribute="top" secondItem="9jP-gn-9qp" secondAttribute="bottom" constant="12" id="H6b-GE-GRl"/>
                                     <constraint firstItem="PDU-3h-h58" firstAttribute="width" secondItem="9jP-gn-9qp" secondAttribute="width" id="Hbv-bJ-C6h"/>
                                     <constraint firstItem="qcf-fU-5ds" firstAttribute="width" secondItem="PDU-3h-h58" secondAttribute="width" constant="-8" id="LOw-LA-Bhx"/>
-                                    <constraint firstItem="0Zm-8J-kQ1" firstAttribute="leading" secondItem="9jP-gn-9qp" secondAttribute="leading" id="Mf5-Sp-QUK"/>
                                     <constraint firstItem="qcf-fU-5ds" firstAttribute="centerY" secondItem="PDU-3h-h58" secondAttribute="centerY" id="Miq-7u-oTR"/>
-                                    <constraint firstItem="p7Q-25-09m" firstAttribute="leading" secondItem="0Zm-8J-kQ1" secondAttribute="leading" id="MkE-sn-fdz"/>
-                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="leading" secondItem="p7Q-25-09m" secondAttribute="leading" constant="8" id="Pdl-EN-8oE"/>
+                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="leading" secondItem="p7Q-25-09m" secondAttribute="leading" constant="8" id="Pbk-uc-WmI"/>
                                     <constraint firstItem="PDU-3h-h58" firstAttribute="height" secondItem="qcf-fU-5ds" secondAttribute="height" constant="8" id="TJx-2M-bCD"/>
+                                    <constraint firstItem="wjT-tJ-5hD" firstAttribute="leading" secondItem="PDU-3h-h58" secondAttribute="leading" id="UJS-fV-IvL"/>
                                     <constraint firstItem="PDU-3h-h58" firstAttribute="top" secondItem="4Y9-rd-YEO" secondAttribute="bottom" constant="6" id="Vxh-hj-W8S"/>
-                                    <constraint firstItem="4Y9-rd-YEO" firstAttribute="leading" secondItem="0Zm-8J-kQ1" secondAttribute="leading" id="YBK-eY-yR4"/>
                                     <constraint firstAttribute="trailing" secondItem="9jP-gn-9qp" secondAttribute="trailing" id="bIt-Ow-ahg"/>
-                                    <constraint firstItem="4Y9-rd-YEO" firstAttribute="top" secondItem="p7Q-25-09m" secondAttribute="bottom" constant="12" id="cbB-TZ-XUJ"/>
                                     <constraint firstItem="qcf-fU-5ds" firstAttribute="centerX" secondItem="PDU-3h-h58" secondAttribute="centerX" id="hcS-fI-50J"/>
-                                    <constraint firstItem="0Zm-8J-kQ1" firstAttribute="top" secondItem="9jP-gn-9qp" secondAttribute="bottom" constant="12" id="jwP-WF-gcG"/>
+                                    <constraint firstItem="4Y9-rd-YEO" firstAttribute="top" secondItem="wjT-tJ-5hD" secondAttribute="bottom" constant="12" id="jgq-7v-mGu"/>
                                     <constraint firstItem="9jP-gn-9qp" firstAttribute="top" secondItem="yME-Oh-5UM" secondAttribute="top" constant="8" id="lK6-dm-ryc"/>
-                                    <constraint firstItem="p7Q-25-09m" firstAttribute="top" secondItem="0Zm-8J-kQ1" secondAttribute="bottom" constant="6" id="rG2-8V-iy7"/>
+                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="bottom" secondItem="p7Q-25-09m" secondAttribute="bottom" constant="-2" id="lMh-tq-7Od"/>
+                                    <constraint firstItem="wjT-tJ-5hD" firstAttribute="width" secondItem="PDU-3h-h58" secondAttribute="width" id="lq1-xb-8Ae"/>
                                     <constraint firstItem="PDU-3h-h58" firstAttribute="leading" secondItem="4Y9-rd-YEO" secondAttribute="leading" id="rGA-V8-ni3"/>
-                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="top" secondItem="p7Q-25-09m" secondAttribute="top" constant="2" id="tg3-Sw-8De"/>
+                                    <constraint firstItem="ooI-ET-fZT" firstAttribute="trailing" secondItem="p7Q-25-09m" secondAttribute="trailing" constant="-10" id="xGj-OQ-CP2"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -663,6 +665,7 @@
                         <outlet property="descriptionLabel" destination="OZq-KL-EN8" id="7Nk-uc-Lep"/>
                         <outlet property="dropDownView" destination="ooI-ET-fZT" id="yx8-fn-sGj"/>
                         <outlet property="imageUploaded" destination="I62-3e-Sla" id="zje-8t-paF"/>
+                        <outlet property="issueStatusStackView" destination="wjT-tJ-5hD" id="J5p-yz-31W"/>
                         <outlet property="nameLabel" destination="cIe-C5-mr9" id="Bbs-9y-dhp"/>
                         <outlet property="ratingButton" destination="az7-ir-yKj" id="PpE-eZ-yhU"/>
                         <outlet property="scrollView" destination="yME-Oh-5UM" id="tqQ-qz-Jap"/>
