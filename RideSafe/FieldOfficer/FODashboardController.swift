@@ -156,7 +156,6 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
                     self.clearUserDefault()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
-                    self.navigationController?.pushViewController(loginController, animated: true)
                     self.navigationController?.viewControllers = [loginController]
                     }.catch{ error in
                         self.showError(error: error)

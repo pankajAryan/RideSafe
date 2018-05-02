@@ -28,6 +28,9 @@ class TransportController: RideSafeViewController {
             self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
             self.recordTable.reloadData()
         }
+        .catch { (error) in
+            self.showError(error: error)
+        }
     }
 }
 

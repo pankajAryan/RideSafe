@@ -13,22 +13,24 @@ class PoliceController: RideSafeViewController {
 @IBOutlet weak var recordTable: UITableView!
 var fieldOfficers:[FieldOfficer]?
 
-override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    self.recordTable.register(UINib(nibName: "FOContactCell", bundle: nil), forCellReuseIdentifier: "FOContactCell")
-    recordTable.tableHeaderView = UIView()
-    recordTable.tableFooterView = UIView()
-    recordTable.estimatedRowHeight = 200
-    recordTable.rowHeight = UITableViewAutomaticDimension
-    recordTable.backgroundColor = .clear
-    recordTable.separatorStyle = .none
-    
-    NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "2"]).then { response -> () in
-        self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
-        self.recordTable.reloadData()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.recordTable.register(UINib(nibName: "FOContactCell", bundle: nil), forCellReuseIdentifier: "FOContactCell")
+        recordTable.tableHeaderView = UIView()
+        recordTable.tableFooterView = UIView()
+        recordTable.estimatedRowHeight = 200
+        recordTable.rowHeight = UITableViewAutomaticDimension
+        recordTable.backgroundColor = .clear
+        recordTable.separatorStyle = .none
+        
+        NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "2"]).then { response -> () in
+            self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
+            self.recordTable.reloadData()
+            }.catch { (error) in
+                self.showError(error: error)
+        }
     }
-}
 }
 
 extension PoliceController:UITableViewDelegate,UITableViewDataSource {

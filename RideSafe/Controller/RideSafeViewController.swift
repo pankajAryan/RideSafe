@@ -129,9 +129,22 @@ extension UIViewController {
     
     func showError(error:Error) {
         if  error is CustomError {
-            self.showAlert(message: (error as! CustomError).errorMessage)
+            let rideSafeError = error as! CustomError
+            if rideSafeError.errorCode == "2" {
+                // Logout
+                self.clearUserDefault()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
+                DispatchQueue.main.async {
+                    self.navigationController?.viewControllers = [loginController]
+                    loginController.showAlert(message: (error as! CustomError).errorMessage)
+                }
+            }
+            else {
+                self.showAlert(message: (error as! CustomError).errorMessage)
+            }
         } else {
-            // handle error
+            self.showAlert(message: "Something went wrong with the request, please try again later.")
         }
     }
     
