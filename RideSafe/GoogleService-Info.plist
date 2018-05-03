@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>988749187632-j4ohrfl7qg1ne20k55f8tqo22ec0l4t6.apps.googleusercontent.com</string>
+	<string>931486529776-fmg0r5jr2412j3g32f4j8m1u0s3666ls.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.988749187632-j4ohrfl7qg1ne20k55f8tqo22ec0l4t6</string>
+	<string>com.googleusercontent.apps.931486529776-fmg0r5jr2412j3g32f4j8m1u0s3666ls</string>
 	<key>API_KEY</key>
-	<string>AIzaSyAqLJhti5tjiA2d4JVgIX1c12BCIX0ZeXk</string>
+	<string>AIzaSyBL_Sc6pUWH8upwk45weYUN9avAL0LhLXs</string>
 	<key>GCM_SENDER_ID</key>
-	<string>988749187632</string>
+	<string>931486529776</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.anand.RideSafe</string>
+	<string>com.mobiquel.ridesafe</string>
 	<key>PROJECT_ID</key>
-	<string>ridesafe-4800d</string>
+	<string>ridesafe-10685</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ridesafe-4800d.appspot.com</string>
+	<string>ridesafe-10685.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:988749187632:ios:be67673f4d11a0bd</string>
+	<string>1:931486529776:ios:24103780b1897358</string>
 	<key>DATABASE_URL</key>
-	<string>https://ridesafe-4800d.firebaseio.com</string>
+	<string>https://ridesafe-10685.firebaseio.com</string>
 </dict>
 </plist>

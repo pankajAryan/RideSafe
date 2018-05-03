@@ -46,8 +46,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         setupLocationManager()
         setupVehicleTypeDropDown()
         addtappinggestureRecognizerOnDrivingIssueLabel()
-        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isFirstTimeLaunch.rawValue) == false {
-            showWelcomeAlert()
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.isNotFirstLaunch.rawValue) == false {
+            showTutorial()
         }
         imagePicker.delegate = self
         setupUI()
@@ -168,13 +168,15 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         }
     }
     
-    private func showWelcomeAlert() {
-        if let vc = UIStoryboard(name: "WelcomeAlert", bundle: nil).instantiateViewController(withIdentifier: "WelcomeAlertController") as? WelcomeAlertController {
-            vc.modalPresentationStyle = .overCurrentContext
-            vc.modalTransitionStyle = .crossDissolve
-            self.navigationController?.present(vc, animated: true, completion: nil)
-            UserDefaults.standard.set(true, forKey: "isFirstTimeLaunch")
-        }
+    private func showTutorial() {
+        //TODO: tutorial code
+
+        UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isNotFirstLaunch.rawValue)
+        //        if let vc = UIStoryboard(name: "WelcomeAlert", bundle: nil).instantiateViewController(withIdentifier: "WelcomeAlertController") as? WelcomeAlertController {
+        //            vc.modalPresentationStyle = .overCurrentContext
+        //            vc.modalTransitionStyle = .crossDissolve
+        //            self.navigationController?.present(vc, animated: true, completion: nil)
+        //    }
     }
     
     @objc func tapFunction() {

@@ -12,7 +12,7 @@ enum UserDefaultsKeys:String {
     case isUserLogedin = "isUserLogedin"
     case citizenId = "citizenId"
     case userType = "userType"
-    case isFirstTimeLaunch = "isFirstTimeLaunch"
+    case isNotFirstLaunch = "isNotFirstLaunch"
     case token = "token"
     case escalationLevel = "escalationLevel"
 }

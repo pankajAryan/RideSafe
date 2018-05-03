@@ -71,6 +71,7 @@
 		2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */; };
 		2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A30207A947F00B7AAFD /* futuram_C.ttf */; };
 		2CC96A35207A965800B7AAFD /* futura-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CC96A34207A965800B7AAFD /* futura-regular.ttf */; };
+		2CE630C7209B5F4F00E1C4F7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE630C6209B5F4F00E1C4F7 /* GoogleService-Info.plist */; };
 		2CF24342205E7880007E696C /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24341205E7880007E696C /* SettingController.swift */; };
 		2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24345205E7B5D007E696C /* LanguageCell.swift */; };
 		2CF2435A205EC80A007E696C /* WelcomeAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF24359205EC80A007E696C /* WelcomeAlertController.swift */; };
@@ -83,7 +84,6 @@
 		2CF7E57B2087DC2B00BE4D84 /* IssueStatusTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E57A2087DC2B00BE4D84 /* IssueStatusTableVC.swift */; };
 		2CF7E57D2087DFE300BE4D84 /* IssueStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */; };
 		2CF7E5812089166000BE4D84 /* ActionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E5802089166000BE4D84 /* ActionListItem.swift */; };
-		2CF7E584208A19A300BE4D84 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */; };
 		2CF7E587208BC27900BE4D84 /* UIViewController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */; };
 		2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCDA2020832170007C9C99 /* RatingController.swift */; };
 		B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD992065E15600475AB9 /* MyRoadInfraIssueResponse.swift */; };
@@ -202,6 +202,7 @@
 		2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FuturaStd-Heavy.otf"; sourceTree = "<group>"; };
 		2CC96A30207A947F00B7AAFD /* futuram_C.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = futuram_C.ttf; sourceTree = "<group>"; };
 		2CC96A34207A965800B7AAFD /* futura-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "futura-regular.ttf"; sourceTree = "<group>"; };
+		2CE630C6209B5F4F00E1C4F7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF24341205E7880007E696C /* SettingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		2CF24345205E7B5D007E696C /* LanguageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageCell.swift; sourceTree = "<group>"; };
 		2CF24359205EC80A007E696C /* WelcomeAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAlertController.swift; sourceTree = "<group>"; };
@@ -214,7 +215,6 @@
 		2CF7E57A2087DC2B00BE4D84 /* IssueStatusTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueStatusTableVC.swift; sourceTree = "<group>"; };
 		2CF7E57C2087DFE300BE4D84 /* IssueStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueStatusTableViewCell.swift; sourceTree = "<group>"; };
 		2CF7E5802089166000BE4D84 /* ActionListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionListItem.swift; sourceTree = "<group>"; };
-		2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extention.swift"; sourceTree = "<group>"; };
 		2CFCDA2020832170007C9C99 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
 		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 				2C1EE2B6204E5A440093B3BF /* Assets.xcassets */,
 				2C1EE2B8204E5A440093B3BF /* LaunchScreen.storyboard */,
 				2C1EE2BB204E5A440093B3BF /* Info.plist */,
-				2CF7E583208A19A200BE4D84 /* GoogleService-Info.plist */,
+				2CE630C6209B5F4F00E1C4F7 /* GoogleService-Info.plist */,
 				2CF2435D20600242007E696C /* AppConstants.swift */,
 			);
 			path = RideSafe;
@@ -792,6 +792,7 @@
 				2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
+				2CE630C7209B5F4F00E1C4F7 /* GoogleService-Info.plist in Resources */,
 				2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
@@ -802,7 +803,6 @@
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
 				2C4F94522078A12C00BC5D31 /* Localizable.strings in Resources */,
 				2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */,
-				2CF7E584208A19A300BE4D84 /* GoogleService-Info.plist in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
@@ -1183,11 +1183,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5T85P5Z5Z;
+				DEVELOPMENT_TEAM = E2QM53C59J;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anand.RideSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.ridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1203,11 +1203,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B5T85P5Z5Z;
+				DEVELOPMENT_TEAM = E2QM53C59J;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anand.RideSafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.ridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
