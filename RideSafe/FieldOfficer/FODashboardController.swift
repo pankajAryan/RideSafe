@@ -150,8 +150,8 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
 
             showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
                 
-                let service =  self.userType.uppercased() == "F" ? ServiceType.logoutFieldOfficial : ServiceType.logoutEscalationOfficial
-                let key = self.userType.uppercased() == "F" ? "fieldOfficialId" : "escalationOfficialId"
+                let service =  self.userType.uppercased() != "E" ? ServiceType.logoutFieldOfficial : ServiceType.logoutEscalationOfficial
+                let key = self.userType.uppercased() != "E" ? "fieldOfficialId" : "escalationOfficialId"
                 NetworkManager().doServiceCall(serviceType: service, params: [key : self.citizenId]).then { (response) -> () in
                     self.clearUserDefault()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)

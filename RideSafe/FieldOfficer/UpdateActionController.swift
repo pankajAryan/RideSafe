@@ -25,6 +25,9 @@ class UpdateActionController: RideSafeViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var ratingButton: UIButton!
     @IBOutlet weak var issueStatusStackView: UIStackView!
+    @IBOutlet weak var issueUpdateUiContainer: UIView!
+    @IBOutlet weak var updateButtonBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var updateButtonheightConstraint: NSLayoutConstraint!
     
     var uploadedImage:UIImage?
     var phoneNumber = ""
@@ -49,8 +52,7 @@ class UpdateActionController: RideSafeViewController {
         self.dateLabel.text = (drivingIssue?.createdOn)! + " |"
         self.nameLabel.text = drivingIssue?.postedByName
         self.phoneNumber = drivingIssue?.postedByMobile ?? ""
-        self.actionTextView.placeholder = "Action Taken"
-        self.actionTextView.text = drivingIssue?.action
+
         if let actionListArray = drivingIssue?.actionList, actionListArray.count > 0  {
             actionButton.isHidden = false
         } else {
@@ -59,7 +61,19 @@ class UpdateActionController: RideSafeViewController {
         statusLabel.text = drivingIssue?.status
         
         setBackButton()
-        self.makeDropDow(["PENDING", "VOID", "RESOLVED"])
+
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .FieldOfficial {
+            self.actionTextView.placeholder = "Action Taken"
+            self.actionTextView.text = ""
+            self.makeDropDow(["PENDING", "VOID", "RESOLVED"])
+        }
+        else {
+            issueUpdateUiContainer.isHidden = true
+            updateButton.isHidden = true
+            updateButtonBottomConstraint.constant = 0
+            updateButtonheightConstraint.constant = 0
+        }
     }
     
     private func makeDropDow(_ statusArray: [String]) {
