@@ -148,7 +148,7 @@
 		2C1566AB2058238800B4067C /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		2C1566B020582F8D00B4067C /* DistrictList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictList.swift; sourceTree = "<group>"; };
 		2C1566B620584B7400B4067C /* SwiftLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLoader.swift; sourceTree = "<group>"; };
-		2C1EE2AC204E5A440093B3BF /* RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1EE2AC204E5A440093B3BF /* JK RideSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JK RideSafe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1EE2AF204E5A440093B3BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1EE2B4204E5A440093B3BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C1EE2B6204E5A440093B3BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 		2C1EE2AD204E5A440093B3BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C1EE2AC204E5A440093B3BF /* RideSafe.app */,
+				2C1EE2AC204E5A440093B3BF /* JK RideSafe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -723,9 +723,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C1EE2AB204E5A440093B3BF /* RideSafe */ = {
+		2C1EE2AB204E5A440093B3BF /* JK RideSafe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */;
+			buildConfigurationList = 2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "JK RideSafe" */;
 			buildPhases = (
 				91533EB2DEB4513B7994C958 /* [CP] Check Pods Manifest.lock */,
 				2C1EE2A8204E5A440093B3BF /* Sources */,
@@ -739,9 +739,9 @@
 			);
 			dependencies = (
 			);
-			name = RideSafe;
+			name = "JK RideSafe";
 			productName = RideSafe;
-			productReference = 2C1EE2AC204E5A440093B3BF /* RideSafe.app */;
+			productReference = 2C1EE2AC204E5A440093B3BF /* JK RideSafe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -760,7 +760,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */;
+			buildConfigurationList = 2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "JK RideSafe" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -775,7 +775,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C1EE2AB204E5A440093B3BF /* RideSafe */,
+				2C1EE2AB204E5A440093B3BF /* JK RideSafe */,
 			);
 		};
 /* End PBXProject section */
@@ -1219,7 +1219,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "RideSafe" */ = {
+		2C1EE2A7204E5A440093B3BF /* Build configuration list for PBXProject "JK RideSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C1EE2BC204E5A440093B3BF /* Debug */,
@@ -1228,7 +1228,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "RideSafe" */ = {
+		2C1EE2BE204E5A440093B3BF /* Build configuration list for PBXNativeTarget "JK RideSafe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C1EE2BF204E5A440093B3BF /* Debug */,

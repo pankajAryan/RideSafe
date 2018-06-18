@@ -421,41 +421,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CCS-Kv-Loe">
                                         <rect key="frame" x="16" y="39" width="288" height="36"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: JK" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRG-c1-AZt">
-                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="36"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R6y-YG-ByD">
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="36"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="3hk-dB-921" id="FZb-EO-khf"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 01C" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGo-bw-ObZ">
-                                                <rect key="frame" x="99.5" y="0.0" width="89" height="36"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="3hk-dB-921" id="qQF-mc-NOA"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: 1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEJ-LD-6az">
-                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="36"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="3hk-dB-921" id="Ig1-hD-Fnp"/>
-                                                </connections>
-                                            </textField>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="36" id="W9s-lB-U0q"/>
                                         </constraints>
                                     </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: JK01C1234" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRG-c1-AZt">
+                                        <rect key="frame" x="24" y="39" width="272" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="3hk-dB-921" id="FZb-EO-khf"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-h8-vde">
+                                        <rect key="frame" x="16" y="39" width="288" height="36"/>
+                                        <connections>
+                                            <action selector="vehicleNumberDidTap:" destination="3hk-dB-921" eventType="touchUpInside" id="QnL-cy-Ult"/>
+                                        </connections>
+                                    </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J7g-m3-ad6">
                                         <rect key="frame" x="16" y="131" width="288" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -544,21 +534,27 @@
                                     <constraint firstItem="EdH-7F-eR6" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="29A-MM-ZUX"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="height" secondItem="Htp-Lj-Me7" secondAttribute="height" constant="8" id="3Su-Gz-PX1"/>
                                     <constraint firstItem="nX7-lu-eSM" firstAttribute="top" secondItem="NHf-lz-QOe" secondAttribute="top" constant="8" id="3tk-63-mgw"/>
+                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="top" id="7iT-pw-wdu"/>
+                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="leading" secondItem="CCS-Kv-Loe" secondAttribute="leading" constant="8" id="AfM-sg-GfR"/>
                                     <constraint firstItem="Nir-Mn-CLa" firstAttribute="leading" secondItem="VII-bl-Cwx" secondAttribute="leading" constant="8" id="AtL-76-JfO"/>
                                     <constraint firstAttribute="bottom" secondItem="NHf-lz-QOe" secondAttribute="bottom" constant="16" id="B0m-9L-5jN"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="centerY" secondItem="NHf-lz-QOe" secondAttribute="centerY" id="Cxb-HC-hkZ"/>
+                                    <constraint firstItem="aeh-h8-vde" firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" id="Dna-W6-UIw"/>
                                     <constraint firstItem="CCS-Kv-Loe" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="E2Y-32-8Cq"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZNB-Yb-Uhu" secondAttribute="trailing" constant="100" id="EG6-nP-YDW"/>
                                     <constraint firstItem="VII-bl-Cwx" firstAttribute="width" secondItem="J7g-m3-ad6" secondAttribute="width" id="FE1-bb-YWB"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="height" secondItem="NHf-lz-QOe" secondAttribute="height" id="GV0-mg-wrs"/>
                                     <constraint firstItem="EF0-cY-evQ" firstAttribute="trailing" secondItem="Nir-Mn-CLa" secondAttribute="trailing" constant="4" id="Gfm-Cz-UI7"/>
+                                    <constraint firstItem="aeh-h8-vde" firstAttribute="bottom" secondItem="CCS-Kv-Loe" secondAttribute="bottom" id="N19-dU-4qz"/>
                                     <constraint firstItem="EdH-7F-eR6" firstAttribute="trailing" secondItem="J7g-m3-ad6" secondAttribute="trailing" id="Nyp-4P-qgF"/>
                                     <constraint firstItem="CCS-Kv-Loe" firstAttribute="top" secondItem="ZNB-Yb-Uhu" secondAttribute="bottom" constant="8" id="PP6-sj-nDl"/>
                                     <constraint firstItem="EdH-7F-eR6" firstAttribute="top" secondItem="J7g-m3-ad6" secondAttribute="bottom" constant="8" id="Rqt-tM-6bB"/>
                                     <constraint firstItem="EF0-cY-evQ" firstAttribute="leading" secondItem="Htp-Lj-Me7" secondAttribute="trailing" constant="-8" id="T47-bq-ZPb"/>
                                     <constraint firstItem="VII-bl-Cwx" firstAttribute="height" secondItem="Nir-Mn-CLa" secondAttribute="height" id="TO0-iE-o0I"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="trailing" secondItem="EdH-7F-eR6" secondAttribute="trailing" id="Ufp-X0-AxP"/>
+                                    <constraint firstItem="aeh-h8-vde" firstAttribute="leading" secondItem="CCS-Kv-Loe" secondAttribute="leading" id="V4s-wV-pwV"/>
                                     <constraint firstItem="EF0-cY-evQ" firstAttribute="centerY" secondItem="J7g-m3-ad6" secondAttribute="centerY" id="XHQ-gm-cxi"/>
+                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="bottom" secondItem="CCS-Kv-Loe" secondAttribute="bottom" id="XzQ-c9-xyA"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="leading" secondItem="VII-bl-Cwx" secondAttribute="leading" id="ZLb-AS-HWZ"/>
                                     <constraint firstItem="Nir-Mn-CLa" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="bottom" constant="8" id="axm-rz-XVa"/>
                                     <constraint firstItem="ZNB-Yb-Uhu" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="cTL-ky-q9N"/>
@@ -571,9 +567,10 @@
                                     <constraint firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" constant="16" id="jqk-6x-1fv"/>
                                     <constraint firstItem="nX7-lu-eSM" firstAttribute="bottom" secondItem="NHf-lz-QOe" secondAttribute="bottom" constant="-8" id="lSE-Sb-Qws"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="mHJ-5Z-xC0"/>
-                                    <constraint firstItem="VII-bl-Cwx" firstAttribute="leading" secondItem="lRG-c1-AZt" secondAttribute="leading" id="rcv-Xl-SxT"/>
+                                    <constraint firstItem="aeh-h8-vde" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="top" id="mRM-Jk-sgX"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="top" secondItem="Htp-Lj-Me7" secondAttribute="top" constant="-4" id="uSv-Wx-bUS"/>
                                     <constraint firstItem="EdH-7F-eR6" firstAttribute="leading" secondItem="J7g-m3-ad6" secondAttribute="leading" id="uVB-aT-A5n"/>
+                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" constant="-8" id="uVh-L2-46w"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="leading" secondItem="nX7-lu-eSM" secondAttribute="leading" constant="-16" id="vO0-Zw-VVB"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="top" secondItem="NHf-lz-QOe" secondAttribute="top" id="vfU-HE-t2E"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="top" secondItem="EdH-7F-eR6" secondAttribute="bottom" constant="8" id="wbA-jr-V40"/>
@@ -719,8 +716,6 @@
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
                         <outlet property="vehicleFirstField" destination="lRG-c1-AZt" id="oBK-9Q-54f"/>
                         <outlet property="vehicleNumber" destination="ZNB-Yb-Uhu" id="dID-zn-YDf"/>
-                        <outlet property="vehicleSecondField" destination="gGo-bw-ObZ" id="Ryz-5Z-l3D"/>
-                        <outlet property="vehicleThirdField" destination="PEJ-LD-6az" id="XTA-SF-8NV"/>
                         <outlet property="vehicleTypeView" destination="Nir-Mn-CLa" id="xxQ-Bo-KBl"/>
                     </connections>
                 </viewController>

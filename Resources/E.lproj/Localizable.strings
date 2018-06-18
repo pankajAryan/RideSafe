@@ -6,10 +6,10 @@
 "Describe issue" = "Describe issue";
 "Vehicle Number" = "Vehicle Number";
 "Select Driving Issues" = "Select Driving Issues" ;
-"Eg: JK" = "Eg: JK" ;
-"Eg: 01C" = "Eg: 01C";
-"Eg: 1234" = "Eg: 1234";
-"Road Infra" = "Road Infra"; //
+"Eg: JK" = "Eg: JK01C1234" ;
+//"Eg: 01C" = "Eg: 01C";
+//"Eg: 1234" = "Eg: 1234";
+"Road Infra" = "Road Infra"; 
 "Help Line" = "Help Line";
 "Education" = "Education" ;
 "Emergency Contacts" = "Emergency Contacts" ;

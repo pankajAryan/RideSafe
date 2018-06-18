@@ -18,8 +18,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
-    @IBOutlet weak var vehicleThirdField: UITextField!
-    @IBOutlet weak var vehicleSecondField: UITextField!
+//    @IBOutlet weak var vehicleThirdField: UITextField!
+//    @IBOutlet weak var vehicleSecondField: UITextField!
     @IBOutlet weak var vehicleFirstField: UITextField!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
@@ -93,9 +93,9 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         self.navigationItem.titleView = imageView
         setRightButton()
         
-        vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
-        vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
-        vehicleThirdField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+//        vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+//        vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+//        vehicleThirdField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
     }
     
     private func setRightButton() {
@@ -114,29 +114,32 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         self.navigationController?.pushViewController(notificationViewController, animated: true)
     }
         
-    
-    @objc func textFieldDidChange(textField: UITextField){
-        
-        let text = textField.text
-        
-        switch textField{
-        case vehicleFirstField:
-            if text?.count == 2 {
-            vehicleSecondField.becomeFirstResponder()
-            }
-        case vehicleSecondField:
-            if text?.count == 3 {
-            vehicleThirdField.becomeFirstResponder()
-            }
-        case vehicleThirdField:
-            if text?.count == 4 {
-                vehicleThirdField.resignFirstResponder()
-            }
-        default:
-            break
-        }
+    @IBAction func vehicleNumberDidTap(_ sender: Any) {
         
     }
+    
+//    @objc func textFieldDidChange(textField: UITextField){
+//
+//        let text = textField.text
+//
+//        switch textField{
+//        case vehicleFirstField:
+//            if text?.count == 2 {
+//            vehicleSecondField.becomeFirstResponder()
+//            }
+//        case vehicleSecondField:
+//            if text?.count == 3 {
+//            vehicleThirdField.becomeFirstResponder()
+//            }
+//        case vehicleThirdField:
+//            if text?.count == 4 {
+//                vehicleThirdField.resignFirstResponder()
+//            }
+//        default:
+//            break
+//        }
+//
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locVal = manager.location?.coordinate else { return }
@@ -191,8 +194,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     private func clearInputFields() {
         descriptionText.resignFirstResponder()
         vehicleFirstField.text = ""
-        vehicleSecondField.text = ""
-        vehicleThirdField.text = " "
+//        vehicleSecondField.text = ""
+//        vehicleThirdField.text = " "
         vehicleType = ""
         drivingIssues = []
         descriptionText.text = ""
@@ -213,7 +216,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             "categoryIds": catagoryIds(),
             "postedBy": citizenId,
             "uploadedImageURL": self.imageUrl ?? "",
-            "vehicleNumber": vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! ,
+            "vehicleNumber": vehicleFirstField.text!,
             "vehicleType": vehicleType])
             .then { response -> () in
                 self.clearInputFields()
@@ -225,7 +228,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     func uploadImage() {
         
-        if (vehicleFirstField.text?.isEmpty)! || (vehicleSecondField.text?.isEmpty)! || (vehicleThirdField.text?.isEmpty)! || vehicleType.count == 0 || drivingIssues.count == 0 {
+        if (vehicleFirstField.text?.isEmpty)! || vehicleType.count == 0 || drivingIssues.count == 0 {
             let alert =  UIAlertController(title: "", message: "Veicle No,Vehicle type and Driving issues are mandatory", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler:nil))
             self.present(alert, animated: true, completion: nil)
@@ -246,7 +249,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     func sendSMS() {
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
-          let body  = "JHQP3:lat: " + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + vehicleSecondField.text! + vehicleThirdField.text! + ":vehicleType:" + vehicleType
+          let body  = "JHQP3:lat: " + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + ":vehicleType:" + vehicleType
             controller.body = body
             controller.recipients = ["9220592205"]
             controller.messageComposeDelegate = self
@@ -491,8 +494,8 @@ extension DashboardController:SettingControllerProtocol {
     
     func setLocalizedText() {
         vehicleFirstField.placeholder = "Eg: JK".localized
-        vehicleSecondField.placeholder = "Eg: 01C".localized
-        vehicleThirdField.placeholder = "Eg: 1234".localized
+//        vehicleSecondField.placeholder = "Eg: 01C".localized
+//        vehicleThirdField.placeholder = "Eg: 1234".localized
         vehicleNumber.text = "Vehicle Number".localized
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
