@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().shouldResignOnTouchOutside = true
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         setRootVC()
 
         registerForPushNotificationAndAnalytics(application)

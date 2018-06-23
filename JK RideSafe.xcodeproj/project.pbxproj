@@ -86,6 +86,7 @@
 		2CF7E5812089166000BE4D84 /* ActionListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E5802089166000BE4D84 /* ActionListItem.swift */; };
 		2CF7E587208BC27900BE4D84 /* UIViewController+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */; };
 		2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFCDA2020832170007C9C99 /* RatingController.swift */; };
+		91A69E4A101E31E129D8E7DA /* Pods_JK_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3011A8E533982EC002C94872 /* Pods_JK_RideSafe.framework */; };
 		B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD992065E15600475AB9 /* MyRoadInfraIssueResponse.swift */; };
 		B803CD9C2065E15700475AB9 /* MyRoadInfraIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803CD9A2065E15600475AB9 /* MyRoadInfraIssue.swift */; };
 		B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */; };
@@ -132,7 +133,6 @@
 		B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77072095C97A00CA603A /* DistrictResponse.swift */; };
 		B8ED770A2095C97C00CA603A /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77082095C97B00CA603A /* District.swift */; };
 		B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */; };
-		C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -217,9 +217,8 @@
 		2CF7E5802089166000BE4D84 /* ActionListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionListItem.swift; sourceTree = "<group>"; };
 		2CF7E586208BC27900BE4D84 /* UIViewController+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extention.swift"; sourceTree = "<group>"; };
 		2CFCDA2020832170007C9C99 /* RatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingController.swift; sourceTree = "<group>"; };
-		4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
-		A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe.release.xcconfig"; sourceTree = "<group>"; };
-		A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3011A8E533982EC002C94872 /* Pods_JK_RideSafe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JK_RideSafe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE333A7AC5A2B1EC681D6E7 /* Pods-JK RideSafe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.debug.xcconfig"; sourceTree = "<group>"; };
 		B803CD992065E15600475AB9 /* MyRoadInfraIssueResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoadInfraIssueResponse.swift; sourceTree = "<group>"; };
 		B803CD9A2065E15600475AB9 /* MyRoadInfraIssue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRoadInfraIssue.swift; sourceTree = "<group>"; };
 		B811FE1F205F5183005F327B /* RoadInfraIssue.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RoadInfraIssue.storyboard; sourceTree = "<group>"; };
@@ -266,6 +265,7 @@
 		B8ED77072095C97A00CA603A /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
 		B8ED77082095C97B00CA603A /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMapViewController.swift; sourceTree = "<group>"; };
+		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,7 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C91776FA71EC69FAC14907C7 /* Pods_RideSafe.framework in Frameworks */,
+				91A69E4A101E31E129D8E7DA /* Pods_JK_RideSafe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +283,8 @@
 		09B9843564E829FFDA27C580 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */,
-				A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */,
+				7DE333A7AC5A2B1EC681D6E7 /* Pods-JK RideSafe.debug.xcconfig */,
+				EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -585,7 +585,7 @@
 		8466DFB9820459677EFEA6B8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A7A60E8E27C9CB4C6C70ECF3 /* Pods_RideSafe.framework */,
+				3011A8E533982EC002C94872 /* Pods_JK_RideSafe.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -732,7 +732,6 @@
 				2C1EE2A9204E5A440093B3BF /* Frameworks */,
 				2C1EE2AA204E5A440093B3BF /* Resources */,
 				269D99F0DFFF07F916A454E6 /* [CP] Embed Pods Frameworks */,
-				8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */,
 				2CF7E5822089ECB900BE4D84 /* Run Script */,
 			);
 			buildRules = (
@@ -827,7 +826,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -862,7 +861,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		2CF7E5822089ECB900BE4D84 /* Run Script */ = {
@@ -879,21 +878,6 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" fa506f2d0c79bb4c344d622501053e44b4abe05d c49739fc7d8fcbdd04b9ac3768b5b351ba23a481dce95b8ab3939dc646ef12fd";
 		};
-		8A1C3F5562934195EEF92836 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideSafe/Pods-RideSafe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		91533EB2DEB4513B7994C958 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -905,7 +889,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RideSafe-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-JK RideSafe-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1178,7 +1162,7 @@
 		};
 		2C1EE2BF204E5A440093B3BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C0699C1E84DD13D1412451D /* Pods-RideSafe.debug.xcconfig */;
+			baseConfigurationReference = 7DE333A7AC5A2B1EC681D6E7 /* Pods-JK RideSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1198,7 +1182,7 @@
 		};
 		2C1EE2C0204E5A440093B3BF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6BE9D3C07882EFAD08A7E57 /* Pods-RideSafe.release.xcconfig */;
+			baseConfigurationReference = EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
