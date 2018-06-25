@@ -14,6 +14,7 @@ class HelplineAdministrationViewController: RideSafeViewController {
     @IBOutlet weak var helpLineTableView: UITableView!
     var mvdDirectoryList:[Directory] = []
     var administrationDirectoryList: [Directory] = []
+    var policeDirectoryList: [Directory] = []
     var selectedSegmented:Int = 0
     var districId:String? = "4"
     @IBOutlet weak var noRecordShowLabel: UILabel!
@@ -30,12 +31,16 @@ class HelplineAdministrationViewController: RideSafeViewController {
                 let directoryResponse = DirectoryResponse(dictionary: response as NSDictionary)
                 self.administrationDirectoryList = (directoryResponse?.responseObject)!
                 return NetworkManager().doServiceCall(serviceType: .getDepartmentDirectoryListByDepartment, params: ["department": "MVD", "districtId": self.districId!])
-            }.then { response -> () in 
+            }.then { response -> Promise<[String:Any]> in
                 let directoryResponse = DirectoryResponse(dictionary: response as NSDictionary)
                 self.mvdDirectoryList = (directoryResponse?.responseObject)!
+                return NetworkManager().doServiceCall(serviceType: .getDepartmentDirectoryListByDepartment, params: ["department": "Police", "districtId": self.districId!])
+            }.then { response -> () in
+                let directoryResponse = DirectoryResponse(dictionary: response as NSDictionary)
+                self.policeDirectoryList = (directoryResponse?.responseObject)!
                 self.helpLineTableView.reloadData()
-                }.catch { (error) in
-                    self.showError(error: error)
+            }.catch { (error) in
+                self.showError(error: error)
         }
     }
 }
@@ -51,13 +56,20 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
                 noRecordShowLabel.alpha = 0.0
             }
             return self.administrationDirectoryList.count
-        } else {
+        } else if selectedSegmented == 1 {
             if self.mvdDirectoryList.count == 0 {
                 noRecordShowLabel.alpha = 1.0
             } else {
                 noRecordShowLabel.alpha = 0.0
             }
             return self.mvdDirectoryList.count
+        }else {
+            if self.policeDirectoryList.count == 0 {
+                noRecordShowLabel.alpha = 1.0
+            } else {
+                noRecordShowLabel.alpha = 0.0
+            }
+            return self.policeDirectoryList.count
         }
     }
     
@@ -68,8 +80,10 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
         var directory: Directory
         if selectedSegmented == 0 {
             directory = self.administrationDirectoryList[indexPath.row]
-        } else {
+        } else  if selectedSegmented == 1 {
             directory = self.mvdDirectoryList[indexPath.row]
+        }else{
+            directory = self.policeDirectoryList[indexPath.row]
         }
         
         cell.nameLabel.text = directory.name

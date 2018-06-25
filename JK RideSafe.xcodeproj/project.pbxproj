@@ -755,7 +755,7 @@
 				TargetAttributes = {
 					2C1EE2AB204E5A440093B3BF = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1165,16 +1165,17 @@
 			baseConfigurationReference = 7DE333A7AC5A2B1EC681D6E7 /* Pods-JK RideSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = E2QM53C59J;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.ridesafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4d85ecf8-876e-4be1-b1cd-7a9e2323c9fb";
+				PROVISIONING_PROFILE_SPECIFIER = RideSafe_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1185,16 +1186,17 @@
 			baseConfigurationReference = EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = E2QM53C59J;
 				INFOPLIST_FILE = RideSafe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.ridesafe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.RideSafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "4d85ecf8-876e-4be1-b1cd-7a9e2323c9fb";
+				PROVISIONING_PROFILE_SPECIFIER = RideSafe_Dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

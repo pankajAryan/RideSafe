@@ -49,7 +49,9 @@ public class DistrictResponse {
 */
 	required public init?(dictionary: NSDictionary) {
 
-        if (dictionary["responseObject"] != nil) { responseObject = District.modelsFromDictionaryArray(array: dictionary["responseObject"] as! NSArray) }
+        if (dictionary["responseObject"] != nil) {
+        let dict = dictionary["responseObject"] as! NSDictionary
+        responseObject = District.modelsFromDictionaryArray(array: dict["districtList"] as! NSArray) }
 		errorCode = dictionary["errorCode"] as? Int
 		errorMessage = dictionary["errorMessage"] as? String
 	}

@@ -26,7 +26,9 @@ class RegistrationController: RideSafeViewController {
     
     private func getDistrict() {
         firstly{
-            NetworkManager().doServiceCall(serviceType: .getDistrictListForApp, params: [:])
+            NetworkManager().doServiceCall(serviceType: .getDistrictList, params: ["startIndex": "-1","searchString": "",
+                                                                                   "length": "10","sortBy": "NAME",
+                                                                                   "order": "A","status": "T"])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 let dictList = json4Swift_Base?.responseObject

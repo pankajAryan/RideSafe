@@ -26,6 +26,7 @@ class HelpLineContainerViewController: RideSafeViewController {
         self.title = "Helpline"
         segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
         segmentedController.setTitle("MVD", forSegmentAt: 1)
+        segmentedController.setTitle("Police", forSegmentAt: 2)
         segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
 
         segmentedController.backgroundColor = UIColor.white
@@ -47,9 +48,9 @@ class HelpLineContainerViewController: RideSafeViewController {
         rightButton.titleLabel?.font = UIFont.init(name: "Poppins-Medium", size: 11.0)!
         rightButton.setImage(#imageLiteral(resourceName: "dropdown-1"), for: .normal)
         rightButton.semanticContentAttribute = .forceRightToLeft
-
         rightButton.contentHorizontalAlignment = .right
         rightButton.contentVerticalAlignment = .center
+        rightButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 7)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightButton)
     }
     
@@ -68,7 +69,9 @@ class HelpLineContainerViewController: RideSafeViewController {
     
     private func getDistrict() {
         firstly{
-            NetworkManager().doServiceCall(serviceType: .getDistrictListForApp, params: [:])
+            NetworkManager().doServiceCall(serviceType: .getDistrictList, params: ["startIndex": "-1","searchString": "",
+                                                                                   "length": "10","sortBy": "NAME",
+                                                                                   "order": "A","status": "T"])
             }.then { response -> () in
                 let json4Swift_Base = DistrictResponse(dictionary: response as NSDictionary)
                 SharedSettings.shared.districtResponse = json4Swift_Base
@@ -104,14 +107,20 @@ class HelpLineContainerViewController: RideSafeViewController {
         helpLineViewController?.helpLineTableView.reloadData()
     }
     
+    func switchPoliceTab() {
+        helpLineViewController?.selectedSegmented = 2
+        helpLineViewController?.helpLineTableView.reloadData()
+    }
+    
     @IBAction func selectedSegmentedController(_ sender: SWSegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             switchtoAdministrationTab()
-        } else {
+        } else if sender.selectedSegmentIndex == 1 {
             switchMVDTab()
+        }else {
+            switchPoliceTab()
         }
     }
-
 }
 
 
