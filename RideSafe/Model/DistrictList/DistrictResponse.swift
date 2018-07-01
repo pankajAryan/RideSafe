@@ -47,14 +47,19 @@ public class DistrictResponse {
 
     - returns: DistrictResponse Instance.
 */
-	required public init?(dictionary: NSDictionary) {
-
+    required public init?(dictionary: NSDictionary) {
+        
         if (dictionary["responseObject"] != nil) {
-        let dict = dictionary["responseObject"] as! NSDictionary
-        responseObject = District.modelsFromDictionaryArray(array: dict["districtList"] as! NSArray) }
-		errorCode = dictionary["errorCode"] as? Int
-		errorMessage = dictionary["errorMessage"] as? String
-	}
+            
+            if let arr = dictionary["responseObject"] as? NSArray {
+                responseObject = District.modelsFromDictionaryArray(array: arr)
+            }else if let dict = dictionary["responseObject"] as? NSDictionary {
+                responseObject = District.modelsFromDictionaryArray(array: dict["districtList"] as! NSArray)
+            }
+        }
+        errorCode = dictionary["errorCode"] as? Int
+        errorMessage = dictionary["errorMessage"] as? String
+    }
 
 		
 /**

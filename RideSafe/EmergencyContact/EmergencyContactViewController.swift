@@ -17,7 +17,7 @@ class EmergencyContactViewController: RideSafeViewController {
     @IBOutlet weak var contact3: UITextField!
     @IBOutlet weak var liveLocationSwitch: UISwitch!
     var  contactPickerScene: ContactsPicker!
-    var isContactAvailable: Bool!
+    var isContactAvailable = false
     var selectedTextField: UITextField!
 
     override func viewDidLoad() {
@@ -112,9 +112,15 @@ extension EmergencyContactViewController:  ContactsPickerDelegate {
     {
         print("Contact \(contact.displayName) has been selected")
         contactPickerScene.dismiss(animated: true)
-        selectedTextField.text = contact.phoneNumbers.first?.phoneNumber
+        
+        let nonDigitCharacterSet = NSCharacterSet.decimalDigits.inverted
+        
+        selectedTextField.text = contact.phoneNumbers.first?.phoneNumber.components(separatedBy: nonDigitCharacterSet).joined(separator: "")
     }
-    
+    func contactPicker(_: ContactsPicker, didCancel error: NSError) {
+        print("Cancel has been selected")
+        contactPickerScene.dismiss(animated: true)
+    }
 }
 
 extension EmergencyContactViewController: UITextFieldDelegate {

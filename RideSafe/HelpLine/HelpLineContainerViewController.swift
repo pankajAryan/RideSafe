@@ -24,9 +24,10 @@ class HelpLineContainerViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Helpline"
+        segmentedController.items = ["ADMINISTRATION","MVD","POLICE"]
         segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
         segmentedController.setTitle("MVD", forSegmentAt: 1)
-        segmentedController.setTitle("Police", forSegmentAt: 2)
+        segmentedController.setTitle("POLICE", forSegmentAt: 2)
         segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
 
         segmentedController.backgroundColor = UIColor.white

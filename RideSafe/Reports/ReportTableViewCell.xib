@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportTableViewCellIdentifier" rowHeight="398" id="KGk-i7-Jjw" customClass="ReportTableViewCell" customModule="RideSafe" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReportTableViewCellIdentifier" rowHeight="382" id="KGk-i7-Jjw" customClass="ReportTableViewCell" customModule="JK_RideSafe" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="422"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -155,6 +155,7 @@
                         <constraints>
                             <constraint firstItem="KK8-nA-i3z" firstAttribute="top" secondItem="2sl-ky-igd" secondAttribute="bottom" constant="8" id="0Qf-J9-kqn"/>
                             <constraint firstItem="mvg-m3-H4j" firstAttribute="top" secondItem="BvM-ew-7LA" secondAttribute="bottom" constant="8" id="1Jn-mJ-Fe7"/>
+                            <constraint firstItem="BvM-ew-7LA" firstAttribute="top" relation="greaterThanOrEqual" secondItem="goV-6G-sLI" secondAttribute="bottom" constant="4" id="2Ud-0Q-bMe"/>
                             <constraint firstAttribute="trailing" secondItem="8zj-e4-GOR" secondAttribute="trailing" constant="8" id="6En-Se-2eh"/>
                             <constraint firstItem="aF1-np-tfn" firstAttribute="top" secondItem="JAt-8I-2Ly" secondAttribute="top" constant="5" id="6O3-NK-4xz"/>
                             <constraint firstItem="2sl-ky-igd" firstAttribute="top" secondItem="aF1-np-tfn" secondAttribute="bottom" constant="10" id="6yu-iY-b0m"/>
@@ -170,6 +171,7 @@
                             <constraint firstItem="NAc-lA-TDN" firstAttribute="centerY" secondItem="2sl-ky-igd" secondAttribute="centerY" id="cFL-HG-FbU"/>
                             <constraint firstItem="naN-FO-DgJ" firstAttribute="top" secondItem="KK8-nA-i3z" secondAttribute="bottom" constant="8" id="cTT-Kx-MFI"/>
                             <constraint firstAttribute="bottom" secondItem="mvg-m3-H4j" secondAttribute="bottom" constant="8" id="cks-Mg-D2B"/>
+                            <constraint firstItem="BvM-ew-7LA" firstAttribute="top" secondItem="naN-FO-DgJ" secondAttribute="bottom" constant="8" id="ggU-ZR-dkg"/>
                             <constraint firstItem="dPO-oW-wW7" firstAttribute="bottom" secondItem="aF1-np-tfn" secondAttribute="bottom" id="hJe-lo-gh8"/>
                             <constraint firstItem="goV-6G-sLI" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="mJh-uX-cbd"/>
                             <constraint firstAttribute="trailing" secondItem="KK8-nA-i3z" secondAttribute="trailing" constant="8" id="n7O-C5-Ben"/>
@@ -180,7 +182,6 @@
                             <constraint firstItem="KK8-nA-i3z" firstAttribute="leading" secondItem="JAt-8I-2Ly" secondAttribute="leading" constant="8" id="t1k-2A-Skx"/>
                             <constraint firstItem="NAc-lA-TDN" firstAttribute="trailing" secondItem="aF1-np-tfn" secondAttribute="trailing" id="tLl-LB-vrz"/>
                             <constraint firstAttribute="trailing" secondItem="naN-FO-DgJ" secondAttribute="trailing" constant="8" id="ugj-xH-AeW"/>
-                            <constraint firstItem="BvM-ew-7LA" firstAttribute="top" secondItem="naN-FO-DgJ" secondAttribute="bottom" constant="8" id="uz6-p9-6eC"/>
                         </constraints>
                     </view>
                 </subviews>
