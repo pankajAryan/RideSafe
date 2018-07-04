@@ -29,6 +29,11 @@ public class FieldOfficer {
 	public var pushNotificationId : String?
 	public var loginStatus : String?
 
+    public var districtId : String?
+    public var districtName : String?
+    public var lastLocationUpdated : String?
+    public var pendingIssueCount : String?
+
 /**
     Returns an array of models based on given dictionary.
     
@@ -76,6 +81,11 @@ public class FieldOfficer {
 		deviceOS = dictionary["deviceOS"] as? String
 		pushNotificationId = dictionary["pushNotificationId"] as? String
 		loginStatus = dictionary["loginStatus"] as? String
+        
+        districtId = dictionary["districtId"] as? String
+        districtName = dictionary["districtName"] as? String
+        lastLocationUpdated = dictionary["lastLocationUpdated"] as? String
+        pendingIssueCount = dictionary["pendingIssueCount"] as? String
 	}
 
 		
@@ -104,6 +114,11 @@ public class FieldOfficer {
 		dictionary.setValue(self.pushNotificationId, forKey: "pushNotificationId")
 		dictionary.setValue(self.loginStatus, forKey: "loginStatus")
 
+        dictionary.setValue(self.districtId, forKey: "districtId")
+        dictionary.setValue(self.districtName, forKey: "districtName")
+        dictionary.setValue(self.lastLocationUpdated, forKey: "lastLocationUpdated")
+        dictionary.setValue(self.pendingIssueCount, forKey: "pendingIssueCount")
+        
 		return dictionary
 	}
 

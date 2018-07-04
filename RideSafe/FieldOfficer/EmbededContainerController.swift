@@ -49,11 +49,7 @@ class EmbededContainerController: RideSafeViewController {
         
         self.segueIdentifier = identifier
         self.performSegue(withIdentifier: self.segueIdentifier, sender: nil)
-        
     }
-    
-    
-    
     
     override open func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier{

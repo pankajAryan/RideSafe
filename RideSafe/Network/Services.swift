@@ -45,6 +45,7 @@ enum ServiceType: String {
     // Escalation official apis
     case getDrivingIssueListForEscalationLevel1 = "getDrivingIssueListForEscalationLevel1"
     case getDrivingIssueListForEscalationLevel2 = "getDrivingIssueListForEscalationLevel2"
+    case getDrivingIssueListForEscalationOfficer = "getDrivingIssueListForEscalationOfficer"
     case getEscalationOfficialById              = "getEscalationOfficialById"
     case logoutEscalationOfficial               = "logoutEscalationOfficial"
     case registerEscalationOfficialPushNotificationId = "registerEscalationOfficialPushNotificationId"

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         <!--Road Infra Issue View Controller-->
         <scene sceneID="gcQ-ND-KCd">
             <objects>
-                <viewController storyboardIdentifier="RoadInfraIssueViewController" id="Hum-IQ-e3f" customClass="RoadInfraIssueViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RoadInfraIssueViewController" id="Hum-IQ-e3f" customClass="RoadInfraIssueViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="B9I-S7-nlo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -73,9 +73,9 @@
                                 <rect key="frame" x="16" y="188.5" width="343" height="70"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="G0t-F7-SIW">
-                                        <rect key="frame" x="8" y="8" width="54" height="54"/>
+                                        <rect key="frame" x="8" y="5" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="54" id="2hd-Eo-x5a"/>
+                                            <constraint firstAttribute="width" constant="60" id="2hd-Eo-x5a"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46o-Oh-vWa">
@@ -93,11 +93,11 @@
                                     <constraint firstItem="46o-Oh-vWa" firstAttribute="leading" secondItem="8yD-54-h7X" secondAttribute="leading" id="AGK-0Q-DYK"/>
                                     <constraint firstAttribute="trailing" secondItem="46o-Oh-vWa" secondAttribute="trailing" id="CVO-8L-y32"/>
                                     <constraint firstItem="46o-Oh-vWa" firstAttribute="top" secondItem="8yD-54-h7X" secondAttribute="top" id="Mht-zk-m7l"/>
-                                    <constraint firstAttribute="bottom" secondItem="G0t-F7-SIW" secondAttribute="bottom" constant="8" id="WIn-UA-GE7"/>
+                                    <constraint firstAttribute="bottom" secondItem="G0t-F7-SIW" secondAttribute="bottom" constant="5" id="WIn-UA-GE7"/>
                                     <constraint firstAttribute="height" constant="70" id="Zce-vu-if9"/>
                                     <constraint firstItem="G0t-F7-SIW" firstAttribute="leading" secondItem="8yD-54-h7X" secondAttribute="leading" constant="8" id="vUR-N2-KRe"/>
                                     <constraint firstAttribute="bottom" secondItem="46o-Oh-vWa" secondAttribute="bottom" id="xKy-bZ-y88"/>
-                                    <constraint firstItem="G0t-F7-SIW" firstAttribute="top" secondItem="8yD-54-h7X" secondAttribute="top" constant="8" id="xdh-of-7zW"/>
+                                    <constraint firstItem="G0t-F7-SIW" firstAttribute="top" secondItem="8yD-54-h7X" secondAttribute="top" constant="5" id="xdh-of-7zW"/>
                                 </constraints>
                             </view>
                         </subviews>

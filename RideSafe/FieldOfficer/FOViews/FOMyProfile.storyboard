@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,32 +22,38 @@
         <!--My Profile Controller-->
         <scene sceneID="7Mx-KN-hgs">
             <objects>
-                <viewController storyboardIdentifier="FOMyProfileController" id="n6V-1r-VPd" customClass="FOMyProfileController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FOMyProfileController" id="n6V-1r-VPd" customClass="FOMyProfileController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ABo-GI-nAQ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_bg" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-ai-HPz">
+                                <rect key="frame" x="0.0" y="20" width="320" height="225.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="YI1-ai-HPz" secondAttribute="height" multiplier="720:507" id="w6P-mB-0QL"/>
+                                </constraints>
+                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="ic_official_circle" translatesAutoresizingMaskIntoConstraints="NO" id="QFQ-kF-hrN">
-                                <rect key="frame" x="120" y="45" width="80" height="80"/>
+                                <rect key="frame" x="120" y="92.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="2FA-sh-UnK"/>
                                     <constraint firstAttribute="height" constant="80" id="Yox-Yd-lEo"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SIv-Ct-m0W">
-                                <rect key="frame" x="16" y="157" width="288" height="316"/>
+                                <rect key="frame" x="16" y="265.5" width="288" height="290"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L7q-6k-Zxv">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="67"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="60.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9u-em-kHE">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POl-9f-v6B">
-                                                <rect key="frame" x="0.0" y="27" width="288" height="40"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="288" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="Ckm-BE-hVD">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
@@ -56,7 +62,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dqJ-dc-kmp">
-                                                        <rect key="frame" x="8" y="8" width="272" height="23"/>
+                                                        <rect key="frame" x="8" y="11" width="272" height="17"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -77,16 +83,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="T2N-B2-dKe">
-                                        <rect key="frame" x="0.0" y="83" width="288" height="67"/>
+                                        <rect key="frame" x="0.0" y="76.5" width="288" height="60.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ye8-1A-WY4">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p0h-Vy-9E4">
-                                                <rect key="frame" x="0.0" y="27" width="288" height="40"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="288" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="BNR-ZH-Vvu">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
@@ -95,7 +101,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Gg-tM-B9t">
-                                                        <rect key="frame" x="8" y="8" width="272" height="23"/>
+                                                        <rect key="frame" x="8" y="11" width="272" height="17"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -116,16 +122,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cOv-lp-lSH">
-                                        <rect key="frame" x="0.0" y="166" width="288" height="67"/>
+                                        <rect key="frame" x="0.0" y="153" width="288" height="60.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Designation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HsU-Zg-ZnD">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y36-DX-gaL">
-                                                <rect key="frame" x="0.0" y="27" width="288" height="40"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="288" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="dmW-eg-niy">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
@@ -134,7 +140,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E55-vV-mze">
-                                                        <rect key="frame" x="8" y="8" width="272" height="23"/>
+                                                        <rect key="frame" x="8" y="11" width="272" height="17"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -155,16 +161,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tf5-rW-GOI">
-                                        <rect key="frame" x="0.0" y="249" width="288" height="67"/>
+                                        <rect key="frame" x="0.0" y="229.5" width="288" height="60.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="251" text="Department" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egf-VP-jzm">
-                                                <rect key="frame" x="0.0" y="0.0" width="288" height="23"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="288" height="16.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-hF-XLR">
-                                                <rect key="frame" x="0.0" y="27" width="288" height="40"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="288" height="40"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="text_field" translatesAutoresizingMaskIntoConstraints="NO" id="RzZ-TR-9EC">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="40"/>
@@ -173,7 +179,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ok4-Pm-wyi">
-                                                        <rect key="frame" x="8" y="8" width="272" height="23"/>
+                                                        <rect key="frame" x="8" y="11" width="272" height="17"/>
                                                         <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
@@ -198,11 +204,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="IsV-E3-h46" firstAttribute="trailing" secondItem="YI1-ai-HPz" secondAttribute="trailing" id="4ZG-FP-RBd"/>
                             <constraint firstItem="SIv-Ct-m0W" firstAttribute="leading" secondItem="IsV-E3-h46" secondAttribute="leading" constant="16" id="7el-Cu-XIf"/>
-                            <constraint firstItem="SIv-Ct-m0W" firstAttribute="top" secondItem="QFQ-kF-hrN" secondAttribute="bottom" constant="32" id="K11-Y3-xIS"/>
-                            <constraint firstItem="QFQ-kF-hrN" firstAttribute="centerX" secondItem="ABo-GI-nAQ" secondAttribute="centerX" id="KeB-hL-r3I"/>
+                            <constraint firstItem="QFQ-kF-hrN" firstAttribute="centerY" secondItem="YI1-ai-HPz" secondAttribute="centerY" id="DQL-gI-CRW"/>
+                            <constraint firstItem="SIv-Ct-m0W" firstAttribute="top" secondItem="YI1-ai-HPz" secondAttribute="bottom" constant="20" id="Wrj-Gp-fqM"/>
                             <constraint firstItem="IsV-E3-h46" firstAttribute="trailing" secondItem="SIv-Ct-m0W" secondAttribute="trailing" constant="16" id="avl-9d-MuI"/>
-                            <constraint firstItem="QFQ-kF-hrN" firstAttribute="centerY" secondItem="ABo-GI-nAQ" secondAttribute="centerY" multiplier="0.3" id="zFm-yq-Hjy"/>
+                            <constraint firstItem="YI1-ai-HPz" firstAttribute="leading" secondItem="IsV-E3-h46" secondAttribute="leading" id="gGG-ZZ-uVp"/>
+                            <constraint firstItem="QFQ-kF-hrN" firstAttribute="centerX" secondItem="YI1-ai-HPz" secondAttribute="centerX" id="k9t-P5-3dr"/>
+                            <constraint firstItem="YI1-ai-HPz" firstAttribute="top" secondItem="IsV-E3-h46" secondAttribute="top" id="lRc-u1-KgK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IsV-E3-h46"/>
                     </view>
@@ -220,6 +229,7 @@
     </scenes>
     <resources>
         <image name="ic_official_circle" width="80" height="80"/>
+        <image name="logo_bg" width="360" height="253"/>
         <image name="text_field" width="319" height="44"/>
     </resources>
 </document>

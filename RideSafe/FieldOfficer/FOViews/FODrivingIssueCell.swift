@@ -8,10 +8,12 @@
 
 import UIKit
 
-protocol FODrivingIssueCellDelegate: class {
+@objc protocol FODrivingIssueCellDelegate: class {
     
     func openMapViewForRowIndex(index: IndexPath)
     func showActionForRowIndex(index: IndexPath)
+    @objc optional func assignedActionForRowIndex(index: IndexPath)
+
 }
 
 class FODrivingIssueCell: UITableViewCell {
@@ -25,6 +27,7 @@ class FODrivingIssueCell: UITableViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var ratingButton: UIButton!
+    @IBOutlet weak var assignedToButton: UIButton!
 
     var phoneNumber = ""
     var actionTakenNote : String?
@@ -47,6 +50,11 @@ class FODrivingIssueCell: UITableViewCell {
     @IBAction func actionTaken(_ sender: UIButton) {
         
         delegate?.showActionForRowIndex(index: indexPath)
+    }
+    
+    @IBAction func assignedAction(_ sender: UIButton) {
+        
+        delegate?.assignedActionForRowIndex!(index: indexPath)
     }
     
     @IBAction func callReporter(_ sender: UIButton) {

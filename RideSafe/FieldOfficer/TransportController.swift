@@ -24,7 +24,7 @@ class TransportController: RideSafeViewController {
         recordTable.backgroundColor = .clear
         recordTable.separatorStyle = .none
         
-        NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "1"]).then { response -> () in
+        NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "3"]).then { response -> () in
             self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
             self.recordTable.reloadData()
         }
@@ -45,22 +45,10 @@ extension TransportController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "FOContactCell") as? FOContactCell {
-            let contact = fieldOfficers?[indexPath.row]
-            cell.nameLabel.text = contact?.name
-            cell.number = contact?.mobile ?? ""
-            cell.phoneNumber.text = "Ph. \(contact?.mobile ?? "")"
+            cell.configureCell(contact: fieldOfficers?[indexPath.row])
             return cell
         }
         return UITableViewCell()
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
-    }
-    
 }
 

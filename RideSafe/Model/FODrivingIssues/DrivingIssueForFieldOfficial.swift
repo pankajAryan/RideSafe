@@ -32,11 +32,14 @@ public class DrivingIssueForFieldOfficial {
 	public var vehicleNumber : String?
 	public var vehicleType : String?
 	public var postedByMobile : String?
+    public var postedByType : String?
 	public var updatedByMobile : String?
 	public var isLevel1EscalationTriggered : String?
 	public var isLevel2EscalationTriggered : String?
+    public var isLevel3EscalationTriggered : String?
 	public var level1EscalationTriggeredByOfficial : String?
 	public var level2EscalationTriggeredByOfficial : String?
+    public var level3EscalationTriggeredByOfficial : String?
     public var drivingCaseLocationList : Array<DrivingCaseLocationList>?
     public var rating : String?
 
@@ -92,13 +95,16 @@ public class DrivingIssueForFieldOfficial {
 		vehicleNumber = dictionary["vehicleNumber"] as? String
 		vehicleType = dictionary["vehicleType"] as? String
 		postedByMobile = dictionary["postedByMobile"] as? String
+        postedByType = dictionary["postedByType"] as? String
 		updatedByMobile = dictionary["updatedByMobile"] as? String
 		isLevel1EscalationTriggered = dictionary["isLevel1EscalationTriggered"] as? String
 		isLevel2EscalationTriggered = dictionary["isLevel2EscalationTriggered"] as? String
+        isLevel3EscalationTriggered = dictionary["isLevel3EscalationTriggered"] as? String
 		level1EscalationTriggeredByOfficial = dictionary["level1EscalationTriggeredByOfficial"] as? String
 		level2EscalationTriggeredByOfficial = dictionary["level2EscalationTriggeredByOfficial"] as? String
+        level3EscalationTriggeredByOfficial = dictionary["level3EscalationTriggeredByOfficial"] as? String
         if (dictionary["drivingCaseLocationList"] != nil) {
-            drivingCaseLocationList = DrivingCaseLocationList.modelsFromDictionaryArray(array: dictionary["drivingCaseLocationList"] as! NSArray)
+            drivingCaseLocationList = DrivingCaseLocationList.modelsFromDictionaryArray(array: dictionary["drivingCaseLocationList"] as? NSArray ?? NSArray())
         }
         rating = dictionary["rating"] as? String
 
@@ -131,11 +137,14 @@ public class DrivingIssueForFieldOfficial {
 		dictionary.setValue(self.vehicleNumber, forKey: "vehicleNumber")
 		dictionary.setValue(self.vehicleType, forKey: "vehicleType")
 		dictionary.setValue(self.postedByMobile, forKey: "postedByMobile")
+        dictionary.setValue(self.postedByType, forKey: "postedByType")
 		dictionary.setValue(self.updatedByMobile, forKey: "updatedByMobile")
 		dictionary.setValue(self.isLevel1EscalationTriggered, forKey: "isLevel1EscalationTriggered")
 		dictionary.setValue(self.isLevel2EscalationTriggered, forKey: "isLevel2EscalationTriggered")
-		dictionary.setValue(self.level1EscalationTriggeredByOfficial, forKey: "level1EscalationTriggeredByOfficial")
+        dictionary.setValue(self.isLevel3EscalationTriggered, forKey: "isLevel3EscalationTriggered")
+        dictionary.setValue(self.level1EscalationTriggeredByOfficial, forKey: "level1EscalationTriggeredByOfficial")
 		dictionary.setValue(self.level2EscalationTriggeredByOfficial, forKey: "level2EscalationTriggeredByOfficial")
+        dictionary.setValue(self.level3EscalationTriggeredByOfficial, forKey: "level3EscalationTriggeredByOfficial")
         dictionary.setValue(self.rating, forKey: "rating")
 
 		return dictionary

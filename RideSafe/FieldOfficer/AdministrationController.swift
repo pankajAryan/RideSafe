@@ -1,18 +1,18 @@
 //
-//  PoliceController.swift
-//  RideSafe
+//  AdministrationController.swift
+//  JK RideSafe
 //
-//  Created by Pankaj Yadav on 23/03/18.
+//  Created by Rahul Chaudhary on 02/07/18.
 //  Copyright © 2018 Mobiquel. All rights reserved.
 //
 
 import UIKit
 
-class PoliceController: RideSafeViewController {
-
-@IBOutlet weak var recordTable: UITableView!
-var fieldOfficers:[FieldOfficer]?
-
+class AdministrationController: RideSafeViewController {
+    
+    @IBOutlet weak var recordTable: UITableView!
+    var fieldOfficers:[FieldOfficer]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,16 +24,17 @@ var fieldOfficers:[FieldOfficer]?
         recordTable.backgroundColor = .clear
         recordTable.separatorStyle = .none
         
-        NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "2"]).then { response -> () in
+        NetworkManager().doServiceCall(serviceType: .getFellowFieldOfficialList, params: ["fieldOfficialId" : citizenId,"departmentId": "4"]).then { response -> () in
             self.fieldOfficers =  FieldOfficerList(dictionary: response as NSDictionary)?.responseObject
             self.recordTable.reloadData()
-            }.catch { (error) in
+            }
+            .catch { (error) in
                 self.showError(error: error)
         }
     }
 }
 
-extension PoliceController:UITableViewDelegate,UITableViewDataSource {
+extension AdministrationController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fieldOfficers?.count {
             return count
@@ -50,3 +51,4 @@ extension PoliceController:UITableViewDelegate,UITableViewDataSource {
         return UITableViewCell()
     }
 }
+

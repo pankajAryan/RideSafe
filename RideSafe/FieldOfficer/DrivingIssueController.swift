@@ -25,18 +25,11 @@ class DrivingIssueController: RideSafeViewController {
         var service: ServiceType = .getDrivingIssueListForFieldOfficial
         
         let user = UserType.Citizen.getTokenUserType(userType: self.userType)
-        if user == .EscalationOfficial {
-            guard let escLevel = UserDefaults.standard.string(forKey: UserDefaultsKeys.escalationLevel.rawValue) else { return }
-
-            if escLevel == "1" {
-                service = .getDrivingIssueListForEscalationLevel1
-            }
-            else {
-                service = .getDrivingIssueListForEscalationLevel2
-            }
+        if user == .EscalationOfficial {            
+            service = .getDrivingIssueListForEscalationOfficer
         }
         
-        NetworkManager().doServiceCall(serviceType: service, params: ["fieldOfficialId" : citizenId]).then { response -> () in
+        NetworkManager().doServiceCall(serviceType: service, params: [:]).then { response -> () in
             self.drivingIssue = DrivingIssueListForFieldOfficial(dictionary: response as NSDictionary)?.responseObject
             
             if (self.drivingIssue?.count)! > 0 {
@@ -128,6 +121,18 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
                 cell.ratingButton.isHidden = true
             }
             
+            if let updatedByName = issue?.updatedByName, updatedByName.count > 0 {
+                
+                let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font :  UIFont.boldSystemFont(ofSize: 16), NSAttributedStringKey.underlineStyle: 1] as [NSAttributedStringKey : Any]
+                
+                let myAttrString = NSMutableAttributedString(string:"Assigned To: "+updatedByName, attributes: myAttribute)
+                
+                cell.assignedToButton.isHidden = false
+                cell.assignedToButton.setAttributedTitle(myAttrString, for: .normal)
+            } else {
+                cell.assignedToButton.isHidden = true
+            }
+            
             return cell
         }
         
@@ -174,5 +179,19 @@ extension DrivingIssueController: FODrivingIssueCellDelegate {
         issueStatusListVC?.actionArray = issue?.actionList
         issueStatusListVC?.title = "Case # \(issue?.drivingIssueId ?? "") - Actions"
         self.navigationController?.pushViewController(issueStatusListVC!, animated: true)
+    }
+    
+    func assignedActionForRowIndex(index: IndexPath) {
+        let issue = drivingIssue?[index.row]
+
+        if let phoneNumber = issue?.updatedByMobile {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
     }
 }

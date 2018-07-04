@@ -31,9 +31,9 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
         setupUI()
         let yellowColor = UIColor(red: 245.0/255.0, green: 193.0/255.0, blue: 68.0/255.0, alpha: 1)
         segmentedControl.setup(content: [SegmentioItem(title: "DRIVING ISSUE", image: nil),
-                                         SegmentioItem(title: "INFRA ISSUE", image: nil),
                                          SegmentioItem(title: "TRANSPORT", image: nil),
-                                         SegmentioItem(title: "POLICE", image: nil)],
+                                         SegmentioItem(title: "POLICE", image: nil),
+                                         SegmentioItem(title: "ADMINISTRATION", image: nil)],
                                style: .onlyLabel,
                                options: SegmentioOptions(backgroundColor: UIColor.white,
                                                          segmentPosition: .dynamic,
@@ -72,11 +72,11 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
             case 0:
                 self?.switchToDrivingIssueTab()
             case 1:
-                self?.switchToInfraIssueTab()
-            case 2:
                 self?.switchToTransportTab()
-            case 3:
+            case 2:
                 self?.switchToPoliceTab()
+            case 3:
+                self?.switchToAdministrationTab()
             default:
                 break
             }
@@ -102,24 +102,27 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
     
     func switchToInfraIssueTab() {
         container!.segueIdentifierReceivedFromParent("InfraIssue")
-
     }
     
     func switchToTransportTab() {
         container!.segueIdentifierReceivedFromParent("transport")
-
     }
     
     func switchToPoliceTab() {
         container!.segueIdentifierReceivedFromParent("police")
-
     }
     
+    func switchToAdministrationTab() {
+        container!.segueIdentifierReceivedFromParent("Administration")
+    }
     
     private func setupUI() {
         sideMenu.menuCellDelegte = self
         self.navigationController?.navigationBar.isHidden = false
         self.view.bringSubview(toFront: self.sideMenu)
+        let logo = UIImage(named: "top_logo")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView
         
     }
     func cellCllicked(action:SliderActions?) {

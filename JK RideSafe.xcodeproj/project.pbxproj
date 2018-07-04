@@ -133,6 +133,7 @@
 		B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77072095C97A00CA603A /* DistrictResponse.swift */; };
 		B8ED770A2095C97C00CA603A /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77082095C97B00CA603A /* District.swift */; };
 		B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */; };
+		D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B732E320EA8226006F0B19 /* AdministrationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -265,6 +266,7 @@
 		B8ED77072095C97A00CA603A /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
 		B8ED77082095C97B00CA603A /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMapViewController.swift; sourceTree = "<group>"; };
+		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -478,6 +480,7 @@
 				2C63FC1620657A9600BE8691 /* InfraIssueController.swift */,
 				2C63FC1820657AAB00BE8691 /* TransportController.swift */,
 				2C63FC1A20657ABD00BE8691 /* PoliceController.swift */,
+				D9B732E320EA8226006F0B19 /* AdministrationController.swift */,
 				2C63FC20206583D600BE8691 /* EmptySegue.swift */,
 				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
 				2C27D16C20767E7300F23736 /* FOMyProfileController.swift */,
@@ -970,6 +973,7 @@
 				B8C4F27E2065574600587E55 /* ReportTableViewCell.swift in Sources */,
 				2C3D5661205D62CB008F9104 /* SharedSettings.swift in Sources */,
 				B813A3FD206175A600A1B6F5 /* EmergencyConacts.swift in Sources */,
+				D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */,
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
 				2C87E7D62066694A00CAD64C /* FieldOfficer.swift in Sources */,
 				2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */,
