@@ -123,7 +123,7 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             
             if let updatedByName = issue?.updatedByName, updatedByName.count > 0 {
                 
-                let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font :  UIFont.boldSystemFont(ofSize: 16), NSAttributedStringKey.underlineStyle: 1] as [NSAttributedStringKey : Any]
+                let myAttribute = [ NSAttributedStringKey.foregroundColor: UIColor.black, NSAttributedStringKey.font :  UIFont.boldSystemFont(ofSize: 12), NSAttributedStringKey.underlineStyle: 1] as [NSAttributedStringKey : Any]
                 
                 let myAttrString = NSMutableAttributedString(string:"Assigned To: "+updatedByName, attributes: myAttribute)
                 
