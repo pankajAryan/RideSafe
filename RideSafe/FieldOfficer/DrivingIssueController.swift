@@ -15,6 +15,8 @@ class DrivingIssueController: RideSafeViewController {
     @IBOutlet weak var recordTable: UITableView!
     var drivingIssue:[DrivingIssueForFieldOfficial]?
     
+    var heightOfAssignedToButton : CGFloat = 0.0
+    
     private func showNoRecordView() {
         let norecordView = UINib(nibName: "NoRecord", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
         norecordView.frame = self.view.frame
@@ -23,13 +25,15 @@ class DrivingIssueController: RideSafeViewController {
     
     fileprivate func fetchIssuesForOfficials() {
         var service: ServiceType = .getDrivingIssueListForFieldOfficial
+        heightOfAssignedToButton = 0.0
         
         let user = UserType.Citizen.getTokenUserType(userType: self.userType)
         if user == .EscalationOfficial {            
             service = .getDrivingIssueListForEscalationOfficer
+            heightOfAssignedToButton = 17.0
         }
         
-        NetworkManager().doServiceCall(serviceType: service, params: [:]).then { response -> () in
+        NetworkManager().doServiceCall(serviceType: service, params: ["fieldOfficialId" : citizenId]).then { response -> () in
             self.drivingIssue = DrivingIssueListForFieldOfficial(dictionary: response as NSDictionary)?.responseObject
             
             if (self.drivingIssue?.count)! > 0 {
@@ -133,6 +137,7 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
                 cell.assignedToButton.isHidden = true
             }
             
+            cell.constrains_heightOfAssignedToButton.constant = heightOfAssignedToButton
             return cell
         }
         

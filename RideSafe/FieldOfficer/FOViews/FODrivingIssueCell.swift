@@ -29,6 +29,8 @@ class FODrivingIssueCell: UITableViewCell {
     @IBOutlet weak var ratingButton: UIButton!
     @IBOutlet weak var assignedToButton: UIButton!
 
+    @IBOutlet weak var constrains_heightOfAssignedToButton: NSLayoutConstraint!
+
     var phoneNumber = ""
     var actionTakenNote : String?
     var senderVC: UIViewController?

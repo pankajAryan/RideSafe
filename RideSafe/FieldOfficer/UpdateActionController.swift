@@ -25,15 +25,14 @@ class UpdateActionController: RideSafeViewController {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var ratingButton: UIButton!
     @IBOutlet weak var issueStatusStackView: UIStackView!
-    @IBOutlet weak var issueUpdateUiContainer: UIView!
-    @IBOutlet weak var updateButtonBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var updateButtonheightConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var btn_call: UIButton!
+
     var uploadedImage:UIImage?
     var phoneNumber = ""
     var issueStatus = ""
     
-    @IBOutlet weak var callingButton: UIButton!
+    @IBOutlet weak var view_action: UIView!
+    @IBOutlet weak var view_updateIssueStatus: UIView!
 
     var drivingIssue: DrivingIssueForFieldOfficial?
     
@@ -67,13 +66,17 @@ class UpdateActionController: RideSafeViewController {
             self.actionTextView.placeholder = "Action Taken"
             self.actionTextView.text = ""
             self.makeDropDow(["PENDING", "VOID", "RESOLVED"])
+            
+            btn_call.isHidden = true
         }
         else {
-            issueUpdateUiContainer.isHidden = true
-            updateButton.isHidden = true
-            updateButtonBottomConstraint.constant = 0
-            updateButtonheightConstraint.constant = 0
+            btn_call.isHidden = false
+            view_action.isHidden = true
+            view_updateIssueStatus.isHidden = true
         }
+        
+        updateButton.layer.cornerRadius = 2.0
+        updateButton.layer.masksToBounds = true
     }
     
     private func makeDropDow(_ statusArray: [String]) {
@@ -126,7 +129,15 @@ class UpdateActionController: RideSafeViewController {
 
     }
     
+    @IBAction func updateIssueStatusClicked(_ sender: UIButton) {
+
+        view_action.isHidden = false
+    }
+    
     @IBAction func updateClicked(_ sender: UIButton) {
+        
+        view_action.isHidden = true
+
         NetworkManager().doServiceCall(serviceType: .updateDrivingIssue, params: [
             "drivingIssueId": (drivingIssue?.drivingIssueId)!,
             "category":(drivingIssue?.category)!,
@@ -140,5 +151,6 @@ class UpdateActionController: RideSafeViewController {
             }.catch { (error) in
                 self.showError(error: error)
         }
+        
     }
 }
