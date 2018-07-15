@@ -55,10 +55,12 @@ class MyProfile: RideSafeViewController {
     }
     
     private func makeDropDow(_ dictList: [District]?) {
-        let drop = UIDropDown(frame: self.districtField.frame)
+        
+        let frm = self.districtField.superview?.convert(self.districtField.frame, to: view)
+        let drop = UIDropDown(frame: frm!)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
-        drop.tableHeight = 150
+        drop.tableHeight = 100
         drop.font = "Poppins-Medium"
         drop.fontSize = 14.0
         drop.optionsFont = "Poppins-Regular"

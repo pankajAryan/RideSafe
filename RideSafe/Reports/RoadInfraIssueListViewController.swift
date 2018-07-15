@@ -62,11 +62,23 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
         cell.selectionStyle = .none
         cell.delegate = self
         cell.indexPath = indexPath
+        
+        cell.callButton.isHidden = true
 
-        if let action = myRoadInfraIssue.action, action.count > 0 {
-            cell.actionButton.isHidden = false
-        } else {
-            cell.actionButton.isHidden = true
+        cell.ratingButton.isHidden = true
+        cell.ratingButton.isUserInteractionEnabled = false
+        cell.reopenButton.isHidden = true
+
+        if myRoadInfraIssue.status?.uppercased()  ==  "RESOLVED" {
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_resolved")
+            cell.reopenButton.isHidden = false
+            cell.ratingButton.isHidden = false
+            cell.ratingButton.isUserInteractionEnabled = true
+        }else if myRoadInfraIssue.status?.uppercased()  ==  "VOID" {
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_void")
+            cell.reopenButton.isHidden = false
+        }else{
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
         }
         
         cell.issueImageView.sd_setImage(with: URL(string: myRoadInfraIssue.uploadedImageURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))
@@ -99,7 +111,12 @@ extension RoadInfraIssueListViewController: ReportCellDelegate {
     
     func showActionForRowIndex(index: IndexPath) {
         let myRoadInfraIssue: MyRoadInfraIssue = self.myRoadInfraIssuesList[index.row]
-        showAlert(title: "Action Taken", message: myRoadInfraIssue.action ?? "")
+        
+        if let actionListArray = myRoadInfraIssue.action, actionListArray == ""  {
+            showAlert(title: "Action Taken", message: "No Action has been taken yet!")
+        } else {
+            showAlert(title: "Action Taken", message: myRoadInfraIssue.action ?? "")
+        }
     }
     
     func makeCall(index: IndexPath) {

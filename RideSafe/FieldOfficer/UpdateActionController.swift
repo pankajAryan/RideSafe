@@ -13,6 +13,7 @@ class UpdateActionController: RideSafeViewController {
 
     @IBOutlet weak var dropDownView: UIDropDown!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var updateButton: UIButton!
     @IBOutlet weak var actionTextView: UITextView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -23,9 +24,9 @@ class UpdateActionController: RideSafeViewController {
     @IBOutlet weak var imageUploaded: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var actionButton: UIButton!
-    @IBOutlet weak var ratingButton: UIButton!
     @IBOutlet weak var issueStatusStackView: UIStackView!
     @IBOutlet weak var btn_call: UIButton!
+    @IBOutlet weak var ratingLabel: UILabel!
 
     var uploadedImage:UIImage?
     var phoneNumber = ""
@@ -43,7 +44,7 @@ class UpdateActionController: RideSafeViewController {
         
         vehicleLabel.text = "Vehicle: " + (drivingIssue?.vehicleNumber ?? "")
         if let vehicleType = drivingIssue?.vehicleType {
-            vehicleLabel.text = "\(vehicleLabel.text!) (\(vehicleType))".uppercased()
+            vehicleLabel.text = "\(vehicleLabel.text!) (\(vehicleType))"
         }
         
         catagoryLabel.text = drivingIssue?.categoryName
@@ -57,7 +58,24 @@ class UpdateActionController: RideSafeViewController {
         } else {
             actionButton.isHidden = true
         }
-        statusLabel.text = drivingIssue?.status
+        
+        if let rating = drivingIssue?.rating, rating.count > 0 {
+            self.ratingLabel.text = "Rating: " + rating
+        } else {
+            self.ratingLabel.text = "Not Rated "
+        }
+        
+        self.statusLabel.text = drivingIssue?.status
+        
+        if drivingIssue?.status?.uppercased()  ==  "PENDING" {
+            self.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
+        }else if drivingIssue?.status?.uppercased()  ==  "RESOLVED" {
+            self.statusImageView.image = #imageLiteral(resourceName: "ic_status_resolved")
+        }else if drivingIssue?.status?.uppercased()  ==  "VOID" {
+            self.statusImageView.image = #imageLiteral(resourceName: "ic_status_void")
+        }else{
+            self.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
+        }
         
         setBackButton()
 
@@ -65,7 +83,7 @@ class UpdateActionController: RideSafeViewController {
         if user == .FieldOfficial {
             self.actionTextView.placeholder = "Action Taken"
             self.actionTextView.text = ""
-            self.makeDropDow(["PENDING", "VOID", "RESOLVED"])
+            self.makeDropDow(["PENDING", "RESOLVED", "VOID"])
             
             btn_call.isHidden = true
         }
@@ -121,10 +139,8 @@ class UpdateActionController: RideSafeViewController {
     
     @IBAction func directionClicked(_ sender: UIButton) {
         
-        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
-        issueMapViewController.issueLatitude = ((drivingIssue?.lat)! as NSString).doubleValue
-        issueMapViewController.issueLongitude = ((drivingIssue?.lon)! as NSString).doubleValue
-        
+        let issueMapViewController: DrivingIssueMapVC = UIStoryboard.init(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "DrivingIssueMapVC") as! DrivingIssueMapVC
+        issueMapViewController.drivingCaseId = drivingIssue?.drivingIssueId
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
 
     }

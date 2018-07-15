@@ -16,13 +16,13 @@ import Firebase
 
 class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
+    
     @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
-//    @IBOutlet weak var vehicleThirdField: UITextField!
-//    @IBOutlet weak var vehicleSecondField: UITextField!
     @IBOutlet weak var vehicleFirstField: UITextField!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
+    @IBOutlet weak var numberOfOffenceSelectedLabel: UILabel!
     @IBOutlet weak var vehicleTypeView: UIDropDown!
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenu: SideMenu!
@@ -36,13 +36,97 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     var isFirstCallToPushNotificationAPI = true
     
+    var drivingIssuePendingCount : String?
+    var roadInfraPendingCount : String?
+    
     @IBOutlet weak var educationLabel: UILabel!
     @IBOutlet weak var helpLineLabel: UILabel!
     @IBOutlet weak var emegencyLabel: UILabel!
     @IBOutlet weak var reportInfraLabel: UILabel!
     @IBOutlet weak var reportButton: UIButton!
+    
+    var menuButton : ExpandingMenuButton!
+    
+    func configureExpandingMenuButton() {
+        
+        let widthHeight : CGFloat = 50.0
+        let menuButtonSize: CGSize = CGSize(width: widthHeight, height: widthHeight)
+        
+        if menuButton != nil {
+            menuButton.removeFromSuperview()
+            menuButton = nil
+        }
+        
+        menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: #imageLiteral(resourceName: "ic_action_close"), centerHighlightedImage: #imageLiteral(resourceName: "ic_action_close"))
+        menuButton.center = CGPoint(x:self.view.bounds.width-40, y: self.view.bounds.height-190)
+        menuButton.bottomViewColor = UIColor.clear
+        menuButton.centerButton.backgroundColor = UIColor.red
+        menuButton.centerButton.layer.cornerRadius = widthHeight/2
+        menuButton.centerButton.layer.masksToBounds = true
+        
+        self.view.addSubview(menuButton)
+        
+        let item1 = ExpandingMenuItem(size: menuButtonSize, title: "  Share Live Location  ", image: #imageLiteral(resourceName: "live_share"), highlightedImage: #imageLiteral(resourceName: "live_share"), backgroundImage: #imageLiteral(resourceName: "live_share"), backgroundHighlightedImage:#imageLiteral(resourceName: "live_share")) { () -> Void in
+            self.emergencyClicked(UIButton())
+        }
+        
+        item1.titleColor = UIColor.white
+        item1.titleButton?.backgroundColor = UIColor.black
+        item1.frontImageView.backgroundColor = UIColor.white
+
+        item1.titleButton?.layer.cornerRadius = 2
+        item1.titleButton?.layer.masksToBounds = true
+        
+        item1.frontImageView.layer.cornerRadius = widthHeight/2
+        item1.frontImageView.layer.masksToBounds = true
+        
+        let item2 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Road Infra (\(roadInfraPendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "road_infra"), highlightedImage:#imageLiteral(resourceName: "road_infra"), backgroundImage: #imageLiteral(resourceName: "road_infra"), backgroundHighlightedImage:#imageLiteral(resourceName: "road_infra")) { () -> Void in
+            
+            let vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController") as! ReportsContainerViewController
+            vc.selectedSegment = 1//road infra
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        item2.titleColor = UIColor.white
+        item2.titleButton?.backgroundColor = UIColor.black
+        item2.frontImageView.backgroundColor = UIColor.white
+        
+        item2.titleButton?.layer.cornerRadius = 2
+        item2.titleButton?.layer.masksToBounds = true
+        
+        item2.frontImageView.layer.cornerRadius = widthHeight/2
+        item2.frontImageView.layer.masksToBounds = true
+        
+        let item3 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Driving Issue (\(drivingIssuePendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "driving_issue"), highlightedImage: #imageLiteral(resourceName: "driving_issue"), backgroundImage: #imageLiteral(resourceName: "driving_issue"), backgroundHighlightedImage:#imageLiteral(resourceName: "driving_issue")) { () -> Void in
+            
+            let vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController") as! ReportsContainerViewController
+            vc.selectedSegment = 0//driving issue
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+        item3.titleColor = UIColor.white
+        item3.titleButton?.backgroundColor = UIColor.black
+        item3.frontImageView.backgroundColor = UIColor.white
+        
+        item3.titleButton?.layer.cornerRadius = 2
+        item3.titleButton?.layer.masksToBounds = true
+        
+        item3.frontImageView.layer.cornerRadius = widthHeight/2
+        item3.frontImageView.layer.masksToBounds = true
+        
+        menuButton.addMenuItems([item1, item2, item3])
+        
+        menuButton.willPresentMenuItems = { (menu) -> Void in
+            print("MenuItems will present.")
+        }
+        
+        menuButton.didDismissMenuItems = { (menu) -> Void in
+            print("MenuItems dismissed.")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureExpandingMenuButton()
         setupLocationManager()
         setupVehicleTypeDropDown()
         addtappinggestureRecognizerOnDrivingIssueLabel()
@@ -156,6 +240,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             }.then { [unowned self] response -> () in
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
 
+                if let responseDict = response as? Dictionary<String,Any>, let responseObject = responseDict["responseObject"] as? Dictionary<String,Any>  {
+                    
+                    self.drivingIssuePendingCount = responseObject["drivingIssuePendingCount"] as? String
+                    self.roadInfraPendingCount = responseObject["roadInfraPendingCount"] as? String
+                    
+                    self.configureExpandingMenuButton()
+                }
+
                 if self.isFirstCallToPushNotificationAPI == true {
                     self.isFirstCallToPushNotificationAPI = false
                     self.retriveJSONFrom(fileName: FileNames.response.rawValue).then { response -> () in
@@ -201,6 +293,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         descriptionText.text = ""
         descriptionText.placeholder = "Describe Issues".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
+        numberOfOffenceSelectedLabel.text = "No Offence Selected"
        // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         selectedImage.image = #imageLiteral(resourceName: "camera")
         imageUrl = nil
@@ -285,7 +378,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
         self.navigationController?.pushViewController(educationContainerController, animated: true)
     }
-    
 }
 
 extension DashboardController: MenuCellDelegte {
@@ -304,6 +396,11 @@ extension DashboardController: MenuCellDelegte {
         case .Setting:
             let _vc = str.instantiateViewController(withIdentifier: "SettingController") as! SettingController
             _vc.delegate = self
+            vc = _vc
+            
+        case .Tutorial:
+            
+            let _vc = str.instantiateViewController(withIdentifier: "TutorialVC") as! TutorialVC
             vc = _vc
             
         case .About:
@@ -349,11 +446,14 @@ extension DashboardController: DropDownDelgate {
         for issue in drivingIssues {
             allIssues =  allIssues + issue.name! + ", "
         }
+
         
         if allIssues != "" {
             drivingIssuesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
+            numberOfOffenceSelectedLabel.text = "\(items.count) Offence(s) Selected"
         } else {
             drivingIssuesLabel.text = "Select Driving Issues".localized
+            numberOfOffenceSelectedLabel.text = "No Offence Selected"
         }
     }
     
@@ -493,12 +593,14 @@ extension DashboardController:SettingControllerProtocol {
     }
     
     func setLocalizedText() {
-        vehicleFirstField.placeholder = "Eg: JK".localized
+        vehicleFirstField.placeholder = "E.g: JK01C1234 (only letters & digits allowed)"//.localized
 //        vehicleSecondField.placeholder = "Eg: 01C".localized
 //        vehicleThirdField.placeholder = "Eg: 1234".localized
         vehicleNumber.text = "Vehicle Number".localized
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
+        numberOfOffenceSelectedLabel.text = "No Offence Selected"
+
         descriptionText.placeholder = "Describe issue".localized
          educationLabel.text = "Education".localized
          helpLineLabel.text = "Help Line".localized

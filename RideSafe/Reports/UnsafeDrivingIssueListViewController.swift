@@ -56,7 +56,7 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         
         cell.vehicleNumberLable.text = "Vehicle: " + (myDrivingIssue.vehicleNumber ?? "")
         if let vehicleType = myDrivingIssue.vehicleType {
-            cell.vehicleNumberLable.text = "\(cell.vehicleNumberLable.text!) (\(vehicleType))".uppercased()
+            cell.vehicleNumberLable.text = "\(cell.vehicleNumberLable.text!) (\(vehicleType))"
         }
         cell.vehicleDiscriptionLabel.text = myDrivingIssue.description
         cell.tagsLabel.text = myDrivingIssue.categoryName
@@ -72,28 +72,33 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
             cell.actionButton.isHidden = true
         }
         
-        cell.ratingButton.isUserInteractionEnabled = true
-        
+        cell.ratingButton.isHidden = true
+        cell.ratingButton.isUserInteractionEnabled = false
+        cell.reopenButton.isHidden = true
+
         if myDrivingIssue.status?.uppercased() == "RESOLVED"   {
+            
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_resolved")
+
+            cell.ratingButton.isHidden = false
+            cell.reopenButton.isHidden = false
+
             if let rating = myDrivingIssue.rating , rating.count > 0 {
-                cell.reopenButton.isHidden = true
-                cell.ratingButton.isHidden = false
                 cell.ratingButton.setTitle("  Rating: " + myDrivingIssue.rating! + " ★  ", for: .normal)
                 cell.ratingButton.isUserInteractionEnabled = false
             }
             else {
-                cell.ratingButton.isHidden = false
                 cell.ratingButton.isUserInteractionEnabled = true
-                cell.reopenButton.isHidden = false
             }
         }
         else if myDrivingIssue.status?.uppercased() == "VOID" {
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_void")
             cell.ratingButton.isHidden = true
             cell.reopenButton.isHidden = false
         }
         else {
+            cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
             cell.ratingButton.isHidden = true
-            cell.reopenButton.isHidden = true
         }
         
         cell.issueImageView.sd_setImage(with: URL(string: myDrivingIssue.uploadedImageURL!), placeholderImage: #imageLiteral(resourceName: "placeholder"))

@@ -15,6 +15,7 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
 
     @IBOutlet weak var issueTypesLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
+    @IBOutlet weak var numberOfOffenceSelectedLabel: UILabel!
     @IBOutlet weak var issueDiscriptionTextView: UITextView!
     @IBOutlet weak var issueImageView: UIImageView!
     var imagePicker = UIImagePickerController()
@@ -24,8 +25,6 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     var locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
     var issueImage: UIImage?
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,8 +204,10 @@ extension RoadInfraIssueViewController: DropDownDelgate{
         
         if allIssues != "" {
             issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
+            numberOfOffenceSelectedLabel.text = "\(items.count) Offence(s) Selected"
         } else {
-            issueTypesLabel.text = "Select Driving Issues".localized
+            issueTypesLabel.text = "-Select-"//.localized
+            numberOfOffenceSelectedLabel.text = "No Offence Selected"
         }
     }
     

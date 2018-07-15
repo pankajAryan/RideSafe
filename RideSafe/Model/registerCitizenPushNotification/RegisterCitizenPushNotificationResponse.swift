@@ -14,6 +14,8 @@ import Foundation
 
 public class RegisterCitizenPushNotificationResponse {
 	public var appVersion : String?
+    public var drivingIssuePendingCount : String?
+    public var roadInfraPendingCount : String?
 	public var drivingIssueCategoryList : Array<DrivingIssueCategory>?
 
 /**
@@ -49,6 +51,9 @@ public class RegisterCitizenPushNotificationResponse {
 	required public init?(dictionary: NSDictionary) {
 
 		appVersion = dictionary["iOSVersion"] as? String
+        drivingIssuePendingCount = dictionary["drivingIssuePendingCount"] as? String
+        roadInfraPendingCount = dictionary["roadInfraPendingCount"] as? String
+
         if (dictionary["drivingIssueCategoryList"] != nil) { drivingIssueCategoryList = DrivingIssueCategory.modelsFromDictionaryArray(array: dictionary["drivingIssueCategoryList"] as! NSArray) }
 	}
 
@@ -62,7 +67,9 @@ public class RegisterCitizenPushNotificationResponse {
 
 		let dictionary = NSMutableDictionary()
 
-		dictionary.setValue(self.appVersion, forKey: "appVersion")
+		dictionary.setValue(self.drivingIssuePendingCount, forKey: "drivingIssuePendingCount")
+        dictionary.setValue(self.appVersion, forKey: "appVersion")
+        dictionary.setValue(self.roadInfraPendingCount, forKey: "roadInfraPendingCount")
 
 		return dictionary
 	}

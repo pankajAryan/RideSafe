@@ -25,8 +25,9 @@ class FODrivingIssueCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var reportedBy: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusImageView: UIImageView!
     @IBOutlet weak var actionButton: UIButton!
-    @IBOutlet weak var ratingButton: UIButton!
+    @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var assignedToButton: UIButton!
 
     @IBOutlet weak var constrains_heightOfAssignedToButton: NSLayoutConstraint!

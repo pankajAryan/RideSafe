@@ -99,7 +99,7 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             
             cell.vehiclelabel.text = "Vehicle: " + (issue?.vehicleNumber ?? "")
             if let vehicleType = issue?.vehicleType {
-                cell.vehiclelabel.text = "\(cell.vehiclelabel.text!) (\(vehicleType))".uppercased()
+                cell.vehiclelabel.text = "\(cell.vehiclelabel.text!) (\(vehicleType))"
             }
             
             if let actionListArray = issue?.actionList, actionListArray.count > 0  {
@@ -111,18 +111,29 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
             cell.decriptionlabel.text = issue?.description
             cell.catagoryLabel.text = issue?.categoryName
             cell.dateLabel.text = issue?.createdOn
-            cell.statusLabel.text = issue?.status
             cell.reportedBy.text = issue?.postedByName
             cell.phoneNumber = issue?.postedByMobile ?? ""
             cell.actionTakenNote = issue?.action
             cell.senderVC = self
             cell.delegate = self
             cell.indexPath = indexPath
+
             if let rating = issue?.rating, rating.count > 0 {
-                cell.ratingButton.isHidden = false
-                cell.ratingButton.setTitle("  Rating: " + rating + " ★  ", for: .normal)
+                cell.ratingLabel.text = "Rating: " + rating
             } else {
-                cell.ratingButton.isHidden = true
+                cell.ratingLabel.text = "Not Rated "
+            }
+            
+            cell.statusLabel.text = issue?.status
+
+            if issue?.status?.uppercased()  ==  "PENDING" {
+                cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
+            }else if issue?.status?.uppercased()  ==  "RESOLVED" {
+                cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_resolved")
+            }else if issue?.status?.uppercased()  ==  "VOID" {
+                cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_void")
+            }else{
+                cell.statusImageView.image = #imageLiteral(resourceName: "ic_status_pending")
             }
             
             if let updatedByName = issue?.updatedByName, updatedByName.count > 0 {
@@ -145,6 +156,12 @@ extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .EscalationOfficial {
+           return
+        }
+        
         let cell = tableView.cellForRow(at: indexPath) as? FODrivingIssueCell
         if let vc = UIStoryboard(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "UpdateActionController") as? UpdateActionController {
             vc.uploadedImage = cell?.uploadedImage.image
@@ -166,14 +183,9 @@ extension DrivingIssueController: FODrivingIssueCellDelegate {
     
     func openMapViewForRowIndex(index: IndexPath) {
         let issue = drivingIssue?[index.row]
-        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
-        issueMapViewController.issueLatitude = ((issue?.lat)! as NSString).doubleValue
-        issueMapViewController.issueLongitude = ((issue?.lon)! as NSString).doubleValue
-        
-        for drivingLocation in (issue?.drivingCaseLocationList)! {
-            let location: CLLocation = CLLocation.init(latitude: ((drivingLocation.lat)! as NSString).doubleValue, longitude: ((drivingLocation.lon)! as NSString).doubleValue)
-            issueMapViewController.locationArray.append(location)
-        }
+        let issueMapViewController: DrivingIssueMapVC = UIStoryboard.init(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "DrivingIssueMapVC") as! DrivingIssueMapVC
+        issueMapViewController.drivingCaseId = issue?.drivingIssueId
+
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     

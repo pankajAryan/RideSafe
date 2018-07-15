@@ -137,6 +137,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
             
         case .Report: break
         case .Setting: break
+        case .Tutorial: break
         case .About:
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             

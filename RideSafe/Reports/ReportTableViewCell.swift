@@ -29,7 +29,8 @@ class ReportTableViewCell: UITableViewCell {
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var reopenButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
-    
+    @IBOutlet weak var statusImageView: UIImageView!
+
     var indexPath: IndexPath!
     weak var delegate: ReportCellDelegate?
     
@@ -37,6 +38,10 @@ class ReportTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bgView.layer.cornerRadius = 5.0
+        
+        let attributedTitle = NSAttributedString(string: "Reopen",
+                                                 attributes: [NSAttributedStringKey.foregroundColor : UIColor.red, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 13),NSAttributedStringKey.underlineColor : UIColor.red, NSAttributedStringKey.underlineStyle : NSNumber.init(value: 1)])
+        reopenButton.setAttributedTitle(attributedTitle, for: .normal)
     }
 
     @IBAction func giveFeedBackClicked(_ sender: UIButton) {

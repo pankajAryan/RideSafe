@@ -16,6 +16,7 @@ class ReportsContainerViewController: RideSafeViewController {
     var unsafeDrivingIssueListViewController: UnsafeDrivingIssueListViewController?
     var roadInfraIssueListViewController: RoadInfraIssueListViewController?
 
+    var selectedSegment : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,11 @@ class ReportsContainerViewController: RideSafeViewController {
         switchtoUnsafeDrivingIssueTab()
         setBackButton()
 
+        if let index = selectedSegment {
+            reportSegmentController.setSelectedSegmentIndex(index)
+            reportSegementClicked(reportSegmentController)
+        }
+        
         // Do any additional setup after loading the view.
     }
 

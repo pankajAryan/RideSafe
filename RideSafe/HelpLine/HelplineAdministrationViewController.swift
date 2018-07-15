@@ -87,7 +87,7 @@ extension HelplineAdministrationViewController: UITableViewDataSource, UITableVi
         }
         
         cell.nameLabel.text = directory.name
-        cell.designationNameLabel.text = directory.departmentName
+        cell.designationNameLabel.text = directory.designation
         cell.phoneNumberLabel.text = "Ph. \(String(describing: directory.contactNumber!))"
         cell.phoneNumber = directory.contactNumber!
         return cell

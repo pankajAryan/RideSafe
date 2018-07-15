@@ -133,6 +133,19 @@
 		B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77072095C97A00CA603A /* DistrictResponse.swift */; };
 		B8ED770A2095C97C00CA603A /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED77082095C97B00CA603A /* District.swift */; };
 		B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */; };
+		D92CAC7620F667A1008562E7 /* DrivingIssueMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CAC7520F667A1008562E7 /* DrivingIssueMapVC.swift */; };
+		D92CAC8A20F78C2E008562E7 /* FieldOfficialList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CAC8620F78C2D008562E7 /* FieldOfficialList.swift */; };
+		D92CAC8C20F78C2E008562E7 /* DrivingCaseLocationForAppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CAC8820F78C2E008562E7 /* DrivingCaseLocationForAppResponse.swift */; };
+		D92CAC8D20F78C2E008562E7 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CAC8920F78C2E008562E7 /* ResponseObject.swift */; };
+		D92CAC8F20F7A410008562E7 /* FieldOfficerAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */; };
+		D92EAB2820FB2A910078A284 /* ExpandingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */; };
+		D92EAB2920FB2A910078A284 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2020FB2A910078A284 /* .gitkeep */; };
+		D92EAB2A20FB2A910078A284 /* ExpandingMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */; };
+		D92EAB2B20FB2A910078A284 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2320FB2A910078A284 /* .gitkeep */; };
+		D92EAB2C20FB2A910078A284 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2520FB2A910078A284 /* selected.caf */; };
+		D92EAB2D20FB2A910078A284 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2620FB2A910078A284 /* fold.caf */; };
+		D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2720FB2A910078A284 /* expanding.caf */; };
+		D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E2D1A20FA427200483984 /* TutorialVC.swift */; };
 		D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B732E320EA8226006F0B19 /* AdministrationController.swift */; };
 /* End PBXBuildFile section */
 
@@ -266,6 +279,19 @@
 		B8ED77072095C97A00CA603A /* DistrictResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistrictResponse.swift; sourceTree = "<group>"; };
 		B8ED77082095C97B00CA603A /* District.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
 		B8FBC51F206775FC00380A41 /* IssueMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueMapViewController.swift; sourceTree = "<group>"; };
+		D92CAC7520F667A1008562E7 /* DrivingIssueMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrivingIssueMapVC.swift; sourceTree = "<group>"; };
+		D92CAC8620F78C2D008562E7 /* FieldOfficialList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficialList.swift; sourceTree = "<group>"; };
+		D92CAC8820F78C2E008562E7 /* DrivingCaseLocationForAppResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrivingCaseLocationForAppResponse.swift; sourceTree = "<group>"; };
+		D92CAC8920F78C2E008562E7 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldOfficerAnnotationView.xib; sourceTree = "<group>"; };
+		D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMenuItem.swift; sourceTree = "<group>"; };
+		D92EAB2020FB2A910078A284 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMenuButton.swift; sourceTree = "<group>"; };
+		D92EAB2320FB2A910078A284 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D92EAB2520FB2A910078A284 /* selected.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = selected.caf; sourceTree = "<group>"; };
+		D92EAB2620FB2A910078A284 /* fold.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fold.caf; sourceTree = "<group>"; };
+		D92EAB2720FB2A910078A284 /* expanding.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = expanding.caf; sourceTree = "<group>"; };
+		D94E2D1A20FA427200483984 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -298,6 +324,7 @@
 				2C15668A2051CE0E00B4067C /* Checkbox.swift */,
 				2C3D5650205AD1CE008F9104 /* DropDown.storyboard */,
 				2C3D5652205AD1E8008F9104 /* DropDownController.swift */,
+				D92EAB1D20FB2A910078A284 /* ExpandingMenu */,
 			);
 			path = "Custom UI";
 			sourceTree = "<group>";
@@ -373,6 +400,7 @@
 		2C1EE2CF204E6F040093B3BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D92CAC7D20F78B4E008562E7 /* DrivingCaseLocation */,
 				B865FFEC207DE8E100B675F3 /* Notification */,
 				2C4F940620768B6700BC5D31 /* FieldOfficialProfile */,
 				2C87E7D22066694A00CAD64C /* FieldOfficerListresponse */,
@@ -414,6 +442,7 @@
 				2C1566AB2058238800B4067C /* RegistrationController.swift */,
 				2CF24341205E7880007E696C /* SettingController.swift */,
 				2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */,
+				D94E2D1A20FA427200483984 /* TutorialVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -485,6 +514,8 @@
 				2C63FC22206590F900BE8691 /* DrivingIssueController.swift */,
 				2C27D16C20767E7300F23736 /* FOMyProfileController.swift */,
 				2C23660020677796000981A8 /* UpdateActionController.swift */,
+				D92CAC7520F667A1008562E7 /* DrivingIssueMapVC.swift */,
+				D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */,
 			);
 			path = FieldOfficer;
 			sourceTree = "<group>";
@@ -723,6 +754,54 @@
 			path = MyReport;
 			sourceTree = "<group>";
 		};
+		D92CAC7D20F78B4E008562E7 /* DrivingCaseLocation */ = {
+			isa = PBXGroup;
+			children = (
+				D92CAC8820F78C2E008562E7 /* DrivingCaseLocationForAppResponse.swift */,
+				D92CAC8620F78C2D008562E7 /* FieldOfficialList.swift */,
+				D92CAC8920F78C2E008562E7 /* ResponseObject.swift */,
+			);
+			path = DrivingCaseLocation;
+			sourceTree = "<group>";
+		};
+		D92EAB1D20FB2A910078A284 /* ExpandingMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D92EAB1E20FB2A910078A284 /* Classes */,
+				D92EAB2220FB2A910078A284 /* Assets */,
+			);
+			path = ExpandingMenu;
+			sourceTree = "<group>";
+		};
+		D92EAB1E20FB2A910078A284 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */,
+				D92EAB2020FB2A910078A284 /* .gitkeep */,
+				D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		D92EAB2220FB2A910078A284 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D92EAB2320FB2A910078A284 /* .gitkeep */,
+				D92EAB2420FB2A910078A284 /* Sounds */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D92EAB2420FB2A910078A284 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D92EAB2520FB2A910078A284 /* selected.caf */,
+				D92EAB2620FB2A910078A284 /* fold.caf */,
+				D92EAB2720FB2A910078A284 /* expanding.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -793,8 +872,10 @@
 				2CC96A35207A965800B7AAFD /* futura-regular.ttf in Resources */,
 				2C87E7CC2066654C00CAD64C /* FOContactCell.xib in Resources */,
 				B821B2AA205CC23E007D1F32 /* PDFTableViewCell.xib in Resources */,
+				D92CAC8F20F7A410008562E7 /* FieldOfficerAnnotationView.xib in Resources */,
 				B811FE20205F5183005F327B /* RoadInfraIssue.storyboard in Resources */,
 				2CE630C7209B5F4F00E1C4F7 /* GoogleService-Info.plist in Resources */,
+				D92EAB2C20FB2A910078A284 /* selected.caf in Resources */,
 				2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
@@ -810,13 +891,17 @@
 				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
+				D92EAB2B20FB2A910078A284 /* .gitkeep in Resources */,
 				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
 				2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */,
 				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
 				B8C4F2752065563500587E55 /* Reports.storyboard in Resources */,
+				D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */,
 				B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */,
 				2CB05AF1207491FE006C547E /* Poppins-Regular.ttf in Resources */,
+				D92EAB2D20FB2A910078A284 /* fold.caf in Resources */,
+				D92EAB2920FB2A910078A284 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -909,11 +994,13 @@
 				2CF7E587208BC27900BE4D84 /* UIViewController+Extention.swift in Sources */,
 				2C87E7C820665B4400CAD64C /* InfraIssuesForFieldOfficer.swift in Sources */,
 				B8FBC520206775FC00380A41 /* IssueMapViewController.swift in Sources */,
+				D92CAC8A20F78C2E008562E7 /* FieldOfficialList.swift in Sources */,
 				2C1566B720584B7400B4067C /* SwiftLoader.swift in Sources */,
 				B86F32EF205D108C00A6A975 /* Media.swift in Sources */,
 				B8C4F284206579D300587E55 /* MyDrivingIssueReportResponse.swift in Sources */,
 				2CF7E5812089166000BE4D84 /* ActionListItem.swift in Sources */,
 				2C87E7B72066204F00CAD64C /* DrivingIssueListForFieldOfficial.swift in Sources */,
+				D92CAC7620F667A1008562E7 /* DrivingIssueMapVC.swift in Sources */,
 				2CF2436E206031A2007E696C /* RegisterCitizenPushNotification.swift in Sources */,
 				B821B2AE205CD8F7007D1F32 /* OpenPdfViewController.swift in Sources */,
 				2CF2435E20600242007E696C /* AppConstants.swift in Sources */,
@@ -921,6 +1008,7 @@
 				2C1EE2D6204E6F3E0093B3BF /* NetworkManager.swift in Sources */,
 				B8AFD877205AD1F20044A608 /* EducationContainerViewController.swift in Sources */,
 				B86F32EE205D108C00A6A975 /* MediaResponse.swift in Sources */,
+				D92CAC8C20F78C2E008562E7 /* DrivingCaseLocationForAppResponse.swift in Sources */,
 				B81A18D2206353C1001701F4 /* RoadInfraIssue.swift in Sources */,
 				B821B2AC205CC260007D1F32 /* YoutubeVideoViewController.swift in Sources */,
 				2CF24342205E7880007E696C /* SettingController.swift in Sources */,
@@ -940,6 +1028,7 @@
 				2C3D5653205AD1E8008F9104 /* DropDownController.swift in Sources */,
 				B870129520982FE70091278F /* DrivingCaseLocationList.swift in Sources */,
 				2C3D5659205AD37B008F9104 /* DrivingIssuesCategoryList.swift in Sources */,
+				D92EAB2A20FB2A910078A284 /* ExpandingMenuButton.swift in Sources */,
 				2C63FC21206583D600BE8691 /* EmptySegue.swift in Sources */,
 				2CF2436D206031A2007E696C /* RegisterCitizenPushNotificationResponse.swift in Sources */,
 				2C1566A02056A76D00B4067C /* DashboardController.swift in Sources */,
@@ -977,6 +1066,7 @@
 				2C1EE2D9204E6F460093B3BF /* LoginController.swift in Sources */,
 				2C87E7D62066694A00CAD64C /* FieldOfficer.swift in Sources */,
 				2CF24346205E7B5D007E696C /* LanguageCell.swift in Sources */,
+				D92CAC8D20F78C2E008562E7 /* ResponseObject.swift in Sources */,
 				2C4F94462078915300BC5D31 /* String+Extenstion.swift in Sources */,
 				B8AFD879205AD1F20044A608 /* EducationVideoViewController.swift in Sources */,
 				2C1566AC2058238800B4067C /* RegistrationController.swift in Sources */,
@@ -998,6 +1088,8 @@
 				B865FFE9207DE1A100B675F3 /* NotificationViewController.swift in Sources */,
 				2C87E7BA206622B100CAD64C /* FODrivingIssueCell.swift in Sources */,
 				B8AFD87E205AD2770044A608 /* HelpLineContainerViewController.swift in Sources */,
+				D92EAB2820FB2A910078A284 /* ExpandingMenuItem.swift in Sources */,
+				D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */,
 				B8AFDA6B205ADB350044A608 /* HelplineAdministrationViewController.swift in Sources */,
 				2CFCDA2120832170007C9C99 /* RatingController.swift in Sources */,
 				B8ED77092095C97C00CA603A /* DistrictResponse.swift in Sources */,

@@ -50,6 +50,9 @@ enum ServiceType: String {
     case logoutEscalationOfficial               = "logoutEscalationOfficial"
     case registerEscalationOfficialPushNotificationId = "registerEscalationOfficialPushNotificationId"
 
+    case reAssignDrivingCaseToFieldOfficial = "reAssignDrivingCaseToFieldOfficial"
+    case getDrivingCaseLocationForApp = "getDrivingCaseLocationForApp"
+
     case noService = ""
 }
 

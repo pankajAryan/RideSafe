@@ -87,10 +87,11 @@ extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
 extension InfraIssueController: FODrivingIssueCellDelegate {
     
     func openMapViewForRowIndex(index: IndexPath) {
+        
+        return
+        
         let issue = infraIssues?[index.row]
-        let issueMapViewController: IssueMapViewController = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
-        issueMapViewController.issueLatitude = ((issue?.lat)! as NSString).doubleValue
-        issueMapViewController.issueLongitude = ((issue?.lon)! as NSString).doubleValue
+        let issueMapViewController: DrivingIssueMapVC = UIStoryboard.init(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "DrivingIssueMapVC") as! DrivingIssueMapVC
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     
