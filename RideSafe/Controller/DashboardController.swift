@@ -73,6 +73,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
+    var selectedImageForReport : UIImage?
     @IBOutlet weak var vehicleFirstField: UITextField!
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
@@ -394,6 +395,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         numberOfOffenceSelectedLabel.text = "No Offence Selected"
        // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         selectedImage.image = #imageLiteral(resourceName: "camera")
+        selectedImageForReport = nil
         imageUrl = nil
         locationManager.stopUpdatingLocation()
         vehicleTypeView.options = []
@@ -454,7 +456,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     func uploadImage() {
         
-        if let image = selectedImage.image {
+        if let image = selectedImageForReport {
             NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
                 self.imageUrl = string
                 }.catch { error in
@@ -644,6 +646,7 @@ extension DashboardController {
         if let image  = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.dismiss(animated: true, completion: nil)
             selectedImage.image = image
+            selectedImageForReport = image
         }
     }
 }

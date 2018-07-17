@@ -229,7 +229,7 @@ class FieldOfficerAnnotation: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        return nil
+        return " "
     }
 }
 

@@ -429,7 +429,7 @@
                                             <constraint firstAttribute="height" constant="36" id="W9s-lB-U0q"/>
                                         </constraints>
                                     </stackView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="AB12C3456" placeholder="E.g: JK01C1234 (only letters &amp; digits allowed)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRG-c1-AZt">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: JK01C1234 (only letters &amp; digits allowed)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRG-c1-AZt">
                                         <rect key="frame" x="24" y="39" width="366" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
