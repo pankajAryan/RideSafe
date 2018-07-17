@@ -13,6 +13,8 @@ class IssueMapViewController: RideSafeViewController {
     
     @IBOutlet weak var issueMapView: MKMapView!
     
+    var postedByName : String?
+    
     var latDelta:CLLocationDegrees = 0.02
     var longDelta:CLLocationDegrees = 0.02
 
@@ -25,7 +27,7 @@ class IssueMapViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        self.title = "Issue report location"
+        self.title = "Issue Location"
         let theSpan:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, longDelta)
         let pointLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake( issueLatitude, issueLongitude)
         
@@ -33,7 +35,7 @@ class IssueMapViewController: RideSafeViewController {
         issueMapView.setRegion(region, animated: true)
         
         let pinLocation : CLLocationCoordinate2D = CLLocationCoordinate2DMake(issueLatitude, issueLongitude)
-        let objectAnnotation = Artwork(title: "\(issueLatitude), \(issueLongitude)", locationName: "", discipline: "", coordinate: pinLocation)
+        let objectAnnotation = Artwork(name: postedByName ?? "", coordinate: pinLocation)
         issueMapView.addAnnotation(objectAnnotation)
         
         if locationArray.count > 0 {
@@ -70,21 +72,21 @@ extension IssueMapViewController: MKMapViewDelegate {
 }
 
 class Artwork: NSObject, MKAnnotation {
-    let title: String?
-    let locationName: String
-    let discipline: String
+    let name: String?
     let coordinate: CLLocationCoordinate2D
     
-    init(title: String, locationName: String, discipline: String, coordinate: CLLocationCoordinate2D) {
-        self.title = title
-        self.locationName = locationName
-        self.discipline = discipline
+    init(name: String, coordinate: CLLocationCoordinate2D) {
+        self.name = name
         self.coordinate = coordinate        
         super.init()
     }
     
+    var title: String? {
+        return name
+    }
+    
     var subtitle: String? {
-        return locationName
+        return nil
     }
 }
 

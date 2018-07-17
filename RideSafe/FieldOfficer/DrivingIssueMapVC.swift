@@ -17,7 +17,8 @@ class FieldOfficerAnnotationView : UIView {
     
     @IBOutlet weak var lbl_detail: UILabel!
     @IBOutlet weak var btn_reassign: UIButton!
-    
+    @IBOutlet weak var constrain_heightReassignBtn: NSLayoutConstraint!
+
     weak var delegate : FieldOfficerAnnotationViewDelegate?
     weak var annotation : FieldOfficerAnnotation?
 
@@ -33,11 +34,14 @@ class DrivingIssueMapVC: RideSafeViewController {
 
     var drivingCaseLocationForAppResponse : DrivingCaseLocationForAppResponse?
     var drivingCaseId : String?
+    var userTypeEnum : UserType!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
         title = "Map View, Case # \(drivingCaseId ?? "")"
+    
+        userTypeEnum = UserType.Citizen.getTokenUserType(userType: self.userType)
         
         issueMapView.delegate = self
         getDrivingCaseLocationForApp()
@@ -150,6 +154,12 @@ extension DrivingIssueMapVC: MKMapViewDelegate {
             
             let views = Bundle.main.loadNibNamed("FieldOfficerAnnotationView", owner: nil, options: nil)
             let fieldOfficerAnnotationView = views?[0] as! FieldOfficerAnnotationView
+           
+            if userTypeEnum == .FieldOfficial {
+                fieldOfficerAnnotationView.constrain_heightReassignBtn.constant = 35.0
+            } else {
+                fieldOfficerAnnotationView.constrain_heightReassignBtn.constant = 0.0
+            }
             
             fieldOfficerAnnotationView.layer.cornerRadius = 2.0
             fieldOfficerAnnotationView.layer.masksToBounds = true

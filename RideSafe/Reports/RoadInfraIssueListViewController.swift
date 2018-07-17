@@ -105,7 +105,7 @@ extension RoadInfraIssueListViewController: ReportCellDelegate {
         let issueMapViewController: IssueMapViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
         issueMapViewController.issueLatitude = (myRoadInfraIssue.lat! as NSString).doubleValue
         issueMapViewController.issueLongitude = (myRoadInfraIssue.lon! as NSString).doubleValue
-        
+        issueMapViewController.postedByName = myRoadInfraIssue.postedByName
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     

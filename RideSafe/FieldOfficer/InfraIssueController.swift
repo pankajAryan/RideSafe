@@ -92,6 +92,7 @@ extension InfraIssueController: FODrivingIssueCellDelegate {
         
         let issue = infraIssues?[index.row]
         let issueMapViewController: DrivingIssueMapVC = UIStoryboard.init(name: "FOMain", bundle: nil).instantiateViewController(withIdentifier: "DrivingIssueMapVC") as! DrivingIssueMapVC
+        issueMapViewController.drivingCaseId = issue?.roadInfraIssueId
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     

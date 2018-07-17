@@ -105,7 +105,7 @@ class UpdateActionController: RideSafeViewController {
             dropDownView.hideOptionsWhenSelect = true
             dropDownView.animationType = .Classic
             dropDownView.tableHeight = 150
-            dropDownView.placeholder = "Select Vehicle Type".localized
+            dropDownView.placeholder = "Select Status"//.localized
             dropDownView.options = statusArray
             dropDownView.textAlignment = NSTextAlignment.left
             dropDownView.font = "Poppins-Medium"

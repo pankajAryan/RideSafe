@@ -124,7 +124,7 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
         let issueMapViewController: IssueMapViewController = self.storyboard?.instantiateViewController(withIdentifier: "IssueMapViewController") as! IssueMapViewController
         issueMapViewController.issueLatitude = (drivingIssue.lat! as NSString).doubleValue
         issueMapViewController.issueLongitude = (drivingIssue.lon! as NSString).doubleValue
-        
+        issueMapViewController.postedByName = drivingIssue.postedByName
         self.navigationController?.pushViewController(issueMapViewController, animated: true)
     }
     
