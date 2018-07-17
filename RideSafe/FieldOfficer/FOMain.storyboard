@@ -141,7 +141,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="257" verticalCompressionResistancePriority="751" text="description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-qF-tg9">
-                                                            <rect key="frame" x="8" y="226" width="307" height="20"/>
+                                                            <rect key="frame" x="8" y="226" width="339" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                             <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -154,7 +154,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="749" text="Vehicle: AS eff 5050" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVJ-1d-Wll">
-                                                            <rect key="frame" x="8" y="273" width="339" height="20"/>
+                                                            <rect key="frame" x="8" y="273" width="299" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -219,12 +219,12 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-oZ-mvh">
-                                                            <rect key="frame" x="323" y="224.5" width="24" height="24"/>
+                                                            <rect key="frame" x="317" y="267.5" width="30" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="24" id="FxM-T3-wXc"/>
-                                                                <constraint firstAttribute="height" constant="24" id="O1D-4k-3zQ"/>
+                                                                <constraint firstAttribute="width" constant="30" id="FxM-T3-wXc"/>
+                                                                <constraint firstAttribute="height" constant="30" id="O1D-4k-3zQ"/>
                                                             </constraints>
-                                                            <state key="normal" image="call_new"/>
+                                                            <state key="normal" image="call_large"/>
                                                             <connections>
                                                                 <action selector="callReporter:" destination="HNT-Fv-K5R" eventType="touchUpInside" id="mKM-Pf-sfp"/>
                                                             </connections>
@@ -276,11 +276,10 @@
                                                         <constraint firstItem="S4Z-Rp-8PJ" firstAttribute="leading" secondItem="h6V-D5-hWF" secondAttribute="leading" constant="8" id="4gH-uw-Qwf"/>
                                                         <constraint firstAttribute="trailing" secondItem="86Q-YQ-93b" secondAttribute="trailing" constant="8" id="73B-Ix-FGj"/>
                                                         <constraint firstItem="rcI-6d-XMf" firstAttribute="top" secondItem="RCB-qF-tg9" secondAttribute="bottom" constant="5" id="79O-3a-G65"/>
+                                                        <constraint firstAttribute="trailing" secondItem="RCB-qF-tg9" secondAttribute="trailing" constant="8" id="Da8-VT-P6K"/>
                                                         <constraint firstItem="0J8-pU-AA8" firstAttribute="centerY" secondItem="CXV-iT-ICn" secondAttribute="centerY" id="EMa-3O-42c"/>
-                                                        <constraint firstAttribute="trailing" secondItem="zVJ-1d-Wll" secondAttribute="trailing" constant="8" id="GQn-DF-Tul"/>
                                                         <constraint firstItem="dkO-45-o3J" firstAttribute="trailing" secondItem="S4Z-Rp-8PJ" secondAttribute="trailing" id="GxC-HP-Eua"/>
                                                         <constraint firstAttribute="trailing" secondItem="7tJ-aC-9Xb" secondAttribute="trailing" constant="8" id="MXo-SV-mWb"/>
-                                                        <constraint firstItem="PKz-oZ-mvh" firstAttribute="leading" secondItem="RCB-qF-tg9" secondAttribute="trailing" constant="8" id="Mf3-GK-qBy"/>
                                                         <constraint firstItem="CXV-iT-ICn" firstAttribute="leading" secondItem="34m-qL-lSA" secondAttribute="trailing" constant="8" id="NoR-8B-Z9g"/>
                                                         <constraint firstItem="86Q-YQ-93b" firstAttribute="leading" secondItem="h6V-D5-hWF" secondAttribute="leading" constant="8" id="OOI-cj-Hhy"/>
                                                         <constraint firstItem="RCB-qF-tg9" firstAttribute="leading" secondItem="S4Z-Rp-8PJ" secondAttribute="leading" id="Ob9-Ak-Pcw"/>
@@ -296,7 +295,9 @@
                                                         <constraint firstItem="AEw-EQ-9yF" firstAttribute="trailing" secondItem="S4Z-Rp-8PJ" secondAttribute="trailing" constant="-8" id="eYv-Ph-iSw"/>
                                                         <constraint firstItem="rcI-6d-XMf" firstAttribute="leading" secondItem="h6V-D5-hWF" secondAttribute="leading" constant="8" id="fUe-bU-NGL"/>
                                                         <constraint firstItem="zVJ-1d-Wll" firstAttribute="top" secondItem="rcI-6d-XMf" secondAttribute="bottom" constant="5" id="hZx-tY-tpj"/>
+                                                        <constraint firstItem="PKz-oZ-mvh" firstAttribute="centerY" secondItem="zVJ-1d-Wll" secondAttribute="centerY" id="hpU-nn-u4S"/>
                                                         <constraint firstItem="dkO-45-o3J" firstAttribute="bottom" secondItem="S4Z-Rp-8PJ" secondAttribute="bottom" id="jL6-za-HTZ"/>
+                                                        <constraint firstItem="PKz-oZ-mvh" firstAttribute="leading" secondItem="zVJ-1d-Wll" secondAttribute="trailing" constant="10" id="lGJ-YY-2al"/>
                                                         <constraint firstItem="Qdy-Rz-S0d" firstAttribute="top" secondItem="7tJ-aC-9Xb" secondAttribute="top" id="nus-c2-TNE"/>
                                                         <constraint firstItem="RCB-qF-tg9" firstAttribute="top" secondItem="S4Z-Rp-8PJ" secondAttribute="bottom" constant="8" id="pMa-i0-Xbf"/>
                                                         <constraint firstItem="7tJ-aC-9Xb" firstAttribute="top" secondItem="zVJ-1d-Wll" secondAttribute="bottom" constant="8" id="q7G-DU-YnK"/>
@@ -305,7 +306,6 @@
                                                         <constraint firstItem="PKz-oZ-mvh" firstAttribute="trailing" secondItem="S4Z-Rp-8PJ" secondAttribute="trailing" id="s7r-8V-X0x"/>
                                                         <constraint firstItem="Qeh-oy-cn5" firstAttribute="centerY" secondItem="CXV-iT-ICn" secondAttribute="centerY" id="sov-sq-dNs"/>
                                                         <constraint firstItem="Qdy-Rz-S0d" firstAttribute="leading" secondItem="h6V-D5-hWF" secondAttribute="leading" constant="8" id="ubT-D4-Um3"/>
-                                                        <constraint firstItem="PKz-oZ-mvh" firstAttribute="centerY" secondItem="RCB-qF-tg9" secondAttribute="centerY" id="un1-pa-2Lc"/>
                                                         <constraint firstItem="S4Z-Rp-8PJ" firstAttribute="top" secondItem="h6V-D5-hWF" secondAttribute="top" constant="8" id="vSE-7R-aqk"/>
                                                         <constraint firstAttribute="trailing" secondItem="S4Z-Rp-8PJ" secondAttribute="trailing" constant="8" id="xzX-Jw-bZd"/>
                                                         <constraint firstItem="7tJ-aC-9Xb" firstAttribute="leading" secondItem="Qdy-Rz-S0d" secondAttribute="trailing" constant="4" id="yd5-Jl-lDv"/>
@@ -442,7 +442,7 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-k7-Sqw">
-                                        <rect key="frame" x="77" y="8" width="282" height="45"/>
+                                        <rect key="frame" x="62" y="8" width="297" height="45"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="MVr-ei-YUB"/>
@@ -456,12 +456,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ox5-MQ-H42">
-                                        <rect key="frame" x="16" y="7.5" width="45" height="45"/>
+                                        <rect key="frame" x="16" y="15" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="2wo-aE-JQK"/>
-                                            <constraint firstAttribute="height" constant="45" id="eSz-gl-D1z"/>
+                                            <constraint firstAttribute="width" constant="30" id="2wo-aE-JQK"/>
+                                            <constraint firstAttribute="height" constant="30" id="eSz-gl-D1z"/>
                                         </constraints>
-                                        <state key="normal" image="call_new"/>
+                                        <state key="normal" image="call_large"/>
                                         <connections>
                                             <action selector="callClicked:" destination="S4b-oh-Q6e" eventType="touchUpInside" id="rpo-ec-IEk"/>
                                         </connections>
@@ -517,18 +517,18 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fsa-Uq-3AI">
-                                                <rect key="frame" x="8" y="216" width="311" height="20"/>
+                                                <rect key="frame" x="8" y="216" width="305" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" red="0.75294117650000003" green="0.20784313730000001" blue="0.1843137255" alpha="1" colorSpace="deviceRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ao4-ns-PSB">
-                                                <rect key="frame" x="327" y="214.5" width="24" height="24"/>
+                                                <rect key="frame" x="321" y="211.5" width="30" height="30"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="24" id="1Ic-lA-U45"/>
-                                                    <constraint firstAttribute="height" constant="24" id="frE-Hp-41F"/>
+                                                    <constraint firstAttribute="width" constant="30" id="1Ic-lA-U45"/>
+                                                    <constraint firstAttribute="height" constant="30" id="frE-Hp-41F"/>
                                                 </constraints>
-                                                <state key="normal" image="call_new"/>
+                                                <state key="normal" image="call_large"/>
                                                 <connections>
                                                     <action selector="callClicked:" destination="S4b-oh-Q6e" eventType="touchUpInside" id="nh7-Li-AWD"/>
                                                 </connections>
@@ -924,12 +924,12 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtE-IY-Shm">
-                                                            <rect key="frame" x="327" y="226" width="24" height="24"/>
+                                                            <rect key="frame" x="321" y="226" width="30" height="30"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="Qd5-AO-gMl"/>
-                                                                <constraint firstAttribute="width" constant="24" id="vJJ-Vj-7bi"/>
+                                                                <constraint firstAttribute="height" constant="30" id="Qd5-AO-gMl"/>
+                                                                <constraint firstAttribute="width" constant="30" id="vJJ-Vj-7bi"/>
                                                             </constraints>
-                                                            <state key="normal" image="call_new"/>
+                                                            <state key="normal" image="call_large"/>
                                                             <connections>
                                                                 <action selector="callReporter:" destination="ye5-Fs-mM4" eventType="touchUpInside" id="m36-Qz-ScM"/>
                                                             </connections>
@@ -942,7 +942,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yaJ-5q-bM4">
-                                                            <rect key="frame" x="8" y="226" width="311" height="23"/>
+                                                            <rect key="frame" x="8" y="226" width="305" height="23"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="14"/>
                                                             <color key="textColor" red="0.75294117647058822" green="0.20784313725490194" blue="0.18431372549019609" alpha="1" colorSpace="deviceRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -1132,7 +1132,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="call_new" width="24" height="24"/>
+        <image name="call_large" width="49" height="49"/>
         <image name="direction" width="25" height="25"/>
         <image name="form_bg" width="375" height="666"/>
         <image name="ic_action" width="24" height="24"/>

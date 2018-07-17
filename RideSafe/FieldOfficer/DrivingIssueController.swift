@@ -66,7 +66,7 @@ class DrivingIssueController: RideSafeViewController {
         }
         
         firstly {
-            NetworkManager().doServiceCall(serviceType: service, params: [paramsKey: citizenId, "notificationId":  deviceID], showLoader: false)
+            NetworkManager().doServiceCall(serviceType: service, params: [paramsKey: citizenId, "notificationId":  deviceID,"deviceOS" : "iOS"], showLoader: false)
             }.then { [unowned self] response -> () in
                 let sresponse =  RegisterCitizenPushNotification.init(dictionary: response as NSDictionary)
                 if self.isForceUpdateRequired(for: sresponse?.responseObject?.appVersion) == true {

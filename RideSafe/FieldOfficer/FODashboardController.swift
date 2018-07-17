@@ -9,25 +9,105 @@
 import UIKit
 import SWSegmentedControl
 import Segmentio
+import CoreLocation
+import PromiseKit
+
+class ShareLiveLocationOfFieldOfficer:NSObject, CLLocationManagerDelegate {
+    
+    var timer: Timer?
+    var locationManager = CLLocationManager()
+    
+    var fieldOfficialId:String {
+        get {
+            guard let fieldOfficialId = UserDefaults.standard.string(forKey: UserDefaultsKeys.citizenId.rawValue) else { return "" }
+            return fieldOfficialId
+        }
+    }
+    
+    func setupLocationManager() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func sotpSendingLocationManager() {
+        locationManager.stopUpdatingLocation()
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locVal = manager.location?.coordinate else { return }
+        locationManager.stopUpdatingLocation()
+        
+        if self.timer != nil {
+            let latitude: String = String(locVal.latitude)
+            let longitude: String = String(locVal.longitude)
+            self.updateServerWithLiveLocation(latitude: latitude, longitude: longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("failed")
+    }
+    
+    private func updateServerWithLiveLocation(latitude: String, longitude: String) {
+        
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .recordFieldOfficialLocation, params: ["fieldOfficialId": fieldOfficialId,
+                                                                                             "lat":  latitude,
+                                                                                             "lon": longitude], showLoader: false)
+            }.then { response -> () in
+                print(response)
+            }.catch { (error) in
+                
+        }
+    }
+    
+}
 
 class FODashboardController: RideSafeViewController,MenuCellDelegte {
     
     @IBOutlet weak var sideMenu: SideMenu!
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var segmentedControl: Segmentio!
-
-    var container: EmbededContainerController!
     
+    var container: EmbededContainerController!
+
+    let shareLiveLocationOfFieldOfficer = ShareLiveLocationOfFieldOfficer()
+
     @IBAction func menuClicked(_ sender: UIBarButtonItem) {
         leftConstraint.constant =   leftConstraint.constant == 0 ? -240 : 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
+    
+    @objc func fetchLiveLocation() {
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .FieldOfficial {
+            shareLiveLocationOfFieldOfficer.setupLocationManager()
+        }else{// stop
+            shareLiveLocationOfFieldOfficer.sotpSendingLocationManager()
+        }
+    }
+    
     // "DRIVING ISSUE" "INFRA ISSUE" "TRANSPORT" "POLICE"
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        
+        if user == .FieldOfficial {// 30 second
+            shareLiveLocationOfFieldOfficer.timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(fetchLiveLocation), userInfo: nil, repeats: true)
+            fetchLiveLocation()
+        }
+       
         setupUI()
         let yellowColor = UIColor(red: 245.0/255.0, green: 193.0/255.0, blue: 68.0/255.0, alpha: 1)
         segmentedControl.setup(content: [SegmentioItem(title: "DRIVING ISSUE", image: nil),
@@ -133,7 +213,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
         switch action {
         case .Profile:
             let str =  UIStoryboard(name: "FOMyProfile", bundle: nil)
-                vc = str.instantiateViewController(withIdentifier: "FOMyProfileController") as! FOMyProfileController
+            vc = str.instantiateViewController(withIdentifier: "FOMyProfileController") as! FOMyProfileController
             
         case .Report: break
         case .Setting: break
@@ -151,7 +231,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
             self.present(activityViewController, animated: true, completion: nil)
             
         case .Logout:
-
+            
             showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
                 
                 let service =  self.userType.uppercased() != "E" ? ServiceType.logoutFieldOfficial : ServiceType.logoutEscalationOfficial

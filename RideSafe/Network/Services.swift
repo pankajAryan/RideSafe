@@ -52,7 +52,9 @@ enum ServiceType: String {
 
     case reAssignDrivingCaseToFieldOfficial = "reAssignDrivingCaseToFieldOfficial"
     case getDrivingCaseLocationForApp = "getDrivingCaseLocationForApp"
-
+    case recordFieldOfficialLocation = "recordFieldOfficialLocation"
+    case recordCitizenLocation = "recordCitizenLocation"
+    
     case noService = ""
 }
 

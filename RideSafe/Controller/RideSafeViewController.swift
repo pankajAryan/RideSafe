@@ -137,7 +137,7 @@ extension UIViewController {
                 let loginController = storyboard.instantiateViewController(withIdentifier: "LoginController") as! LoginController
                 DispatchQueue.main.async {
                     self.navigationController?.viewControllers = [loginController]
-                    loginController.showAlert(message: (error as! CustomError).errorMessage)
+                    loginController.showAlert(message: "Invalid Access! You are logged out.") //(error as! CustomError).errorMessage
                 }
             }
             else {

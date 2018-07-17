@@ -28,19 +28,19 @@
                         <rect key="frame" x="16" y="8" width="315" height="41.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYF-TW-xos">
-                                <rect key="frame" x="8" y="8" width="267" height="25.5"/>
+                                <rect key="frame" x="8" y="8" width="261" height="25.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
                                 <color key="textColor" red="0.050980392156862744" green="0.26666666666666666" blue="0.59607843137254901" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YqN-ix-Zff">
-                                <rect key="frame" x="283" y="9" width="24" height="24"/>
+                                <rect key="frame" x="277" y="6" width="30" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="ZRs-uG-Knw"/>
-                                    <constraint firstAttribute="width" constant="24" id="a7h-M1-7s6"/>
+                                    <constraint firstAttribute="height" constant="30" id="ZRs-uG-Knw"/>
+                                    <constraint firstAttribute="width" constant="30" id="a7h-M1-7s6"/>
                                 </constraints>
-                                <state key="normal" image="call_new">
+                                <state key="normal" image="call_large">
                                     <color key="titleColor" red="0.24348503743859792" green="0.52619368654822329" blue="0.16053973040991307" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
@@ -78,6 +78,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="call_new" width="24" height="24"/>
+        <image name="call_large" width="49" height="49"/>
     </resources>
 </document>

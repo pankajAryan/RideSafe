@@ -439,10 +439,10 @@ open class ExpandingMenuButton: UIView, UIGestureRecognizerDelegate {
         //
         if self.enabledExpandingAnimations.contains(.MenuButtonRotation) == true {
             UIView.animate(withDuration: 0.1575, animations: { () -> Void in
-                self.centerButton.transform = CGAffineTransform(rotationAngle: CGFloat(-0.5 * Float.pi))
+                self.centerButton.transform = CGAffineTransform(rotationAngle: CGFloat(-0.75 * Float.pi))
             })
         } else {
-            self.centerButton.transform = CGAffineTransform(rotationAngle: CGFloat(-0.5 * Float.pi))
+            self.centerButton.transform = CGAffineTransform(rotationAngle: CGFloat(-0.75 * Float.pi))
         }
         
         // 5. Excute the expanding animation

@@ -14,8 +14,62 @@ import PromiseKit
 import Alamofire
 import Firebase
 
-class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
+class ShareLiveLocationOfCitizen:NSObject, CLLocationManagerDelegate {
     
+    var timer: Timer?
+    var locationManager = CLLocationManager()
+    var drivingIssueId : String?
+
+    func setupLocationManager() {
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func sotpSendingLocationManager() {
+        locationManager.stopUpdatingLocation()
+        timer?.invalidate()
+        timer = nil
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locVal = manager.location?.coordinate else { return }
+        locationManager.stopUpdatingLocation()
+        
+        if self.timer != nil {
+            let latitude: String = String(locVal.latitude)
+            let longitude: String = String(locVal.longitude)
+            self.updateServerWithLiveLocation(latitude: latitude, longitude: longitude)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("failed")
+    }
+    
+    private func updateServerWithLiveLocation(latitude: String, longitude: String) {
+        
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .recordCitizenLocation, params: ["drivingIssueId": drivingIssueId ?? "",
+                                                                                               "lat":  latitude,
+                                                                                               "lon": longitude], showLoader: false)
+            }.then { response -> () in
+                print(response)
+                
+                if let errorCode = response["errorCode"] as? String, errorCode == "-1"   {
+                    self.sotpSendingLocationManager()
+                }
+                
+            }.catch { (error) in
+        }
+    }
+}
+
+class DashboardController: RideSafeViewController,UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
     
     @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
@@ -33,7 +87,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     var locationManager = CLLocationManager()
     var userLocation = CLLocationCoordinate2D()
     var imageUrl:String?
-    
+    var postedByType:String?
+
     var isFirstCallToPushNotificationAPI = true
     
     var drivingIssuePendingCount : String?
@@ -47,6 +102,31 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     
     var menuButton : ExpandingMenuButton!
     
+    var shareLiveLocationOfCitizen : ShareLiveLocationOfCitizen?
+
+    @objc func fetchLiveLocation() {
+        
+        let user = UserType.Citizen.getTokenUserType(userType: self.userType)
+        if user == .Citizen {
+            shareLiveLocationOfCitizen?.setupLocationManager()
+        }else{// stop
+            shareLiveLocationOfCitizen?.sotpSendingLocationManager()
+        }
+    }
+    
+    func startLocationSending (drivingIssueId: String?) {
+        
+        // destroy old instance
+        shareLiveLocationOfCitizen?.sotpSendingLocationManager()
+        shareLiveLocationOfCitizen = nil
+        
+        //create new
+        shareLiveLocationOfCitizen = ShareLiveLocationOfCitizen()
+        shareLiveLocationOfCitizen?.drivingIssueId = drivingIssueId
+        shareLiveLocationOfCitizen?.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fetchLiveLocation), userInfo: nil, repeats: true)
+        fetchLiveLocation()
+    }
+    
     func configureExpandingMenuButton() {
         
         let widthHeight : CGFloat = 50.0
@@ -57,7 +137,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             menuButton = nil
         }
         
-        menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: #imageLiteral(resourceName: "ic_action_close"), centerHighlightedImage: #imageLiteral(resourceName: "ic_action_close"))
+        menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: #imageLiteral(resourceName: "plus"), centerHighlightedImage: #imageLiteral(resourceName: "plus"))
         menuButton.center = CGPoint(x:self.view.bounds.width-40, y: self.view.bounds.height-190)
         menuButton.bottomViewColor = UIColor.clear
         menuButton.centerButton.backgroundColor = UIColor.red
@@ -115,12 +195,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         
         menuButton.addMenuItems([item1, item2, item3])
         
-        menuButton.willPresentMenuItems = { (menu) -> Void in
+        menuButton.didPresentMenuItems = { (menu) -> Void in
             print("MenuItems will present.")
+//            self.menuButton.centerButton.setImage(#imageLiteral(resourceName: "ic_action_close"), for: .normal)
         }
         
         menuButton.didDismissMenuItems = { (menu) -> Void in
             print("MenuItems dismissed.")
+//            self.menuButton.centerButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         }
     }
     
@@ -236,7 +318,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         firstly {
             NetworkManager().doServiceCall(serviceType: .registerCitizenPushNotificationId, params: ["citizenId": citizenId,
                                                                                                      "notificationId":  deviceID,
-                                                                                                     "language": selectedLanguage], showLoader: isFirstCallToPushNotificationAPI)
+                                                                                                     "language": selectedLanguage, "deviceOS" : "iOS"
+], showLoader: isFirstCallToPushNotificationAPI)
             }.then { [unowned self] response -> () in
                 self.writeJSONTo(fileName: FileNames.response.rawValue, data: response)
 
@@ -279,7 +362,22 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     }
     
     @IBAction func reportButtonClicked(_ sender: UIButton) {
-        uploadImage()
+        
+        if validateInputs() {
+            
+            let alert =  UIAlertController(title: "", message: "Are you a passenger in the vehicle ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "YES", style: UIAlertActionStyle.default, handler: { handler -> () in
+                self.postedByType = "Passenger"
+                self.uploadImage()
+            }
+            ))
+            alert.addAction(UIAlertAction(title: "NO", style: UIAlertActionStyle.cancel, handler:{ handler -> () in
+                self.postedByType = "Reporter"
+                self.uploadImage()
+            }))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     
@@ -310,34 +408,64 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             "postedBy": citizenId,
             "uploadedImageURL": self.imageUrl ?? "",
             "vehicleNumber": vehicleFirstField.text!,
-            "vehicleType": vehicleType])
+            "vehicleType": vehicleType,
+            "postedByType" : postedByType ?? "" ])
             .then { response -> () in
                 self.clearInputFields()
                 self.showToast(response: response)
+                
+                if self.postedByType == "Passenger" {
+                    self.startLocationSending(drivingIssueId: response["responseObject"] as? String ?? "" )
+                }else{
+                    // destroy current one instance if any 
+                    self.shareLiveLocationOfCitizen?.sotpSendingLocationManager()
+                    self.shareLiveLocationOfCitizen = nil
+                }
+                
             }.catch { error in
                 self.showError(error: error)
         }
     }
     
-    func uploadImage() {
+    func validateInputs() -> Bool
+    {
+        var isValid = true
+        var str = "Invalid input"
+
+        if let vehicleNum = vehicleFirstField.text, vehicleNum.count <= 7 {
+            isValid = false
+            str = "Vehicle number has to be 8-10 characters long!"
+        }else if vehicleType.count == 0 {
+            isValid = false
+            str = "Please select vehicle type!"
+        }else if drivingIssues.count == 0 {
+            isValid = false
+            str = "Please select atleast one Issue!"
+        }
         
-        if (vehicleFirstField.text?.isEmpty)! || vehicleType.count == 0 || drivingIssues.count == 0 {
-            let alert =  UIAlertController(title: "", message: "Veicle No,Vehicle type and Driving issues are mandatory", preferredStyle: .alert)
+        if !isValid {
+            let alert =  UIAlertController(title: "", message: str, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler:nil))
             self.present(alert, animated: true, completion: nil)
-        } else {
-            if let image = selectedImage.image {
-                NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
-                    self.imageUrl = string
-                    }.catch { error in
-                        //self.showError(error: error)
-                    }.always {
-                        NetworkReachabilityManager()!.isReachable ? self.reportIssues() : self.sendSMS()
-                }
-            }
         }
+        
+       return isValid
     }
     
+    func uploadImage() {
+        
+        if let image = selectedImage.image {
+            NetworkManager().upload(image: image, serviceType: .uploadDrivingIssuePicture) .then { string -> () in
+                self.imageUrl = string
+                }.catch { error in
+                    //self.showError(error: error)
+                }.always {
+                    NetworkReachabilityManager()!.isReachable ? self.reportIssues() : self.sendSMS()
+            }
+        }else{
+            NetworkReachabilityManager()!.isReachable ? self.reportIssues() : self.sendSMS()
+        }
+    }
     
     func sendSMS() {
         if (MFMessageComposeViewController.canSendText()) {

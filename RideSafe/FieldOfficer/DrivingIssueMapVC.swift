@@ -37,7 +37,7 @@ class DrivingIssueMapVC: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        title = "Issue report location"
+        title = "Map View, Case # \(drivingCaseId ?? "")"
         
         issueMapView.delegate = self
         getDrivingCaseLocationForApp()
