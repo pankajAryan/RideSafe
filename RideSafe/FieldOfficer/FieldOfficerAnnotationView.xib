@@ -39,12 +39,12 @@
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                     </state>
                     <connections>
-                        <action selector="reassignBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="mMg-8p-6J7"/>
-                        <action selector="reassignBtnAction:" destination="-1" eventType="touchUpInside" id="oec-IM-ujV"/>
+                        <action selector="reassignBtnAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="MGh-YH-rxE"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="IPh-nf-kAe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="6b8-Ue-aqa"/>
                 <constraint firstItem="0uJ-X3-qWR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Lhj-xF-Hx2"/>
@@ -59,8 +59,14 @@
                 <outlet property="btn_reassign" destination="0uJ-X3-qWR" id="AjX-F9-Um8"/>
                 <outlet property="constrain_heightReassignBtn" destination="9Yd-6R-n7J" id="0mo-a0-JNj"/>
                 <outlet property="lbl_detail" destination="IPh-nf-kAe" id="Vsw-5w-Iog"/>
+                <outletCollection property="gestureRecognizers" destination="AQw-fO-Ncd" appends="YES" id="rhb-8L-S5d"/>
             </connections>
             <point key="canvasLocation" x="-241" y="-205.5"/>
         </view>
+        <tapGestureRecognizer id="AQw-fO-Ncd">
+            <connections>
+                <action selector="tapGestureAction:" destination="iN0-l3-epB" id="uKO-a8-a6I"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

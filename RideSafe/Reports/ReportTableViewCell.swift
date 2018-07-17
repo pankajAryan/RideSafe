@@ -38,9 +38,9 @@ class ReportTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.bgView.layer.cornerRadius = 5.0
-        
+        let color = UIColor.init(red: 0.702, green: 0.220, blue: 0.267, alpha: 1.0)
         let attributedTitle = NSAttributedString(string: "Reopen",
-                                                 attributes: [NSAttributedStringKey.foregroundColor : UIColor.red, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 13),NSAttributedStringKey.underlineColor : UIColor.red, NSAttributedStringKey.underlineStyle : NSNumber.init(value: 1)])
+                                                 attributes: [NSAttributedStringKey.foregroundColor : color, NSAttributedStringKey.font : UIFont.systemFont(ofSize: 13),NSAttributedStringKey.underlineColor : color, NSAttributedStringKey.underlineStyle : NSNumber.init(value: 1)])
         reopenButton.setAttributedTitle(attributedTitle, for: .normal)
     }
 

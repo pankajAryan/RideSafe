@@ -26,6 +26,20 @@ class FieldOfficerAnnotationView : UIView {
         
         delegate?.buttonReassignAction(fieldOfficerAnnotation: annotation)
     }
+    
+    @IBAction func tapGestureAction(_ sender: Any) {
+        
+        if let phoneNumber = annotation?.number {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
+    
 }
 
 class DrivingIssueMapVC: RideSafeViewController {
@@ -104,6 +118,22 @@ class DrivingIssueMapVC: RideSafeViewController {
         
         let polyline = MKPolyline(coordinates: &points, count: points.count)
         issueMapView.add(polyline)
+    }
+    
+    @objc func triggerTouchAction(gestureReconizer: UITapGestureRecognizer) {
+        
+        if let mkAnnotationView = gestureReconizer.view as? MKAnnotationView, let annotation = mkAnnotationView.annotation as?  DrivingCaseLocationAnnotation {
+            
+            if let phoneNumber = annotation.number {
+                if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                    if #available(iOS 10, *) {
+                        UIApplication.shared.open(url)
+                    } else {
+                        UIApplication.shared.openURL(url)
+                    }
+                }
+            }
+        }
     }
 }
 extension DrivingIssueMapVC: FieldOfficerAnnotationViewDelegate {
@@ -201,12 +231,21 @@ extension DrivingIssueMapVC: MKMapViewDelegate {
             }
             
             let drivingCaseLocationAnnotation = annotation as! DrivingCaseLocationAnnotation
-
+            
             annotationView?.image = drivingCaseLocationAnnotation.image
+            
+//            let lbl = UILabel()
+//            lbl.numberOfLines = 0
+//            lbl.font = UIFont.systemFont(ofSize: 14)
+//            lbl.text = (drivingCaseLocationAnnotation.name ?? "")+"\n"+(drivingCaseLocationAnnotation.number ?? "")
+            
+            let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(DrivingIssueMapVC.triggerTouchAction(gestureReconizer:)))
+            annotationView?.addGestureRecognizer(gestureRecognizer)
+            
+//            annotationView?.detailCalloutAccessoryView = lbl
 
             return annotationView
         }
-        
         return nil
     }
 }

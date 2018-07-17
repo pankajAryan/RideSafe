@@ -280,10 +280,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         let notificationViewController: NotificationViewController = UIStoryboard.init(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
         self.navigationController?.pushViewController(notificationViewController, animated: true)
     }
-        
-    @IBAction func vehicleNumberDidTap(_ sender: Any) {
-        
-    }
     
 //    @objc func textFieldDidChange(textField: UITextField){
 //
