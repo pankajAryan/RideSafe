@@ -40,6 +40,24 @@ class UnsafeDrivingIssueListViewController: RideSafeViewController {
         self.myDrivingIssueReportList = myDrivingIssueList
         unsafeDrivingIssueTableView.reloadData()
     }
+    
+    func reOpenDrivingIssueByCitizen (index: IndexPath, msg : String?) {
+        
+        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
+        
+        let param = [ "drivingIssueId":drivingIssue.drivingIssueId ?? "",
+                      "status": "REOPEN",
+                      "action": msg ?? "",
+                      "updatedBy":drivingIssue.updatedBy ?? ""
+        ]
+        
+        NetworkManager().doServiceCall(serviceType: .reOpenDrivingIssueByCitizen, params: param).then { response -> () in
+            self.showToast(response: response)
+            self.loadData()
+            }.catch{ error in
+                self.showError(error: error)
+        }
+    }
 }
 
 
@@ -164,18 +182,19 @@ extension UnsafeDrivingIssueListViewController: ReportCellDelegate {
     }
     
     func reopenIssue(index: IndexPath) {
-        let drivingIssue: MyDrivingIssueReport = self.myDrivingIssueReportList[index.row]
         
-        let param = [ "drivingIssueId":drivingIssue.drivingIssueId ?? "",
-                      "status": drivingIssue.status ?? "",
-                      "action":drivingIssue.action ?? "",
-                      "updatedBy":drivingIssue.updatedBy ?? ""
-        ]
+        let alert = UIAlertController(title: "", message: "Enter message!", preferredStyle: .alert)
         
-        NetworkManager().doServiceCall(serviceType: .reOpenDrivingIssueByCitizen, params: param).then { response -> () in
-            self.showToast(response: response)
-            }.catch{ error in
-                self.showError(error: error)
+        alert.addTextField { (textField) in
+            textField.placeholder = "enter message"
         }
+        
+        alert.addAction(UIAlertAction(title: "RE-OPEN", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0]
+           
+            self.reOpenDrivingIssueByCitizen(index: index, msg: textField?.text)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
