@@ -98,15 +98,129 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
 
     //MARK:- Push Notification Delegates
-//    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-//        print("Firebase registration token: \(fcmToken)")
-//
-//        // TODO: If necessary send token to application server.
-//        // Note: This callback is fired at each app startup and whenever a new token is generated.
-//    }
-    
-//    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-//        Messaging.messaging().apnsToken = deviceToken
-//    }
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        print("Firebase registration token: \(fcmToken)")
 
+        // TODO: If necessary send token to application server.
+        // Note: This callback is fired at each app startup and whenever a new token is generated.
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+        
+        let tokenParts = deviceToken.map { data -> String in
+            return String(format: "%02.2hhx", data)
+        }
+        
+        let token = tokenParts.joined()
+        print("Device Token: \(token)")
+        
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
+
+        handlePushNotification(payloadDict:userInfo,application: application)
+    }
+    
+    func handlePushNotification(payloadDict : [AnyHashable : Any], application: UIApplication) {
+        
+        switch application.applicationState {
+            
+        case .active:
+            
+            let vc = (window?.rootViewController)!
+ 
+            let user = UserType.Citizen.getTokenUserType(userType: vc.userType)
+            if user == .none {
+                return
+            }
+            
+            let apsDict = payloadDict["aps"] as? [AnyHashable : Any]
+           
+//            {"aps":{"alert":"Test notification","badge":1,"sound":"default"},"type":"Success"}
+
+            let alert = UIAlertController(title:"", message: apsDict?["alert"] as? String ?? "", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (act) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+
+            alert.addAction(UIAlertAction(title: "Show", style: .default, handler: { (act) in
+                self.handlePushFlow(payloadDict:payloadDict)
+            }))
+            
+            vc.present(alert, animated: true, completion: nil)
+            break
+        case .inactive:
+            handlePushFlow(payloadDict:payloadDict)
+            break
+        case .background:
+            
+            handlePushFlow(payloadDict:payloadDict)
+            break
+        }
+    }
+    
+    func handlePushFlow(payloadDict : [AnyHashable : Any]) {
+        
+        if let key = payloadDict["type"] as? String {
+            switch key {
+            case "my_reports":
+                gotoMyReportsScreen()
+                break
+            case "notification":
+                //just open the app
+                gotoHomeScreen()
+                break
+            case "alert":
+                gotoAlertScreen()
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    func gotoMyReportsScreen() {
+        
+        let vc = (window?.rootViewController)!
+        let user = UserType.Citizen.getTokenUserType(userType: vc.userType)
+        if user == .Citizen {
+            
+            if let nav = window?.rootViewController as? UINavigationController, let dash = nav.viewControllers.first as? DashboardController  {
+                
+                let reportVC = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController")
+                //pop till root
+                dash.navigationController?.popToRootViewController(animated: true)
+                //push
+                dash.navigationController?.pushViewController(reportVC, animated: true)
+            }
+        }
+    }
+    
+    func gotoAlertScreen() {
+        
+        let vc = (window?.rootViewController)!
+        let user = UserType.Citizen.getTokenUserType(userType: vc.userType)
+        if user == .Citizen {
+            
+            if let nav = window?.rootViewController as? UINavigationController, let dash = nav.viewControllers.first as? DashboardController  {
+                
+                let notificationViewController = UIStoryboard.init(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
+                //pop till root
+                dash.navigationController?.popToRootViewController(animated: true)
+                //push
+                dash.navigationController?.pushViewController(notificationViewController, animated: true)
+            }
+        }
+    }
+    
+    func gotoHomeScreen() {
+        
+        if let nav = window?.rootViewController as? UINavigationController  {
+            //pop till root
+            nav.popToRootViewController(animated: true)
+        }
+    }
 }
+
+

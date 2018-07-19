@@ -293,6 +293,7 @@
 		D92EAB2720FB2A910078A284 /* expanding.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = expanding.caf; sourceTree = "<group>"; };
 		D94E2D1A20FA427200483984 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
+		D9C74C9D20FFA260006FEB8E /* JK RideSafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JK RideSafe.entitlements"; sourceTree = "<group>"; };
 		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,6 +353,7 @@
 		2C1EE2A3204E5A440093B3BF = {
 			isa = PBXGroup;
 			children = (
+				D9C74C9D20FFA260006FEB8E /* JK RideSafe.entitlements */,
 				2CF7E585208BC21A00BE4D84 /* Extentions */,
 				2C1566892051CDE000B4067C /* Custom UI */,
 				2C1EE2AE204E5A440093B3BF /* RideSafe */,
@@ -838,6 +840,11 @@
 					2C1EE2AB204E5A440093B3BF = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -1261,6 +1268,7 @@
 			baseConfigurationReference = 7DE333A7AC5A2B1EC681D6E7 /* Pods-JK RideSafe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
 				CODE_SIGN_STYLE = Manual;
@@ -1282,6 +1290,7 @@
 			baseConfigurationReference = EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Vibhor Gupta (59C46AYD6K)";
 				CODE_SIGN_STYLE = Manual;
