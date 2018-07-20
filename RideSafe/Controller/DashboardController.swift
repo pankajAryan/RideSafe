@@ -101,6 +101,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     @IBOutlet weak var reportInfraLabel: UILabel!
     @IBOutlet weak var reportButton: UIButton!
     
+    var menuBtnCenter : CGPoint?
+    
     var menuButton : ExpandingMenuButton!
     
     var shareLiveLocationOfCitizen : ShareLiveLocationOfCitizen?
@@ -128,6 +130,12 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         fetchLiveLocation()
     }
     
+    @objc func setCenter() {
+        menuBtnCenter = CGPoint(x:self.view.bounds.width-40, y: self.view.bounds.height-95 - 40)
+        menuButton.center = menuBtnCenter!
+        menuButton.isHidden = false
+    }
+    
     func configureExpandingMenuButton() {
         
         let widthHeight : CGFloat = 50.0
@@ -138,12 +146,24 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             menuButton = nil
         }
         
-        menuButton = ExpandingMenuButton(frame: CGRect(origin: CGPoint.zero, size: menuButtonSize), centerImage: #imageLiteral(resourceName: "plus"), centerHighlightedImage: #imageLiteral(resourceName: "plus"))
-        menuButton.center = CGPoint(x:self.view.bounds.width-40, y: self.view.bounds.height-190)
+        menuButton = ExpandingMenuButton(frame: CGRect.init(x: self.view.bounds.width-40, y: self.view.bounds.height-95 - 40, width: widthHeight, height: widthHeight), centerImage: #imageLiteral(resourceName: "plus"), centerHighlightedImage: #imageLiteral(resourceName: "plus"))
+        //hack
+        
+        if menuBtnCenter == nil {
+            menuButton.isHidden = true
+            perform(#selector(setCenter), with: nil, afterDelay: 0.2)
+        }else{
+            menuButton.center = menuBtnCenter!
+        }
+        //end hack
         menuButton.bottomViewColor = UIColor.clear
         menuButton.centerButton.backgroundColor = UIColor.red
+
         menuButton.centerButton.layer.cornerRadius = widthHeight/2
-        menuButton.centerButton.layer.masksToBounds = true
+        menuButton.centerButton.layer.shadowColor = UIColor.black.cgColor
+        menuButton.centerButton.layer.shadowRadius = 2
+        menuButton.centerButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        menuButton.centerButton.layer.shadowOpacity = 0.3
         
         self.view.addSubview(menuButton)
         
@@ -159,7 +179,11 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item1.titleButton?.layer.masksToBounds = true
         
         item1.frontImageView.layer.cornerRadius = widthHeight/2
-        item1.frontImageView.layer.masksToBounds = true
+        item1.frontImageView.layer.shadowColor = UIColor.black.cgColor
+        item1.frontImageView.layer.shadowRadius = 2
+        item1.frontImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        item1.frontImageView.layer.shadowOpacity = 0.3
+        
         
         let item2 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Road Infra (\(roadInfraPendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "road_infra"), highlightedImage:#imageLiteral(resourceName: "road_infra"), backgroundImage: #imageLiteral(resourceName: "road_infra"), backgroundHighlightedImage:#imageLiteral(resourceName: "road_infra")) { () -> Void in
             
@@ -175,7 +199,10 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item2.titleButton?.layer.masksToBounds = true
         
         item2.frontImageView.layer.cornerRadius = widthHeight/2
-        item2.frontImageView.layer.masksToBounds = true
+        item2.frontImageView.layer.shadowColor = UIColor.black.cgColor
+        item2.frontImageView.layer.shadowRadius = 2
+        item2.frontImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        item2.frontImageView.layer.shadowOpacity = 0.3
         
         let item3 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Driving Issue (\(drivingIssuePendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "driving_issue"), highlightedImage: #imageLiteral(resourceName: "driving_issue"), backgroundImage: #imageLiteral(resourceName: "driving_issue"), backgroundHighlightedImage:#imageLiteral(resourceName: "driving_issue")) { () -> Void in
             
@@ -192,7 +219,10 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item3.titleButton?.layer.masksToBounds = true
         
         item3.frontImageView.layer.cornerRadius = widthHeight/2
-        item3.frontImageView.layer.masksToBounds = true
+        item3.frontImageView.layer.shadowColor = UIColor.black.cgColor
+        item3.frontImageView.layer.shadowRadius = 2
+        item3.frontImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
+        item3.frontImageView.layer.shadowOpacity = 0.3
         
         menuButton.addMenuItems([item1, item2, item3])
         

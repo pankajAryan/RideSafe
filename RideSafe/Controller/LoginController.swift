@@ -10,9 +10,7 @@ import UIKit
 import PromiseKit
 
 class LoginController: RideSafeViewController {
-    
-    
-  
+
     @IBOutlet weak var otpView: UIStackView!
     @IBOutlet weak var mobileNumber: UITextField!
     @IBOutlet weak var otpText: UITextField!
@@ -148,6 +146,12 @@ extension LoginController: UITextFieldDelegate {
                     self.otpText.text = ""
                 })
             }
+        } else if textField == otpText {
+                let maxLength = 4
+                let currentString: NSString = textField.text! as NSString
+                let newString: NSString =
+                    currentString.replacingCharacters(in: range, with: string) as NSString
+                return newString.length <= maxLength
         }
         
         return true
