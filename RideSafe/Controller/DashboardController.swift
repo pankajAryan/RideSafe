@@ -394,7 +394,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         selectedImageForReport = nil
         imageUrl = nil
         locationManager.stopUpdatingLocation()
-        vehicleTypeView.options = []
+        vehicleTypeView.options = ["Taxi".localized, "Tempo".localized, "Mini Bus".localized, "Bus".localized]
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
     }
     

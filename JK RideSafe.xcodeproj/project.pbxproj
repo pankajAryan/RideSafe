@@ -147,6 +147,7 @@
 		D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2720FB2A910078A284 /* expanding.caf */; };
 		D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E2D1A20FA427200483984 /* TutorialVC.swift */; };
 		D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B732E320EA8226006F0B19 /* AdministrationController.swift */; };
+		D9CCEE6E21021EE700F8C26D /* official.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9CCEE6D21021EE600F8C26D /* official.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -294,6 +295,7 @@
 		D94E2D1A20FA427200483984 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		D9C74C9D20FFA260006FEB8E /* JK RideSafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JK RideSafe.entitlements"; sourceTree = "<group>"; };
+		D9CCEE6D21021EE600F8C26D /* official.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = official.mp3; sourceTree = "<group>"; };
 		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -568,6 +570,7 @@
 		2CB05AEC207491DD006C547E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D9CCEE6D21021EE600F8C26D /* official.mp3 */,
 				2CC96A34207A965800B7AAFD /* futura-regular.ttf */,
 				2CC96A30207A947F00B7AAFD /* futuram_C.ttf */,
 				2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */,
@@ -903,6 +906,7 @@
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
 				2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */,
 				B8AFD876205AD1F20044A608 /* Education.storyboard in Resources */,
+				D9CCEE6E21021EE700F8C26D /* official.mp3 in Resources */,
 				B8C4F2752065563500587E55 /* Reports.storyboard in Resources */,
 				D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */,
 				B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */,

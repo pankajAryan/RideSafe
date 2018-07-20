@@ -16,14 +16,16 @@ class DrivingIssueController: RideSafeViewController {
     var drivingIssue:[DrivingIssueForFieldOfficial]?
     
     var heightOfAssignedToButton : CGFloat = 0.0
-    
+    var refreshControl = UIRefreshControl()
+    var timer: Timer?
+
     private func showNoRecordView() {
         let norecordView = UINib(nibName: "NoRecord", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
         norecordView.frame = self.view.frame
         self.view.addSubview( norecordView)
     }
     
-    fileprivate func fetchIssuesForOfficials() {
+    @objc fileprivate func fetchIssuesForOfficials() {
         var service: ServiceType = .getDrivingIssueListForFieldOfficial
         heightOfAssignedToButton = 0.0
         
@@ -33,9 +35,11 @@ class DrivingIssueController: RideSafeViewController {
             heightOfAssignedToButton = 17.0
         }
         
-        NetworkManager().doServiceCall(serviceType: service, params: ["fieldOfficialId" : citizenId]).then { response -> () in
+        NetworkManager().doServiceCall(serviceType: service, params: ["fieldOfficialId" : citizenId], showLoader: false).then { response -> () in
             self.drivingIssue = DrivingIssueListForFieldOfficial(dictionary: response as NSDictionary)?.responseObject
             
+            self.refreshControl.endRefreshing()
+
             if (self.drivingIssue?.count)! > 0 {
                 self.recordTable.delegate = self
                 self.recordTable.dataSource = self
@@ -48,11 +52,21 @@ class DrivingIssueController: RideSafeViewController {
         }
     }
     
+    @objc func timerFuncCallForRefreshDrivingIssue() {
+        
+       
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         recordTable.estimatedRowHeight = 300
         recordTable.rowHeight = UITableViewAutomaticDimension
         RegisterForPushNotification()
+        
+        // pull to refresh
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(fetchIssuesForOfficials), for: UIControlEvents.valueChanged)
+        recordTable.addSubview(refreshControl) // not required when using UITableViewController
     }
     
     func RegisterForPushNotification() {
@@ -81,6 +95,18 @@ class DrivingIssueController: RideSafeViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchIssuesForOfficials()
+        
+        timer?.invalidate()
+        timer = nil
+        
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fetchIssuesForOfficials), userInfo: nil, repeats: true)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        timer?.invalidate()
+        timer = nil
     }
 }
 

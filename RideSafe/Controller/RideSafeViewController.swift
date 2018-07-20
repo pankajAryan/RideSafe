@@ -187,12 +187,9 @@ extension UIViewController {
     
     var deviceID:String {
         get {
-           return  UIDevice.current.identifierForVendor!.uuidString
+            return UserDefaults.standard.string(forKey: "DeviceToken") ?? ""
         }
     }
-    
-    
-    
 }
 
 extension UIImage {

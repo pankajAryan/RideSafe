@@ -114,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         let token = tokenParts.joined()
         print("Device Token: \(token)")
-        
+        UserDefaults.standard.set(token, forKey: "DeviceToken")
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
@@ -186,7 +186,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let user = UserType.Citizen.getTokenUserType(userType: vc.userType)
         if user == .Citizen {
             
-            if let nav = window?.rootViewController as? UINavigationController, let dash = nav.viewControllers.first as? DashboardController  {
+            if let nav = window?.rootViewController as? RideSafeNavigationController, let dash = nav.viewControllers.first as? DashboardController  {
                 
                 let reportVC = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController")
                 //pop till root
