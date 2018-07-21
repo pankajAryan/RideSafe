@@ -92,7 +92,7 @@ class RegistrationController: RideSafeViewController {
     private func gotodashBoard() {
         let str =  UIStoryboard(name: "Main", bundle: nil)
         let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.viewControllers = [vc]
     }
     
 }

@@ -263,6 +263,20 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         RegisterForCitizenPushNotification()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        handlePushFlow()
+    }
+    
+    func handlePushFlow () {
+        
+        let delegate =  UIApplication.shared.delegate as! AppDelegate
+        if let dict = delegate.remoteNitificationPayloadDict {
+            delegate.handlePushFlow(payloadDict: dict)
+            delegate.remoteNitificationPayloadDict = nil //// after handling, remove the dict
+        }
+    }
+    
     private func setupLocationManager() {
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()

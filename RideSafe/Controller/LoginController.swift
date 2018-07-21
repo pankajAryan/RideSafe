@@ -101,11 +101,11 @@ class LoginController: RideSafeViewController {
         if  delegate.getuserType() == .Citizen {
             let str =  UIStoryboard(name: "Main", bundle: nil)
             let vc = str.instantiateViewController(withIdentifier: "dashboard") as! DashboardController
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.viewControllers = [vc]
         } else {
             let str =  UIStoryboard(name: "FOMain", bundle: nil)
             let vc = str.instantiateViewController(withIdentifier: "FODashboardController") as! FODashboardController
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.viewControllers = [vc]
         }
     }
     

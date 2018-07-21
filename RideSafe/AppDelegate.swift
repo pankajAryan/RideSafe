@@ -19,10 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
 
+    // for handling notification
+    var  remoteNitificationPayloadDict : [AnyHashable : Any]?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
+        if let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]  {
+            remoteNitificationPayloadDict = remoteNotif as? [AnyHashable : Any]
+        }
+        
         setRootVC()
 
         registerForPushNotificationAndAnalytics(application)
@@ -186,7 +193,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let user = UserType.Citizen.getTokenUserType(userType: vc.userType)
         if user == .Citizen {
             
-            if let nav = window?.rootViewController as? RideSafeNavigationController, let dash = nav.viewControllers.first as? DashboardController  {
+            if let nav = window?.rootViewController as? UINavigationController, let dash = nav.viewControllers.first as? DashboardController  {
                 
                 let reportVC = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController")
                 //pop till root
