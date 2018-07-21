@@ -39,7 +39,25 @@ class FieldOfficerAnnotationView : UIView {
             }
         }
     }
+}
+
+class CitizenAnnotationView : UIView {
     
+    @IBOutlet weak var lbl_detail: UILabel!
+    weak var annotation : DrivingCaseLocationAnnotation?
+    
+    @IBAction func tapGestureAction(_ sender: Any) {
+        
+        if let phoneNumber = annotation?.number {
+            if let url = URL(string: "tel://\(phoneNumber)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
 }
 
 class DrivingIssueMapVC: RideSafeViewController {
@@ -220,7 +238,7 @@ extension DrivingIssueMapVC: MKMapViewDelegate {
             
         }else if annotation is DrivingCaseLocationAnnotation {
          
-            let identifier = "DrivingCaseLocationAnnotation"
+            let identifier = "CitizenAnnotationView"
             
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
             if annotationView == nil {
@@ -232,18 +250,25 @@ extension DrivingIssueMapVC: MKMapViewDelegate {
             
             let drivingCaseLocationAnnotation = annotation as! DrivingCaseLocationAnnotation
             
+            let views = Bundle.main.loadNibNamed("CitizenAnnotationView", owner: nil, options: nil)
+            let citizenAnnotationView = views?[0] as! CitizenAnnotationView
+            
+            citizenAnnotationView.layer.cornerRadius = 2.0
+            citizenAnnotationView.layer.masksToBounds = true
+            
+            var str = drivingCaseLocationAnnotation.name
+            
+            if let number = drivingCaseLocationAnnotation.number {
+                str?.append("\n")
+                str?.append(number)
+            }
+            
+            citizenAnnotationView.lbl_detail.text = str
+            citizenAnnotationView.annotation = annotation as? DrivingCaseLocationAnnotation
+            
+            annotationView?.detailCalloutAccessoryView = citizenAnnotationView
             annotationView?.image = drivingCaseLocationAnnotation.image
             
-//            let lbl = UILabel()
-//            lbl.numberOfLines = 0
-//            lbl.font = UIFont.systemFont(ofSize: 14)
-//            lbl.text = (drivingCaseLocationAnnotation.name ?? "")+"\n"+(drivingCaseLocationAnnotation.number ?? "")
-            
-            let gestureRecognizer = UITapGestureRecognizer.init(target: self, action: #selector(DrivingIssueMapVC.triggerTouchAction(gestureReconizer:)))
-            annotationView?.addGestureRecognizer(gestureRecognizer)
-            
-//            annotationView?.detailCalloutAccessoryView = lbl
-
             return annotationView
         }
         return nil
@@ -289,10 +314,7 @@ class DrivingCaseLocationAnnotation: NSObject, MKAnnotation {
     }
     
     var title: String? {
-        return name
+        return " "
     }
-    
-    var subtitle: String? {
-        return number
-    }
+
 }

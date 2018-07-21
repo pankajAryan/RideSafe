@@ -148,6 +148,7 @@
 		D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E2D1A20FA427200483984 /* TutorialVC.swift */; };
 		D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B732E320EA8226006F0B19 /* AdministrationController.swift */; };
 		D9CCEE6E21021EE700F8C26D /* official.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9CCEE6D21021EE600F8C26D /* official.mp3 */; };
+		D9F17B462103696D008D4D92 /* CitizenAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F17B452103696D008D4D92 /* CitizenAnnotationView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -296,6 +297,7 @@
 		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		D9C74C9D20FFA260006FEB8E /* JK RideSafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JK RideSafe.entitlements"; sourceTree = "<group>"; };
 		D9CCEE6D21021EE600F8C26D /* official.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = official.mp3; sourceTree = "<group>"; };
+		D9F17B452103696D008D4D92 /* CitizenAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CitizenAnnotationView.xib; sourceTree = "<group>"; };
 		EBA50EE64359DEC9A8C9ADF3 /* Pods-JK RideSafe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JK RideSafe.release.xcconfig"; path = "Pods/Target Support Files/Pods-JK RideSafe/Pods-JK RideSafe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -520,6 +522,7 @@
 				2C23660020677796000981A8 /* UpdateActionController.swift */,
 				D92CAC7520F667A1008562E7 /* DrivingIssueMapVC.swift */,
 				D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */,
+				D9F17B452103696D008D4D92 /* CitizenAnnotationView.xib */,
 			);
 			path = FieldOfficer;
 			sourceTree = "<group>";
@@ -900,6 +903,7 @@
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
+				D9F17B462103696D008D4D92 /* CitizenAnnotationView.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
 				D92EAB2B20FB2A910078A284 /* .gitkeep in Resources */,
 				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
