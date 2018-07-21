@@ -693,6 +693,18 @@ extension DashboardController: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+     
+        if vehicleFirstField != textField {
+            return true
+        }
+        
+        let aSet = CharacterSet.alphanumerics.inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return string == numberFiltered
+    }
 }
 
 extension DashboardController {
