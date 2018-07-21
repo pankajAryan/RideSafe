@@ -416,12 +416,13 @@
                                         </constraints>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="E.g: JK01C1234 (only letters &amp; digits allowed)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRG-c1-AZt">
-                                        <rect key="frame" x="24" y="39" width="366" height="36"/>
+                                        <rect key="frame" x="24" y="39" width="370" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                         <connections>
+                                            <action selector="vehicleTextFieldValueChanged:" destination="3hk-dB-921" eventType="editingChanged" id="e9q-tg-eSm"/>
                                             <outlet property="delegate" destination="3hk-dB-921" id="FZb-EO-khf"/>
                                         </connections>
                                     </textField>
@@ -526,6 +527,17 @@
                                             <action selector="reportButtonClicked:" destination="3hk-dB-921" eventType="touchUpInside" id="FpW-BG-7ck"/>
                                         </connections>
                                     </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ajK-zJ-aNL">
+                                        <rect key="frame" x="24" y="78" width="370" height="0.0"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" id="Dci-y4-jbL"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="3hk-dB-921" id="3rI-UA-kJC"/>
+                                            <outlet property="delegate" destination="3hk-dB-921" id="ceT-FI-dH2"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="ZNB-Yb-Uhu" firstAttribute="top" secondItem="Yvd-Ks-T05" secondAttribute="top" constant="8" id="1Kb-qV-OBD"/>
@@ -555,7 +567,9 @@
                                     <constraint firstItem="EF0-cY-evQ" firstAttribute="centerY" secondItem="J7g-m3-ad6" secondAttribute="centerY" id="XHQ-gm-cxi"/>
                                     <constraint firstItem="lRG-c1-AZt" firstAttribute="bottom" secondItem="CCS-Kv-Loe" secondAttribute="bottom" id="XzQ-c9-xyA"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="leading" secondItem="VII-bl-Cwx" secondAttribute="leading" id="ZLb-AS-HWZ"/>
+                                    <constraint firstItem="ajK-zJ-aNL" firstAttribute="top" secondItem="lRG-c1-AZt" secondAttribute="bottom" constant="3" id="ZuX-Sf-hjh"/>
                                     <constraint firstItem="Nir-Mn-CLa" firstAttribute="top" secondItem="CCS-Kv-Loe" secondAttribute="bottom" constant="8" id="axm-rz-XVa"/>
+                                    <constraint firstItem="ajK-zJ-aNL" firstAttribute="trailing" secondItem="lRG-c1-AZt" secondAttribute="trailing" id="bCQ-2d-Whr"/>
                                     <constraint firstItem="ZNB-Yb-Uhu" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="cTL-ky-q9N"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="leading" secondItem="EdH-7F-eR6" secondAttribute="leading" id="ccB-PZ-EDo"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="top" secondItem="VII-bl-Cwx" secondAttribute="bottom" constant="8" id="dN8-H9-f1D"/>
@@ -568,9 +582,10 @@
                                     <constraint firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" constant="16" id="jqk-6x-1fv"/>
                                     <constraint firstItem="nX7-lu-eSM" firstAttribute="bottom" secondItem="NHf-lz-QOe" secondAttribute="bottom" constant="-8" id="lSE-Sb-Qws"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="leading" secondItem="Yvd-Ks-T05" secondAttribute="leading" constant="16" id="mHJ-5Z-xC0"/>
+                                    <constraint firstItem="ajK-zJ-aNL" firstAttribute="leading" secondItem="lRG-c1-AZt" secondAttribute="leading" id="o1e-Ve-0zx"/>
                                     <constraint firstItem="J7g-m3-ad6" firstAttribute="top" secondItem="Htp-Lj-Me7" secondAttribute="top" constant="-4" id="uSv-Wx-bUS"/>
                                     <constraint firstItem="EdH-7F-eR6" firstAttribute="leading" secondItem="J7g-m3-ad6" secondAttribute="leading" id="uVB-aT-A5n"/>
-                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" constant="-8" id="uVh-L2-46w"/>
+                                    <constraint firstItem="lRG-c1-AZt" firstAttribute="trailing" secondItem="CCS-Kv-Loe" secondAttribute="trailing" constant="-4" id="uVh-L2-46w"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="leading" secondItem="nX7-lu-eSM" secondAttribute="leading" constant="-16" id="vO0-Zw-VVB"/>
                                     <constraint firstItem="U8a-Jv-Jjn" firstAttribute="top" secondItem="NHf-lz-QOe" secondAttribute="top" id="vfU-HE-t2E"/>
                                     <constraint firstItem="NHf-lz-QOe" firstAttribute="top" secondItem="EdH-7F-eR6" secondAttribute="bottom" constant="8" id="wbA-jr-V40"/>
@@ -645,11 +660,6 @@
                                 <color key="textColor" white="0.123046875" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yw-YK-a3C">
-                                <rect key="frame" x="369" y="593" width="20" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="44" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="BUX-Hk-BfR" customClass="SideMenu" customModule="JK_RideSafe" customModuleProvider="target">
                                 <rect key="frame" x="-240" y="64" width="240" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -658,6 +668,10 @@
                                 </constraints>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="3hk-dB-921" id="OzS-dz-X7C"/>
+                                    <outlet property="delegate" destination="3hk-dB-921" id="e0Q-TB-uKa"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.24348503739999999" green="0.52619368649999998" blue="0.1605397304" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -707,6 +721,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cameraButton" destination="NHf-lz-QOe" id="HNU-J0-tmf"/>
+                        <outlet property="constraint_heightOfVehicleTbl" destination="Dci-y4-jbL" id="8ba-4r-59M"/>
                         <outlet property="descriptionText" destination="EdH-7F-eR6" id="ssI-ss-GCg"/>
                         <outlet property="drivingIssuesLabel" destination="Htp-Lj-Me7" id="7pv-r5-hdp"/>
                         <outlet property="educationLabel" destination="xXL-7K-QOh" id="cNr-xY-OaG"/>
@@ -718,6 +733,7 @@
                         <outlet property="selectedImage" destination="nX7-lu-eSM" id="jna-Ox-K0O"/>
                         <outlet property="sideMenu" destination="BUX-Hk-BfR" id="bMo-Jb-bGl"/>
                         <outlet property="tableViewleadingConstraint" destination="BLy-Ev-1ds" id="F3I-ra-KqA"/>
+                        <outlet property="tbl_vehicleList" destination="ajK-zJ-aNL" id="7fy-Ek-2NK"/>
                         <outlet property="vehicleFirstField" destination="lRG-c1-AZt" id="oBK-9Q-54f"/>
                         <outlet property="vehicleNumber" destination="ZNB-Yb-Uhu" id="dID-zn-YDf"/>
                         <outlet property="vehicleTypeView" destination="Nir-Mn-CLa" id="xxQ-Bo-KBl"/>

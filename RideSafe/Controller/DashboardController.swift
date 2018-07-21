@@ -74,7 +74,12 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     @IBOutlet weak var vehicleNumber: UILabel!
     @IBOutlet weak var selectedImage: UIImageView!
     var selectedImageForReport : UIImage?
+    
     @IBOutlet weak var vehicleFirstField: UITextField!
+    @IBOutlet weak var tbl_vehicleList: UITableView!
+    @IBOutlet weak var constraint_heightOfVehicleTbl: NSLayoutConstraint!
+    var arr_vehicleList:[Dictionary<String,Any>] = []
+
     @IBOutlet weak var descriptionText: UITextView!
     @IBOutlet weak var drivingIssuesLabel: UILabel!
     @IBOutlet weak var numberOfOffenceSelectedLabel: UILabel!
@@ -82,6 +87,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     @IBOutlet weak var tableViewleadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var sideMenu: SideMenu!
     @IBOutlet weak var cameraButton: UIButton!
+
     var vehicleType = ""
     var drivingIssues:[DropDownDataSource] = []
     var imagePicker = UIImagePickerController()
@@ -249,7 +255,11 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         imagePicker.delegate = self
         setupUI()
         setLocalizedText()
-
+        
+        tbl_vehicleList.layer.borderColor = UIColor.black.cgColor
+        tbl_vehicleList.layer.borderWidth = 0.5
+        tbl_vehicleList.layer.cornerRadius = 2.0
+        
         NotificationCenter.default.addObserver(self, selector: #selector(fcmTokeUpdated), name: NSNotification.Name.MessagingRegistrationTokenRefreshed, object: nil)
     }
     
@@ -548,6 +558,46 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         let educationContainerController: EducationContainerViewController = UIStoryboard.init(name: "Education", bundle: nil).instantiateViewController(withIdentifier: "EducationContainerViewController") as! EducationContainerViewController
         self.navigationController?.pushViewController(educationContainerController, animated: true)
     }
+    
+    @IBAction func vehicleTextFieldValueChanged(_ sender: UITextField) {
+        
+        if let txt = sender.text, txt.count < 4 {
+            return
+        }
+        
+        firstly {
+            NetworkManager().doServiceCall(serviceType: .getVehicleDetailsForSearchedVehicleNo, params: ["vehicleSearchString": sender.text ?? ""], showLoader: false)
+            }.then { [unowned self] response -> () in
+                
+                if let responseObject = response["responseObject"] as? [Dictionary<String,Any>]  {
+                    
+                    self.showVehicleList(array: responseObject)
+                }
+            }.catch { error in
+                self.showError(error: error)
+        }
+    }
+    
+    func showVehicleList(array:[Dictionary<String,Any>]?) {
+        
+        if array != nil && array!.count > 0 {
+            arr_vehicleList = array!
+            tbl_vehicleList.reloadData()
+            hideVehicleList(isHide: false)
+        }else{
+            arr_vehicleList = []
+            tbl_vehicleList.reloadData()
+            hideVehicleList(isHide: true)
+        }
+    }
+    
+    func hideVehicleList(isHide: Bool) {
+        
+        UIView.animate(withDuration: 0.25) {
+            self.constraint_heightOfVehicleTbl.constant = isHide ? 0.0 : 132.0
+            self.view.layoutIfNeeded() // Change to view.layoutIfNeeded()
+        }
+    }
 }
 
 extension DashboardController: MenuCellDelegte {
@@ -712,7 +762,7 @@ extension DashboardController {
             self.vehicleType = option
         }
     }
-    
+        
     private func makeDrivingIssuesCatagory() {
         let vc = UIStoryboard(name: "DropDown", bundle: nil).instantiateViewController(withIdentifier: "DropDownController") as! DropDownController
         vc.dropDownDelgate = self
@@ -798,4 +848,29 @@ extension DashboardController:MFMessageComposeViewControllerDelegate {
 //    override func viewWillDisappear(animated: Bool) {
 //        self.navigationController?.navigationBarHidden = false
 //    }
+}
+
+extension DashboardController : UITableViewDelegate , UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arr_vehicleList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: "cellID")
+        
+        if cell == nil {
+            cell = UITableViewCell.init(style: .default, reuseIdentifier: "cellID")
+            cell?.selectionStyle = .none
+        }
+        
+        cell?.textLabel?.text = "\(arr_vehicleList[indexPath.row]["vehicleNo"] as? String ?? "") - \(arr_vehicleList[indexPath.row]["make"] as? String ?? "")"
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vehicleFirstField.text = arr_vehicleList[indexPath.row]["vehicleNo"] as? String ?? ""
+        hideVehicleList(isHide: true)
+    }
 }

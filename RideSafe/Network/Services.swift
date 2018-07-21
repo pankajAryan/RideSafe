@@ -54,7 +54,7 @@ enum ServiceType: String {
     case getDrivingCaseLocationForApp = "getDrivingCaseLocationForApp"
     case recordFieldOfficialLocation = "recordFieldOfficialLocation"
     case recordCitizenLocation = "recordCitizenLocation"
-    
+    case getVehicleDetailsForSearchedVehicleNo = "getVehicleDetailsForSearchedVehicleNo"
     case noService = ""
 }
 
