@@ -668,10 +668,6 @@
                                 </constraints>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="3hk-dB-921" id="OzS-dz-X7C"/>
-                                    <outlet property="delegate" destination="3hk-dB-921" id="e0Q-TB-uKa"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.24348503739999999" green="0.52619368649999998" blue="0.1605397304" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
