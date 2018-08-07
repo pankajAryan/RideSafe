@@ -565,6 +565,10 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             return
         }
         
+        if  !NetworkReachabilityManager()!.isReachable  {
+            return
+        }
+        
         firstly {
             NetworkManager().doServiceCall(serviceType: .getVehicleDetailsForSearchedVehicleNo, params: ["vehicleSearchString": sender.text ?? ""], showLoader: false)
             }.then { [unowned self] response -> () in
