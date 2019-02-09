@@ -152,8 +152,8 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             menuButton = nil
         }
         
-        menuButton = ExpandingMenuButton(frame: CGRect.init(x: self.view.bounds.width-40, y: self.view.bounds.height-95 - 40, width: widthHeight, height: widthHeight), centerImage: #imageLiteral(resourceName: "plus"), centerHighlightedImage: #imageLiteral(resourceName: "plus"))
-        //hack
+        menuButton = ExpandingMenuButton.init(frame: CGRect.init(x: self.view.bounds.width-40, y: self.view.bounds.height-95 - 40, width: widthHeight, height: widthHeight), image: #imageLiteral(resourceName: "plus"), highlightedImage: #imageLiteral(resourceName: "plus"), rotatedImage: #imageLiteral(resourceName: "plus"), rotatedHighlightedImage: #imageLiteral(resourceName: "plus"))
+        
         
         if menuBtnCenter == nil {
             menuButton.isHidden = true
@@ -162,14 +162,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
             menuButton.center = menuBtnCenter!
         }
         //end hack
-        menuButton.bottomViewColor = UIColor.clear
-        menuButton.centerButton.backgroundColor = UIColor.red
+        self.menuButton.bottomViewColor = UIColor.clear
+        self.menuButton.menuButton.backgroundColor = UIColor.red
 
-        menuButton.centerButton.layer.cornerRadius = widthHeight/2
-        menuButton.centerButton.layer.shadowColor = UIColor.black.cgColor
-        menuButton.centerButton.layer.shadowRadius = 2
-        menuButton.centerButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        menuButton.centerButton.layer.shadowOpacity = 0.3
+        self.menuButton.menuButton.layer.cornerRadius = widthHeight/2
+        self.menuButton.menuButton.layer.shadowColor = UIColor.black.cgColor
+        self.menuButton.menuButton.layer.shadowRadius = 2
+        self.menuButton.menuButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.menuButton.menuButton.layer.shadowOpacity = 0.3
         
         self.view.addSubview(menuButton)
         
@@ -522,9 +522,9 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     func sendSMS() {
         if (MFMessageComposeViewController.canSendText()) {
             let controller = MFMessageComposeViewController()
-          let body  = "JHQP3:lat: " + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + ":vehicleType:" + vehicleType
+          let body  = "lat:" + "\(userLocation.latitude)" + ":lon:" + "\(userLocation.longitude)" + ":desc:" + descriptionText.text + ":categoryIds:" + catagoryIds() + ":vehicleNumber:" + vehicleFirstField.text! + ":vehicleType:" + vehicleType
             controller.body = body
-            controller.recipients = ["9220592205"]
+            controller.recipients = ["9246400200"]
             controller.messageComposeDelegate = self
             self.present(controller, animated: true, completion: nil)
         }

@@ -139,9 +139,7 @@
 		D92CAC8D20F78C2E008562E7 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CAC8920F78C2E008562E7 /* ResponseObject.swift */; };
 		D92CAC8F20F7A410008562E7 /* FieldOfficerAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */; };
 		D92EAB2820FB2A910078A284 /* ExpandingMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */; };
-		D92EAB2920FB2A910078A284 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2020FB2A910078A284 /* .gitkeep */; };
 		D92EAB2A20FB2A910078A284 /* ExpandingMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */; };
-		D92EAB2B20FB2A910078A284 /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2320FB2A910078A284 /* .gitkeep */; };
 		D92EAB2C20FB2A910078A284 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2520FB2A910078A284 /* selected.caf */; };
 		D92EAB2D20FB2A910078A284 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2620FB2A910078A284 /* fold.caf */; };
 		D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2720FB2A910078A284 /* expanding.caf */; };
@@ -287,9 +285,7 @@
 		D92CAC8920F78C2E008562E7 /* ResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		D92CAC8E20F7A410008562E7 /* FieldOfficerAnnotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FieldOfficerAnnotationView.xib; sourceTree = "<group>"; };
 		D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMenuItem.swift; sourceTree = "<group>"; };
-		D92EAB2020FB2A910078A284 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingMenuButton.swift; sourceTree = "<group>"; };
-		D92EAB2320FB2A910078A284 /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D92EAB2520FB2A910078A284 /* selected.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = selected.caf; sourceTree = "<group>"; };
 		D92EAB2620FB2A910078A284 /* fold.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fold.caf; sourceTree = "<group>"; };
 		D92EAB2720FB2A910078A284 /* expanding.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = expanding.caf; sourceTree = "<group>"; };
@@ -785,7 +781,6 @@
 			isa = PBXGroup;
 			children = (
 				D92EAB1F20FB2A910078A284 /* ExpandingMenuItem.swift */,
-				D92EAB2020FB2A910078A284 /* .gitkeep */,
 				D92EAB2120FB2A910078A284 /* ExpandingMenuButton.swift */,
 			);
 			path = Classes;
@@ -794,7 +789,6 @@
 		D92EAB2220FB2A910078A284 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				D92EAB2320FB2A910078A284 /* .gitkeep */,
 				D92EAB2420FB2A910078A284 /* Sounds */,
 			);
 			path = Assets;
@@ -905,7 +899,6 @@
 				2C1566992056A6F900B4067C /* MenuCell.xib in Resources */,
 				D9F17B462103696D008D4D92 /* CitizenAnnotationView.xib in Resources */,
 				B8AFD87C205AD23E0044A608 /* HelpLine.storyboard in Resources */,
-				D92EAB2B20FB2A910078A284 /* .gitkeep in Resources */,
 				2CB05AF2207491FE006C547E /* Poppins-Medium.ttf in Resources */,
 				2C1EE2B5204E5A440093B3BF /* Main.storyboard in Resources */,
 				2CC96A33207A947F00B7AAFD /* futuram_C.ttf in Resources */,
@@ -916,7 +909,6 @@
 				B8C4F27F2065574600587E55 /* ReportTableViewCell.xib in Resources */,
 				2CB05AF1207491FE006C547E /* Poppins-Regular.ttf in Resources */,
 				D92EAB2D20FB2A910078A284 /* fold.caf in Resources */,
-				D92EAB2920FB2A910078A284 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1197,6 +1189,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1256,6 +1249,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1277,8 +1271,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3W3UD2A4L8;
 				INFOPLIST_FILE = RideSafe/Info.plist;
@@ -1287,7 +1281,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.jkridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "abcac450-daa0-4dd3-af68-ac96c5cf6bd7";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Dev_JKRideSafe_7/8/2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1299,8 +1293,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3W3UD2A4L8;
 				INFOPLIST_FILE = RideSafe/Info.plist;
@@ -1309,7 +1303,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.jkridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "abcac450-daa0-4dd3-af68-ac96c5cf6bd7";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = Dev_JKRideSafe_7/8/2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

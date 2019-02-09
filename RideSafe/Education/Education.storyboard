@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,7 +21,7 @@
         <!--Education Container View Controller-->
         <scene sceneID="o9E-zP-7Jv">
             <objects>
-                <viewController storyboardIdentifier="EducationContainerViewController" id="oTI-JK-u1A" customClass="EducationContainerViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationContainerViewController" id="oTI-JK-u1A" customClass="EducationContainerViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y1g-eL-N3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
         <!--Education Video View Controller-->
         <scene sceneID="3Se-KN-4Qf">
             <objects>
-                <viewController storyboardIdentifier="EducationVideoViewController" id="dEt-vq-f15" customClass="EducationVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationVideoViewController" id="dEt-vq-f15" customClass="EducationVideoViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J9F-fa-bKo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
         <!--Youtube Video View Controller-->
         <scene sceneID="zgO-pg-dWJ">
             <objects>
-                <viewController storyboardIdentifier="YoutubeVideoViewController" id="tVL-oe-BNb" customClass="YoutubeVideoViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YoutubeVideoViewController" id="tVL-oe-BNb" customClass="YoutubeVideoViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6vy-6m-WA3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -182,7 +182,7 @@
         <!--Open Pdf View Controller-->
         <scene sceneID="iXZ-ke-C1N">
             <objects>
-                <viewController storyboardIdentifier="OpenPdfViewController" id="sUQ-JV-iUO" customClass="OpenPdfViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OpenPdfViewController" id="sUQ-JV-iUO" customClass="OpenPdfViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3Yi-uL-xLS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -197,7 +197,7 @@
         <!--EducationPDF View Controller-->
         <scene sceneID="i89-0H-UIa">
             <objects>
-                <viewController storyboardIdentifier="EducationPDFViewController" id="RAt-6q-gL1" customClass="EducationPDFViewController" customModule="RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EducationPDFViewController" id="RAt-6q-gL1" customClass="EducationPDFViewController" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bHn-0W-Vtc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
