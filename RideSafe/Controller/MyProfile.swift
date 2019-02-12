@@ -15,14 +15,15 @@ class MyProfile: RideSafeViewController {
     @IBOutlet weak var districtField: UITextField!
     @IBOutlet weak var mobileNumberField: UITextField!
     @IBOutlet weak var nameFiled: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
+
     private var selectedDistrictID:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        self.title = "My profile"
+        self.title = "My profile".localized
         getDistrict()
-        self.view.bringSubview(toFront: districtField)
     }
     
     fileprivate func getMyProfileData(citizenId:String) {
@@ -56,7 +57,7 @@ class MyProfile: RideSafeViewController {
     
     private func makeDropDow(_ dictList: [District]?) {
         
-        let frm = self.districtField.superview?.convert(self.districtField.frame, to: view)
+        let frm = self.districtField.superview?.convert(self.districtField.frame, to: scrollView)
         let drop = UIDropDown(frame: frm!)
         drop.animationType = .Classic
         drop.hideOptionsWhenSelect = true
@@ -77,7 +78,7 @@ class MyProfile: RideSafeViewController {
         drop.didSelect { (option, index) in
             self.selectedDistrictID = (dictList?[index].districtId)!
         }
-        self.view.addSubview(drop)
+        self.scrollView.addSubview(drop)
     }
     
     @IBAction func updateProfile(_ sender: UIButton) {

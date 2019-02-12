@@ -16,6 +16,8 @@ class EmergencyContactViewController: RideSafeViewController {
     @IBOutlet weak var contact2: UITextField!
     @IBOutlet weak var contact3: UITextField!
     @IBOutlet weak var liveLocationSwitch: UISwitch!
+    @IBOutlet weak var shareLiveLocationLabel: UILabel!
+
     var  contactPickerScene: ContactsPicker!
     var isContactAvailable = false
     var selectedTextField: UITextField!
@@ -24,6 +26,7 @@ class EmergencyContactViewController: RideSafeViewController {
         super.viewDidLoad()
         loadEmergencyContact()
         self.title = "Emergency Contacts"
+        shareLiveLocationLabel.text = "Share Live Location".localized
         setBackButton()
         if let _ = ShareLiveLocation.shared.timer {
             liveLocationSwitch.setOn(true, animated: false)

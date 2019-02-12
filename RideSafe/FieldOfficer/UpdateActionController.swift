@@ -150,7 +150,21 @@ class UpdateActionController: RideSafeViewController {
         view_action.isHidden = false
     }
     
+    @IBAction func closeActionView(_ sender: UIButton) {
+        view_action.isHidden = true
+    }
+    
     @IBAction func updateClicked(_ sender: UIButton) {
+        
+        if issueStatus == "" {
+            showAlert(message: "Please select issue type!")
+            return
+        }
+        
+        if actionTextView.text.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) == "" {
+            showAlert(message: "Please enter the action taken!")
+            return
+        }
         
         view_action.isHidden = true
 

@@ -144,6 +144,7 @@
 		D92EAB2D20FB2A910078A284 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2620FB2A910078A284 /* fold.caf */; };
 		D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2720FB2A910078A284 /* expanding.caf */; };
 		D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E2D1A20FA427200483984 /* TutorialVC.swift */; };
+		D97614312213321500A378BF /* ZoomableImageViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97614302213321500A378BF /* ZoomableImageViewVC.swift */; };
 		D9B732E420EA8226006F0B19 /* AdministrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B732E320EA8226006F0B19 /* AdministrationController.swift */; };
 		D9CCEE6E21021EE700F8C26D /* official.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D9CCEE6D21021EE600F8C26D /* official.mp3 */; };
 		D9F17B462103696D008D4D92 /* CitizenAnnotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9F17B452103696D008D4D92 /* CitizenAnnotationView.xib */; };
@@ -290,6 +291,7 @@
 		D92EAB2620FB2A910078A284 /* fold.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fold.caf; sourceTree = "<group>"; };
 		D92EAB2720FB2A910078A284 /* expanding.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = expanding.caf; sourceTree = "<group>"; };
 		D94E2D1A20FA427200483984 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
+		D97614302213321500A378BF /* ZoomableImageViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewVC.swift; sourceTree = "<group>"; };
 		D9B732E320EA8226006F0B19 /* AdministrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministrationController.swift; sourceTree = "<group>"; };
 		D9C74C9D20FFA260006FEB8E /* JK RideSafe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JK RideSafe.entitlements"; sourceTree = "<group>"; };
 		D9CCEE6D21021EE600F8C26D /* official.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = official.mp3; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				2CF24341205E7880007E696C /* SettingController.swift */,
 				2CF2435F206010B6007E696C /* RideSafeNavigationController.swift */,
 				D94E2D1A20FA427200483984 /* TutorialVC.swift */,
+				D97614302213321500A378BF /* ZoomableImageViewVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1082,6 +1085,7 @@
 				B803CD9B2065E15700475AB9 /* MyRoadInfraIssueResponse.swift in Sources */,
 				2C63FC23206590F900BE8691 /* DrivingIssueController.swift in Sources */,
 				2C63FC1F20657D8900BE8691 /* EmbededContainerController.swift in Sources */,
+				D97614312213321500A378BF /* ZoomableImageViewVC.swift in Sources */,
 				2C23660120677796000981A8 /* UpdateActionController.swift in Sources */,
 				B841ED0C205D920B00ACFF0E /* HelpLineTableViewCell.swift in Sources */,
 				2CF243702062B126007E696C /* Extension+UITextView.swift in Sources */,

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Kh-hi-RG9">
-                                <rect key="frame" x="16" y="135" width="343" height="100"/>
+                                <rect key="frame" x="16" y="135.5" width="343" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="0Kt-Fr-aE8"/>
@@ -85,14 +85,8 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8yD-54-h7X">
-                                <rect key="frame" x="16" y="243" width="343" height="70"/>
+                                <rect key="frame" x="16" y="243.5" width="343" height="70"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="G0t-F7-SIW">
-                                        <rect key="frame" x="8" y="5" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="2hd-Eo-x5a"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="46o-Oh-vWa">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="70"/>
                                         <state key="normal" title="Photo">
@@ -102,17 +96,33 @@
                                             <action selector="openCameraClicked:" destination="Hum-IQ-e3f" eventType="touchUpInside" id="8kD-sw-XHu"/>
                                         </connections>
                                     </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera" translatesAutoresizingMaskIntoConstraints="NO" id="G0t-F7-SIW">
+                                        <rect key="frame" x="8" y="8" width="54" height="54"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="FNv-CZ-fvc"/>
+                                            <constraint firstAttribute="height" constant="54" id="sxQ-br-co0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAZ-Ye-P69">
+                                        <rect key="frame" x="8" y="8" width="54" height="54"/>
+                                        <connections>
+                                            <action selector="openPhotoClicked:" destination="Hum-IQ-e3f" eventType="touchUpInside" id="ear-jK-DKG"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="yAZ-Ye-P69" firstAttribute="top" secondItem="G0t-F7-SIW" secondAttribute="top" id="7Zo-jP-t3y"/>
                                     <constraint firstItem="46o-Oh-vWa" firstAttribute="leading" secondItem="8yD-54-h7X" secondAttribute="leading" id="AGK-0Q-DYK"/>
                                     <constraint firstAttribute="trailing" secondItem="46o-Oh-vWa" secondAttribute="trailing" id="CVO-8L-y32"/>
+                                    <constraint firstItem="G0t-F7-SIW" firstAttribute="centerY" secondItem="8yD-54-h7X" secondAttribute="centerY" id="K09-Tc-Dq3"/>
                                     <constraint firstItem="46o-Oh-vWa" firstAttribute="top" secondItem="8yD-54-h7X" secondAttribute="top" id="Mht-zk-m7l"/>
-                                    <constraint firstAttribute="bottom" secondItem="G0t-F7-SIW" secondAttribute="bottom" constant="5" id="WIn-UA-GE7"/>
+                                    <constraint firstItem="yAZ-Ye-P69" firstAttribute="leading" secondItem="G0t-F7-SIW" secondAttribute="leading" id="RU2-Jm-nvo"/>
                                     <constraint firstAttribute="height" constant="70" id="Zce-vu-if9"/>
+                                    <constraint firstItem="yAZ-Ye-P69" firstAttribute="bottom" secondItem="G0t-F7-SIW" secondAttribute="bottom" id="e6a-Gk-YnU"/>
+                                    <constraint firstItem="yAZ-Ye-P69" firstAttribute="trailing" secondItem="G0t-F7-SIW" secondAttribute="trailing" id="q1X-2D-VIm"/>
                                     <constraint firstItem="G0t-F7-SIW" firstAttribute="leading" secondItem="8yD-54-h7X" secondAttribute="leading" constant="8" id="vUR-N2-KRe"/>
                                     <constraint firstAttribute="bottom" secondItem="46o-Oh-vWa" secondAttribute="bottom" id="xKy-bZ-y88"/>
-                                    <constraint firstItem="G0t-F7-SIW" firstAttribute="top" secondItem="8yD-54-h7X" secondAttribute="top" constant="5" id="xdh-of-7zW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -146,11 +156,13 @@
                         <viewLayoutGuide key="safeArea" id="f8a-xM-N4f"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="46o-Oh-vWa" id="6gP-GH-Z8L"/>
                         <outlet property="dropDownButton" destination="foZ-23-Lxm" id="Z5w-4I-1uU"/>
                         <outlet property="issueDiscriptionTextView" destination="7Kh-hi-RG9" id="fbw-fS-Uyc"/>
                         <outlet property="issueImageView" destination="G0t-F7-SIW" id="tQW-U2-8BT"/>
                         <outlet property="issueTypesLabel" destination="9TU-px-g9k" id="9vb-Iw-qsn"/>
                         <outlet property="numberOfOffenceSelectedLabel" destination="D4d-Cg-Rvb" id="fqM-Zr-G1l"/>
+                        <outlet property="reportButton" destination="f9g-0M-MEu" id="P1W-Ye-Z4N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3JE-6a-YNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,7 +171,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera" width="51" height="40"/>
+        <image name="camera" width="51.5" height="40.5"/>
         <image name="icn_frwd" width="24" height="24"/>
     </resources>
 </document>

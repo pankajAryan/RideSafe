@@ -111,9 +111,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
         setupUI()
         let yellowColor = UIColor(red: 245.0/255.0, green: 193.0/255.0, blue: 68.0/255.0, alpha: 1)
         segmentedControl.setup(content: [SegmentioItem(title: "DRIVING ISSUE", image: nil),
-                                         SegmentioItem(title: "TRANSPORT", image: nil),
-                                         SegmentioItem(title: "POLICE", image: nil),
-                                         SegmentioItem(title: "ADMINISTRATION", image: nil)],
+                                         SegmentioItem(title: "TRANSPORT", image: nil)],
                                style: .onlyLabel,
                                options: SegmentioOptions(backgroundColor: UIColor.white,
                                                          segmentPosition: .dynamic,

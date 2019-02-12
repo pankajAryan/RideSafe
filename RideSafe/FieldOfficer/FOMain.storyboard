@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -173,7 +173,7 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="253" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXV-iT-ICn">
-                                                            <rect key="frame" x="56" y="338.5" width="227" height="16.5"/>
+                                                            <rect key="frame" x="56" y="338" width="227" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -219,7 +219,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKz-oZ-mvh">
-                                                            <rect key="frame" x="317" y="267.5" width="30" height="30"/>
+                                                            <rect key="frame" x="317" y="268" width="30" height="30"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="30" id="FxM-T3-wXc"/>
                                                                 <constraint firstAttribute="height" constant="30" id="O1D-4k-3zQ"/>
@@ -442,7 +442,7 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NbH-k7-Sqw">
-                                        <rect key="frame" x="62" y="8" width="297" height="45"/>
+                                        <rect key="frame" x="62" y="7.5" width="297" height="45"/>
                                         <color key="backgroundColor" red="0.96078431369999995" green="0.75686274509999996" blue="0.2666666667" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="MVr-ei-YUB"/>
@@ -481,7 +481,7 @@
                                 <rect key="frame" x="8" y="0.0" width="359" height="607"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jP-gn-9qp">
-                                        <rect key="frame" x="0.0" y="8" width="359" height="332"/>
+                                        <rect key="frame" x="0.0" y="8" width="359" height="331.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I62-3e-Sla">
                                                 <rect key="frame" x="8" y="8" width="343" height="200"/>
@@ -523,7 +523,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ao4-ns-PSB">
-                                                <rect key="frame" x="321" y="211.5" width="30" height="30"/>
+                                                <rect key="frame" x="321" y="211" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="1Ic-lA-U45"/>
                                                     <constraint firstAttribute="height" constant="30" id="frE-Hp-41F"/>
@@ -547,19 +547,19 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="253" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIe-C5-mr9">
-                                                <rect key="frame" x="56" y="309.5" width="231" height="14.5"/>
+                                                <rect key="frame" x="56" y="309" width="231" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="752" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dc2-H3-xpq">
-                                                <rect key="frame" x="8" y="309.5" width="31" height="14.5"/>
+                                                <rect key="frame" x="8" y="309" width="31" height="14.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZT-hP-Wgm">
-                                                <rect key="frame" x="47" y="307" width="1" height="19"/>
+                                                <rect key="frame" x="47" y="307" width="1" height="18.5"/>
                                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="s3w-wl-oQV"/>
@@ -731,7 +731,7 @@
                                                         <rect key="frame" x="8" y="43" width="309" height="36"/>
                                                         <subviews>
                                                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" image="icn_dropdown" translatesAutoresizingMaskIntoConstraints="NO" id="oAg-HH-9Fg">
-                                                                <rect key="frame" x="291" y="5.5" width="24" height="24"/>
+                                                                <rect key="frame" x="291" y="6" width="24" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="24" id="BQz-UD-UxW"/>
                                                                     <constraint firstAttribute="width" constant="24" id="jLE-9O-PfT"/>
@@ -783,9 +783,21 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y4O-Sm-u8y">
+                                        <rect key="frame" x="327" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Adr-Gv-E1W"/>
+                                            <constraint firstAttribute="height" constant="40" id="PNf-eB-gZs"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_action_close"/>
+                                        <connections>
+                                            <action selector="closeActionView:" destination="S4b-oh-Q6e" eventType="touchUpInside" id="irV-nu-nci"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.70288420380000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="y4O-Sm-u8y" secondAttribute="trailing" constant="8" id="02x-Cq-zpl"/>
                                     <constraint firstItem="FvU-dD-d5Z" firstAttribute="leading" secondItem="apP-xv-5V3" secondAttribute="leading" constant="24" id="H00-dZ-Fbs"/>
                                     <constraint firstItem="AgW-AX-IPi" firstAttribute="top" secondItem="FvU-dD-d5Z" secondAttribute="top" constant="-8" id="IO3-Vj-ydd"/>
                                     <constraint firstItem="FvU-dD-d5Z" firstAttribute="centerY" secondItem="apP-xv-5V3" secondAttribute="centerY" id="LZt-wu-VJH"/>
@@ -793,6 +805,7 @@
                                     <constraint firstItem="AgW-AX-IPi" firstAttribute="bottom" secondItem="FvU-dD-d5Z" secondAttribute="bottom" constant="8" id="bLb-Ls-pHU"/>
                                     <constraint firstItem="AgW-AX-IPi" firstAttribute="leading" secondItem="FvU-dD-d5Z" secondAttribute="leading" constant="-8" id="h5K-Rx-lYl"/>
                                     <constraint firstItem="AgW-AX-IPi" firstAttribute="trailing" secondItem="FvU-dD-d5Z" secondAttribute="trailing" constant="8" id="taM-uq-3wh"/>
+                                    <constraint firstItem="y4O-Sm-u8y" firstAttribute="top" secondItem="apP-xv-5V3" secondAttribute="top" constant="8" id="tw9-Qy-kWF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -912,7 +925,7 @@
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uX4-Su-U04">
-                                                            <rect key="frame" x="8" y="288.5" width="31.5" height="20"/>
+                                                            <rect key="frame" x="8" y="288" width="31.5" height="20"/>
                                                             <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1132,16 +1145,17 @@
         </scene>
     </scenes>
     <resources>
-        <image name="call_large" width="49" height="49"/>
+        <image name="call_large" width="49.5" height="49.5"/>
         <image name="direction" width="25" height="25"/>
-        <image name="form_bg" width="375" height="666"/>
+        <image name="form_bg" width="375" height="666.5"/>
         <image name="ic_action" width="24" height="24"/>
+        <image name="ic_action_close" width="24" height="24"/>
         <image name="ic_category" width="24" height="24"/>
         <image name="ic_star" width="24" height="24"/>
         <image name="ic_status_pending" width="24" height="24"/>
         <image name="icn_dropdown" width="24" height="24"/>
         <image name="menu" width="25" height="25"/>
-        <image name="text_area" width="319" height="91"/>
-        <image name="text_field" width="319" height="44"/>
+        <image name="text_area" width="319.5" height="91"/>
+        <image name="text_field" width="319.5" height="44"/>
     </resources>
 </document>

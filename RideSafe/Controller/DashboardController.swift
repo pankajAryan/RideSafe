@@ -442,7 +442,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         descriptionText.text = ""
         descriptionText.placeholder = "Describe Issues".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
-        numberOfOffenceSelectedLabel.text = "No Offence Selected"
+        numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
        // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         selectedImage.image = #imageLiteral(resourceName: "camera")
         selectedImageForReport = nil
@@ -674,10 +674,10 @@ extension DashboardController: DropDownDelgate {
         
         if allIssues != "" {
             drivingIssuesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
-            numberOfOffenceSelectedLabel.text = "\(items.count) Offence(s) Selected"
+            numberOfOffenceSelectedLabel.text = "\(items.count) "+"Offence(s) Selected".localized
         } else {
             drivingIssuesLabel.text = "Select Driving Issues".localized
-            numberOfOffenceSelectedLabel.text = "No Offence Selected"
+            numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
         }
     }
     
@@ -712,6 +712,19 @@ extension DashboardController: UITextFieldDelegate {
 }
 
 extension DashboardController {
+    
+    @IBAction func openPhotoClicked(_ sender: Any) {
+        
+        if selectedImageForReport == nil {
+            return
+        }
+        
+        let zoomableImageViewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ZoomableImageViewVC") as! ZoomableImageViewVC
+        zoomableImageViewVC.img = selectedImageForReport
+        zoomableImageViewVC.modalPresentationStyle = .overCurrentContext
+        present(zoomableImageViewVC, animated: true, completion: nil)
+    }
+    
     @IBAction func cameraClicked(_ sender: UIButton) {
         
         let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!", message: nil, preferredStyle: .actionSheet)
@@ -830,17 +843,17 @@ extension DashboardController:SettingControllerProtocol {
     }
     
     func setLocalizedText() {
-        vehicleFirstField.placeholder = "E.g: JK01C1234 (only letters & digits allowed)"//.localized
+        vehicleFirstField.placeholder = "Eg: JK".localized+" (only letters & digits allowed)"//.localized
 //        vehicleSecondField.placeholder = "Eg: 01C".localized
 //        vehicleThirdField.placeholder = "Eg: 1234".localized
         vehicleNumber.text = "Vehicle Number".localized
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
-        numberOfOffenceSelectedLabel.text = "No Offence Selected"
+        numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
 
         descriptionText.placeholder = "Describe issue".localized
          educationLabel.text = "Education".localized
-         helpLineLabel.text = "Help Line".localized
+         helpLineLabel.text = "Helpline".localized
          emegencyLabel.text = "Emergency Contacts".localized
          reportInfraLabel.text = "Road Infra".localized
 //        shareLiveLocationLabel.text =  "Share Live Location".localized

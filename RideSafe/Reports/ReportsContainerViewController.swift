@@ -25,8 +25,9 @@ class ReportsContainerViewController: RideSafeViewController {
         reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
         reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
         reportSegmentController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
-        reportSegmentController.backgroundColor = .white
-
+        reportSegmentController.titleColor = UIColor.white
+        reportSegmentController.unselectedTitleColor = UIColor.white
+        reportSegmentController.backgroundColor = UIColor.init(red: 0.79, green: 0.24, blue: 0.16, alpha: 1.0)
         unsafeDrivingIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "UnsafeDrivingIssueListViewController") as? UnsafeDrivingIssueListViewController
         roadInfraIssueListViewController = storyboard?.instantiateViewController(withIdentifier: "RoadInfraIssueListViewController") as? RoadInfraIssueListViewController
 

@@ -24,13 +24,11 @@ class HelpLineContainerViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Helpline"
-        segmentedController.items = ["ADMINISTRATION","MVD","POLICE"]
-        segmentedController.setTitle("ADMINISTRATION", forSegmentAt: 0)
+        segmentedController.items = ["MVD"]
         segmentedController.setTitle("MVD", forSegmentAt: 1)
-        segmentedController.setTitle("POLICE", forSegmentAt: 2)
         segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
-
-        segmentedController.backgroundColor = UIColor.white
+        segmentedController.titleColor = UIColor.white
+        segmentedController.backgroundColor = UIColor.init(red: 0.79, green: 0.24, blue: 0.16, alpha: 1.0)
         helpLineViewController = storyboard?.instantiateViewController(withIdentifier: "HelplineAdministrationViewController") as? HelplineAdministrationViewController
         helpLineViewController?.view.frame = CGRect.init(x: 0, y: 0, width: self.containerView.frame.size.width, height: self.containerView.frame.size.height)
         self.containerView.addSubview((helpLineViewController?.view)!)
@@ -47,7 +45,8 @@ class HelpLineContainerViewController: RideSafeViewController {
         self.districtList = dictList!
         rightButton.setTitleColor(UIColor.white, for: .normal)
         rightButton.titleLabel?.font = UIFont.init(name: "Poppins-Medium", size: 11.0)!
-        rightButton.setImage(#imageLiteral(resourceName: "dropdown-1"), for: .normal)
+        rightButton.setImage(#imageLiteral(resourceName: "dropdown-1").withRenderingMode(.alwaysTemplate), for: .normal)
+        rightButton.tintColor = UIColor.white
         rightButton.semanticContentAttribute = .forceRightToLeft
         rightButton.contentHorizontalAlignment = .right
         rightButton.contentVerticalAlignment = .center

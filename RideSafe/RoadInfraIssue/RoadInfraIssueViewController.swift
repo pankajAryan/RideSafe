@@ -12,6 +12,9 @@ import CoreLocation
 
 
 class RoadInfraIssueViewController: RideSafeViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate,CLLocationManagerDelegate {
+    
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
 
     @IBOutlet weak var issueTypesLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
@@ -29,7 +32,11 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Report Issue"
-        issueDiscriptionTextView.placeholder = "Describe Issue"
+        issueDiscriptionTextView.placeholder = "Describe Issue".localized
+        reportButton.setTitle("Report".localized, for: .normal)
+        cameraButton.setTitle("Photo".localized, for: .normal)
+        numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
+
         loadIssueListAsperLanguage()
         addtapGestureOnIssueLabel()
         imagePicker.delegate = self
@@ -124,6 +131,18 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func openPhotoClicked(_ sender: Any) {
+        
+        if issueImage == nil {
+            return
+        }
+        
+        let zoomableImageViewVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ZoomableImageViewVC") as! ZoomableImageViewVC
+        zoomableImageViewVC.img = issueImage
+        zoomableImageViewVC.modalPresentationStyle = .overCurrentContext
+        present(zoomableImageViewVC, animated: true, completion: nil)
+    }
+    
     @IBAction func openCameraClicked(_ sender: Any) {
         let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!", message: nil, preferredStyle: .actionSheet)
         
@@ -204,10 +223,10 @@ extension RoadInfraIssueViewController: DropDownDelgate{
         
         if allIssues != "" {
             issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
-            numberOfOffenceSelectedLabel.text = "\(items.count) Offence(s) Selected"
+            numberOfOffenceSelectedLabel.text = "\(items.count) "+"Offence(s) Selected".localized
         } else {
             issueTypesLabel.text = "-Select-"//.localized
-            numberOfOffenceSelectedLabel.text = "No Offence Selected"
+            numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
         }
     }
     
