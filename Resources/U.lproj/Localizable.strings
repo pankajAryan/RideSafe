@@ -7,7 +7,7 @@
 "Vehicle Number" = "گاڑی نمبر";
 "Select Driving Issues" = "ڈرائیونگ کے مسائل کا انتخاب کریں";
 "Eg: JK" = "JK01Cمثال: 1234";
-"Road Infra" = "روڈ انفراسٹرکچر";
+"Road Infra" = "روڈ بُنیادی ڈھانچا";
 "Helpline" = "ہیلپ لائن";
 "Education" = "تعلیم " ;
 "Emergency Contacts" = "ہنگامی رابطے" ;
@@ -26,6 +26,38 @@
 "About App" = "اپپ  کے بارے میں";
 "Settings" = "ترتیب";
 "Logout" = "لاگ آوٹ";
+"Tutorial" = "سبق";
+"My Reports" = "میری رپورٹیں";
+"Share" = "بانٹیں";
+"Videos" = "ویڈیوز";
+"PDFs" = "پی ڈی ایفز";
+"Unsafe Driving" = "غیر محفوظ ڈرائیونگ";
+"REOPEN" = "دوبارہ شروع کریں";
+"INITIATED" = "ابتدائی";
+"PENDING" = "زیر سماعت";
+"RESOLVED" = "حل کیا";
+"VOID" = "باطل";
+"only_letters_digits" = "(صرف حروف اور ہندسوں کی اجازت دی)";
+"Pending Infra Issue" = "زیر التواء انفراسٹرکچر شکایات";
+"Pending Driving Issue" = "موصول ہونے والی ڈرائیونگ شکایات";
+"Contact" = "رابطے";
+"Save" = "محفوظ کریں";
+"share_location_desc" = "مندرجہ ذیل پر سوئچنگ کرکے اپنے ہنگامی رابطوں کے ساتھ لائیو مقام کا اشتراک کریں!";
+"Road Safety Education" = "روڈ سیفٹی تعلیم";
+"Infra Issue" = "انفرا مسئلہ";
+"Report Issue" = "رپورٹ کا مسئلہ";
+"-Select-" = "منتخب کریں-";
+"Select item" = "آئٹم منتخب کریں";
+"Done" = "ہو گیا";
+"Version" = "ورژن";
+"Issue Location" = "مسئلہ کا مقام";
+"Name" = "نام";
+"Mobile Number" = "موبائل نمبر";
+"District" = "ضلع";
+"UPDATE PROFILE" = "اپ ڈیٹ پروفائل";
+"Notifications" = "اطلاعات";
+"No records to show" = "ظاہر کرنے کے لئے کوئی ریکارڈ نہیں ہے";
+
 "about_app" = "
 جی کے سواری
 سڑکوں پر مختصر ڈرائیونگ پر محفوظ ڈرائیونگ کو فروغ دینے کے لئے ایک شہری سینٹیٹی نوٹیفکیشن نوٹ: بھارت میں حادثات کے ناقابل اعتماد ڈرائیونگ میں سے ایک اہم سبب ہے. اندر

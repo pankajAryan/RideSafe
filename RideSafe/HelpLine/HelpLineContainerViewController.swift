@@ -23,7 +23,7 @@ class HelpLineContainerViewController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Helpline"
+        self.title = "Helpline".localized
         segmentedController.items = ["MVD"]
         segmentedController.setTitle("MVD", forSegmentAt: 1)
         segmentedController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
@@ -127,6 +127,7 @@ class HelpLineContainerViewController: RideSafeViewController {
 extension HelpLineContainerViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( districtList.count == 0, viewOn: tableView)
         return self.districtList.count
     }
     

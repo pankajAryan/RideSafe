@@ -15,8 +15,9 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
-
+    
     @IBOutlet weak var issueTypesLabel: UILabel!
+    @IBOutlet weak var lbl_infraIssueText: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var numberOfOffenceSelectedLabel: UILabel!
     @IBOutlet weak var issueDiscriptionTextView: UITextView!
@@ -31,11 +32,13 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Report Issue"
+        self.title = "Report Issue".localized
         issueDiscriptionTextView.placeholder = "Describe Issue".localized
         reportButton.setTitle("Report".localized, for: .normal)
         cameraButton.setTitle("Photo".localized, for: .normal)
         numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
+        lbl_infraIssueText.text = "Infra Issue".localized
+        issueTypesLabel.text = "-Select-".localized
 
         loadIssueListAsperLanguage()
         addtapGestureOnIssueLabel()
@@ -225,7 +228,7 @@ extension RoadInfraIssueViewController: DropDownDelgate{
             issueTypesLabel.text = String(describing: allIssues.prefix(allIssues.count-2))
             numberOfOffenceSelectedLabel.text = "\(items.count) "+"Offence(s) Selected".localized
         } else {
-            issueTypesLabel.text = "-Select-"//.localized
+            issueTypesLabel.text = "-Select-".localized
             numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
         }
     }

@@ -161,6 +161,7 @@
                         <outlet property="issueDiscriptionTextView" destination="7Kh-hi-RG9" id="fbw-fS-Uyc"/>
                         <outlet property="issueImageView" destination="G0t-F7-SIW" id="tQW-U2-8BT"/>
                         <outlet property="issueTypesLabel" destination="9TU-px-g9k" id="9vb-Iw-qsn"/>
+                        <outlet property="lbl_infraIssueText" destination="Qqm-fD-EtI" id="qw2-xm-Pfz"/>
                         <outlet property="numberOfOffenceSelectedLabel" destination="D4d-Cg-Rvb" id="fqM-Zr-G1l"/>
                         <outlet property="reportButton" destination="f9g-0M-MEu" id="P1W-Ye-Z4N"/>
                     </connections>

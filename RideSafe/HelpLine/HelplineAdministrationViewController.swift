@@ -15,7 +15,6 @@ class HelplineAdministrationViewController: RideSafeViewController {
     var mvdDirectoryList:[Directory] = []
     var selectedSegmented:Int = 0
     var districId:String? = "4"
-    @IBOutlet weak var noRecordShowLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +38,7 @@ class HelplineAdministrationViewController: RideSafeViewController {
 extension HelplineAdministrationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.mvdDirectoryList.count == 0 {
-            noRecordShowLabel.alpha = 1.0
-        } else {
-            noRecordShowLabel.alpha = 0.0
-        }
+        showNoRecod( mvdDirectoryList.count == 0, viewOn: tableView)
         return self.mvdDirectoryList.count
     }
     

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 extension String {
     var localized: String {
@@ -18,7 +19,14 @@ extension String {
         }
         
         
-        let lang = UserDefaults.standard.string(forKey: Localization.selectedLanguage.rawValue)
+        var lang = UserDefaults.standard.string(forKey: Localization.selectedLanguage.rawValue)
+        
+        //Hack ,no need of localization other than citizen
+        let delegate =  UIApplication.shared.delegate as! AppDelegate
+        if delegate.getuserType() != UserType.Citizen{
+            lang = "E";
+        }
+        
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")
         let bundle = Bundle(path: path!)
         return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")

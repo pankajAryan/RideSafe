@@ -21,9 +21,9 @@ class ReportsContainerViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "My Reports"
-        reportSegmentController.setTitle("UNSAFE DRIVING", forSegmentAt: 0)
-        reportSegmentController.setTitle("ROAD INFRA", forSegmentAt: 1)
+        self.title = "My Reports".localized
+        reportSegmentController.setTitle("Unsafe Driving".localized, forSegmentAt: 0)
+        reportSegmentController.setTitle("Road Infra".localized, forSegmentAt: 1)
         reportSegmentController.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
         reportSegmentController.titleColor = UIColor.white
         reportSegmentController.unselectedTitleColor = UIColor.white

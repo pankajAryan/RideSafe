@@ -60,7 +60,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="7rg-ux-iL9" id="60h-Cn-d6M"/>
                                 </connections>
@@ -90,7 +90,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="7rg-ux-iL9" id="mZ8-9Z-uTO"/>
                                 </connections>
@@ -120,7 +120,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                 <connections>
                                     <outlet property="delegate" destination="7rg-ux-iL9" id="b19-yp-Lu5"/>
                                 </connections>
@@ -237,9 +237,14 @@
                         <viewLayoutGuide key="safeArea" id="ozW-1h-87N"/>
                     </view>
                     <connections>
+                        <outlet property="btn_save" destination="1k7-KS-kRr" id="UZl-CY-4Qc"/>
                         <outlet property="contact1" destination="hTt-6X-cmS" id="6xr-pa-zma"/>
                         <outlet property="contact2" destination="iKS-pK-Pjv" id="Pc4-Om-8Qt"/>
                         <outlet property="contact3" destination="ur8-Bq-iMJ" id="qbR-gU-Kx4"/>
+                        <outlet property="lbl_contact1" destination="vE6-6e-pOV" id="Kdz-Ue-ELD"/>
+                        <outlet property="lbl_contact2" destination="GB1-nP-Rxe" id="L29-ei-P6D"/>
+                        <outlet property="lbl_contact3" destination="sGA-Z1-R38" id="0JM-kd-h7H"/>
+                        <outlet property="lbl_shareLocationDescription" destination="iuQ-wx-RTw" id="Cww-0f-2jM"/>
                         <outlet property="liveLocationSwitch" destination="pzX-eH-zR3" id="iV7-13-hIt"/>
                         <outlet property="shareLiveLocationLabel" destination="1eM-8b-qzb" id="VHm-dh-w7I"/>
                     </connections>

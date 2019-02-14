@@ -45,6 +45,7 @@ class RoadInfraIssueListViewController: RideSafeViewController {
 extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod(myRoadInfraIssuesList.count == 0, viewOn: tableView)
         return self.myRoadInfraIssuesList.count
     }
     
@@ -58,7 +59,7 @@ extension RoadInfraIssueListViewController: UITableViewDataSource, UITableViewDe
         cell.vehicleDiscriptionLabel.text = myRoadInfraIssue.description
         cell.tagsLabel.text = myRoadInfraIssue.categoryName
         cell.dateLabel.text = myRoadInfraIssue.createdOn
-        cell.statusLabel.text = myRoadInfraIssue.status
+        cell.statusLabel.text = (myRoadInfraIssue.status ?? "").uppercased().localized
         cell.selectionStyle = .none
         cell.delegate = self
         cell.indexPath = indexPath

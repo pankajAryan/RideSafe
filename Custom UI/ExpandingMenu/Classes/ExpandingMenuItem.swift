@@ -139,6 +139,10 @@ open class ExpandingMenuItem: UIView {
     // MARK: - Title Button
     fileprivate func createTitleButton(_ title: String, titleColor: UIColor? = nil) -> UIButton {
         let button = UIButton()
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.titleLabel?.minimumScaleFactor = 0.5
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+
         #if swift(>=4.2)
         button.setTitle(title, for: UIControl.State())
         button.setTitleColor(titleColor, for: UIControl.State())

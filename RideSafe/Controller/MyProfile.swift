@@ -17,12 +17,21 @@ class MyProfile: RideSafeViewController {
     @IBOutlet weak var nameFiled: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var lbl_name: UILabel!
+    @IBOutlet weak var lbl_mobNo: UILabel!
+    @IBOutlet weak var lbl_district: UILabel!
+    @IBOutlet weak var btn_updateProfile: UIButton!
+
     private var selectedDistrictID:String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        self.title = "My profile".localized
+        self.title = "My Profile".localized
+        lbl_name.text = "Name".localized
+        lbl_mobNo.text = "Mobile Number".localized
+        lbl_district.text = "District".localized
+        btn_updateProfile.setTitle("UPDATE PROFILE".localized, for: .normal)
         getDistrict()
     }
     

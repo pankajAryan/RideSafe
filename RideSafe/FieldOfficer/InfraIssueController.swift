@@ -12,25 +12,11 @@ class InfraIssueController: RideSafeViewController {
     
     @IBOutlet weak var recordTable: UITableView!
      var infraIssues:[InfraIssuesForFieldOfficer]?
-
-    private func showNoRecordView() {
-        let norecordView = UINib(nibName: "NoRecord", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        norecordView.frame = self.view.bounds
-        self.view.addSubview( norecordView)
-    }
     
     fileprivate func fetchIssuesForOfficials() {
         NetworkManager().doServiceCall(serviceType: .getRoadInfraIssueListForFieldOfficial, params: ["fieldOfficialId" : citizenId]).then { response -> () in
             self.infraIssues = InfraIssuesListForFieldOfficer(dictionary: response as NSDictionary)?.responseObject
             self.recordTable.reloadData()
-
-//            if (self.infraIssues?.count)! > 0 {
-//                self.recordTable.delegate = self
-//                self.recordTable.dataSource = self
-//                self.recordTable.reloadData()
-//            } else {
-//                self.showNoRecordView()
-//            }
             }.catch { error in
                 self.showError(error: error)
         }
@@ -45,6 +31,7 @@ class InfraIssueController: RideSafeViewController {
 }
 extension InfraIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( infraIssues != nil ? infraIssues!.count == 0 : true, viewOn: tableView)
         if let count = infraIssues?.count {
             return count
         }

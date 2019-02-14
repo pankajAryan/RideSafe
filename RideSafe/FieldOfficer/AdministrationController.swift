@@ -36,6 +36,7 @@ class AdministrationController: RideSafeViewController {
 
 extension AdministrationController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( fieldOfficers != nil ? fieldOfficers!.count == 0 : true, viewOn: tableView)
         if let count = fieldOfficers?.count {
             return count
         }

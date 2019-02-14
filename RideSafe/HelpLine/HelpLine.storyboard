@@ -202,29 +202,18 @@
                                     <outlet property="delegate" destination="zUo-hg-fQp" id="Mnw-V4-EPA"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Record to show" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOb-MB-bhQ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.1137254902" green="0.1137254902" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="oK6-Vr-9QF" firstAttribute="trailing" secondItem="Ofb-jz-U3E" secondAttribute="trailing" id="20M-AG-jCx"/>
                             <constraint firstItem="Ofb-jz-U3E" firstAttribute="top" secondItem="oK6-Vr-9QF" secondAttribute="top" id="H0g-VG-BYW"/>
-                            <constraint firstItem="oK6-Vr-9QF" firstAttribute="bottom" secondItem="aOb-MB-bhQ" secondAttribute="bottom" id="dS6-Hz-s07"/>
                             <constraint firstItem="oK6-Vr-9QF" firstAttribute="bottom" secondItem="Ofb-jz-U3E" secondAttribute="bottom" id="eWu-Re-sZq"/>
-                            <constraint firstItem="aOb-MB-bhQ" firstAttribute="top" secondItem="oK6-Vr-9QF" secondAttribute="top" id="giM-xq-ely"/>
-                            <constraint firstItem="aOb-MB-bhQ" firstAttribute="leading" secondItem="oK6-Vr-9QF" secondAttribute="leading" id="p25-gp-1AN"/>
                             <constraint firstItem="Ofb-jz-U3E" firstAttribute="leading" secondItem="oK6-Vr-9QF" secondAttribute="leading" id="sc7-5U-b1M"/>
-                            <constraint firstItem="oK6-Vr-9QF" firstAttribute="trailing" secondItem="aOb-MB-bhQ" secondAttribute="trailing" id="u7q-Gd-nOF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oK6-Vr-9QF"/>
                     </view>
                     <connections>
                         <outlet property="helpLineTableView" destination="Ofb-jz-U3E" id="rLX-yR-cvz"/>
-                        <outlet property="noRecordShowLabel" destination="aOb-MB-bhQ" id="lLv-ud-e2V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lzf-ga-7A9" userLabel="First Responder" sceneMemberID="firstResponder"/>

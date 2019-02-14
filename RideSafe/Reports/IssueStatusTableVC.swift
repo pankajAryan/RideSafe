@@ -27,6 +27,7 @@ class IssueStatusTableVC: RideSafeViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( actionArray != nil ? actionArray!.count == 0 : true, viewOn: tableView)
         return actionArray != nil ? (actionArray?.count)! : 0
     }
 

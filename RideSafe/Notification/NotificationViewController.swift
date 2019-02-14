@@ -18,7 +18,7 @@ class NotificationViewController: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Notifications"
+        self.title = "Notifications".localized
         notificationTableView.tableFooterView = UIView()
         notificationTableView.estimatedRowHeight = 464
         notificationTableView.rowHeight = UITableViewAutomaticDimension
@@ -55,6 +55,7 @@ class NotificationViewController: RideSafeViewController {
 extension NotificationViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod(self.notificationList.count == 0, viewOn: tableView)
         return self.notificationList.count
     }
     

@@ -18,12 +18,6 @@ class DrivingIssueController: RideSafeViewController {
     var heightOfAssignedToButton : CGFloat = 0.0
     var refreshControl = UIRefreshControl()
     var timer: Timer?
-
-    private func showNoRecordView() {
-        let norecordView = UINib(nibName: "NoRecord", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
-        norecordView.frame = self.view.frame
-        self.view.addSubview( norecordView)
-    }
     
     @objc fileprivate func fetchIssuesForOfficials() {
         var service: ServiceType = .getDrivingIssueListForFieldOfficial
@@ -39,14 +33,7 @@ class DrivingIssueController: RideSafeViewController {
             self.drivingIssue = DrivingIssueListForFieldOfficial(dictionary: response as NSDictionary)?.responseObject
             
             self.refreshControl.endRefreshing()
-
-            if (self.drivingIssue?.count)! > 0 {
-                self.recordTable.delegate = self
-                self.recordTable.dataSource = self
-                self.recordTable.reloadData()
-            } else {
-                self.showNoRecordView()
-            }
+            self.recordTable.reloadData()
             }.catch { error in
                 self.showError(error: error)
         }
@@ -59,6 +46,8 @@ class DrivingIssueController: RideSafeViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.recordTable.delegate = self
+        self.recordTable.dataSource = self
         recordTable.estimatedRowHeight = 300
         recordTable.rowHeight = UITableViewAutomaticDimension
         RegisterForPushNotification()
@@ -112,6 +101,7 @@ class DrivingIssueController: RideSafeViewController {
 
 extension DrivingIssueController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( drivingIssue != nil ? drivingIssue!.count == 0 : true, viewOn: tableView)
         if let count = drivingIssue?.count {
             return count
         }

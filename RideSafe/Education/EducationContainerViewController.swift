@@ -19,9 +19,9 @@ class EducationContainerViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Road Safety Education"
-        educationSegmentedControl.setTitle("VIDEOS", forSegmentAt: 0)
-        educationSegmentedControl.setTitle("PDFS", forSegmentAt: 1)
+        self.title = "Road Safety Education".localized
+        educationSegmentedControl.setTitle("Videos".localized, forSegmentAt: 0)
+        educationSegmentedControl.setTitle("PDFs".localized, forSegmentAt: 1)
         educationSegmentedControl.font = UIFont.init(name: "Poppins-Medium", size: 14.0)!
         educationSegmentedControl.titleColor = UIColor.white
         educationSegmentedControl.unselectedTitleColor = UIColor.white

@@ -33,4 +33,15 @@ extension UIViewController {
         }
     }
     
+    func showNoRecod(_ value:Bool, viewOn tableView:UITableView) {
+        if value {
+            let noDataLabel: UILabel = UILabel(frame: CGRect.init(x:0, y:0, width:tableView.bounds.size.width, height: tableView.bounds.size.height))
+            noDataLabel.text = "No records to show".localized
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView = noDataLabel
+        } else {
+            tableView.backgroundView = nil
+        }
+    }
+    
 }

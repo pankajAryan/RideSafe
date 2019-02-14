@@ -22,6 +22,8 @@ class SettingController: RideSafeViewController {
     }
     
     @IBOutlet weak var tabble: UITableView!
+    @IBOutlet weak var btn_save: UIButton!
+
     weak var delegate:SettingControllerProtocol?
     var selectedIndexPath = IndexPath()
     
@@ -30,6 +32,8 @@ class SettingController: RideSafeViewController {
                      languageModel(lanCode:"U", langName: "Urdu",localName:"اردو", isChecked: false)]
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Settings".localized
+        btn_save.setTitle("Save".localized, for: .normal)
         setBackButton()
     }
     
@@ -49,6 +53,7 @@ class SettingController: RideSafeViewController {
 extension SettingController:UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( languages.count == 0, viewOn: tableView)
         return languages.count
     }
     

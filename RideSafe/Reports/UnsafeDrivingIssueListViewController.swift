@@ -64,6 +64,7 @@ class UnsafeDrivingIssueListViewController: RideSafeViewController {
 extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod(myDrivingIssueReportList.count == 0, viewOn: tableView)
         return self.myDrivingIssueReportList.count
     }
     
@@ -79,11 +80,11 @@ extension UnsafeDrivingIssueListViewController: UITableViewDataSource, UITableVi
         cell.vehicleDiscriptionLabel.text = myDrivingIssue.description
         cell.tagsLabel.text = myDrivingIssue.categoryName
         cell.dateLabel.text = myDrivingIssue.createdOn
-        cell.statusLabel.text = myDrivingIssue.status
+        cell.statusLabel.text = (myDrivingIssue.status ?? "").uppercased().localized
         cell.delegate = self
         cell.indexPath = indexPath
         cell.selectionStyle = .none
-        
+
         if let actionListArray = myDrivingIssue.actionList, actionListArray.count > 0  {
             cell.actionButton.isHidden = false
         } else {

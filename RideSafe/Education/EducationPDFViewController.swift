@@ -47,6 +47,7 @@ class EducationPDFViewController: RideSafeViewController {
 extension EducationPDFViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( mediaList.count == 0, viewOn: tableView)
         return self.mediaList.count
     }
     

@@ -173,14 +173,14 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         
         self.view.addSubview(menuButton)
         
-        let item1 = ExpandingMenuItem(size: menuButtonSize, title: "  Share Live Location  ", image: #imageLiteral(resourceName: "live_share"), highlightedImage: #imageLiteral(resourceName: "live_share"), backgroundImage: #imageLiteral(resourceName: "live_share"), backgroundHighlightedImage:#imageLiteral(resourceName: "live_share")) { () -> Void in
+        let item1 = ExpandingMenuItem(size: menuButtonSize, title: "  \("Share Live Location".localized)  ", image: #imageLiteral(resourceName: "live_share"), highlightedImage: #imageLiteral(resourceName: "live_share"), backgroundImage: #imageLiteral(resourceName: "live_share"), backgroundHighlightedImage:#imageLiteral(resourceName: "live_share")) { () -> Void in
             self.emergencyClicked(UIButton())
         }
         
         item1.titleColor = UIColor.white
         item1.titleButton?.backgroundColor = UIColor.black
         item1.frontImageView.backgroundColor = UIColor.white
-
+       
         item1.titleButton?.layer.cornerRadius = 2
         item1.titleButton?.layer.masksToBounds = true
         
@@ -190,8 +190,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item1.frontImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
         item1.frontImageView.layer.shadowOpacity = 0.3
         
-        
-        let item2 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Road Infra (\(roadInfraPendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "road_infra"), highlightedImage:#imageLiteral(resourceName: "road_infra"), backgroundImage: #imageLiteral(resourceName: "road_infra"), backgroundHighlightedImage:#imageLiteral(resourceName: "road_infra")) { () -> Void in
+        let item2 = ExpandingMenuItem(size: menuButtonSize, title: "  \("Pending Infra Issue".localized) (\(roadInfraPendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "road_infra"), highlightedImage:#imageLiteral(resourceName: "road_infra"), backgroundImage: #imageLiteral(resourceName: "road_infra"), backgroundHighlightedImage:#imageLiteral(resourceName: "road_infra")) { () -> Void in
             
             let vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController") as! ReportsContainerViewController
             vc.selectedSegment = 1//road infra
@@ -200,7 +199,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item2.titleColor = UIColor.white
         item2.titleButton?.backgroundColor = UIColor.black
         item2.frontImageView.backgroundColor = UIColor.white
-        
+
         item2.titleButton?.layer.cornerRadius = 2
         item2.titleButton?.layer.masksToBounds = true
         
@@ -210,7 +209,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         item2.frontImageView.layer.shadowOffset = CGSize(width: 2, height: 2)
         item2.frontImageView.layer.shadowOpacity = 0.3
         
-        let item3 = ExpandingMenuItem(size: menuButtonSize, title: "  Pending Driving Issue (\(drivingIssuePendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "driving_issue"), highlightedImage: #imageLiteral(resourceName: "driving_issue"), backgroundImage: #imageLiteral(resourceName: "driving_issue"), backgroundHighlightedImage:#imageLiteral(resourceName: "driving_issue")) { () -> Void in
+        let item3 = ExpandingMenuItem(size: menuButtonSize, title: "  \("Pending Driving Issue".localized) (\(drivingIssuePendingCount ?? "0"))  ", image: #imageLiteral(resourceName: "driving_issue"), highlightedImage: #imageLiteral(resourceName: "driving_issue"), backgroundImage: #imageLiteral(resourceName: "driving_issue"), backgroundHighlightedImage:#imageLiteral(resourceName: "driving_issue")) { () -> Void in
             
             let vc = UIStoryboard.init(name: "Reports", bundle: nil).instantiateViewController(withIdentifier: "ReportsContainerViewController") as! ReportsContainerViewController
             vc.selectedSegment = 0//driving issue
@@ -234,12 +233,10 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         
         menuButton.didPresentMenuItems = { (menu) -> Void in
             print("MenuItems will present.")
-//            self.menuButton.centerButton.setImage(#imageLiteral(resourceName: "ic_action_close"), for: .normal)
         }
         
         menuButton.didDismissMenuItems = { (menu) -> Void in
             print("MenuItems dismissed.")
-//            self.menuButton.centerButton.setImage(#imageLiteral(resourceName: "plus"), for: .normal)
         }
     }
     
@@ -531,6 +528,7 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     }
     
     @IBAction func meuClicked(_ sender: UIBarButtonItem) {
+        sideMenu.reloadData()
         tableViewleadingConstraint.constant = tableViewleadingConstraint.constant == 0 ? -240 : 0
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -843,24 +841,20 @@ extension DashboardController:SettingControllerProtocol {
     }
     
     func setLocalizedText() {
-        vehicleFirstField.placeholder = "Eg: JK".localized+" (only letters & digits allowed)"//.localized
-//        vehicleSecondField.placeholder = "Eg: 01C".localized
-//        vehicleThirdField.placeholder = "Eg: 1234".localized
+        vehicleFirstField.placeholder = "Eg: JK".localized+" "+"only_letters_digits".localized
         vehicleNumber.text = "Vehicle Number".localized
         vehicleTypeView.placeholder = "Select Vehicle Type".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
         numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
-
         descriptionText.placeholder = "Describe issue".localized
-         educationLabel.text = "Education".localized
-         helpLineLabel.text = "Helpline".localized
-         emegencyLabel.text = "Emergency Contacts".localized
-         reportInfraLabel.text = "Road Infra".localized
-//        shareLiveLocationLabel.text =  "Share Live Location".localized
-         reportButton.setTitle("Report".localized, for: .normal)
+        educationLabel.text = "Education".localized
+        helpLineLabel.text = "Helpline".localized
+        emegencyLabel.text = "Emergency Contacts".localized
+        reportInfraLabel.text = "Road Infra".localized
+        reportButton.setTitle("Report".localized, for: .normal)
         cameraButton.setTitle("Photo".localized, for: .normal)
         makeVehicleDropDown()
-
+        
     }
 }
 
@@ -882,6 +876,7 @@ extension DashboardController:MFMessageComposeViewControllerDelegate {
 extension DashboardController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        showNoRecod( arr_vehicleList.count == 0, viewOn: tableView)
         return arr_vehicleList.count
     }
     

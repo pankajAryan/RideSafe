@@ -12,11 +12,17 @@ import JFContactsPicker
 
 class EmergencyContactViewController: RideSafeViewController {
 
+    @IBOutlet weak var lbl_contact1: UILabel!
+    @IBOutlet weak var lbl_contact2: UILabel!
+    @IBOutlet weak var lbl_contact3: UILabel!
+
     @IBOutlet weak var contact1: UITextField!
     @IBOutlet weak var contact2: UITextField!
     @IBOutlet weak var contact3: UITextField!
     @IBOutlet weak var liveLocationSwitch: UISwitch!
     @IBOutlet weak var shareLiveLocationLabel: UILabel!
+    @IBOutlet weak var lbl_shareLocationDescription: UILabel!
+    @IBOutlet weak var btn_save: UIButton!
 
     var  contactPickerScene: ContactsPicker!
     var isContactAvailable = false
@@ -25,8 +31,20 @@ class EmergencyContactViewController: RideSafeViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadEmergencyContact()
-        self.title = "Emergency Contacts"
+        self.title = "Emergency Contacts".localized
+        let txt = "Contact".localized
+        lbl_contact1.text = txt+" 1"
+        lbl_contact2.text = txt+" 2"
+        lbl_contact3.text = txt+" 3"
+        
+        contact1.placeholder = txt+" 1"
+        contact2.placeholder = txt+" 2"
+        contact3.placeholder = txt+" 3"
+        
         shareLiveLocationLabel.text = "Share Live Location".localized
+        btn_save.setTitle("Save".localized, for: .normal)
+        lbl_shareLocationDescription.text = "share_location_desc".localized
+
         setBackButton()
         if let _ = ShareLiveLocation.shared.timer {
             liveLocationSwitch.setOn(true, animated: false)

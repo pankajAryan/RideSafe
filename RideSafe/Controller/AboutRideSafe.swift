@@ -16,8 +16,12 @@ class AboutRideSafe: RideSafeViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "About RideSafe"
+        title = "About App".localized
         txt_about.text = "about_app".localized
+        let appVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String
+        lbl_version.text = "Version".localized+": "+appVersion!
+
+
         setBackButton()
     }
 }

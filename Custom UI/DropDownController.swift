@@ -14,16 +14,22 @@ protocol DropDownDelgate:class {
 
 class DropDownController: UITableViewController {
 
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var doneBtn: UIBarButtonItem!
+
     var dropDownDataSource:[DropDownDataSource]?
     weak var dropDownDelgate:DropDownDelgate?
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackButton()
-        
+        navItem.title = "Select item".localized
+        doneBtn.title = "Done".localized
+        tableView.tableFooterView = UIView()
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let dataSource = dropDownDataSource else { return 0  }
+        showNoRecod(dataSource.count == 0, viewOn: tableView)
         return dataSource.count
     }
 
