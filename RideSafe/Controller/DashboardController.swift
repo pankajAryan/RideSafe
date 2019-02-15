@@ -310,10 +310,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         let imageView = UIImageView(image:logo)
         self.navigationItem.titleView = imageView
         setRightButton()
-        
-//        vehicleFirstField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
-//        vehicleSecondField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
-//        vehicleThirdField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
     }
     
     private func setRightButton() {
@@ -331,29 +327,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         let notificationViewController: NotificationViewController = UIStoryboard.init(name: "Notification", bundle: nil).instantiateViewController(withIdentifier: "NotificationViewController") as! NotificationViewController
         self.navigationController?.pushViewController(notificationViewController, animated: true)
     }
-    
-//    @objc func textFieldDidChange(textField: UITextField){
-//
-//        let text = textField.text
-//
-//        switch textField{
-//        case vehicleFirstField:
-//            if text?.count == 2 {
-//            vehicleSecondField.becomeFirstResponder()
-//            }
-//        case vehicleSecondField:
-//            if text?.count == 3 {
-//            vehicleThirdField.becomeFirstResponder()
-//            }
-//        case vehicleThirdField:
-//            if text?.count == 4 {
-//                vehicleThirdField.resignFirstResponder()
-//            }
-//        default:
-//            break
-//        }
-//
-//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locVal = manager.location?.coordinate else { return }
@@ -398,11 +371,6 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         //TODO: tutorial code
 
         UserDefaults.standard.set(true, forKey: UserDefaultsKeys.isNotFirstLaunch.rawValue)
-        //        if let vc = UIStoryboard(name: "WelcomeAlert", bundle: nil).instantiateViewController(withIdentifier: "WelcomeAlertController") as? WelcomeAlertController {
-        //            vc.modalPresentationStyle = .overCurrentContext
-        //            vc.modalTransitionStyle = .crossDissolve
-        //            self.navigationController?.present(vc, animated: true, completion: nil)
-        //    }
     }
     
     @objc func tapFunction() {
@@ -432,15 +400,12 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
     private func clearInputFields() {
         descriptionText.resignFirstResponder()
         vehicleFirstField.text = ""
-//        vehicleSecondField.text = ""
-//        vehicleThirdField.text = " "
         vehicleType = ""
         drivingIssues = []
         descriptionText.text = ""
         descriptionText.placeholder = "Describe Issues".localized
         drivingIssuesLabel.text = "Select Driving Issues".localized
         numberOfOffenceSelectedLabel.text = "No Offence Selected".localized
-       // cameraButton.setBackgroundImage(#imageLiteral(resourceName: "camera"), for: .normal)
         selectedImage.image = #imageLiteral(resourceName: "camera")
         selectedImageForReport = nil
         imageUrl = nil
@@ -862,15 +827,6 @@ extension DashboardController:MFMessageComposeViewControllerDelegate {
      func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
         self.dismiss(animated: true, completion: nil)
     }
-
-//    func messageComposeViewController(controller: MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
-//        //... handle sms screen actions
-//        self.dismissViewControllerAnimated(true, completion: nil)
-//    }
-//
-//    override func viewWillDisappear(animated: Bool) {
-//        self.navigationController?.navigationBarHidden = false
-//    }
 }
 
 extension DashboardController : UITableViewDelegate , UITableViewDataSource {

@@ -53,13 +53,6 @@ class DropDownController: UITableViewController {
 
     }
     
-//    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-//        let cell = tableView.cellForRow(at: indexPath)
-//        cell?.accessoryType = .none
-//        let model = dropDownDataSource![indexPath.row]
-//        selectedValues = selectedValues.filter { $0.id != model.id }
-//
-//    }
     @IBAction func DoneButtonClicked(_ sender: UIBarButtonItem) {
         let selectedValues = dropDownDataSource?.filter{ $0.checkMark == true }
         self.dropDownDelgate?.selectedItems(selectedValues!)

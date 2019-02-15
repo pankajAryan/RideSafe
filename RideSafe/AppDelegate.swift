@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 {
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
+    private var splashWindow: UIWindow?
 
     // for handling notification
     var  remoteNitificationPayloadDict : [AnyHashable : Any]?
@@ -68,8 +69,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         guard let initialVC = initialViewController else { return  }
         let navController = storyboard.instantiateViewController(withIdentifier: "RideSafeNavigationController") as! RideSafeNavigationController
         navController.viewControllers = [initialVC]
+        
         self.window?.rootViewController = navController
         self.window?.makeKeyAndVisible()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.splashWindow?.isHidden = true
+            self.splashWindow = nil
+        }
+      
+        self.splashWindow = UIWindow(frame: UIScreen.main.bounds)
+        self.splashWindow?.rootViewController = UIStoryboard.init(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        self.splashWindow?.isHidden = false
     }
     
     func getuserType() -> UserType {
