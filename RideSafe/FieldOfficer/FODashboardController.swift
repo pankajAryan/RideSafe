@@ -230,7 +230,7 @@ class FODashboardController: RideSafeViewController,MenuCellDelegte {
             
         case .Logout:
             
-            showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
+            showAlert(message: "Are you sure you want to Logout?".localized, handler: { (action) in
                 
                 let service =  self.userType.uppercased() != "E" ? ServiceType.logoutFieldOfficial : ServiceType.logoutEscalationOfficial
                 let key = self.userType.uppercased() != "E" ? "fieldOfficialId" : "escalationOfficialId"
