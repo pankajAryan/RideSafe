@@ -73,15 +73,17 @@ class EmergencyContactViewController: RideSafeViewController {
     }
     
     @IBAction func turnOffLiveLocation(_ sender: UISwitch) {
-        
         if !liveLocationSwitch.isOn {
-            print("location off")
             ShareLiveLocation.shared.timer?.invalidate()
             ShareLiveLocation.shared.counter = 0
             ShareLiveLocation.shared.timer = nil
         } else {
-            ShareLiveLocation.shared.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(fetchLiveLocation), userInfo: nil, repeats: true)
-            ShareLiveLocation.shared.setupLocationManager()
+            self.liveLocationSwitch.isOn = false
+            showAlert(message: "Are you sure you want to share location?".localized, handler: { (action) in
+                self.liveLocationSwitch.isOn = true
+                ShareLiveLocation.shared.timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(EmergencyContactViewController.fetchLiveLocation), userInfo: nil, repeats: true)
+                ShareLiveLocation.shared.setupLocationManager()
+            })
         }
     }
     @objc func fetchLiveLocation() {

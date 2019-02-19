@@ -113,8 +113,8 @@ extension UIViewController {
     
     func showAlert(message:String ,handler:((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
-        let actionButton = UIAlertAction(title: "YES", style: .default, handler: handler)
-        let dismissAction = UIAlertAction(title: "NO", style: .cancel, handler: nil)
+        let actionButton = UIAlertAction(title: "YES".localized, style: .default, handler: handler)
+        let dismissAction = UIAlertAction(title: "NO".localized, style: .cancel, handler: nil)
         alert.addAction(actionButton)
         alert.addAction(dismissAction)
         self.present(alert, animated: true, completion: nil)

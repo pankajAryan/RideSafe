@@ -1231,7 +1231,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_large" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-F8-mIF">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_large" translatesAutoresizingMaskIntoConstraints="NO" id="xh1-F8-mIF">
                                 <rect key="frame" x="0.0" y="20" width="414" height="131"/>
                                 <color key="backgroundColor" red="0.73333333329999995" green="0.1647058824" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1239,13 +1239,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jD4-0p-UAO">
-                                <rect key="frame" x="160.66666666666666" y="167" width="93" height="26.666666666666657"/>
+                                <rect key="frame" x="160.66666666666666" y="121.66666666666667" width="93" height="26.333333333333329"/>
                                 <fontDescription key="fontDescription" name="Poppins-SemiBold" family="Poppins" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView contentMode="scaleToFill" verticalCompressionResistancePriority="749" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Id-Cx-FVi">
-                                <rect key="frame" x="16" y="209.66666666666666" width="382" height="506.33333333333337"/>
+                                <rect key="frame" x="16" y="203.33333333333331" width="382" height="512.66666666666674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">RideSafe - A Citizen Centric Initiative to Promote Safe Driving on Roads.
 
@@ -1257,23 +1257,33 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRB-mp-oRz">
+                                <rect key="frame" x="16" y="167" width="382" height="20.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.76912147714401868" green="0.76912147714401868" blue="0.76912147714401868" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="qRB-mp-oRz" firstAttribute="top" secondItem="xh1-F8-mIF" secondAttribute="bottom" constant="16" id="6Mb-CY-IcT"/>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="top" secondItem="8ei-dN-CYt" secondAttribute="top" id="EnS-ju-U4v"/>
                             <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="9Id-Cx-FVi" secondAttribute="trailing" constant="16" id="FFj-67-wG5"/>
                             <constraint firstItem="8ei-dN-CYt" firstAttribute="bottom" secondItem="9Id-Cx-FVi" secondAttribute="bottom" constant="20" id="SaR-tE-83G"/>
                             <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="xh1-F8-mIF" secondAttribute="trailing" id="Vde-Es-lNU"/>
+                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="top" secondItem="qRB-mp-oRz" secondAttribute="bottom" constant="16" id="WWZ-TS-tbe"/>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="centerX" secondItem="fws-Xw-Pqf" secondAttribute="centerX" id="XNi-f2-bKT"/>
-                            <constraint firstItem="jD4-0p-UAO" firstAttribute="top" secondItem="xh1-F8-mIF" secondAttribute="bottom" constant="16" id="auo-rd-E5z"/>
-                            <constraint firstItem="9Id-Cx-FVi" firstAttribute="top" secondItem="jD4-0p-UAO" secondAttribute="bottom" constant="16" id="fLl-sA-SEh"/>
+                            <constraint firstItem="jD4-0p-UAO" firstAttribute="bottom" secondItem="xh1-F8-mIF" secondAttribute="bottom" constant="-3" id="ba7-ll-DLK"/>
                             <constraint firstItem="xh1-F8-mIF" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" id="kKy-qR-RMN"/>
+                            <constraint firstItem="8ei-dN-CYt" firstAttribute="trailing" secondItem="qRB-mp-oRz" secondAttribute="trailing" constant="16" id="pQb-d1-NQ3"/>
+                            <constraint firstItem="qRB-mp-oRz" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" constant="16" id="rDL-gt-8zO"/>
                             <constraint firstItem="9Id-Cx-FVi" firstAttribute="leading" secondItem="8ei-dN-CYt" secondAttribute="leading" constant="16" id="wFe-uk-VJl"/>
                             <constraint firstItem="jD4-0p-UAO" firstAttribute="centerX" secondItem="fws-Xw-Pqf" secondAttribute="centerX" id="ykh-AZ-qg7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8ei-dN-CYt"/>
                     </view>
                     <connections>
+                        <outlet property="lbl_headingText" destination="qRB-mp-oRz" id="52e-I6-Cax"/>
                         <outlet property="lbl_version" destination="jD4-0p-UAO" id="paf-90-wbM"/>
                         <outlet property="txt_about" destination="9Id-Cx-FVi" id="9a7-3F-ens"/>
                     </connections>
@@ -1441,6 +1451,96 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
             </objects>
             <point key="canvasLocation" x="2986" y="133"/>
         </scene>
+        <!--Transport Commissioner PopupVC-->
+        <scene sceneID="GIq-ZG-GT9">
+            <objects>
+                <viewController storyboardIdentifier="TransportCommissionerPopupVC" id="bxV-q1-uAW" customClass="TransportCommissionerPopupVC" customModule="JK_RideSafe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WEV-2x-fVm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsL-1M-32G">
+                                <rect key="frame" x="0.0" y="20" width="414" height="716"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BGf-DI-z8B">
+                                <rect key="frame" x="57" y="192.66666666666666" width="300" height="350.66666666666674"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XUW-WC-y6n">
+                                        <rect key="frame" x="255" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Tze-5a-qhY"/>
+                                            <constraint firstAttribute="width" constant="45" id="zVM-w9-GUa"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="ic_action_close"/>
+                                        <connections>
+                                            <action selector="closeBtnActionWithSender:" destination="bxV-q1-uAW" eventType="touchUpInside" id="4Yo-ge-oGl"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transport Commissioner, J&amp;K" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zN2-Wn-w9A">
+                                        <rect key="frame" x="16" y="50" width="268" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <color key="textColor" red="0.85098039219999999" green="0.2274509804" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jkTC" translatesAutoresizingMaskIntoConstraints="NO" id="5Nc-n6-zj1">
+                                        <rect key="frame" x="16" y="85.333333333333343" width="268" height="88"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr. S. P Vaid, IPS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqL-0d-Nwj">
+                                        <rect key="frame" x="16" y="189.33333333333334" width="268" height="21.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zu9-3I-Lfy">
+                                        <rect key="frame" x="16" y="227.00000000000003" width="268" height="107.66666666666666"/>
+                                        <string key="text">I welcome you to the JK RideSafe app, an initiative of Motor Vehicles Department, Govt. of J&amp;K. Let's together participate in making our roads safe by reporting irresponsible driving and other vehicle offences.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.90196078431372551" blue="0.80784313725490198" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zu9-3I-Lfy" firstAttribute="leading" secondItem="BGf-DI-z8B" secondAttribute="leading" constant="16" id="1eP-Bf-qKd"/>
+                                    <constraint firstItem="zN2-Wn-w9A" firstAttribute="leading" secondItem="BGf-DI-z8B" secondAttribute="leading" constant="16" id="ILO-mZ-Esi"/>
+                                    <constraint firstItem="XUW-WC-y6n" firstAttribute="top" secondItem="BGf-DI-z8B" secondAttribute="top" id="PKT-ut-dGn"/>
+                                    <constraint firstItem="5Nc-n6-zj1" firstAttribute="top" secondItem="zN2-Wn-w9A" secondAttribute="bottom" constant="16" id="RRQ-su-g4z"/>
+                                    <constraint firstItem="zN2-Wn-w9A" firstAttribute="top" secondItem="XUW-WC-y6n" secondAttribute="bottom" constant="5" id="WOG-aX-wvK"/>
+                                    <constraint firstAttribute="trailing" secondItem="zu9-3I-Lfy" secondAttribute="trailing" constant="16" id="a7Z-Us-4zR"/>
+                                    <constraint firstAttribute="trailing" secondItem="hqL-0d-Nwj" secondAttribute="trailing" constant="16" id="fga-Us-ctp"/>
+                                    <constraint firstItem="hqL-0d-Nwj" firstAttribute="leading" secondItem="BGf-DI-z8B" secondAttribute="leading" constant="16" id="lQX-sn-ijO"/>
+                                    <constraint firstAttribute="trailing" secondItem="XUW-WC-y6n" secondAttribute="trailing" id="mlK-Ie-Y74"/>
+                                    <constraint firstAttribute="trailing" secondItem="zN2-Wn-w9A" secondAttribute="trailing" constant="16" id="nJc-eT-eDR"/>
+                                    <constraint firstItem="zu9-3I-Lfy" firstAttribute="top" secondItem="hqL-0d-Nwj" secondAttribute="bottom" constant="16" id="o1G-bz-IPN"/>
+                                    <constraint firstItem="5Nc-n6-zj1" firstAttribute="leading" secondItem="BGf-DI-z8B" secondAttribute="leading" constant="16" id="ocM-zI-MH1"/>
+                                    <constraint firstAttribute="bottom" secondItem="zu9-3I-Lfy" secondAttribute="bottom" constant="16" id="teH-hD-yaY"/>
+                                    <constraint firstItem="hqL-0d-Nwj" firstAttribute="top" secondItem="5Nc-n6-zj1" secondAttribute="bottom" constant="16" id="u4j-DZ-TjB"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Nc-n6-zj1" secondAttribute="trailing" constant="16" id="v04-IS-kSA"/>
+                                    <constraint firstAttribute="width" constant="300" id="zoe-tT-WMt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BGf-DI-z8B" firstAttribute="centerX" secondItem="WEV-2x-fVm" secondAttribute="centerX" id="0Iz-y5-Nnu"/>
+                            <constraint firstItem="bsL-1M-32G" firstAttribute="top" secondItem="OeI-tr-M9O" secondAttribute="top" id="EOX-7b-hK0"/>
+                            <constraint firstItem="BGf-DI-z8B" firstAttribute="centerY" secondItem="WEV-2x-fVm" secondAttribute="centerY" id="I2A-h2-fb2"/>
+                            <constraint firstItem="OeI-tr-M9O" firstAttribute="bottom" secondItem="bsL-1M-32G" secondAttribute="bottom" id="VT9-qN-4n9"/>
+                            <constraint firstItem="bsL-1M-32G" firstAttribute="leading" secondItem="OeI-tr-M9O" secondAttribute="leading" id="q4U-da-fTU"/>
+                            <constraint firstItem="OeI-tr-M9O" firstAttribute="trailing" secondItem="bsL-1M-32G" secondAttribute="trailing" id="quC-RU-0LQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OeI-tr-M9O"/>
+                    </view>
+                    <connections>
+                        <outlet property="view_popupBGView" destination="BGf-DI-z8B" id="yjv-lV-RVd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XKE-f4-KkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696" y="1006"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera" width="56.666667938232422" height="45"/>
@@ -1457,6 +1557,7 @@ The idea is conceptualized by Sh. Saugat Biswas, IAS, Transport Commissioner, Ja
         <image name="ic_citizen_circle" width="240" height="240"/>
         <image name="icn_dropdown" width="24" height="24"/>
         <image name="icn_frwd" width="24" height="24"/>
+        <image name="jkTC" width="69" height="88"/>
         <image name="logo_bg" width="360" height="253.66667175292969"/>
         <image name="logo_large" width="607" height="225"/>
         <image name="menu" width="27.666666030883789" height="27.666666030883789"/>

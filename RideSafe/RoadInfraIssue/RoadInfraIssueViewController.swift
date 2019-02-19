@@ -147,9 +147,9 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
     }
     
     @IBAction func openCameraClicked(_ sender: Any) {
-        let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!", message: nil, preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!".localized, message: nil, preferredStyle: .actionSheet)
         
-        let cameraAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .default) { action -> Void in
+        let cameraAction: UIAlertAction = UIAlertAction(title: "Take Photo".localized, style: .default) { action -> Void in
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
@@ -158,7 +158,7 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
             }
         }
         
-        let galleryAction: UIAlertAction = UIAlertAction(title: "Choose From Gallery", style: .default) { action -> Void in
+        let galleryAction: UIAlertAction = UIAlertAction(title: "Choose From Gallery".localized, style: .default) { action -> Void in
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
                 self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -167,7 +167,7 @@ class RoadInfraIssueViewController: RideSafeViewController, UINavigationControll
             }
         }
         
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { action -> Void in }
         
         // add actions
         actionSheetController.addAction(cameraAction)

@@ -258,6 +258,17 @@ class DashboardController: RideSafeViewController,UINavigationControllerDelegate
         tbl_vehicleList.layer.cornerRadius = 2.0
         
         NotificationCenter.default.addObserver(self, selector: #selector(fcmTokeUpdated), name: NSNotification.Name.MessagingRegistrationTokenRefreshed, object: nil)
+        
+        perform(#selector(DashboardController.showTransportCommissionerPopupVC), with: nil, afterDelay: 1)
+    }
+    
+    @objc func showTransportCommissionerPopupVC () {
+        if !UserDefaults.standard.bool(forKey: "firstTimeCitizenAppLaunch") {
+            UserDefaults.standard.set(true, forKey: "firstTimeCitizenAppLaunch")
+            let transportCommissionerPopupVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TransportCommissionerPopupVC") as? TransportCommissionerPopupVC
+            transportCommissionerPopupVC!.modalPresentationStyle = .overCurrentContext
+            present(transportCommissionerPopupVC!, animated: true, completion: nil)
+        }
     }
     
     @objc func fcmTokeUpdated() {
@@ -604,7 +615,7 @@ extension DashboardController: MenuCellDelegte {
 
         case .Logout:
             
-            showAlert(message: "Are you sure you want to Logout?", handler: { (action) in
+            showAlert(message: "Are you sure you want to Logout?".localized, handler: { (action) in
                 
                 NetworkManager().doServiceCall(serviceType: .logoutCitizen, params: ["citizenId" : self.citizenId]).then { (response) -> () in
                     self.clearUserDefault()
@@ -690,9 +701,9 @@ extension DashboardController {
     
     @IBAction func cameraClicked(_ sender: UIButton) {
         
-        let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!", message: nil, preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Add Photo!".localized, message: nil, preferredStyle: .actionSheet)
         
-        let cameraAction: UIAlertAction = UIAlertAction(title: "Take Photo", style: .default) { action -> Void in
+        let cameraAction: UIAlertAction = UIAlertAction(title: "Take Photo".localized, style: .default) { action -> Void in
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
                 self.imagePicker.sourceType = UIImagePickerControllerSourceType.camera
@@ -701,7 +712,7 @@ extension DashboardController {
             }
         }
         
-        let galleryAction: UIAlertAction = UIAlertAction(title: "Choose From Gallery", style: .default) { action -> Void in
+        let galleryAction: UIAlertAction = UIAlertAction(title: "Choose From Gallery".localized, style: .default) { action -> Void in
             
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
                 self.imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary
@@ -710,7 +721,7 @@ extension DashboardController {
             }
         }
         
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel".localized, style: .cancel) { action -> Void in }
         
         // add actions
         actionSheetController.addAction(cameraAction)
