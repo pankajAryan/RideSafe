@@ -113,6 +113,19 @@ class EmergencyContactViewController: RideSafeViewController {
     
     @IBAction func saveButtonClicked(_ sender: Any) {
    
+        if let cont1 = contact1.text, cont1 != "", cont1.count != 10  {
+            showToast(message: "Contact number should be 10 digit number!".localized)
+            return
+        }
+        if let cont2 = contact2.text, cont2 != "", cont2.count != 10  {
+            showToast(message: "Contact number should be 10 digit number!".localized)
+            return
+        }
+        if let cont3 = contact3.text, cont3 != "", cont3.count != 10  {
+            showToast(message: "Contact number should be 10 digit number!".localized)
+            return
+        }
+        
         var serviceType: ServiceType
         if self.isContactAvailable {
             serviceType = .updateEmergencyContacts
@@ -149,10 +162,11 @@ extension EmergencyContactViewController:  ContactsPickerDelegate {
 extension EmergencyContactViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        guard let text = textField.text else { return true }
-        let newLength = text.count + string.count - range.length
-        return newLength <= 10
+        let newString = textField.text! + string
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let compSepByCharInSet = newString.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return ((newString == numberFiltered) && (newString.count <= 10)) || string == ""
     }
 
 }

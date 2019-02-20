@@ -13,6 +13,8 @@ import UserNotifications
 import Fabric
 import Crashlytics
 
+let kAppStoreURL = "https://itunes.apple.com/app/id1423138438"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate//, MessagingDelegate
 {

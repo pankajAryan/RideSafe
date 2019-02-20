@@ -605,9 +605,9 @@ extension DashboardController: MenuCellDelegte {
             vc = str.instantiateViewController(withIdentifier: "AboutRideSafe") as! AboutRideSafe
             
         case .Share:
-            let text = "Hi! Please Download Ride Safe app from this link:"
+            let text = "Hi! Checkout JK RideSafe app here:\n\(kAppStoreURL)"
             let image = #imageLiteral(resourceName: "logo_large")
-            let myWebsite = NSURL(string:"http://139.59.81.101:8080/RideSafeapp/ridesafe.apk")!
+            let myWebsite = NSURL(string:kAppStoreURL)!
             let shareAll = [text , image , myWebsite] as [Any]
             let activityViewController = UIActivityViewController(activityItems: shareAll, applicationActivities: nil)
             activityViewController.popoverPresentationController?.sourceView = self.view
