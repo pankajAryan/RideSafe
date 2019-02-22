@@ -1,3 +1,11 @@
+/* 
+  Localizable.strings
+  JK RideSafe
+
+  Created by Rahul Chaudhary on 21/02/19.
+  Copyright © 2019 Mobiquel. All rights reserved.
+*/
+
 "Select Vehicle Type" = "Select Vehicle Type";
 "Taxi" = "Taxi" ;
 "Tempo" = "Tempo";
@@ -7,7 +15,7 @@
 "Vehicle Number" = "Vehicle Number";
 "Select Driving Issues" = "Select Driving Issues" ;
 "Eg: JK" = "Eg: JK01C1234" ;
-"Road Infra" = "Road Infra"; 
+"Road Infra" = "Road Infra";
 "Helpline" = "Helpline";
 "Education" = "Education" ;
 "Emergency Contacts" = "Emergency Contacts" ;

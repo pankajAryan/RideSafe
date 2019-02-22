@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>931486529776-fmg0r5jr2412j3g32f4j8m1u0s3666ls.apps.googleusercontent.com</string>
+	<string>931486529776-v2e91phou6eh7nsujjbh6ioqshbgcddh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.931486529776-fmg0r5jr2412j3g32f4j8m1u0s3666ls</string>
+	<string>com.googleusercontent.apps.931486529776-v2e91phou6eh7nsujjbh6ioqshbgcddh</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBL_Sc6pUWH8upwk45weYUN9avAL0LhLXs</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.mobiquel.ridesafe</string>
+	<string>com.mobiquel.jkridesafe</string>
 	<key>PROJECT_ID</key>
 	<string>ridesafe-10685</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:931486529776:ios:24103780b1897358</string>
+	<string>1:931486529776:ios:be882785fca8a30d</string>
 	<key>DATABASE_URL</key>
 	<string>https://ridesafe-10685.firebaseio.com</string>
 </dict>

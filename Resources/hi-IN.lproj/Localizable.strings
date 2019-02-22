@@ -1,3 +1,11 @@
+/* 
+  Localizable.strings
+  JK RideSafe
+
+  Created by Rahul Chaudhary on 21/02/19.
+  Copyright © 2019 Mobiquel. All rights reserved.
+*/
+
 "Select Vehicle Type" = "वाहन प्रकार का चयन करें";
 "Taxi" = "टैक्सी" ;
 "Tempo" = "टेमपो";

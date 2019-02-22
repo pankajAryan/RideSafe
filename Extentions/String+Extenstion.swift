@@ -18,13 +18,23 @@ extension String {
             UserDefaults.standard.synchronize()
         }
         
-        
         var lang = UserDefaults.standard.string(forKey: Localization.selectedLanguage.rawValue)
         
         //Hack ,no need of localization other than citizen
         let delegate =  UIApplication.shared.delegate as! AppDelegate
         if delegate.getuserType() != UserType.Citizen{
             lang = "E";
+        }
+        
+        switch lang {
+        case "E":
+            lang = "en"
+        case "H":
+            lang = "hi-IN"
+        case "U":
+            lang = "ur-IN"
+        default:
+            lang = "en"
         }
         
         let path = Bundle.main.path(forResource: lang, ofType: "lproj")

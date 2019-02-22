@@ -42,9 +42,6 @@
 		2C4F940920768B6800BC5D31 /* FieldOfficial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F940720768B6700BC5D31 /* FieldOfficial.swift */; };
 		2C4F940A20768B6800BC5D31 /* FieldOfficialProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F940820768B6700BC5D31 /* FieldOfficialProfileResponse.swift */; };
 		2C4F94462078915300BC5D31 /* String+Extenstion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4F94452078915300BC5D31 /* String+Extenstion.swift */; };
-		2C4F94522078A12C00BC5D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4F944A2078A12B00BC5D31 /* Localizable.strings */; };
-		2C4F94532078A12C00BC5D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4F944D2078A12B00BC5D31 /* Localizable.strings */; };
-		2C4F94542078A12C00BC5D31 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2C4F94502078A12B00BC5D31 /* Localizable.strings */; };
 		2C63FBEC2064023E00BE8691 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FBEB2064023E00BE8691 /* CustomError.swift */; };
 		2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C63FC102065493B00BE8691 /* FOMain.storyboard */; };
 		2C63FC132065495C00BE8691 /* FODashboardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C63FC122065495C00BE8691 /* FODashboardController.swift */; };
@@ -143,6 +140,7 @@
 		D92EAB2C20FB2A910078A284 /* selected.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2520FB2A910078A284 /* selected.caf */; };
 		D92EAB2D20FB2A910078A284 /* fold.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2620FB2A910078A284 /* fold.caf */; };
 		D92EAB2E20FB2A910078A284 /* expanding.caf in Resources */ = {isa = PBXBuildFile; fileRef = D92EAB2720FB2A910078A284 /* expanding.caf */; };
+		D94A5B57221EE6EB00019539 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D94A5B59221EE6EB00019539 /* Localizable.strings */; };
 		D94E2D1B20FA427200483984 /* TutorialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94E2D1A20FA427200483984 /* TutorialVC.swift */; };
 		D953945E221C3D5600B00760 /* TransportCommissionerPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D953945D221C3D5600B00760 /* TransportCommissionerPopupVC.swift */; };
 		D97614312213321500A378BF /* ZoomableImageViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97614302213321500A378BF /* ZoomableImageViewVC.swift */; };
@@ -189,9 +187,6 @@
 		2C4F940720768B6700BC5D31 /* FieldOfficial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficial.swift; sourceTree = "<group>"; };
 		2C4F940820768B6700BC5D31 /* FieldOfficialProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FieldOfficialProfileResponse.swift; sourceTree = "<group>"; };
 		2C4F94452078915300BC5D31 /* String+Extenstion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extenstion.swift"; sourceTree = "<group>"; };
-		2C4F944B2078A12B00BC5D31 /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = Localizable.strings; sourceTree = "<group>"; };
-		2C4F944E2078A12B00BC5D31 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
-		2C4F94512078A12B00BC5D31 /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = Localizable.strings; sourceTree = "<group>"; };
 		2C63FBEB2064023E00BE8691 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		2C63FC102065493B00BE8691 /* FOMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FOMain.storyboard; sourceTree = "<group>"; };
 		2C63FC122065495C00BE8691 /* FODashboardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FODashboardController.swift; sourceTree = "<group>"; };
@@ -291,6 +286,9 @@
 		D92EAB2520FB2A910078A284 /* selected.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = selected.caf; sourceTree = "<group>"; };
 		D92EAB2620FB2A910078A284 /* fold.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fold.caf; sourceTree = "<group>"; };
 		D92EAB2720FB2A910078A284 /* expanding.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = expanding.caf; sourceTree = "<group>"; };
+		D94A5B58221EE6EB00019539 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D94A5B5A221EE6EF00019539 /* ur-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ur-IN"; path = "ur-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D94A5B5B221EE6F000019539 /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D94E2D1A20FA427200483984 /* TutorialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialVC.swift; sourceTree = "<group>"; };
 		D953945D221C3D5600B00760 /* TransportCommissionerPopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportCommissionerPopupVC.swift; sourceTree = "<group>"; };
 		D97614302213321500A378BF /* ZoomableImageViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomableImageViewVC.swift; sourceTree = "<group>"; };
@@ -483,30 +481,6 @@
 			path = FieldOfficialProfile;
 			sourceTree = "<group>";
 		};
-		2C4F94492078A12B00BC5D31 /* U.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				2C4F944A2078A12B00BC5D31 /* Localizable.strings */,
-			);
-			path = U.lproj;
-			sourceTree = "<group>";
-		};
-		2C4F944C2078A12B00BC5D31 /* E.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				2C4F944D2078A12B00BC5D31 /* Localizable.strings */,
-			);
-			path = E.lproj;
-			sourceTree = "<group>";
-		};
-		2C4F944F2078A12B00BC5D31 /* H.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				2C4F94502078A12B00BC5D31 /* Localizable.strings */,
-			);
-			path = H.lproj;
-			sourceTree = "<group>";
-		};
 		2C63FC0F2065491E00BE8691 /* FieldOfficer */ = {
 			isa = PBXGroup;
 			children = (
@@ -579,12 +553,10 @@
 				2CC96A34207A965800B7AAFD /* futura-regular.ttf */,
 				2CC96A30207A947F00B7AAFD /* futuram_C.ttf */,
 				2CC96A2F207A947F00B7AAFD /* FuturaStd-Heavy.otf */,
-				2C4F944C2078A12B00BC5D31 /* E.lproj */,
-				2C4F944F2078A12B00BC5D31 /* H.lproj */,
-				2C4F94492078A12B00BC5D31 /* U.lproj */,
 				2CB05AEF207491FE006C547E /* Poppins-Medium.ttf */,
 				2CB05AEE207491FE006C547E /* Poppins-Regular.ttf */,
 				2CB05AED207491FD006C547E /* Poppins-SemiBold.ttf */,
+				D94A5B59221EE6EB00019539 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -892,13 +864,11 @@
 				2CB05AF0207491FE006C547E /* Poppins-SemiBold.ttf in Resources */,
 				2C3D5651205AD1CE008F9104 /* DropDown.storyboard in Resources */,
 				2C63FC112065493B00BE8691 /* FOMain.storyboard in Resources */,
-				2C4F94542078A12C00BC5D31 /* Localizable.strings in Resources */,
 				2C1EE2B7204E5A440093B3BF /* Assets.xcassets in Resources */,
-				2C4F94532078A12C00BC5D31 /* Localizable.strings in Resources */,
 				2C2366092067793B000981A8 /* UpdateActionCell.xib in Resources */,
 				2CF2435C205EC81F007E696C /* WelcomeAlert.storyboard in Resources */,
-				2C4F94522078A12C00BC5D31 /* Localizable.strings in Resources */,
 				2CC96A32207A947F00B7AAFD /* FuturaStd-Heavy.otf in Resources */,
+				D94A5B57221EE6EB00019539 /* Localizable.strings in Resources */,
 				B84DB417205E32710000A256 /* EmergencyContact.storyboard in Resources */,
 				2C87E7BE2066557D00CAD64C /* NoRecord.xib in Resources */,
 				B865FFE7207DE18900B675F3 /* Notification.storyboard in Resources */,
@@ -1131,26 +1101,12 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		2C4F944A2078A12B00BC5D31 /* Localizable.strings */ = {
+		D94A5B59221EE6EB00019539 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2C4F944B2078A12B00BC5D31 /* ur-IN */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2C4F944D2078A12B00BC5D31 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C4F944E2078A12B00BC5D31 /* en */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		2C4F94502078A12B00BC5D31 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2C4F94512078A12B00BC5D31 /* hi-IN */,
+				D94A5B58221EE6EB00019539 /* en */,
+				D94A5B5A221EE6EF00019539 /* ur-IN */,
+				D94A5B5B221EE6F000019539 /* hi-IN */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1279,8 +1235,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3W3UD2A4L8;
 				INFOPLIST_FILE = RideSafe/Info.plist;
@@ -1289,7 +1245,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.jkridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "abcac450-daa0-4dd3-af68-ac96c5cf6bd7";
-				PROVISIONING_PROFILE_SPECIFIER = Dev_JKRideSafe_7/8/2018;
+				PROVISIONING_PROFILE_SPECIFIER = AppStore_JKRideSafe_7/8/2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1301,8 +1257,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "JK RideSafe.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Saugat Biswas (XPQMSUM7ZW)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Transport Department, Govt of J&K, India (3W3UD2A4L8)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 3W3UD2A4L8;
 				INFOPLIST_FILE = RideSafe/Info.plist;
@@ -1311,7 +1267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobiquel.jkridesafe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "abcac450-daa0-4dd3-af68-ac96c5cf6bd7";
-				PROVISIONING_PROFILE_SPECIFIER = Dev_JKRideSafe_7/8/2018;
+				PROVISIONING_PROFILE_SPECIFIER = AppStore_JKRideSafe_7/8/2018;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
