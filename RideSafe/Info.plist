@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>4</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -44,17 +44,17 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Ride safe need access to Camera </string>
+	<string>JK RideSafe need access to use Camera for uploading a picture of issues.</string>
 	<key>NSContactsUsageDescription</key>
-	<string>Ride Safe need access to contacts</string>
+	<string>JK RideSafe need access to contacts so that you can pick your emergency contacts number and share with us for emergency purpose.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>App need access to use location</string>
+	<string>JK RideSafe need access to use location to fetch the reported issue location.</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>App need access to use location</string>
+	<string>JK RideSafe need access to use location to fetch the reported issue location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App need access to use location</string>
+	<string>JK RideSafe need access to use location to fetch the reported issue location.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>App need access to use access Photos</string>
+	<string>JK RideSafe need access to use Photos for uploading a picture of issues.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Medium.ttf</string>
